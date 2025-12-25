@@ -28,6 +28,7 @@ export function BoardGrid({
   const mainDisplaySettings = useAppSelector((state) => state.displaySettings.mainPanel);
   
   // Section color mapping (must match sectionName format: "n1-A-org", "n5-org", etc.)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const sectionColorMap: Record<string, string> = {
     'n1-A-org': '#ef4444', // red
     'n1-B-org': '#f97316', // orange

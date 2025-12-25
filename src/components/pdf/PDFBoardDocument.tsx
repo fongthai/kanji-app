@@ -67,11 +67,7 @@ export function registerHeaderFont(fontFamily: string, fontFilename: string): st
   }
   
   try {
-    // Check if already registered (avoid duplicate registration)
-    const isRegistered = Font.getRegisteredFonts().includes(fontFamily);
-    if (isRegistered) return fontFamily;
-    
-    // Register new font
+    // Register new font (Font.register handles duplicates internally)
     Font.register({
       family: fontFamily,
       src: fontFilename,

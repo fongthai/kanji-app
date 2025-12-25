@@ -3,13 +3,11 @@ import { getGradeColor } from '../../constants/indicators';
 
 interface PDFGradeIndicatorProps {
   gradeLevel: number | string;
-  kanjiFont: string; // Not used, kept for compatibility
   size?: number; // Size in points, default 20
 }
 
 export const PDFGradeIndicator: React.FC<PDFGradeIndicatorProps> = ({ 
   gradeLevel,
-  kanjiFont, // Not used
   size = 20 
 }) => {
   const color = getGradeColor(gradeLevel);

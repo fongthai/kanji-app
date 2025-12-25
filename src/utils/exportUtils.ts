@@ -11,7 +11,7 @@ import {
   calculateBoardCardsPerPage,
   calculateFontSizes,
 } from './layoutCalculations';
-import { A4_WIDTH, A4_HEIGHT, BOARD_HEADER_HEIGHT, BOARD_FOOTER_HEIGHT, GRID_GAP } from '../constants/boardDimensions';
+import { A4_WIDTH, GRID_GAP } from '../constants/boardDimensions';
 
 // A4 dimensions in points (for React-PDF)
 const A4_WIDTH_PT = 595;
@@ -390,8 +390,6 @@ export async function exportToPNG(
       status: 'completed',
       message: 'PNG export completed!',
     });
-
-    return true;
   } catch (error) {
     console.error('PNG Export error:', error);
     onProgress({
@@ -400,7 +398,6 @@ export async function exportToPNG(
       status: 'error',
       message: `Export failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
     });
-    return false;
   }
 }
 
@@ -572,12 +569,19 @@ export async function exportBoardToPNG(
     const pdfHanVietFont = displaySettings.hanVietFont === 'system-ui' ? 'NotoSansJP-Regular' : displaySettings.hanVietFont;
 
     // Calculate layout
-    const cellSize = calculateBoardCellSize(boardSettings.boardColumnCount);
-    const rowCount = calculateRowCount(cellSize);
-    const cardsPerPage = calculateBoardCardsPerPage(boardSettings.boardColumnCount);
+    const paddingPt = 48;
+    const headerHeightPt = boardSettings.showHeader ? 57 : 0;
+    const footerHeightPt = boardSettings.showFooter ? 45 : 0;
+    const gapPt = GRID_GAP;
+    const availableWidth = A4_WIDTH - (2 * paddingPt);
+    const availableHeight = 1123 - (2 * paddingPt) - headerHeightPt - footerHeightPt;
+    
+    const cellSize = calculateBoardCellSize(availableWidth, boardSettings.boardColumnCount, gapPt);
+    const rowCount = calculateRowCount(availableHeight, cellSize, gapPt);
+    const cardsPerPage = calculateBoardCardsPerPage(boardSettings.boardColumnCount, rowCount);
     const totalPages = Math.ceil(chosenKanjis.length / cardsPerPage);
 
-    const { kanjiFontSize, hanVietFontSize, indicatorFontSize } = calculateFontSizes(cellSize);
+    const { kanjiFontSize, hanVietFontSize, indicatorFontSize } = calculateFontSizes(cellSize, 100, 100);
 
     // Generate PDF blob
     const document = PDFBoardDocument({
@@ -596,10 +600,14 @@ export async function exportBoardToPNG(
       showJlptIndicator: displaySettings.showJlptIndicator,
       showGradeIndicator: displaySettings.showGradeIndicator,
       showFrequencyIndicator: displaySettings.showFrequencyIndicator,
-      showEmptyCells: boardSettings.showEmptyCells,
-      centerCards: boardSettings.centerCards,
+      showEmptyCells: boardSettings.showEmptyCells !== 'hide',
+      centerCards: false,
       showHeader: boardSettings.showHeader,
       showFooter: boardSettings.showFooter,
+      totalKanjis: chosenKanjis.length,
+      headerText: 'Kanji Practice Worksheet',
+      headerFontFamily: 'Helvetica',
+      headerFontFilename: '',
     });
 
     const pdfBlob = await pdf(document).toBlob();
@@ -656,11 +664,12 @@ export async function exportBoardToPNG(
       await page.render({
         canvasContext: context,
         viewport: viewport,
+        canvas: canvas,
       }).promise;
 
       // Convert canvas to PNG blob
       const pngBlob = await new Promise<Blob>((resolve, reject) => {
-        canvas.toBlob((blob) => {
+        canvas.toBlob((blob: Blob | null) => {
           if (blob) resolve(blob);
           else reject(new Error('Failed to convert canvas to blob'));
         }, 'image/png');

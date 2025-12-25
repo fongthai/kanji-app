@@ -228,7 +228,7 @@ function InputPanel() {
       }, {});
 
       const colorMap = new Map();
-      const newSections: KanjiSection[] = Object.entries(grouped).map(([level, kanjis]: [string, any], index) => {
+      const newSections: KanjiSection[] = Object.entries(grouped).map(([level, kanjis]: [string, any]) => {
         const colors = getSectionColor(); // Random color for each section
         // Store colors for each kanji in this section
         kanjis.forEach((k: KanjiData) => {

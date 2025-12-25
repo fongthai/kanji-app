@@ -15,11 +15,9 @@ import { setChosenKanjis } from '../kanji/kanjiSlice';
 import {
   setInputPanelKanjiFont,
   setInputPanelKanjiSize,
-  setInputPanelHanVietFont,
   setInputPanelHanVietSize,
   setMainPanelKanjiFont,
   setMainPanelKanjiSize,
-  setMainPanelHanVietFont,
   setMainPanelHanVietSize,
   toggleInputPanelShowHanViet,
   toggleInputPanelHanVietOrientation,
@@ -37,7 +35,7 @@ import {
 } from '../displaySettings/displaySettingsSlice';
 import { FontSizeControl } from '../../components/shared/FontSizeControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
-import { exportToPDF, exportToPNG, exportBoardToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
+import { exportToPDF, exportBoardToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
 import { loadFontManifest } from '../../utils/fontLoader';
 
 function ControlPanel() {
@@ -204,10 +202,10 @@ function ControlPanel() {
         chosenKanjis,
         {
           boardColumnCount: worksheet.boardColumnCount,
-          showEmptyCells: worksheet.boardSettings.showEmptyCells,
-          centerCards: worksheet.boardSettings.centerCards,
-          showHeader: worksheet.boardSettings.showHeader,
-          showFooter: worksheet.boardSettings.showFooter,
+          showEmptyCells: worksheet.boardEmptyCellsMode !== 'hide',
+          centerCards: false, // Default value
+          showHeader: worksheet.boardShowHeader,
+          showFooter: worksheet.boardShowFooter,
         },
         {
           kanjiFont: mainPanel.kanjiFont,
