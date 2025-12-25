@@ -3,52 +3,55 @@ import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFBoardPage } from './PDFBoardPage';
 import { calculatePagination } from '../../utils/layoutCalculations';
 
+// Get base URL for asset paths
+const BASE_URL = import.meta.env.BASE_URL;
+
 // Register all available fonts with explicit properties
 Font.register({
   family: 'KanjiStrokeOrders',
-  src: '/fonts/KanjiStrokeOrders.ttf',
+  src: `${BASE_URL}fonts/KanjiStrokeOrders.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'YujiMai-Regular',
-  src: '/fonts/YujiMai-Regular.ttf',
+  src: `${BASE_URL}fonts/YujiMai-Regular.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'YujiBoku-Regular',
-  src: '/fonts/YujiBoku-Regular.ttf',
+  src: `${BASE_URL}fonts/YujiBoku-Regular.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'KleeOne-Regular',
-  src: '/fonts/KleeOne-Regular.ttf',
+  src: `${BASE_URL}fonts/KleeOne-Regular.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'NotoSansJP-Regular',
-  src: '/fonts/NotoSansJP-Regular.ttf',
+  src: `${BASE_URL}fonts/NotoSansJP-Regular.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'ZenOldMincho-Regular',
-  src: '/fonts/ZenOldMincho-Regular.ttf',
+  src: `${BASE_URL}fonts/ZenOldMincho-Regular.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
 
 Font.register({
   family: 'mitimasu',
-  src: '/fonts/mitimasu.ttf',
+  src: `${BASE_URL}fonts/mitimasu.ttf`,
   fontStyle: 'normal',
   fontWeight: 'normal',
 });
