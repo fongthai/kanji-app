@@ -1,0 +1,10 @@
+KanjiStrokeOrders.ttf
+KleeOne-Regular.ttf
+KosugiMaru-Regular.woff2
+NotoSansJP-Regular.ttf
+YujiBoku-Regular.ttf
+YujiMai-Regular.ttf
+ZenOldMincho-Regular.ttf
+manifest.txt
+mitimasu.ttf
+ubuntu.woff2

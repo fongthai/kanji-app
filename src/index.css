@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Load custom Japanese fonts */
+@font-face {
+  font-family: 'YujiMai-Regular';
+  src: url('/fonts/YujiMai-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KanjiStrokeOrders';
+  src: url('/fonts/KanjiStrokeOrders.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YujiBoku-Regular';
+  src: url('/fonts/YujiBoku-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KleeOne-Regular';
+  src: url('/fonts/KleeOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NotoSansJP-Regular';
+  src: url('/fonts/NotoSansJP-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZenOldMincho-Regular';
+  src: url('/fonts/ZenOldMincho-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'mitimasu';
+  src: url('/fonts/mitimasu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Header Animation Styles */
+
+/* Option 0: Gradient Shimmer */
+@keyframes gradientShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.header-gradient-shimmer {
+  background: linear-gradient(
+    -45deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #4facfe 75%,
+    #667eea 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShimmer 8s ease infinite;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Option 1: Wave Pattern */
+@keyframes waveFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 0; }
+}
+
+.header-wave-pattern {
+  background: 
+    linear-gradient(135deg, rgba(0,123,193,0.1) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(0,123,193,0.1) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(0,123,193,0.1) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(0,123,193,0.1) 25%, transparent 25%);
+  background-color: #e0f2fe;
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 0, 25px -25px, 0 0;
+  animation: waveFlow 4s linear infinite;
+  box-shadow: inset 0 -1px 0 rgba(0,123,193,0.2), 0 2px 6px rgba(0,123,193,0.15);
+}
+
+/* Option 2: Holographic */
+@keyframes holographicShift {
+  0%, 100% { 
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: hue-rotate(20deg);
+  }
+}
+
+.header-holographic {
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff8c00,
+    #40e0d0,
+    #7b68ee,
+    #ff0080
+  );
+  background-size: 300% 100%;
+  animation: holographicShift 6s ease-in-out infinite;
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.5), 0 2px 10px rgba(123, 104, 238, 0.4);
+  position: relative;
+}
+
+.header-holographic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Option 3: Sparkle Particles */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+
+.header-sparkle {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.header-sparkle::before,
+.header-sparkle::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    10px 10px 0 white,
+    -10px -10px 0 white,
+    20px -20px 0 rgba(255,255,255,0.8),
+    -20px 20px 0 rgba(255,255,255,0.8),
+    30px 10px 0 rgba(255,255,255,0.6),
+    -30px -10px 0 rgba(255,255,255,0.6);
+  animation: sparkle 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-sparkle::before {
+  top: 25%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.header-sparkle::after {
+  top: 60%;
+  right: 20%;
+  animation-delay: 1.5s;
+}
+
+/* Option 4: Neon Glow */
+@keyframes neonPulse {
+  0%, 100% { 
+    box-shadow: 
+      inset 0 0 20px rgba(138, 43, 226, 0.5),
+      0 0 20px rgba(138, 43, 226, 0.4),
+      0 0 40px rgba(138, 43, 226, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      inset 0 0 30px rgba(138, 43, 226, 0.7),
+      0 0 30px rgba(138, 43, 226, 0.6),
+      0 0 60px rgba(138, 43, 226, 0.4);
+  }
+}
+
+.header-neon-glow {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d1b4e 100%);
+  animation: neonPulse 2s ease-in-out infinite;
+  border: 2px solid #8a2be2;
+  position: relative;
+}
+
+.header-neon-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.1), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
