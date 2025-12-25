@@ -176,7 +176,7 @@ function InputPanel() {
         // Load manifest file to get list of JSON files
         let jsonFiles: string[] = [];
         try {
-          const manifestResponse = await fetch('/json/input-json-manifest.txt');
+          const manifestResponse = await fetch(`${import.meta.env.BASE_URL}json/input-json-manifest.txt`);
           
           if (manifestResponse.ok) {
             const manifestText = await manifestResponse.text();
@@ -186,7 +186,7 @@ function InputPanel() {
               .split('\n')
               .map(line => line.trim())
               .filter(line => line.length > 0 && !line.startsWith('#'))
-              .map(filename => `/json/${filename}`);
+              .map(filename => `${import.meta.env.BASE_URL}json/${filename}`);
           } else {
             throw new Error(`Manifest file not found: ${manifestResponse.status}`);
           }
@@ -194,19 +194,19 @@ function InputPanel() {
           console.error('Could not load manifest file:', manifestError);
           // Fallback to hardcoded list if manifest fails
           jsonFiles = [
-            '/json/n5-org.json',
-            '/json/n4-org.json',
-            '/json/n3-A-org.json',
-            '/json/n3-B-org.json',
-            '/json/n2-A-org.json',
-            '/json/n2-B-org.json',
-            '/json/n1-A-org.json',
-            '/json/n1-B-org.json',
-            '/json/n1-C-org.json',
-            '/json/n1-D-org.json',
-            '/json/n1-E-org.json',
-            '/json/n1-F-org.json',
-            '/json/n1-G-org.json',
+            `${import.meta.env.BASE_URL}json/n5-org.json`,
+            `${import.meta.env.BASE_URL}json/n4-org.json`,
+            `${import.meta.env.BASE_URL}json/n3-A-org.json`,
+            `${import.meta.env.BASE_URL}json/n3-B-org.json`,
+            `${import.meta.env.BASE_URL}json/n2-A-org.json`,
+            `${import.meta.env.BASE_URL}json/n2-B-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-A-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-B-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-C-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-D-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-E-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-F-org.json`,
+            `${import.meta.env.BASE_URL}json/n1-G-org.json`,
           ];
         }
         

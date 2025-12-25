@@ -23,7 +23,7 @@ export async function loadFontManifest(): Promise<FontInfo[]> {
   if (cachedFonts) return cachedFonts;
 
   try {
-    const response = await fetch('/fonts/fonts-manifest-for-non-kanji.txt');
+    const response = await fetch(`${import.meta.env.BASE_URL}fonts/fonts-manifest-for-non-kanji.txt`);
     if (!response.ok) throw new Error('Failed to fetch font manifest');
     
     const text = await response.text();
