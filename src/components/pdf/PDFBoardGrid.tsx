@@ -19,6 +19,7 @@ interface PDFBoardGridProps {
   showFrequencyIndicator: boolean;
   showEmptyCells: boolean;
   centerCards: boolean;
+  availableHeight: number; // Add this to calculate centering
 }
 
 export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({ 
@@ -37,11 +38,17 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   showGradeIndicator,
   showFrequencyIndicator,
   showEmptyCells,
-  centerCards,
+  availableHeight,
+  // centerCards - not used, grid is conditionally centered based on space
 }) => {
-  // Calculate total cells
-  const rowCount = Math.ceil(kanjis.length / columnCount);
-  const totalCells = rowCount * columnCount;
+  // Calculate actual row count based on kanji count
+  const actualRowCount = showEmptyCells 
+    ? Math.ceil(kanjis.length / columnCount) 
+    : Math.ceil(kanjis.length / columnCount);
+  
+  const totalCells = showEmptyCells 
+    ? actualRowCount * columnCount 
+    : kanjis.length;
   
   // Create cells array (kanji or null for empty)
   let cells: (KanjiData | null)[] = [...kanjis];
@@ -51,12 +58,24 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
     cells = [...kanjis, ...Array(emptyCellsCount).fill(null)];
   }
   
+  // Calculate grid height and remaining space
+  const gridHeight = actualRowCount * cellSize + (actualRowCount - 1) * gap;
+  const remainingSpace = availableHeight - gridHeight;
+  
+  // Only center if remaining space is less than 50px
+  const shouldCenter = remainingSpace < 70;
+  const topPadding = shouldCenter ? Math.floor(remainingSpace / 2) : 0;
+  
+  // Calculate exact grid width to ensure proper column wrapping
+  const gridWidth = columnCount * cellSize + (columnCount - 1) * gap;
+  
   const styles = StyleSheet.create({
     grid: {
       flexDirection: 'row',
       flexWrap: 'wrap',
       gap: gap,
-      justifyContent: centerCards && kanjis.length < totalCells ? 'center' : 'flex-start',
+      paddingTop: topPadding,
+      width: gridWidth,
     },
     emptyCell: {
       width: cellSize,

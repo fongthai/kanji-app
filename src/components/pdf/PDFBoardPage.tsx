@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFBoardGrid } from './PDFBoardGrid';
-import { FOOTER_TEXT } from '../../constants/appText';
+import { getFooterText } from '../../constants/appText';
 
 const PADDING = 48;
 const HEADER_HEIGHT = 50;
@@ -121,6 +121,18 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
   headerText,
   headerFont,
 }) => {
+  // Calculate available height for grid (A4 height minus padding, header, footer)
+  const A4_HEIGHT_PX = 842; // 297mm at 72dpi
+  let availableHeight = A4_HEIGHT_PX - (PADDING * 2); // Subtract top and bottom padding
+  
+  if (showHeader) {
+    availableHeight -= HEADER_HEIGHT;
+  }
+  
+  if (showFooter) {
+    availableHeight -= FOOTER_HEIGHT;
+  }
+  
   return (
     <View style={styles.page}>
       {/* Header */}
@@ -160,13 +172,14 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
           showFrequencyIndicator={showFrequencyIndicator}
           showEmptyCells={showEmptyCells}
           centerCards={centerCards}
+          availableHeight={availableHeight}
         />
       </View>
       
       {/* Footer */}
       {showFooter && (
         <View style={styles.footer}>
-          <Text style={styles.footerText}>{FOOTER_TEXT}</Text>
+          <Text style={styles.footerText}>{getFooterText()}</Text>
           <Text style={styles.footerText}>Page {pageNumber} of {totalPages}</Text>
         </View>
       )}

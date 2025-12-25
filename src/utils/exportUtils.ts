@@ -552,6 +552,8 @@ export async function exportBoardToPNG(
     showJlptIndicator: boolean;
     showGradeIndicator: boolean;
     showFrequencyIndicator: boolean;
+    kanjiSize: number;
+    hanVietSize: number;
   },
   pngQuality: 200 | 300 | 600, // DPI
   onProgress: ExportProgressCallback,
@@ -570,20 +572,34 @@ export async function exportBoardToPNG(
     const pdfKanjiFont = displaySettings.kanjiFont === 'system-ui' ? 'NotoSansJP-Regular' : displaySettings.kanjiFont;
     const pdfHanVietFont = displaySettings.hanVietFont === 'system-ui' ? 'NotoSansJP-Regular' : displaySettings.hanVietFont;
 
-    // Calculate layout
+    // Calculate layout using correct A4 dimensions at 72 DPI (PDF standard)
+    // A4 = 210mm x 297mm = 595pt x 842pt at 72 DPI
+    const A4_WIDTH_PT = 595;
+    const A4_HEIGHT_PT = 842;
     const paddingPt = 48;
-    const headerHeightPt = boardSettings.showHeader ? 57 : 0;
-    const footerHeightPt = boardSettings.showFooter ? 45 : 0;
-    const gapPt = GRID_GAP;
-    const availableWidth = A4_WIDTH - (2 * paddingPt);
-    const availableHeight = 1123 - (2 * paddingPt) - headerHeightPt - footerHeightPt;
+    const headerHeightPt = boardSettings.showHeader ? 50 : 0;
+    const footerHeightPt = boardSettings.showFooter ? 40 : 0;
+    const gapPt = 4; // Match GRID_GAP
     
-    const cellSize = calculateBoardCellSize(availableWidth, boardSettings.boardColumnCount, gapPt);
-    const rowCount = calculateRowCount(availableHeight, cellSize, gapPt);
-    const cardsPerPage = calculateBoardCardsPerPage(boardSettings.boardColumnCount, rowCount);
+    const availableWidth = A4_WIDTH_PT - (2 * paddingPt);  // 595 - 96 = 499
+    const availableHeight = A4_HEIGHT_PT - (2 * paddingPt) - headerHeightPt - footerHeightPt; // 842 - 96 - header - footer
+    
+    const cellSize = Math.floor((availableWidth - (boardSettings.boardColumnCount - 1) * gapPt) / boardSettings.boardColumnCount);
+    const rowCount = Math.floor((availableHeight + gapPt) / (cellSize + gapPt));
+    const cardsPerPage = boardSettings.boardColumnCount * rowCount;
     const totalPages = Math.ceil(chosenKanjis.length / cardsPerPage);
 
-    const { kanjiFontSize, hanVietFontSize, indicatorFontSize } = calculateFontSizes(cellSize, 100, 100);
+    // Calculate font sizes in points (PDF uses points, not rem)
+    // Base sizes: Kanji 75% of cell, Han-Viet 20% of kanji
+    // Then apply user's percentage adjustments (60-120%)
+    const baseKanjiFontSize = cellSize * 0.75;
+    const kanjiSizePercentage = Math.max(60, Math.min(120, displaySettings.kanjiSize));
+    const kanjiFontSize = baseKanjiFontSize * (kanjiSizePercentage / 100);
+    
+    const baseIndicatorSize = baseKanjiFontSize * 0.20;
+    const hanVietSizePercentage = Math.max(60, Math.min(120, displaySettings.hanVietSize));
+    const hanVietFontSize = baseIndicatorSize * (hanVietSizePercentage / 100);
+    const indicatorFontSize = hanVietFontSize;
 
     // Generate PDF blob
     const document = PDFBoardDocument({
@@ -591,7 +607,7 @@ export async function exportBoardToPNG(
       columnCount: boardSettings.boardColumnCount,
       cellSize,
       rowCount,
-      gap: GRID_GAP,
+      gap: gapPt,
       kanjiFont: pdfKanjiFont,
       kanjiFontSize,
       hanVietFont: pdfHanVietFont,
@@ -619,6 +635,9 @@ export async function exportBoardToPNG(
       return false;
     }
 
+    // Add delay to ensure PDF is fully rendered
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     // Step 2: Convert PDF to PNG using pdfjs-dist
     onProgress({
       currentPage: 0,
@@ -628,8 +647,9 @@ export async function exportBoardToPNG(
     });
 
     const pdfjsLib = await import('pdfjs-dist');
-    // Set worker path
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+    // Use the worker from the npm package instead of CDN
+    const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.mjs?url');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker.default;
 
     const pdfData = await pdfBlob.arrayBuffer();
     const pdfDocument = await pdfjsLib.getDocument({ data: pdfData }).promise;
@@ -637,6 +657,7 @@ export async function exportBoardToPNG(
     // Step 3: Render each page to PNG
     const zip = new JSZip();
     const scale = pngQuality / 72; // Convert DPI to scale (72 is PDF default DPI)
+    const pngBlobs: Blob[] = []; // Store blobs for single page handling
 
     for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
       if (checkCancelled()) {
@@ -662,12 +683,14 @@ export async function exportBoardToPNG(
       canvas.width = viewport.width;
       canvas.height = viewport.height;
 
-      // Render PDF page to canvas
-      await page.render({
+      // Render PDF page to canvas with proper background
+      const renderContext = {
         canvasContext: context,
         viewport: viewport,
         canvas: canvas,
-      }).promise;
+      };
+      
+      await page.render(renderContext).promise;
 
       // Convert canvas to PNG blob
       const pngBlob = await new Promise<Blob>((resolve, reject) => {
@@ -677,9 +700,13 @@ export async function exportBoardToPNG(
         }, 'image/png');
       });
 
-      // Add to ZIP with padded filename
-      const paddedPageNum = pageNum.toString().padStart(3, '0');
-      zip.file(`kanji-page-${paddedPageNum}.png`, pngBlob);
+      pngBlobs.push(pngBlob);
+
+      // Add to ZIP with padded filename (only if multiple pages)
+      if (totalPages > 1) {
+        const paddedPageNum = pageNum.toString().padStart(3, '0');
+        zip.file(`kanji-page-${paddedPageNum}.png`, pngBlob);
+      }
     }
 
     if (checkCancelled()) {
@@ -687,18 +714,33 @@ export async function exportBoardToPNG(
       return false;
     }
 
-    // Step 4: Generate and download ZIP
-    onProgress({
-      currentPage: totalPages,
-      totalPages,
-      status: 'exporting',
-      message: 'Creating ZIP archive...',
-    });
-
-    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    // Step 4: Download - single PNG or ZIP
     const qualityLabel = pngQuality === 200 ? 'low' : pngQuality === 300 ? 'medium' : 'hq';
-    const filename = `kanji-worksheets-${qualityLabel}-${new Date().toISOString().split('T')[0]}.zip`;
-    saveAs(zipBlob, filename);
+    
+    if (totalPages === 1) {
+      // Single page - download PNG directly
+      onProgress({
+        currentPage: totalPages,
+        totalPages,
+        status: 'exporting',
+        message: 'Saving PNG file...',
+      });
+      
+      const filename = `kanji-worksheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.png`;
+      saveAs(pngBlobs[0], filename);
+    } else {
+      // Multiple pages - create ZIP
+      onProgress({
+        currentPage: totalPages,
+        totalPages,
+        status: 'exporting',
+        message: 'Creating ZIP archive...',
+      });
+
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
+      const filename = `kanji-worksheets-${qualityLabel}-${new Date().toISOString().split('T')[0]}.zip`;
+      saveAs(zipBlob, filename);
+    }
 
     onProgress({
       currentPage: totalPages,

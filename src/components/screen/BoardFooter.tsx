@@ -1,13 +1,18 @@
-import { FOOTER_TEXT } from '../../constants/appText';
+import { useMemo } from 'react';
+import { getFooterText } from '../../constants/appText';
 
 interface BoardFooterProps {
   currentPage: number;
   totalPages: number;
   visible: boolean;
+  timestamp?: number; // Optional timestamp to force re-generation
 }
 
-export function BoardFooter({ currentPage, totalPages, visible }: BoardFooterProps) {
+export function BoardFooter({ currentPage, totalPages, visible, timestamp }: BoardFooterProps) {
   if (!visible) return null;
+  
+  // Regenerate footer text when timestamp changes (or on mount)
+  const footerText = useMemo(() => getFooterText(), [timestamp]);
   
   return (
     <div 
@@ -31,7 +36,7 @@ export function BoardFooter({ currentPage, totalPages, visible }: BoardFooterPro
       >
         {/* Left: Generation text */}
         <p className="text-sm text-gray-600">
-          {FOOTER_TEXT}
+          {footerText}
         </p>
         
         {/* Right: Page numbers */}

@@ -30,9 +30,6 @@ function MainView() {
       availableHeight -= 40;
     }
     
-    // Account for container padding (pt-1 = 4px)
-    availableHeight -= 4;
-    
     const gap = 2;
     
     const cellSize = Math.floor((availableWidth - (worksheet.boardColumnCount - 1) * gap) / worksheet.boardColumnCount);
@@ -58,7 +55,7 @@ function MainView() {
             <div className="flex flex-col h-full" style={{ overflow: 'visible' }}>
               <BoardHeader visible={worksheet.boardShowHeader} />
               
-              <div className="flex-1 overflow-hidden pt-1">
+              <div className="flex-1 overflow-hidden">
                 {chosenKanjis.length === 0 ? (
                   <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
                     Select kanji from the Input Panel to generate worksheet
@@ -79,7 +76,8 @@ function MainView() {
               <BoardFooter 
                 currentPage={currentPage} 
                 totalPages={totalPages}
-                visible={worksheet.boardShowFooter} 
+                visible={worksheet.boardShowFooter}
+                timestamp={chosenKanjis.length}
               />
             </div>
           ) : (

@@ -71,9 +71,6 @@ export function ExportProgressModal({ progress, onCancel }: ExportProgressModalP
           <div className="mt-4 p-3 bg-red-900/20 border border-red-700/30 rounded text-xs text-gray-300">
             <p className="font-semibold text-red-400 mb-1">Error Details:</p>
             <p>{progress.message}</p>
-            <p className="mt-2 text-gray-400">
-              If fonts failed to load, you can try exporting anyway. The output may use fallback system fonts.
-            </p>
           </div>
         )}
       </div>

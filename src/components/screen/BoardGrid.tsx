@@ -54,9 +54,6 @@ export function BoardGrid({
   if (showHeader) availableHeight -= BOARD_HEADER_HEIGHT;
   if (showFooter) availableHeight -= BOARD_FOOTER_HEIGHT;
   
-  // Account for container padding (pt-1 = 4px)
-  availableHeight -= 4;
-  
   // Calculate cell size based on available width and column count
   const cellSize = Math.floor((availableWidth - (columnCount - 1) * GRID_GAP) / columnCount);
   
@@ -109,6 +106,15 @@ export function BoardGrid({
     return kanji || null;
   });
   
+  // Calculate actual grid height and remaining space
+  const actualRows = Math.ceil(totalCells / columnCount);
+  const gridHeight = actualRows * cellSize + (actualRows - 1) * GRID_GAP;
+  const remainingSpace = availableHeight - gridHeight;
+  
+  // Only center if remaining bottom gap would be less than 50px
+  const shouldCenter = remainingSpace < 70;
+  const topBottomPadding = shouldCenter ? Math.max(0, Math.floor(remainingSpace / 2)) : 0;
+  
   // Handle double-click to remove kanji from chosen list
   const handleRemoveKanji = (kanji: KanjiData) => {
     dispatch(removeKanji(kanji.kanji));
@@ -120,8 +126,10 @@ export function BoardGrid({
       style={{
         gridTemplateColumns: `repeat(${columnCount}, ${cellSize}px)`,
         gap: `${GRID_GAP}px`,
-        gridTemplateRows: `repeat(${rowCount}, ${cellSize}px)`,
-        alignContent: 'start',
+        gridTemplateRows: `repeat(${actualRows}, ${cellSize}px)`,
+        alignContent: shouldCenter ? 'center' : 'start',
+        paddingTop: `${topBottomPadding}px`,
+        paddingBottom: `${topBottomPadding}px`,
       }}
     >
       {cells.map((kanji, index) => {

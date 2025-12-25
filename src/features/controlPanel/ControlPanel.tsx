@@ -215,6 +215,8 @@ function ControlPanel() {
           showJlptIndicator: mainPanel.showJlptIndicator,
           showGradeIndicator: mainPanel.showGradeIndicator,
           showFrequencyIndicator: mainPanel.showFrequencyIndicator,
+          kanjiSize: mainPanel.kanjiSize,
+          hanVietSize: mainPanel.hanVietSize,
         },
         pngQuality,
         (progress) => setExportProgress(progress),
@@ -526,7 +528,7 @@ function ControlPanel() {
               <span className="text-xs text-gray-300">
                 {pngQuality === 200 ? 'Low (Web)' : pngQuality === 300 ? 'Medium (Standard)' : 'HQ (Print)'}
               </span>
-              <span className="text-xs text-gray-400">{pngQuality} DPI</span>
+              <span className="text-xs text-gray-400">{pngQuality} dpi</span>
             </div>
             <input
               type="range"
