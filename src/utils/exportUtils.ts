@@ -3,6 +3,7 @@ import jsPDF from 'jspdf';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { pdf } from '@react-pdf/renderer';
+import React from 'react';
 import type { KanjiData } from '../features/kanji/kanjiSlice';
 import { PDFBoardDocument } from '../components/pdf/PDFBoardDocument';
 import {
@@ -392,6 +393,7 @@ export async function exportToPNG(
     });
   } catch (error) {
     console.error('PNG Export error:', error);
+    const totalPages = getTotalPages();
     onProgress({
       currentPage: 0,
       totalPages,
@@ -496,7 +498,7 @@ export async function exportBoardToPDFVector(
     });
 
     // Generate PDF blob
-    const blob = await pdf(document).toBlob();
+    const blob = await pdf(document as React.ReactElement).toBlob();
 
     onProgress({
       currentPage: totalPages,
@@ -600,7 +602,7 @@ export async function exportBoardToPNG(
       showJlptIndicator: displaySettings.showJlptIndicator,
       showGradeIndicator: displaySettings.showGradeIndicator,
       showFrequencyIndicator: displaySettings.showFrequencyIndicator,
-      showEmptyCells: boardSettings.showEmptyCells !== 'hide',
+      showEmptyCells: boardSettings.boardEmptyCellsMode !== 'hide',
       centerCards: false,
       showHeader: boardSettings.showHeader,
       showFooter: boardSettings.showFooter,
@@ -610,7 +612,7 @@ export async function exportBoardToPNG(
       headerFontFilename: '',
     });
 
-    const pdfBlob = await pdf(document).toBlob();
+    const pdfBlob = await pdf(document as React.ReactElement).toBlob();
 
     if (checkCancelled()) {
       onProgress({ currentPage: 0, totalPages, status: 'cancelled', message: 'Export cancelled by user' });
@@ -653,7 +655,7 @@ export async function exportBoardToPNG(
       const viewport = page.getViewport({ scale });
 
       // Create canvas
-      const canvas = document.createElement('canvas');
+      const canvas = globalThis.document.createElement('canvas');
       const context = canvas.getContext('2d');
       if (!context) throw new Error('Could not get canvas context');
 

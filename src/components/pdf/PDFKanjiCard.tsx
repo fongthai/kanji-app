@@ -133,7 +133,7 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
       
       {/* Grade Indicator */}
       {showGradeIndicator && kanji.gradeLevel && (
-        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} kanjiFont={kanjiFont} size={indicatorFontSize} />
+        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} size={indicatorFontSize} />
       )}
       
       {/* Main Kanji */}

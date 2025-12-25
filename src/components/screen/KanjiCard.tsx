@@ -103,7 +103,7 @@ const KanjiCardComponent = ({
     ? Math.max(0.2, kanjiSize * 0.05)
     : 0.6; // Fixed padding for input
   
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // @ts-ignore - kept for future reference
   const hanVietMargin = 0.15;
 
   const cardContent = (
