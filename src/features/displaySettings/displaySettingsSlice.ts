@@ -23,7 +23,7 @@ interface DisplaySettingsState {
 }
 const initialState: DisplaySettingsState = {
   inputPanel: {
-    kanjiFont: 'YujiMai-Regular',
+    kanjiFont: 'KleeOne-Regular',
     kanjiSize: 75, // Percentage scale: 60%-120%, default 75%
     hanVietFont: 'system-ui',
     hanVietSize: 80, // Percentage scale: 50%-100%, default 80%

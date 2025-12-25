@@ -62,6 +62,7 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
       position: 'relative',
       justifyContent: 'center',
       alignItems: 'center',
+      overflow: 'hidden', // Clip content that extends beyond card boundaries
     },
     kanji: {
       fontSize: kanjiFontSize,

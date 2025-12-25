@@ -4,6 +4,7 @@ import { Paginator } from '../../components/shared/Paginator';
 import { BoardGrid } from '../../components/screen/BoardGrid';
 import { BoardHeader } from '../../components/screen/BoardHeader';
 import { BoardFooter } from '../../components/screen/BoardFooter';
+import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
 
 function MainView() {
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
@@ -85,7 +86,7 @@ function MainView() {
             // Sheet mode placeholder
             <div className="p-8">
               <div className="p-8 border-b border-gray-400 flex justify-between items-center text-sm">
-                <span>Kanji Practice Worksheet</span>
+                <span>{DEFAULT_HEADER_TEXT}</span>
                 <span>Page {currentPage}</span>
                 <span>Name: _____________</span>
               </div>

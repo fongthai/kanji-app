@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
 
 interface WorksheetState {
   // Board mode settings
@@ -27,9 +28,14 @@ interface WorksheetState {
 const loadHeaderText = (): string => {
   try {
     const saved = localStorage.getItem('kanjiWorksheet_headerText');
-    return saved || 'Kanji Practice Worksheet';
+    // Migrate old default text to new default
+    if (saved === 'Kanji Practice Worksheet') {
+      localStorage.setItem('kanjiWorksheet_headerText', DEFAULT_HEADER_TEXT);
+      return DEFAULT_HEADER_TEXT;
+    }
+    return saved || DEFAULT_HEADER_TEXT;
   } catch {
-    return 'Kanji Practice Worksheet';
+    return DEFAULT_HEADER_TEXT;
   }
 };
 

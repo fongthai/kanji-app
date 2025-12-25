@@ -15,13 +15,6 @@ Font.register({
 });
 
 Font.register({
-  family: 'YujiMai-Regular',
-  src: `${BASE_URL}fonts/YujiMai-Regular.ttf`,
-  fontStyle: 'normal',
-  fontWeight: 'normal',
-});
-
-Font.register({
   family: 'YujiBoku-Regular',
   src: `${BASE_URL}fonts/YujiBoku-Regular.ttf`,
   fontStyle: 'normal',

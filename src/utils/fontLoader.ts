@@ -1,8 +1,9 @@
 /**
  * Font Loader Utility
  * 
- * Manages loading and caching of header fonts from fonts-manifest-for-non-kanji.txt
- * Provides lazy loading with error handling and fallback support
+ * Manages loading and caching of fonts from manifest files:
+ * - fonts-manifest-for-non-kanji.txt: for header text
+ * - fonts-manifest-for-kanji.txt: for kanji display in panels
  */
 
 export interface FontInfo {
@@ -13,18 +14,19 @@ export interface FontInfo {
   error: boolean; // Whether font failed to load
 }
 
-// Font list cache
-let cachedFonts: FontInfo[] | null = null;
+// Font list caches
+let cachedHeaderFonts: FontInfo[] | null = null;
+let cachedKanjiFonts: FontInfo[] | null = null;
 
 /**
- * Parse manifest file and generate font list
+ * Load fonts from a manifest file
  */
-export async function loadFontManifest(): Promise<FontInfo[]> {
-  if (cachedFonts) return cachedFonts;
+async function loadFontsFromManifest(manifestFile: string, cache: FontInfo[] | null): Promise<FontInfo[]> {
+  if (cache) return cache;
 
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}fonts/fonts-manifest-for-non-kanji.txt`);
-    if (!response.ok) throw new Error('Failed to fetch font manifest');
+    const response = await fetch(`${import.meta.env.BASE_URL}fonts/${manifestFile}`);
+    if (!response.ok) throw new Error(`Failed to fetch ${manifestFile}`);
     
     const text = await response.text();
     const filenames = text
@@ -49,13 +51,12 @@ export async function loadFontManifest(): Promise<FontInfo[]> {
       fonts.push({
         name,
         family,
-        filename: `/fonts/${filename}`,
+        filename: `${import.meta.env.BASE_URL}fonts/${filename}`,
         loaded: false,
         error: false,
       });
     }
 
-    cachedFonts = fonts;
     return fonts;
   } catch (error) {
     console.error('Failed to load font manifest:', error);
@@ -68,6 +69,28 @@ export async function loadFontManifest(): Promise<FontInfo[]> {
       error: false,
     }];
   }
+}
+
+/**
+ * Load kanji fonts from fonts-manifest-for-kanji.txt
+ * Used for: Input Panel, Main Panel, and Control Panel kanji font dropdowns
+ */
+export async function loadKanjiFontManifest(): Promise<FontInfo[]> {
+  if (!cachedKanjiFonts) {
+    cachedKanjiFonts = await loadFontsFromManifest('fonts-manifest-for-kanji.txt', cachedKanjiFonts);
+  }
+  return cachedKanjiFonts;
+}
+
+/**
+ * Load header fonts from fonts-manifest-for-non-kanji.txt
+ * Used for: Header text in worksheets
+ */
+export async function loadHeaderFontManifest(): Promise<FontInfo[]> {
+  if (!cachedHeaderFonts) {
+    cachedHeaderFonts = await loadFontsFromManifest('fonts-manifest-for-non-kanji.txt', cachedHeaderFonts);
+  }
+  return cachedHeaderFonts;
 }
 
 /**

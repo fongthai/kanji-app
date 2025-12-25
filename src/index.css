@@ -3,13 +3,7 @@
 @tailwind utilities;
 
 /* Load custom Japanese fonts */
-@font-face {
-  font-family: 'YujiMai-Regular';
-  src: url('/fonts/YujiMai-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* Fonts are now loaded dynamically via fontLoader.ts */
 
 @font-face {
   font-family: 'KanjiStrokeOrders';

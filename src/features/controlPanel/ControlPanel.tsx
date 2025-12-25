@@ -36,7 +36,7 @@ import {
 import { FontSizeControl } from '../../components/shared/FontSizeControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
 import { exportToPDF, exportBoardToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
-import { loadFontManifest } from '../../utils/fontLoader';
+import { loadHeaderFontManifest } from '../../utils/fontLoader';
 
 function ControlPanel() {
   const dispatch = useAppDispatch();
@@ -147,7 +147,7 @@ function ControlPanel() {
       // Use React-PDF for board mode, keep html2canvas for sheet mode (for now)
       if (worksheet.currentMode === 'board') {
         // Load font manifest to get header font info
-        const fonts = await loadFontManifest();
+        const fonts = await loadHeaderFontManifest();
         const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
         
         await exportBoardToPDFVector(

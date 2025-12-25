@@ -1,5 +1,6 @@
-import { memo, useState } from 'react';
+import { memo, useState, useEffect } from 'react';
 import type { IndicatorPreset } from '../../constants/indicators';
+import { loadKanjiFontManifest, type FontInfo } from '../../utils/fontLoader';
 
 interface FontSizeControlProps {
   kanjiFont: string;
@@ -24,16 +25,6 @@ interface FontSizeControlProps {
   onIndicatorPresetChange: (preset: IndicatorPreset) => void;
 }
 
-const AVAILABLE_KANJI_FONTS = [
-  { value: 'YujiMai-Regular', label: 'Yuji Mai' },
-  { value: 'KanjiStrokeOrders', label: 'Kanji Stroke Orders' },
-  { value: 'YujiBoku-Regular', label: 'Yuji Boku' },
-  { value: 'KleeOne-Regular', label: 'Klee One' },
-  { value: 'NotoSansJP-Regular', label: 'Noto Sans JP' },
-  { value: 'ZenOldMincho-Regular', label: 'Zen Old Mincho' },
-  { value: 'mitimasu', label: 'Mitimasu' },
-];
-
 export const FontSizeControl = memo(function FontSizeControl({
   kanjiFont,
   kanjiSize,
@@ -56,6 +47,14 @@ export const FontSizeControl = memo(function FontSizeControl({
 }: FontSizeControlProps) {
   // Accordion state
   const [openSection, setOpenSection] = useState<'kanji' | 'indicators' | 'hanviet' | null>('kanji');
+  
+  // Font manifest state
+  const [availableFonts, setAvailableFonts] = useState<FontInfo[]>([]);
+  
+  // Load kanji fonts on mount
+  useEffect(() => {
+    loadKanjiFontManifest().then(setAvailableFonts);
+  }, []);
   
   const toggleSection = (section: 'kanji' | 'indicators' | 'hanviet') => {
     setOpenSection(openSection === section ? null : section);
@@ -100,9 +99,9 @@ export const FontSizeControl = memo(function FontSizeControl({
                   onChange={(e) => onKanjiFontChange(e.target.value)}
                   className="w-full px-2 py-1 text-sm bg-gray-700 text-gray-200 rounded border border-gray-600 focus:border-blue-500 focus:outline-none"
                 >
-                  {AVAILABLE_KANJI_FONTS.map((font) => (
-                    <option key={font.value} value={font.value}>
-                      {font.label}
+                  {availableFonts.map((font) => (
+                    <option key={font.family} value={font.family}>
+                      {font.name}
                     </option>
                   ))}
                 </select>

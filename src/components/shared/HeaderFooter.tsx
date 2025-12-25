@@ -1,3 +1,5 @@
+import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
+
 export interface HeaderProps {
   mode: 'sheet' | 'board';
   className?: string;
@@ -21,7 +23,7 @@ export function Header({ mode, className = '' }: HeaderProps) {
       className={`px-8 py-4 border-b border-gray-400 flex justify-between items-center text-sm ${className}`}
       data-testid="sheet-header"
     >
-      <span>Kanji Practice Worksheet</span>
+      <span>{DEFAULT_HEADER_TEXT}</span>
       <span>Name: _____________</span>
     </div>
   );

@@ -50,7 +50,7 @@ const KanjiCardComponent = ({
   showJlptIndicator: showJlptIndicatorProp,
   showGradeIndicator: showGradeIndicatorProp,
   showFrequencyIndicator: showFrequencyIndicatorProp,
-  kanjiFont = 'YujiMai-Regular',
+  kanjiFont = 'KleeOne-Regular',
   kanjiSize = 3,
   hanVietFont = 'system-ui',
   hanVietSize = 1,

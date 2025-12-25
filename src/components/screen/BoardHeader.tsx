@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { setHeaderText, cycleHeaderFont, cycleHeaderAnimation } from '../../features/worksheet/worksheetSlice';
-import { loadFontManifest, getNextFontIndex, type FontInfo } from '../../utils/fontLoader';
+import { loadHeaderFontManifest, getNextFontIndex, type FontInfo } from '../../utils/fontLoader';
+import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
 
 interface BoardHeaderProps {
   visible: boolean;
@@ -31,7 +32,7 @@ export function BoardHeader({ visible }: BoardHeaderProps) {
   
   // Load fonts on mount
   useEffect(() => {
-    loadFontManifest().then(setFonts);
+    loadHeaderFontManifest().then(setFonts);
   }, []);
   
   // Sync editValue with Redux state when not editing
@@ -93,7 +94,7 @@ export function BoardHeader({ visible }: BoardHeaderProps) {
   };
   
   const handleSave = () => {
-    dispatch(setHeaderText(editValue.trim() || 'Kanji Practice Worksheet'));
+    dispatch(setHeaderText(editValue.trim() || DEFAULT_HEADER_TEXT));
     setIsEditing(false);
   };
   
