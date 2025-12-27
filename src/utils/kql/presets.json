@@ -1,0 +1,218 @@
+[
+  {
+    "id": "featured-n5-common",
+    "name": "Common N5 Kanjis",
+    "query": "jlpt:N5 AND freq:<=500",
+    "description": "Most frequently used N5 level kanjis (frequency rank 500 or better)",
+    "category": "Featured",
+    "difficulty": "Beginner",
+    "tags": ["jlpt", "n5", "frequency", "beginner"]
+  },
+  {
+    "id": "featured-popular-verbs",
+    "name": "Popular Action Verbs",
+    "query": "Actions AND freq:<=1000",
+    "description": "Common action/verb kanjis used in everyday Japanese",
+    "category": "Featured",
+    "difficulty": "Beginner",
+    "tags": ["actions", "verbs", "common"]
+  },
+  {
+    "id": "featured-essential-nature",
+    "name": "Essential Nature Words",
+    "query": "Nature AND (jlpt:N5 OR jlpt:N4)",
+    "description": "Basic nature-related kanjis at N5 and N4 level",
+    "category": "Featured",
+    "difficulty": "Beginner",
+    "tags": ["nature", "jlpt", "basic"]
+  },
+  {
+    "id": "level-n5-all",
+    "name": "All N5 Kanjis",
+    "query": "jlpt:N5",
+    "description": "Complete set of JLPT N5 level kanjis (80 kanjis)",
+    "category": "JLPT Levels",
+    "difficulty": "Beginner",
+    "tags": ["jlpt", "n5", "complete"]
+  },
+  {
+    "id": "level-n4-all",
+    "name": "All N4 Kanjis",
+    "query": "jlpt:N4",
+    "description": "Complete set of JLPT N4 level kanjis (approx. 170 kanjis)",
+    "category": "JLPT Levels",
+    "difficulty": "Elementary",
+    "tags": ["jlpt", "n4", "complete"]
+  },
+  {
+    "id": "level-n3-common",
+    "name": "Common N3 Kanjis",
+    "query": "jlpt:N3 AND freq:<=1500",
+    "description": "Most frequently used N3 level kanjis",
+    "category": "JLPT Levels",
+    "difficulty": "Intermediate",
+    "tags": ["jlpt", "n3", "frequency"]
+  },
+  {
+    "id": "level-n2-common",
+    "name": "Common N2 Kanjis",
+    "query": "jlpt:N2 AND freq:<=2000",
+    "description": "Most frequently used N2 level kanjis",
+    "category": "JLPT Levels",
+    "difficulty": "Upper Intermediate",
+    "tags": ["jlpt", "n2", "frequency"]
+  },
+  {
+    "id": "freq-top100",
+    "name": "Top 100 Most Common",
+    "query": "freq:<=100",
+    "description": "The 100 most frequently used kanjis in Japanese",
+    "category": "Frequency",
+    "difficulty": "Beginner",
+    "tags": ["frequency", "common", "essential"]
+  },
+  {
+    "id": "freq-top500",
+    "name": "Top 500 Most Common",
+    "query": "freq:<=500",
+    "description": "The 500 most frequently used kanjis (covers ~75% of written Japanese)",
+    "category": "Frequency",
+    "difficulty": "Elementary",
+    "tags": ["frequency", "common", "coverage"]
+  },
+  {
+    "id": "freq-popular",
+    "name": "Popular Range (101-500)",
+    "query": "freq:101-500",
+    "description": "Kanjis with frequency ranking between 101 and 500",
+    "category": "Frequency",
+    "difficulty": "Elementary",
+    "tags": ["frequency", "popular"]
+  },
+  {
+    "id": "freq-moderate",
+    "name": "Moderate Range (501-1000)",
+    "query": "freq:501-1000",
+    "description": "Moderately common kanjis",
+    "category": "Frequency",
+    "difficulty": "Intermediate",
+    "tags": ["frequency", "moderate"]
+  },
+  {
+    "id": "freq-rare",
+    "name": "Less Common (>1000)",
+    "query": "freq:>1000",
+    "description": "Kanjis with lower frequency (advanced/specialized)",
+    "category": "Frequency",
+    "difficulty": "Advanced",
+    "tags": ["frequency", "rare", "specialized"]
+  },
+  {
+    "id": "theme-time",
+    "name": "Time-Related Kanjis",
+    "query": "Time",
+    "description": "Kanjis related to time, dates, and temporal concepts",
+    "category": "Themes",
+    "difficulty": "Mixed",
+    "tags": ["time", "dates", "temporal"]
+  },
+  {
+    "id": "theme-people",
+    "name": "People-Related Kanjis",
+    "query": "People",
+    "description": "Kanjis about people, relationships, and social roles",
+    "category": "Themes",
+    "difficulty": "Mixed",
+    "tags": ["people", "relationships", "social"]
+  },
+  {
+    "id": "theme-numbers",
+    "name": "Numbers and Counting",
+    "query": "Numbers",
+    "description": "Numeric kanjis and counting-related characters",
+    "category": "Themes",
+    "difficulty": "Beginner",
+    "tags": ["numbers", "counting", "math"]
+  },
+  {
+    "id": "reading-kou",
+    "name": "Kanjis with コウ Reading",
+    "query": "on:コウ",
+    "description": "All kanjis with onyomi reading 'コウ' (kō)",
+    "category": "Readings",
+    "difficulty": "Mixed",
+    "tags": ["onyomi", "reading", "コウ"]
+  },
+  {
+    "id": "reading-gyou",
+    "name": "Kanjis with ギョウ Reading",
+    "query": "on:ギョウ",
+    "description": "All kanjis with onyomi reading 'ギョウ' (gyō)",
+    "category": "Readings",
+    "difficulty": "Mixed",
+    "tags": ["onyomi", "reading", "ギョウ"]
+  },
+  {
+    "id": "reading-iku",
+    "name": "Kanjis with い-く Reading",
+    "query": "kun:い",
+    "description": "Kanjis with kunyomi containing 'い' (i/iku/iru)",
+    "category": "Readings",
+    "difficulty": "Mixed",
+    "tags": ["kunyomi", "reading", "い"]
+  },
+  {
+    "id": "component-gyou",
+    "name": "Contains 行 Component",
+    "query": "com:行",
+    "description": "Kanjis containing the 行 (gyō/iku) component/radical",
+    "category": "Components",
+    "difficulty": "Mixed",
+    "tags": ["component", "radical", "行"]
+  },
+  {
+    "id": "advanced-n5-complex",
+    "name": "N5 with Multiple Readings",
+    "query": "jlpt:N5 AND (on:* OR kun:*)",
+    "description": "N5 kanjis that have both onyomi and kunyomi readings",
+    "category": "Advanced Queries",
+    "difficulty": "Beginner",
+    "tags": ["jlpt", "n5", "readings"]
+  },
+  {
+    "id": "advanced-common-non-jlpt",
+    "name": "Common but Not in JLPT N5",
+    "query": "freq:<500 AND NOT jlpt:N5",
+    "description": "Frequently used kanjis that aren't in the basic N5 list",
+    "category": "Advanced Queries",
+    "difficulty": "Elementary",
+    "tags": ["frequency", "jlpt", "excluding"]
+  },
+  {
+    "id": "advanced-beginner-pack",
+    "name": "Comprehensive Beginner Pack",
+    "query": "(jlpt:N5 OR jlpt:N4) AND freq:<=800",
+    "description": "All common N5/N4 kanjis with good frequency (excellent starter pack)",
+    "category": "Advanced Queries",
+    "difficulty": "Beginner",
+    "tags": ["jlpt", "n5", "n4", "frequency", "starter"]
+  },
+  {
+    "id": "advanced-hanviet-hanh",
+    "name": "Han-Viet HÀNH/HẠNH",
+    "query": "hanviet:HÀNH OR hanviet:HẠNH",
+    "description": "Kanjis with Han-Viet reading 'HÀNH' or 'HẠNH' (for Vietnamese learners)",
+    "category": "Advanced Queries",
+    "difficulty": "Mixed",
+    "tags": ["hanviet", "vietnamese", "reading"]
+  },
+  {
+    "id": "advanced-n3-exclude-common",
+    "name": "Challenging N3 Kanjis",
+    "query": "jlpt:N3 AND freq:>1000",
+    "description": "Less common N3 kanjis (good for advanced practice)",
+    "category": "Advanced Queries",
+    "difficulty": "Intermediate",
+    "tags": ["jlpt", "n3", "challenging"]
+  }
+]

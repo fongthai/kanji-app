@@ -72,7 +72,7 @@ const KanjiCardComponent = ({
   const indicatorSize = hanVietSize * INDICATOR_SIZE_RATIO;
   
   // Parse han-viet meanings (comma or slash separated)
-  const hanVietMeanings = kanji.sinoViet
+  const hanVietMeanings = kanji.hanViet
     .split(/[,/]/)
     .map(m => m.trim())
     .filter(m => m.length > 0);

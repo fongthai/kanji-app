@@ -1,0 +1,18 @@
+{
+  "examples": [
+    "hanviet:NGHỈ",
+    "en:rest & jlpt:N5",
+    "freq:<1000",
+    "category:actions",
+    "on:コウ | kun:い",
+    "com:水 & jlpt:N5",
+    "(jlpt:N5 | jlpt:N4) & !category:numbers"
+  ],
+  "quickFilters": [
+    { "label": "N5", "query": "jlpt:N5" },
+    { "label": "N4", "query": "jlpt:N4" },
+    { "label": "Actions", "query": "category:actions" },
+    { "label": "Numbers", "query": "category:numbers" },
+    { "label": "Frequency <500", "query": "freq:<500" }
+  ]
+}

@@ -1,13 +1,13 @@
 [
   {
-    "character": "熊",
+    "kanji": "熊",
     "components": "能, 灬",
-    "stroke-order-svg": "kanji-vectors/0718a.svg",
-    "han-viet": "HÙNG",
-    "english-meaning": "bear",
-    "vietnamese-meaning": "con gấu",
-    "jlpt-level": "N3",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/0718a.svg",
+    "hanViet": "HÙNG",
+    "englishMeaning": "bear",
+    "vietnameseMeaning": "con gấu",
+    "jlptLevel": "N3",
+    "gradeLevel": "4",
     "onyomi": [
       "ユウ"
     ],
@@ -24,19 +24,19 @@
       "態"
     ],
     "mnemonics": "A **bear** (熊) has the **ability** (能) to withstand **fire** (灬) (or run fast on four legs).",
-    "viet-mnemonics": "Con **GẤU** (HÙNG - 熊) này có **khả năng** (Năng - 能) nhảy qua đống **lửa** (Hỏa - 灬).",
+    "vietMnemonics": "Con **GẤU** (HÙNG - 熊) này có **khả năng** (Năng - 能) nhảy qua đống **lửa** (Hỏa - 灬).",
     "frequency": 1176,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 熊 HÙNG = con gấu: chữ ghép từ 能 NĂNG, 灬 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 熊 HÙNG = con gấu: chữ ghép từ 能 NĂNG, 灬 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "米",
+    "kanji": "米",
     "components": "丷, 木",
-    "stroke-order-svg": "kanji-vectors/07c73.svg",
-    "han-viet": "MỄ",
-    "english-meaning": "rice, USA, metre",
-    "vietnamese-meaning": "gạo, nước Mỹ, mét",
-    "jlpt-level": "N3",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/07c73.svg",
+    "hanViet": "MỄ",
+    "englishMeaning": "rice, USA, metre",
+    "vietnameseMeaning": "gạo, nước Mỹ, mét",
+    "jlptLevel": "N3",
+    "gradeLevel": "2",
     "onyomi": [
       "ベイ",
       "マイ"
@@ -56,19 +56,19 @@
       "平"
     ],
     "mnemonics": "Grains of **rice** (米) scattering from the top of a tree/stalk.",
-    "viet-mnemonics": "Hạt **GẠO** (**MỄ** - 米) là tinh hoa kết tinh trên cây lúa (nhìn giống chữ Mộc nhưng có thêm 2 hạt ở trên).",
+    "vietMnemonics": "Hạt **GẠO** (**MỄ** - 米) là tinh hoa kết tinh trên cây lúa (nhìn giống chữ Mộc nhưng có thêm 2 hạt ở trên).",
     "frequency": 66,
-    "luc-thu": "Tượng hình 象形. 米 MỄ = gạo: chữ này vẽ theo hình dạng của gạo, nhìn vào có thể tưởng tượng ra hình gạo."
+    "lucThu": "Tượng hình 象形. 米 MỄ = gạo: chữ này vẽ theo hình dạng của gạo, nhìn vào có thể tưởng tượng ra hình gạo."
   },
   {
-    "character": "高",
+    "kanji": "高",
     "components": "亠, 口, 冂, 口",
-    "stroke-order-svg": "kanji-vectors/09ad8.svg",
-    "han-viet": "CAO",
-    "english-meaning": "tall, high, expensive",
-    "vietnamese-meaning": "cao, đắt",
-    "jlpt-level": "N5",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/09ad8.svg",
+    "hanViet": "CAO",
+    "englishMeaning": "tall, high, expensive",
+    "vietnameseMeaning": "cao, đắt",
+    "jlptLevel": "N5",
+    "gradeLevel": "2",
     "onyomi": [
       "コウ"
     ],
@@ -90,19 +90,19 @@
       "亮"
     ],
     "mnemonics": "A **tall** (高) tower with a lid (亠) and windows (口) stacked up.",
-    "viet-mnemonics": "Tòa tháp này xây rất **CAO** (高), nhìn từ dưới lên thấy các tầng xếp chồng lên nhau.",
+    "vietMnemonics": "Tòa tháp này xây rất **CAO** (高), nhìn từ dưới lên thấy các tầng xếp chồng lên nhau.",
     "frequency": 65,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 高 CAO = cao: chữ ghép từ 亠 ĐẦU, 口 KHẨU, 冂 QUYNH, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 高 CAO = cao: chữ ghép từ 亠 ĐẦU, 口 KHẨU, 冂 QUYNH, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "脈",
+    "kanji": "脈",
     "components": "月, 𠂢",
-    "stroke-order-svg": "kanji-vectors/08108.svg",
-    "han-viet": "MẠCH",
-    "english-meaning": "vein, pulse, hope",
-    "vietnamese-meaning": "mạch máu, nhịp đập, mạch lạc",
-    "jlpt-level": "N2",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/08108.svg",
+    "hanViet": "MẠCH",
+    "englishMeaning": "vein, pulse, hope",
+    "vietnameseMeaning": "mạch máu, nhịp đập, mạch lạc",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
     "onyomi": [
       "ミャク"
     ],
@@ -117,19 +117,19 @@
       "旅"
     ],
     "mnemonics": "The **pulse** (脈) is the river (derivative of water/stream right side) flowing through the **flesh/body** (月).",
-    "viet-mnemonics": "**MẠCH** (脈) máu chảy trong cơ thể (Nguyệt - 月) giống như những dòng **sông** (phần bên phải là biến thể của dòng nước) luân chuyển.",
+    "vietMnemonics": "**MẠCH** (脈) máu chảy trong cơ thể (Nguyệt - 月) giống như những dòng **sông** (phần bên phải là biến thể của dòng nước) luân chuyển.",
     "frequency": 1109,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 脈 MẠCH = mạch máu: chữ ghép từ 月 NGUYỆT, 𠂢. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 脈 MẠCH = mạch máu: chữ ghép từ 月 NGUYỆT, 𠂢. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "万",
+    "kanji": "万",
     "components": "一, 勹",
-    "stroke-order-svg": "kanji-vectors/04e07.svg",
-    "han-viet": "VẠN",
-    "english-meaning": "ten thousand, 10,000",
-    "vietnamese-meaning": "mười nghìn, vạn, rất nhiều",
-    "jlpt-level": "N5",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/04e07.svg",
+    "hanViet": "VẠN",
+    "englishMeaning": "ten thousand, 10,000",
+    "vietnameseMeaning": "mười nghìn, vạn, rất nhiều",
+    "jlptLevel": "N5",
+    "gradeLevel": "2",
     "onyomi": [
       "マン",
       "バン"
@@ -147,19 +147,19 @@
       "力"
     ],
     "mnemonics": "**Ten thousand** (万) soldiers marching as **one** (一) under a command.",
-    "viet-mnemonics": "Một (Nhất - 一) người cân được cả **VẠN** (万) người (nhìn giống bộ Lực/Đao nhưng nét ngang dài ở trên).",
+    "vietMnemonics": "Một (Nhất - 一) người cân được cả **VẠN** (万) người (nhìn giống bộ Lực/Đao nhưng nét ngang dài ở trên).",
     "frequency": 375,
-    "luc-thu": "Chỉ sự 指事. 万 VẠN = mười nghìn: số vạn, trông vào dấu hiệu mà biết được ý nghĩa."
+    "lucThu": "Chỉ sự 指事. 万 VẠN = mười nghìn: số vạn, trông vào dấu hiệu mà biết được ý nghĩa."
   },
   {
-    "character": "変",
+    "kanji": "変",
     "components": "亦, 攵",
-    "stroke-order-svg": "kanji-vectors/05909.svg",
-    "han-viet": "BIẾN",
-    "english-meaning": "unusual, change, strange",
-    "vietnamese-meaning": "thay đổi, kỳ lạ, biến cố",
-    "jlpt-level": "N4",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/05909.svg",
+    "hanViet": "BIẾN",
+    "englishMeaning": "unusual, change, strange",
+    "vietnameseMeaning": "thay đổi, kỳ lạ, biến cố",
+    "jlptLevel": "N4",
+    "gradeLevel": "4",
     "onyomi": [
       "ヘン"
     ],
@@ -178,19 +178,19 @@
       "蛮"
     ],
     "mnemonics": "To **change** (変) things, you take **action** (攵) on the **red** (亦 - variant) status quo.",
-    "viet-mnemonics": "**BIẾN** (変) đổi là khi cái cũ (Diệc - 亦) bị tác động bởi hành động (Phộc - 攵) đánh vào.",
+    "vietMnemonics": "**BIẾN** (変) đổi là khi cái cũ (Diệc - 亦) bị tác động bởi hành động (Phộc - 攵) đánh vào.",
     "frequency": 358,
-    "luc-thu": "Cần tra cứu. 変 BIẾN = thay đổi: chữ ghép từ 亦, 攵 PHỘC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+    "lucThu": "Cần tra cứu. 変 BIẾN = thay đổi: chữ ghép từ 亦, 攵 PHỘC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
   },
   {
-    "character": "博",
+    "kanji": "博",
     "components": "十, 甫, 寸",
-    "stroke-order-svg": "kanji-vectors/0535a.svg",
-    "han-viet": "BÁC",
-    "english-meaning": "dr., command, esteem, winning, ph.d., exposition, fair",
-    "vietnamese-meaning": "rộng lớn, bác học, cờ bạc, triển lãm",
-    "jlpt-level": "N3",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/0535a.svg",
+    "hanViet": "BÁC",
+    "englishMeaning": "dr., command, esteem, winning, ph.d., exposition, fair",
+    "vietnameseMeaning": "rộng lớn, bác học, cờ bạc, triển lãm",
+    "jlptLevel": "N3",
+    "gradeLevel": "4",
     "onyomi": [
       "ハク",
       "バク"
@@ -207,19 +207,19 @@
       "薄"
     ],
     "mnemonics": "A **doctor/expert** (博) has **ten** (十) specialties and measures them with an **inch** (寸) of precision.",
-    "viet-mnemonics": "Nhà **BÁC** (博) học là người hiểu biết mười (Thập) phân vẹn mười (Thốn - 寸) về các lĩnh vực chuyên môn (Phủ - 甫).",
+    "vietMnemonics": "Nhà **BÁC** (博) học là người hiểu biết mười (Thập) phân vẹn mười (Thốn - 寸) về các lĩnh vực chuyên môn (Phủ - 甫).",
     "frequency": 662,
-    "luc-thu": "Cần tra cứu. 博 BÁC = rộng lớn: chữ ghép từ 十 THẬP, 甫 PHỦ, 寸. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+    "lucThu": "Cần tra cứu. 博 BÁC = rộng lớn: chữ ghép từ 十 THẬP, 甫 PHỦ, 寸. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
   },
   {
-    "character": "女",
+    "kanji": "女",
     "components": "女",
-    "stroke-order-svg": "kanji-vectors/05973.svg",
-    "han-viet": "NỮ, NỨ",
-    "english-meaning": "woman, female",
-    "vietnamese-meaning": "phụ nữ, con gái, giống cái",
-    "jlpt-level": "N5",
-    "grade-level": "1",
+    "strokeOrderSvg": "kanji-vectors/05973.svg",
+    "hanViet": "NỮ, NỨ",
+    "englishMeaning": "woman, female",
+    "vietnameseMeaning": "phụ nữ, con gái, giống cái",
+    "jlptLevel": "N5",
+    "gradeLevel": "1",
     "onyomi": [
       "ジョ",
       "ニョ",
@@ -240,19 +240,19 @@
       "奴"
     ],
     "mnemonics": "Pictograph of a **woman** (女) sitting/kneeling.",
-    "viet-mnemonics": "Hình ảnh người phụ **NỮ** (女) đang ngồi bắt chéo chân duyên dáng.",
+    "vietMnemonics": "Hình ảnh người phụ **NỮ** (女) đang ngồi bắt chéo chân duyên dáng.",
     "frequency": 152,
-    "luc-thu": "Tượng hình 象形. 女 NỮ = phụ nữ: chữ này vẽ theo hình dạng của người phụ nữ, nhìn vào có thể tưởng tượng ra hình người phụ nữ."
+    "lucThu": "Tượng hình 象形. 女 NỮ = phụ nữ: chữ này vẽ theo hình dạng của người phụ nữ, nhìn vào có thể tưởng tượng ra hình người phụ nữ."
   },
   {
-    "character": "新",
+    "kanji": "新",
     "components": "立, 木, 斤",
-    "stroke-order-svg": "kanji-vectors/065b0.svg",
-    "han-viet": "TÂN",
-    "english-meaning": "new",
-    "vietnamese-meaning": "mới, tân thời",
-    "jlpt-level": "N4",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/065b0.svg",
+    "hanViet": "TÂN",
+    "englishMeaning": "new",
+    "vietnameseMeaning": "mới, tân thời",
+    "jlptLevel": "N4",
+    "gradeLevel": "2",
     "onyomi": [
       "シン"
     ],
@@ -273,19 +273,19 @@
       "祈"
     ],
     "mnemonics": "Use an **axe** (斤) to cut a **standing** (立) **tree** (木) to make something **new** (新).",
-    "viet-mnemonics": "Lấy cái **Rìu** (Cân - 斤) chặt cái **Cây** (Mộc - 木) đang **Đứng** (Lập - 立) để làm ngôi nhà **MỚI** (**TÂN** - 新).",
+    "vietMnemonics": "Lấy cái **Rìu** (Cân - 斤) chặt cái **Cây** (Mộc - 木) đang **Đứng** (Lập - 立) để làm ngôi nhà **MỚI** (**TÂN** - 新).",
     "frequency": 48,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 新 TÂN = mới: chữ ghép từ 立 LẬP, 木 MỘC, 斤 CÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 新 TÂN = mới: chữ ghép từ 立 LẬP, 木 MỘC, 斤 CÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "初",
+    "kanji": "初",
     "components": "衤, 刀",
-    "stroke-order-svg": "kanji-vectors/0521d.svg",
-    "han-viet": "SƠ",
-    "english-meaning": "first time, beginning",
-    "vietnamese-meaning": "đầu tiên, ban đầu, sơ cấp",
-    "jlpt-level": "N4",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/0521d.svg",
+    "hanViet": "SƠ",
+    "englishMeaning": "first time, beginning",
+    "vietnameseMeaning": "đầu tiên, ban đầu, sơ cấp",
+    "jlptLevel": "N4",
+    "gradeLevel": "4",
     "onyomi": [
       "ショ"
     ],
@@ -309,19 +309,19 @@
       "幼"
     ],
     "mnemonics": "In the **beginning** (初), you use a **knife** (刀) to cut the **clothing/fabric** (衤).",
-    "viet-mnemonics": "Việc đầu tiên (**SƠ** - 初) của người may áo là dùng **Dao** (Đao - 刀) cắt vải (**Áo** - 衤).",
+    "vietMnemonics": "Việc đầu tiên (**SƠ** - 初) của người may áo là dùng **Dao** (Đao - 刀) cắt vải (**Áo** - 衤).",
     "frequency": 242,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 初 SƠ = đầu tiên: chữ ghép từ 衤 Y, 刀 ĐAO. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 初 SƠ = đầu tiên: chữ ghép từ 衤 Y, 刀 ĐAO. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "暑",
+    "kanji": "暑",
     "components": "日, 者",
-    "stroke-order-svg": "kanji-vectors/06691.svg",
-    "han-viet": "THỬ",
-    "english-meaning": "sultry, hot, summer heat",
-    "vietnamese-meaning": "nóng (thời tiết), mùa hè",
-    "jlpt-level": "N4",
-    "grade-level": "3",
+    "strokeOrderSvg": "kanji-vectors/06691.svg",
+    "hanViet": "THỬ",
+    "englishMeaning": "sultry, hot, summer heat",
+    "vietnameseMeaning": "nóng (thời tiết), mùa hè",
+    "jlptLevel": "N4",
+    "gradeLevel": "3",
     "onyomi": [
       "ショ"
     ],
@@ -340,19 +340,19 @@
       "都"
     ],
     "mnemonics": "The **sun** (日) beating down on a **person** (者) makes it **hot** (暑).",
-    "viet-mnemonics": "Mặt trời (Nhật - 日) chiếu vào người (Giả - 者) thì đương nhiên là thấy **NÓNG** (**THỬ** - 暑).",
+    "vietMnemonics": "Mặt trời (Nhật - 日) chiếu vào người (Giả - 者) thì đương nhiên là thấy **NÓNG** (**THỬ** - 暑).",
     "frequency": 1118,
-    "luc-thu": "Cần tra cứu. 暑 THỬ = nóng (thời tiết): chữ ghép từ 日 NHẬT, 者 CHẢ. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+    "lucThu": "Cần tra cứu. 暑 THỬ = nóng (thời tiết): chữ ghép từ 日 NHẬT, 者 CHẢ. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
   },
   {
-    "character": "楽",
+    "kanji": "楽",
     "components": "白, 幺, 木",
-    "stroke-order-svg": "kanji-vectors/0697d.svg",
-    "han-viet": "LẠC, NHẠC",
-    "english-meaning": "music, comfort, ease",
-    "vietnamese-meaning": "vui vẻ, an lạc, âm nhạc, dễ dàng",
-    "jlpt-level": "N4",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/0697d.svg",
+    "hanViet": "LẠC, NHẠC",
+    "englishMeaning": "music, comfort, ease",
+    "vietnameseMeaning": "vui vẻ, an lạc, âm nhạc, dễ dàng",
+    "jlptLevel": "N4",
+    "gradeLevel": "2",
     "onyomi": [
       "ガク",
       "ラク",
@@ -373,19 +373,19 @@
       "楽器"
     ],
     "mnemonics": "Typically depicts drums (top) on a wooden stand (木). **Music** makes people have **fun** (楽). (Top looks like white 白 + ice/small 幺).",
-    "viet-mnemonics": "Nghe **NHẠC** (**LẠC** - 楽) trên **cây** (Mộc) đàn màu **trắng** (Bạch) rất **nhỏ** (Yêu) thật là **VUI**. (Lưu ý: phần trên thực ra là hình tượng cái trống/lục lạc).",
+    "vietMnemonics": "Nghe **NHẠC** (**LẠC** - 楽) trên **cây** (Mộc) đàn màu **trắng** (Bạch) rất **nhỏ** (Yêu) thật là **VUI**. (Lưu ý: phần trên thực ra là hình tượng cái trống/lục lạc).",
     "frequency": 372,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 楽 LẠC = vui vẻ: chữ ghép từ 白 BẠCH, 幺 YẾU, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 楽 LẠC = vui vẻ: chữ ghép từ 白 BẠCH, 幺 YẾU, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "政",
+    "kanji": "政",
     "components": "正, 攵",
-    "stroke-order-svg": "kanji-vectors/0653f.svg",
-    "han-viet": "CHÍNH, CHÁNH",
-    "english-meaning": "politics, government",
-    "vietnamese-meaning": "chính trị, chính phủ, hành chính",
-    "jlpt-level": "N4",
-    "grade-level": "5",
+    "strokeOrderSvg": "kanji-vectors/0653f.svg",
+    "hanViet": "CHÍNH, CHÁNH",
+    "englishMeaning": "politics, government",
+    "vietnameseMeaning": "chính trị, chính phủ, hành chính",
+    "jlptLevel": "N4",
+    "gradeLevel": "5",
     "onyomi": [
       "セイ",
       "ショウ"
@@ -404,19 +404,19 @@
       "故"
     ],
     "mnemonics": "**Politics** (政) is using **force/action** (攵) to make things **correct** (正).",
-    "viet-mnemonics": "**CHÍNH** (政) trị là dùng hành động/roi vọt (Phộc - 攵) để nắn chỉnh mọi việc cho đúng (Chính - 正).",
+    "vietMnemonics": "**CHÍNH** (政) trị là dùng hành động/roi vọt (Phộc - 攵) để nắn chỉnh mọi việc cho đúng (Chính - 正).",
     "frequency": 24,
-    "luc-thu": "Cần tra cứu. 政 CHÍNH = chính trị: chữ ghép từ 正 CHÍNH, 攵 PHỘC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+    "lucThu": "Cần tra cứu. 政 CHÍNH = chính trị: chữ ghép từ 正 CHÍNH, 攵 PHỘC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
   },
   {
-    "character": "金",
+    "kanji": "金",
     "components": "𠆢, 王, 丷",
-    "stroke-order-svg": "kanji-vectors/091d1.svg",
-    "han-viet": "KIM",
-    "english-meaning": "gold, money, metal",
-    "vietnamese-meaning": "vàng, tiền, kim loại",
-    "jlpt-level": "N5",
-    "grade-level": "1",
+    "strokeOrderSvg": "kanji-vectors/091d1.svg",
+    "hanViet": "KIM",
+    "englishMeaning": "gold, money, metal",
+    "vietnameseMeaning": "vàng, tiền, kim loại",
+    "jlptLevel": "N5",
+    "gradeLevel": "1",
     "onyomi": [
       "キン",
       "コン",
@@ -440,19 +440,19 @@
       "会"
     ],
     "mnemonics": "People (top hat) want the **king's** (王) **gold** (金) nuggets (two dots).",
-    "viet-mnemonics": "Trong nhà ông Vua (Vương - 王) cất giấu 2 thỏi **VÀNG** (**KIM** - 金) dưới mái nhà.",
+    "vietMnemonics": "Trong nhà ông Vua (Vương - 王) cất giấu 2 thỏi **VÀNG** (**KIM** - 金) dưới mái nhà.",
     "frequency": 53,
-    "luc-thu": "Tượng hình 象形. 金 KIM = vàng: chữ này vẽ theo hình dạng của kim loại, nhìn vào có thể tưởng tượng ra hình kim loại."
+    "lucThu": "Tượng hình 象形. 金 KIM = vàng: chữ này vẽ theo hình dạng của kim loại, nhìn vào có thể tưởng tượng ra hình kim loại."
   },
   {
-    "character": "大",
+    "kanji": "大",
     "components": "大",
-    "stroke-order-svg": "kanji-vectors/05927.svg",
-    "han-viet": "ĐẠI",
-    "english-meaning": "large, big",
-    "vietnamese-meaning": "to lớn, đại học",
-    "jlpt-level": "N5",
-    "grade-level": "1",
+    "strokeOrderSvg": "kanji-vectors/05927.svg",
+    "hanViet": "ĐẠI",
+    "englishMeaning": "large, big",
+    "vietnameseMeaning": "to lớn, đại học",
+    "jlptLevel": "N5",
+    "gradeLevel": "1",
     "onyomi": [
       "ダイ",
       "タイ"
@@ -474,19 +474,19 @@
       "夫"
     ],
     "mnemonics": "A person stretching their arms out to show how **big** (大) something is.",
-    "viet-mnemonics": "Một người dang rộng hai tay và hai chân để khoe mình **TO LỚN** (**ĐẠI** - 大).",
+    "vietMnemonics": "Một người dang rộng hai tay và hai chân để khoe mình **TO LỚN** (**ĐẠI** - 大).",
     "frequency": 7,
-    "luc-thu": "Tượng hình 象形. 大 ĐẠI = to lớn: chữ này vẽ theo hình dạng của người lớn, nhìn vào có thể tưởng tượng ra hình người lớn."
+    "lucThu": "Tượng hình 象形. 大 ĐẠI = to lớn: chữ này vẽ theo hình dạng của người lớn, nhìn vào có thể tưởng tượng ra hình người lớn."
   },
   {
-    "character": "税",
+    "kanji": "税",
     "components": "禾, 兑",
-    "stroke-order-svg": "kanji-vectors/07a0e.svg",
-    "han-viet": "THUẾ",
-    "english-meaning": "tax, duty",
-    "vietnamese-meaning": "thuế, đóng thuế",
-    "jlpt-level": "N3",
-    "grade-level": "5",
+    "strokeOrderSvg": "kanji-vectors/07a0e.svg",
+    "hanViet": "THUẾ",
+    "englishMeaning": "tax, duty",
+    "vietnameseMeaning": "thuế, đóng thuế",
+    "jlptLevel": "N3",
+    "gradeLevel": "5",
     "onyomi": [
       "ゼイ"
     ],
@@ -502,19 +502,19 @@
       "鋭"
     ],
     "mnemonics": "You pay **tax** (税) with **grain** (禾) in **exchange** (兑) for government services.",
-    "viet-mnemonics": "Ngày xưa nộp **THUẾ** (税) bằng lúa (Hòa - 禾) để **đổi** (Duyệt - 兑) lấy sự bình yên.",
+    "vietMnemonics": "Ngày xưa nộp **THUẾ** (税) bằng lúa (Hòa - 禾) để **đổi** (Duyệt - 兑) lấy sự bình yên.",
     "frequency": 194,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 税 THUẾ = thuế: chữ ghép từ 禾 HÒA, 兑 DUẾ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 税 THUẾ = thuế: chữ ghép từ 禾 HÒA, 兑 DUẾ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "働",
+    "kanji": "働",
     "components": "亻, 動",
-    "stroke-order-svg": "kanji-vectors/050cd.svg",
-    "han-viet": "ĐỘNG",
-    "english-meaning": "work",
-    "vietnamese-meaning": "làm việc, lao động",
-    "jlpt-level": "N4",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/050cd.svg",
+    "hanViet": "ĐỘNG",
+    "englishMeaning": "work",
+    "vietnameseMeaning": "làm việc, lao động",
+    "jlptLevel": "N4",
+    "gradeLevel": "4",
     "onyomi": [
       "ドウ"
     ],
@@ -531,19 +531,19 @@
       "勲"
     ],
     "mnemonics": "A **person** (亻) who **moves** (動) is **working** (働).",
-    "viet-mnemonics": "**Người** (Nhân - 亻) mà cử **động** (Động - 動) tay chân liên tục tức là đang **LÀM VIỆC** (ĐỘNG - 働).",
+    "vietMnemonics": "**Người** (Nhân - 亻) mà cử **động** (Động - 動) tay chân liên tục tức là đang **LÀM VIỆC** (ĐỘNG - 働).",
     "frequency": 427,
-    "luc-thu": "Hình thanh 形聲. 働 ĐỘNG = làm việc: gồm bộ 亻 NHÂN người (NHÂN) chỉ nghĩa và 動 ĐỘNG chỉ thanh, hợp lại thành chữ có nghĩa là làm việc."
+    "lucThu": "Hình thanh 形聲. 働 ĐỘNG = làm việc: gồm bộ 亻 NHÂN người (NHÂN) chỉ nghĩa và 動 ĐỘNG chỉ thanh, hợp lại thành chữ có nghĩa là làm việc."
   },
   {
-    "character": "愛",
+    "kanji": "愛",
     "components": "爫, 冖, 心, 夂",
-    "stroke-order-svg": "kanji-vectors/0611b.svg",
-    "han-viet": "ÁI",
-    "english-meaning": "love, affection, favorite",
-    "vietnamese-meaning": "tình yêu, yêu thương, ái tình",
-    "jlpt-level": "N3",
-    "grade-level": "4",
+    "strokeOrderSvg": "kanji-vectors/0611b.svg",
+    "hanViet": "ÁI",
+    "englishMeaning": "love, affection, favorite",
+    "vietnameseMeaning": "tình yêu, yêu thương, ái tình",
+    "jlptLevel": "N3",
+    "gradeLevel": "4",
     "onyomi": [
       "アイ"
     ],
@@ -564,19 +564,19 @@
       "憂"
     ],
     "mnemonics": "**Love** (愛) is accepting (receiving without hand radical) someone into your **heart** (心) as you walk (夂) through life.",
-    "viet-mnemonics": "**YÊU** (**ÁI** - 愛) là cảm nhận bằng móng tay (Trảo), trùm kín (Mịch), giữ trong **tim** (Tâm) và đi theo nhau (Truy - 夂) suốt đời.",
+    "vietMnemonics": "**YÊU** (**ÁI** - 愛) là cảm nhận bằng móng tay (Trảo), trùm kín (Mịch), giữ trong **tim** (Tâm) và đi theo nhau (Truy - 夂) suốt đời.",
     "frequency": 637,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 愛 ÁI = tình yêu: chữ ghép từ 爫 TRẢO, 冖 MỊCH, 心 TÂM, 夂 TRỈ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 愛 ÁI = tình yêu: chữ ghép từ 爫 TRẢO, 冖 MỊCH, 心 TÂM, 夂 TRỈ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "幸",
+    "kanji": "幸",
     "components": "土, 羊",
-    "stroke-order-svg": "kanji-vectors/05e78.svg",
-    "han-viet": "HẠNH",
-    "english-meaning": "happiness, blessing, fortune",
-    "vietnamese-meaning": "hạnh phúc, may mắn",
-    "jlpt-level": "N3",
-    "grade-level": "3",
+    "strokeOrderSvg": "kanji-vectors/05e78.svg",
+    "hanViet": "HẠNH",
+    "englishMeaning": "happiness, blessing, fortune",
+    "vietnameseMeaning": "hạnh phúc, may mắn",
+    "jlptLevel": "N3",
+    "gradeLevel": "3",
     "onyomi": [
       "コウ"
     ],
@@ -595,19 +595,19 @@
       "南"
     ],
     "mnemonics": "Having **earth** (土) and **money** (¥ - slightly looks like it/bottom part) brings **happiness** (幸). (Note: Etymologically depicts handcuffs, implying happiness is escaping them).",
-    "viet-mnemonics": "**HẠNH** (幸) phúc là có đất (Thổ - 土) và có tiền (trông giống ký hiệu Yên Nhật ¥).",
+    "vietMnemonics": "**HẠNH** (幸) phúc là có đất (Thổ - 土) và có tiền (trông giống ký hiệu Yên Nhật ¥).",
     "frequency": 1056,
-    "luc-thu": "Hình thanh 形聲 (chưa xác định rõ). 幸 HẠNH = hạnh phúc: chữ ghép từ 土 THỔ, 羊 DƯƠNG. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 幸 HẠNH = hạnh phúc: chữ ghép từ 土 THỔ, 羊 DƯƠNG. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
   },
   {
-    "character": "国",
+    "kanji": "国",
     "components": "囗, 玉",
-    "stroke-order-svg": "kanji-vectors/056fd.svg",
-    "han-viet": "QUỐC",
-    "english-meaning": "country",
-    "vietnamese-meaning": "đất nước, quốc gia",
-    "jlpt-level": "N5",
-    "grade-level": "2",
+    "strokeOrderSvg": "kanji-vectors/056fd.svg",
+    "hanViet": "QUỐC",
+    "englishMeaning": "country",
+    "vietnameseMeaning": "đất nước, quốc gia",
+    "jlptLevel": "N5",
+    "gradeLevel": "2",
     "onyomi": [
       "コク"
     ],
@@ -625,8 +625,8 @@
       "回"
     ],
     "mnemonics": "A **country** (国) is a border (囗) protecting its **jewel/king** (玉).",
-    "viet-mnemonics": "Đất nước (**QUỐC** - 国) là vùng lãnh thổ được bao quanh (Vi - 囗) để bảo vệ hòn **Ngọc** (Ngọc - 玉) quý giá bên trong.",
+    "vietMnemonics": "Đất nước (**QUỐC** - 国) là vùng lãnh thổ được bao quanh (Vi - 囗) để bảo vệ hòn **Ngọc** (Ngọc - 玉) quý giá bên trong.",
     "frequency": 3,
-    "luc-thu": "Cần tra cứu. 国 QUỐC = đất nước: chữ ghép từ 囗 VI, 玉 NGỌC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+    "lucThu": "Cần tra cứu. 国 QUỐC = đất nước: chữ ghép từ 囗 VI, 玉 NGỌC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
   }
 ]

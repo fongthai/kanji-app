@@ -7,7 +7,7 @@ const allData = {};
 files.forEach(file => {
   try {
     const data = JSON.parse(fs.readFileSync(`public/json/${file}`, 'utf8'));
-    allData[file] = data.map(item => item.character).filter(Boolean);
+    allData[file] = data.map(item => item.kanji).filter(Boolean);
   } catch (e) {
     console.log(`Error reading ${file}: ${e.message}`);
   }

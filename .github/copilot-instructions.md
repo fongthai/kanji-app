@@ -65,15 +65,16 @@ screens: {
 ```json
 {
   "kanji": "行",
-  "sino-viet": "HÀNH, HẠNH",
-  "jlpt-level": "N5",
-  "grade-level": 2,
+  "hanViet": "HÀNH, HẠNH",
+  "jlptLevel": "N5",
+  "gradeLevel": 2,
   "onyomi": ["コウ", "ギョウ"],
   "kunyomi": ["い-く"],
-  "meaning": "to go",
-  "category": "Actions"
+  "englishMeaning": "to go",
+  "category": ["Actions"]
 }
 ```
+**CRITICAL:** JSON files now use camelCase (not kebab-case). Fields: `hanViet`, `englishMeaning`, `jlptLevel`, `gradeLevel`, `vietnameseMeaning`, `vietMnemonics`, `lucThu`.
 
 **Reloading data:** Control Panel has "🔄 Reload Data" button that calls `indexedDB.deleteDatabase('KanjiDB')` then refreshes.
 

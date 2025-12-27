@@ -32,7 +32,9 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Only handle if not typing in an input
-      if (document.activeElement?.tagName === 'INPUT') return;
+      // Don't intercept if user is typing in an input or textarea
+      const activeTag = document.activeElement?.tagName;
+      if (activeTag === 'INPUT' || activeTag === 'TEXTAREA') return;
 
       switch (e.key) {
         case 'Home':

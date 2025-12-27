@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addKanji, removeKanji, setAllKanjis, clearChosenKanjis, reorderChosenKanjis, type KanjiData } from '../kanji/kanjiSlice';
 import { seedKanjisFromJSON, checkIfDataExists, getAllKanjis } from '../../db/indexedDB';
@@ -121,6 +121,8 @@ function InputPanel() {
   const [sections, setSections] = useState<KanjiSection[]>([]);
   const [chosenExpanded, setChosenExpanded] = useState(false);
   const [kanjiColors, setKanjiColors] = useState<Map<string, { header: string; body: string; border: string; chosenBorder: string; text: string }>>(new Map());
+  const [isLoadingData, setIsLoadingData] = useState(false);
+  const loadDataAttemptedRef = useRef(false);
 
   // Fixed card size: always 4.05rem (based on 3rem kanji * 1.35)
   const fixedCardSize = 4.05;
@@ -156,22 +158,50 @@ function InputPanel() {
   };
 
   useEffect(() => {
-    loadData();
+    if (!loadDataAttemptedRef.current && !isLoadingData) {
+      loadDataAttemptedRef.current = true;
+      loadData();
+    }
   }, []);
 
   const loadData = async () => {
+    if (isLoadingData) {
+      console.log('[InputPanel] Already loading, skipping duplicate call');
+      return;
+    }
+    
     try {
+      console.log('[InputPanel] Starting data load...');
+      setIsLoadingData(true);
       setLoading(true);
+      
+      // Set a timeout to detect if loading hangs
+      const timeoutId = setTimeout(() => {
+        console.error('[InputPanel] Loading timeout - database may be stuck. Try clearing browser data.');
+      }, 10000); // 10 second timeout
       
       // Check if IndexedDB is available
       if (!('indexedDB' in window)) {
+        clearTimeout(timeoutId);
         throw new Error('IndexedDB is not supported in this browser');
       }
       
+      console.log('[InputPanel] Checking if data exists...');
       // Check if data exists, if not seed it
-      const dataExists = await checkIfDataExists();
+      let dataExists = false;
+      try {
+        dataExists = await checkIfDataExists();
+        clearTimeout(timeoutId);
+        console.log('[InputPanel] Data exists:', dataExists);
+      } catch (checkError) {
+        clearTimeout(timeoutId);
+        console.error('[InputPanel] Error checking data existence:', checkError);
+        // Assume data doesn't exist if check fails
+        dataExists = false;
+      }
       
       if (!dataExists) {
+        console.log('[InputPanel] Data does not exist, seeding from JSON...');
         
         // Load manifest file to get list of JSON files
         let jsonFiles: string[] = [];
@@ -194,27 +224,30 @@ function InputPanel() {
           console.error('Could not load manifest file:', manifestError);
           // Fallback to hardcoded list if manifest fails
           jsonFiles = [
-            `${import.meta.env.BASE_URL}json/n5-org.json`,
-            `${import.meta.env.BASE_URL}json/n4-org.json`,
-            `${import.meta.env.BASE_URL}json/n3-A-org.json`,
-            `${import.meta.env.BASE_URL}json/n3-B-org.json`,
-            `${import.meta.env.BASE_URL}json/n2-A-org.json`,
-            `${import.meta.env.BASE_URL}json/n2-B-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-A-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-B-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-C-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-D-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-E-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-F-org.json`,
-            `${import.meta.env.BASE_URL}json/n1-G-org.json`,
+            `${import.meta.env.BASE_URL}json/koty-2025.json`,
+            `${import.meta.env.BASE_URL}json/n5.json`,
+            `${import.meta.env.BASE_URL}json/n4.json`,
+            `${import.meta.env.BASE_URL}json/n3-A.json`,
+            `${import.meta.env.BASE_URL}json/n3-B.json`,
+            `${import.meta.env.BASE_URL}json/n2-A.json`,
+            `${import.meta.env.BASE_URL}json/n2-B.json`,
+            `${import.meta.env.BASE_URL}json/n1-A.json`,
+            `${import.meta.env.BASE_URL}json/n1-B.json`,
+            `${import.meta.env.BASE_URL}json/n1-C.json`,
+            `${import.meta.env.BASE_URL}json/n1-D.json`,
+            `${import.meta.env.BASE_URL}json/n1-E.json`,
+            `${import.meta.env.BASE_URL}json/n1-F.json`,
+            `${import.meta.env.BASE_URL}json/n1-G.json`,
           ];
         }
         
         await seedKanjisFromJSON(jsonFiles);
+        console.log('[InputPanel] Data seeded successfully');
       }
 
       // Load all kanjis
       const kanjis = await getAllKanjis();
+      console.log('[InputPanel] Loaded kanjis:', kanjis.length);
       dispatch(setAllKanjis(kanjis));
 
       // Group kanjis by section name (using filename)
@@ -255,12 +288,16 @@ function InputPanel() {
       // Sort sections in reverse alphabetical order (n5-org, n4-org, ..., n1-A-org)
       newSections.sort((a, b) => b.name.localeCompare(a.name));
 
+      console.log('[InputPanel] Sections created:', newSections.length);
       setSections(newSections);
       setLoading(false);
+      setIsLoadingData(false);
+      console.log('[InputPanel] Loading complete');
     } catch (error) {
-      console.error('Failed to load kanji data:', error);
-      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack');
+      console.error('[InputPanel] Failed to load kanji data:', error);
+      console.error('[InputPanel] Error stack:', error instanceof Error ? error.stack : 'No stack');
       setLoading(false);
+      setIsLoadingData(false);
     }
   };
 
@@ -312,8 +349,10 @@ function InputPanel() {
     <div data-testid="input-panel" className="bg-gray-800 rounded-lg p-4 border border-gray-700 overflow-y-auto h-full">
       <h2 className="text-lg font-semibold mb-4">Input Panel</h2>
       
-      {/* Search Component */}
-      <KanjiSearch kanjiColors={kanjiColors} />
+      {/* Search Component with Tabs */}
+      <div className="mb-3 overflow-visible">
+        <KanjiSearch kanjiColors={kanjiColors} />
+      </div>
       
       <div className="mb-4 bg-green-900 border border-green-600 rounded">
         <div 

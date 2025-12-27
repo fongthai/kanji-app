@@ -35,8 +35,8 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
   showFrequencyIndicator,
 }) => {
   // Parse han-viet meanings (comma or slash separated)
-  const hanVietMeanings = kanji.sinoViet
-    ? kanji.sinoViet.split(/[,/]/).map(m => m.trim()).filter(m => m.length > 0)
+  const hanVietMeanings = kanji.hanViet
+    ? kanji.hanViet.split(/[,/]/).map(m => m.trim()).filter(m => m.length > 0)
     : [];
 
   // Determine layout: 1-2 meanings on sides, 3rd+ at bottom center

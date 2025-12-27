@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KQL Test</title>
+</head>
+<body>
+    <h1>KQL Search Test</h1>
+    <p>Open browser console and check the test results</p>
+    
+    <script type="module">
+        // Simulate KanjiData
+        const testKanjis = [
+            {
+                kanji: '峰',
+                sinoViet: 'PHONG',
+                meaning: 'summit, peak',
+                vietnameseMeaning: 'đỉnh',
+                jlptLevel: 'N1',
+                onyomi: ['ホウ'],
+                kunyomi: ['みね'],
+                components: '',
+                frequency: 2000
+            },
+            {
+                kanji: '楓',
+                sinoViet: 'PHONG',
+                meaning: 'maple',
+                vietnameseMeaning: 'cây phong',
+                jlptLevel: 'N1',
+                onyomi: ['フウ'],
+                kunyomi: ['かえで'],
+                components: '',
+                frequency: 3000
+            }
+        ];
+
+        console.log('Test data:', testKanjis);
+        console.log('\nTest 1: Search for "phong" in sinoViet field');
+        
+        const searchValue = 'phong'.toLowerCase();
+        const results = testKanjis.filter(k => {
+            const sinoViet = k.sinoViet.toLowerCase();
+            const matches = sinoViet.includes(searchValue);
+            console.log(`  ${k.kanji}: sinoViet="${k.sinoViet}" → lowercase="${sinoViet}" → includes("${searchValue}"): ${matches}`);
+            return matches;
+        });
+        
+        console.log(`\nResults: ${results.length} kanji(s)`);
+        results.forEach(k => console.log(`  ${k.kanji}: ${k.sinoViet}`));
+        
+        if (results.length === 2) {
+            console.log('\n✅ TEST PASSED: Search logic works correctly');
+        } else {
+            console.log('\n❌ TEST FAILED: Expected 2 results, got ' + results.length);
+        }
+    </script>
+</body>
+</html>

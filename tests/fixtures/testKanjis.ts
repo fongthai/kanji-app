@@ -11,7 +11,7 @@ import type { KanjiData } from '../../src/features/kanji/kanjiSlice';
 export const testKanjis: KanjiData[] = [
   {
     kanji: '日',
-    sinoViet: 'NHẬT',
+    hanViet: 'NHẬT',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 1,
@@ -23,7 +23,7 @@ export const testKanjis: KanjiData[] = [
   },
   {
     kanji: '行',
-    sinoViet: 'HÀNH, HẠNH, HÀNG,항, 항, ハンフ',
+    hanViet: 'HÀNH, HẠNH, HÀNG,항, 항, ハンフ',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 2,
@@ -35,7 +35,7 @@ export const testKanjis: KanjiData[] = [
   },
   {
     kanji: '人',
-    sinoViet: 'NHÂN',
+    hanViet: 'NHÂN',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 1,
@@ -47,7 +47,7 @@ export const testKanjis: KanjiData[] = [
   },
   {
     kanji: '大',
-    sinoViet: 'ĐẠI, THÁI, ĐẠI',
+    hanViet: 'ĐẠI, THÁI, ĐẠI',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 1,
@@ -59,7 +59,7 @@ export const testKanjis: KanjiData[] = [
   },
   {
     kanji: '見',
-    sinoViet: 'KIẾN',
+    hanViet: 'KIẾN',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 1,
@@ -85,7 +85,7 @@ export function getRandomKanjis(count: number = 3): KanjiData[] {
 export function getOverflowTestKanji(): KanjiData {
   return {
     kanji: '行',
-    sinoViet: 'HÀNH, HẠNH, HÀNG,항, 항, ハンフ',
+    hanViet: 'HÀNH, HẠNH, HÀNG,항, 항, ハンフ',
     sectionName: 'test-section',
     jlptLevel: 'N5',
     gradeLevel: 2,

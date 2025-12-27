@@ -8,12 +8,12 @@ describe('Data Loading - JSON Format Validation', () => {
     const mockData = [
       {
         character: '分',
-        'han-viet': 'PHÂN',
-        'jlpt-level': 'N5',
-        'grade-level': '2',
+        hanViet: 'PHÂN',
+        jlptLevel: 'N5',
+        gradeLevel: '2',
         onyomi: ['ブン'],
         kunyomi: ['わ.ける'],
-        'english-meaning': 'part, minute',
+        englishMeaning: 'part, minute',
         category: []
       }
     ];
@@ -26,21 +26,21 @@ describe('Data Loading - JSON Format Validation', () => {
     const data = await response.json();
     
     expect(Array.isArray(data)).toBe(true);
-    expect(data[0].character).toBe('分');
-    expect(data[0]['han-viet']).toBe('PHÂN');
+    expect(data[0].kanji).toBe('分');
+    expect(data[0].hanViet).toBe('PHÂN');
   });
 
   it('should correctly parse wrapped object JSON format', async () => {
     const mockData = {
       kanji: [
         {
-          character: '氏',
-          'han-viet': '',
-          'jlpt-level': 'jlptn1',
-          'grade-level': '4',
+          kanji: '氏',
+          hanViet: 'THỊ',
+          jlptLevel: 'jlptn1',
+          gradeLevel: '4',
           onyomi: ['シ'],
           kunyomi: ['うじ'],
-          'english-meaning': 'family name',
+          englishMeaning: 'family name',
           category: []
         }
       ]
@@ -56,22 +56,22 @@ describe('Data Loading - JSON Format Validation', () => {
     expect(Array.isArray(data)).toBe(false);
     expect(data.kanji).toBeDefined();
     expect(Array.isArray(data.kanji)).toBe(true);
-    expect(data.kanji[0].character).toBe('氏');
+    expect(data.kanji[0].kanji).toBe('氏');
   });
 
   it('should handle both JSON formats with unified logic', async () => {
-    const directArray = [{ character: '分' }];
-    const wrappedObject: { kanji?: Array<{ character: string }> } = { kanji: [{ character: '氏' }] };
+    const directArray = [{ kanji: '分' }];
+    const wrappedObject: { kanji?: Array<{ kanji: string }> } = { kanji: [{ kanji: '氏' }] };
 
     // Test direct array
     const kanjis1 = Array.isArray(directArray) ? directArray : (directArray);
     expect(kanjis1.length).toBe(1);
-    expect(kanjis1[0].character).toBe('分');
+    expect(kanjis1[0].kanji).toBe('分');
 
     // Test wrapped object  
     const kanjis2 = Array.isArray(wrappedObject) ? wrappedObject : (wrappedObject.kanji || []);
     expect(kanjis2.length).toBe(1);
-    expect(kanjis2[0].character).toBe('氏');
+    expect(kanjis2[0].kanji).toBe('氏');
   });
 
   it('should extract filename correctly for grouping', () => {
@@ -101,34 +101,34 @@ describe('Data Loading - JSON Format Validation', () => {
 
   it('should validate property transformation mapping', () => {
     const sourceData = {
-      character: '分',
-      'han-viet': 'PHÂN',
-      'jlpt-level': 'N5',
-      'grade-level': '2',
+      kanji: '分',
+      hanViet: 'PHÂN',
+      jlptLevel: 'N5',
+      gradeLevel: '2',
       onyomi: ['ブン'],
       kunyomi: ['わ.ける'],
-      'english-meaning': 'part, minute',
+      englishMeaning: 'part, minute',
       category: []
     };
 
-    // Simulate transformation
+    // Simulate transformation (no longer needed - data already in camelCase)
     const transformed = {
-      kanji: sourceData.character || '',
+      kanji: sourceData.kanji || '',
       jlptLevel: 'n5-org', // filename, not source data
-      gradeLevel: sourceData['grade-level'] || '',
-      sinoViet: sourceData['han-viet'] || '',
+      gradeLevel: sourceData.gradeLevel || '',
+      hanViet: sourceData.hanViet || '',
       onyomi: sourceData.onyomi || [],
       kunyomi: sourceData.kunyomi || [],
-      meaning: sourceData['english-meaning'] || '',
+      meaning: sourceData.englishMeaning || '',
       category: sourceData.category || [],
     };
 
     expect(transformed.kanji).toBe('分');
-    expect(transformed.sinoViet).toBe('PHÂN');
+    expect(transformed.hanViet).toBe('PHÂN');
     expect(transformed.jlptLevel).toBe('n5-org');
     expect(transformed.gradeLevel).toBe('2');
-    expect(transformed).not.toHaveProperty('han-viet');
-    expect(transformed).not.toHaveProperty('grade-level');
+    expect(transformed).toHaveProperty('hanViet');
+    expect(transformed).toHaveProperty('gradeLevel');
   });
 
   it('should sort sections in reverse alphabetical order', () => {

@@ -21,7 +21,7 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
   // Helper function to lookup han-viet for a kanji character
   const getHanViet = (kanjiChar: string): string | null => {
     const found = allKanjis.find(k => k.kanji === kanjiChar);
-    return found?.sinoViet || null;
+    return found?.hanViet || null;
   };
 
   const handleMouseEnter = (e: React.MouseEvent) => {
@@ -182,9 +182,9 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
             {/* READINGS Section */}
             <div className="mb-2 pb-2 border-b border-gray-700">
               <div className="text-xs font-semibold text-gray-400 mb-1">📖 READINGS</div>
-              {kanji.sinoViet && (
+              {kanji.hanViet && (
                 <div className="text-lg font-semibold text-blue-300 mb-1">
-                  {kanji.sinoViet}
+                  {kanji.hanViet}
                 </div>
               )}
               {readingsText && (

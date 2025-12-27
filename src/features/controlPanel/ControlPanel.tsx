@@ -37,6 +37,7 @@ import { FontSizeControl } from '../../components/shared/FontSizeControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
 import { exportToPDF, exportBoardToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
 import { loadHeaderFontManifest } from '../../utils/fontLoader';
+import { deleteDatabase } from '../../db/indexedDB';
 
 function ControlPanel() {
   const dispatch = useAppDispatch();
@@ -109,12 +110,19 @@ function ControlPanel() {
     event.target.value = '';
   };
 
-  const handleReloadData = () => {
+  const handleReloadData = async () => {
     if (confirm('This will clear IndexedDB and reload all JSON files. Continue?')) {
-      indexedDB.deleteDatabase('ft-kanji-database');
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
+      try {
+        console.log('[ControlPanel] Deleting database...');
+        await deleteDatabase();
+        console.log('[ControlPanel] Database deleted, reloading page...');
+        setTimeout(() => {
+          window.location.reload();
+        }, 100);
+      } catch (error) {
+        console.error('[ControlPanel] Error deleting database:', error);
+        alert('Failed to delete database. Please try manually: Open DevTools Console and run:\nindexedDB.deleteDatabase("ft-kanji-database")');
+      }
     }
   };
 

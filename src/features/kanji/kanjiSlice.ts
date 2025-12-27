@@ -3,7 +3,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 export interface KanjiData {
   id?: string; // Composite key: kanji-sectionName (optional for backward compatibility)
   kanji: string;
-  sinoViet: string;
+  hanViet: string;
   sectionName: string;
   jlptLevel: string;
   gradeLevel?: number | string;

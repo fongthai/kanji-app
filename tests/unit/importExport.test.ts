@@ -25,7 +25,7 @@ describe('Import/Export Logic', () => {
   const mockKanjis: KanjiData[] = [
     {
       kanji: '日',
-      sinoViet: 'nhật',
+      hanViet: 'nhật',
       jlptLevel: 'n5',
       onyomi: ['ニチ', 'ジツ'],
       kunyomi: ['ひ'],
@@ -35,7 +35,7 @@ describe('Import/Export Logic', () => {
     },
     {
       kanji: '月',
-      sinoViet: 'nguyệt',
+      hanViet: 'nguyệt',
       jlptLevel: 'n5',
       onyomi: ['ゲツ', 'ガツ'],
       kunyomi: ['つき'],
