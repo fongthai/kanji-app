@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from 'react';
 import type { IndicatorPreset } from '../../constants/indicators';
-import { loadKanjiFontManifest, type FontInfo } from '../../utils/fontLoader';
+import { loadKanjiFontManifest, preloadFont, type FontInfo } from '../../utils/fontLoader';
 
 interface FontSizeControlProps {
   kanjiFont: string;
@@ -55,6 +55,16 @@ export const FontSizeControl = memo(function FontSizeControl({
   useEffect(() => {
     loadKanjiFontManifest().then(setAvailableFonts);
   }, []);
+  
+  // Preload font when it's selected
+  useEffect(() => {
+    const font = availableFonts.find(f => f.family === kanjiFont);
+    if (font && !font.loaded && !font.error) {
+      preloadFont(font).catch(err => {
+        console.warn(`Failed to preload font ${font.name}:`, err);
+      });
+    }
+  }, [kanjiFont, availableFonts]);
   
   const toggleSection = (section: 'kanji' | 'indicators' | 'hanviet') => {
     setOpenSection(openSection === section ? null : section);

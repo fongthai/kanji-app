@@ -198,6 +198,10 @@ function ControlPanel() {
     setIsExporting(true);
 
     try {
+      // Load font manifest to get header font info
+      const fonts = await loadHeaderFontManifest();
+      const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
+      
       await exportBoardToPNG(
         chosenKanjis,
         {
@@ -219,6 +223,9 @@ function ControlPanel() {
           hanVietSize: mainPanel.hanVietSize,
         },
         pngQuality,
+        worksheet.headerText,
+        headerFont.family,
+        headerFont.filename,
         (progress) => setExportProgress(progress),
         () => exportCancelledRef.current
       );

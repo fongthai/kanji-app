@@ -12,7 +12,7 @@ import {
   calculateFontSizes,
 } from './layoutCalculations';
 import { A4_WIDTH, GRID_GAP } from '../constants/boardDimensions';
-import { DEFAULT_HEADER_TEXT, FOOTER_TEXT } from '../constants/appText';
+import { FOOTER_TEXT } from '../constants/appText';
 
 // A4 dimensions in points (for React-PDF)
 const A4_WIDTH_PT = 595;
@@ -556,6 +556,9 @@ export async function exportBoardToPNG(
     hanVietSize: number;
   },
   pngQuality: 200 | 300 | 600, // DPI
+  headerText: string,
+  headerFontFamily: string,
+  headerFontFilename: string,
   onProgress: ExportProgressCallback,
   checkCancelled: CancelCheck
 ): Promise<boolean> {
@@ -623,9 +626,9 @@ export async function exportBoardToPNG(
       showHeader: boardSettings.showHeader,
       showFooter: boardSettings.showFooter,
       totalKanjis: chosenKanjis.length,
-      headerText: DEFAULT_HEADER_TEXT,
-      headerFontFamily: 'Helvetica',
-      headerFontFilename: '',
+      headerText,
+      headerFontFamily,
+      headerFontFilename,
     });
 
     const pdfBlob = await pdf(document as any).toBlob();

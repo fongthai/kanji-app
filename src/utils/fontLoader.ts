@@ -132,9 +132,14 @@ export async function preloadFont(font: FontInfo): Promise<boolean> {
     }
 
     // Create and add new font face
+    // Wrap URL in quotes if it contains spaces (required by FontFace API)
+    const fontUrl = font.filename.includes(' ') 
+      ? `url("${font.filename}")`
+      : `url(${font.filename})`;
+    
     const fontFace = new FontFace(
       font.family,
-      `url(${font.filename})`,
+      fontUrl,
       { weight: 'normal', style: 'normal' }
     );
 

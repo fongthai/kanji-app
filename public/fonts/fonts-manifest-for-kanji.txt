@@ -1,8 +1,9 @@
+02UtsukushiMincho.ttf
+A-OTF Outai Kaisho Std Light.otf
+HGMaruGothicMPRO.TTF
 KanjiStrokeOrders.ttf
 KleeOne-Regular.ttf
 KosugiMaru-Regular.woff2
 NotoSansJP-Regular.ttf
 YujiBoku-Regular.ttf
-ZenOldMincho-Regular.ttf
 mitimasu.ttf
-ubuntu.woff2
