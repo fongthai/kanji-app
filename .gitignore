@@ -24,10 +24,18 @@ dist-ssr
 *.sw?
 
 # My own patterns
-scripts
-docs
+scripts/*
+docs/*
+!docs/README.md
+!docs/changelog.txt
+!docs/color-coded.md
+!docs/advance-search-feature-VI.md
+!docs/advance-search-feature-EN.md
 
-# Ignore specific JLPT level JSON files
-public/json/n3-*.json
-public/json/n2-*.json
+# Ignore specific JLPT level JSON files (except specific ones)
 public/json/n1-*.json
+!public/json/n1-G.json
+public/json/n2-*.json
+!public/json/n2-B.json
+public/json/n3-*.json
+!public/json/n3-B.json

@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useAppSelector } from '../../app/hooks';
 import type { KanjiData } from '../kanji/kanjiSlice';
 import { executeKQLQuery, getKQLSuggestions, validateKQLSyntax } from '../../utils/kqlParser';
-import { EXAMPLES, QUICK_FILTERS } from './searchExamples';
+import { EXAMPLES, STATIC_FILTERS } from './searchExamples';
+import { getRandomCategoryChips, type CategoryChip } from './categoryChips';
 import { highlightKQLSyntax } from '../../utils/kqlSyntaxHighlighter';
+import { CategoryBrowser } from './CategoryBrowser';
 
 interface MinimalSearchProps {
   onResultsChange: (results: KanjiData[]) => void;
@@ -22,6 +24,8 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
   const [savedQueries, setSavedQueries] = useState<Array<{ name: string; query: string }>>([]);
   const [currentExampleIndex, setCurrentExampleIndex] = useState(0);
   const [activeChips, setActiveChips] = useState<Set<string>>(new Set());
+  const [categoryChips, setCategoryChips] = useState<CategoryChip[]>([]);
+  const [showCategoryBrowser, setShowCategoryBrowser] = useState(false);
   const [triggerShake, setTriggerShake] = useState(false);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   
@@ -51,6 +55,19 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
     const interval = setInterval(() => {
       setCurrentExampleIndex((prev) => (prev + 1) % EXAMPLES.length);
     }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Initialize and rotate category chips every 45 seconds
+  useEffect(() => {
+    // Initial load
+    setCategoryChips(getRandomCategoryChips(3));
+    
+    // Rotate every 45 seconds
+    const interval = setInterval(() => {
+      setCategoryChips(getRandomCategoryChips(3));
+    }, 45000);
+    
     return () => clearInterval(interval);
   }, []);
 
@@ -332,6 +349,12 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
     }
   };
 
+  const handleCategoryBrowserApply = (query: string) => {
+    setQuery(query);
+    executeSearch(query, true);
+    inputRef.current?.focus();
+  };
+
   return (
     <div className="space-y-2 relative">
       {/* Search Input */}
@@ -498,7 +521,8 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
 
       {/* Quick Filter Chips */}
       <div className="flex flex-wrap gap-2">
-        {QUICK_FILTERS.map((filter) => {
+        {/* Static filters (JLPT, Top 100, KOTY) */}
+        {STATIC_FILTERS.map((filter) => {
           const isActive = activeChips.has(filter.query);
           return (
             <button
@@ -522,6 +546,41 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
             </button>
           );
         })}
+        
+        {/* Rotating category chips */}
+        {categoryChips.map((chip) => {
+          const isActive = activeChips.has(chip.query);
+          return (
+            <button
+              key={chip.query}
+              onClick={() => handleChipClick(chip.query)}
+              className={`px-3 py-1 rounded-full text-sm transition-colors ${
+                isActive
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              {chip.label}
+              {isActive && (
+                <span
+                  onClick={(e) => handleRemoveChip(chip.query, e)}
+                  className="ml-1 font-bold"
+                >
+                  ×
+                </span>
+              )}
+            </button>
+          );
+        })}
+        
+        {/* Category Browser Button */}
+        <button
+          onClick={() => setShowCategoryBrowser(true)}
+          className="px-3 py-1 rounded-full text-sm transition-colors bg-purple-600 text-white hover:bg-purple-700"
+          title="Browse all 53 categories"
+        >
+          📂 All Categories
+        </button>
       </div>
 
       {/* Rotating Example */}
@@ -534,6 +593,13 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
           {EXAMPLES[currentExampleIndex]}
         </code>
       </div>
+      
+      {/* Category Browser Modal */}
+      <CategoryBrowser
+        isOpen={showCategoryBrowser}
+        onClose={() => setShowCategoryBrowser(false)}
+        onApply={handleCategoryBrowserApply}
+      />
     </div>
   );
 };

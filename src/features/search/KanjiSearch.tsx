@@ -16,6 +16,7 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
   
   const [searchResults, setSearchResults] = useState<KanjiData[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Calculate actual font sizes from percentage sliders (same as InputPanel)
   const baseKanjiFontSize = 3;
@@ -34,6 +35,11 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
     setShowResults(results.length > 0);
   };
 
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
   const handleKanjiClick = (kanji: KanjiData) => {
     // Check if already chosen
     const isAlreadyChosen = chosenKanjis.some((k) => k.kanji === kanji.kanji);
@@ -41,10 +47,35 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
     if (!isAlreadyChosen) {
       // Add to chosen
       dispatch(addKanji(kanji));
-      // Clear results
-      setSearchResults([]);
-      setShowResults(false);
+      // Show toast notification
+      showToast(`Added ${kanji.kanji}`);
+      // Keep results visible
     }
+  };
+
+  const handleAddAll = () => {
+    const uniqueKanjis = searchResults.filter(
+      (kanji) => !chosenKanjis.some((k) => k.kanji === kanji.kanji)
+    );
+    
+    const alreadyChosenCount = searchResults.length - uniqueKanjis.length;
+    
+    // Add all unique kanjis
+    uniqueKanjis.forEach((kanji) => {
+      dispatch(addKanji(kanji));
+    });
+
+    // Show summary toast
+    if (alreadyChosenCount > 0) {
+      showToast(`Added ${uniqueKanjis.length} kanji${uniqueKanjis.length !== 1 ? 's' : ''} (${alreadyChosenCount} already chosen)`);
+    } else {
+      showToast(`Added ${uniqueKanjis.length} kanji${uniqueKanjis.length !== 1 ? 's' : ''}`);
+    }
+  };
+
+  const handleClearResults = () => {
+    setSearchResults([]);
+    setShowResults(false);
   };
 
   return (
@@ -59,8 +90,24 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
         <div className="border-2 border-blue-500 rounded-lg bg-gray-800 shadow-lg max-h-96 overflow-y-auto">
           <div className="p-2 bg-gray-700 border-b border-gray-600 flex justify-between items-center">
             <span className="text-white font-semibold text-sm">
-              {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} found {searchResults.length >= 50 ? '(showing top 50)' : ''}
+              {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} found {searchResults.length >= 200 ? '(showing top 200)' : ''}
             </span>
+            <div className="flex gap-2">
+              <button
+                onClick={handleAddAll}
+                className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-sm rounded transition-colors"
+                title="Add all unique kanjis to chosen"
+              >
+                Add All {searchResults.length} ✚
+              </button>
+              <button
+                onClick={handleClearResults}
+                className="px-3 py-1 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded transition-colors"
+                title="Clear search results"
+              >
+                Clear Results ×
+              </button>
+            </div>
           </div>
           <div
             style={{
@@ -81,20 +128,38 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
                 text: '#FFFFFF',
               };
               return (
-                <KanjiCard
-                  key={`${kanji.sectionName}-${kanji.kanji}-${index}`}
-                  kanji={kanji}
-                  isChosen={isChosen}
-                  colors={colors}
-                  onClick={() => handleKanjiClick(kanji)}
-                  showAlreadyPicked={true}
-                  kanjiFont={inputPanelSettings.kanjiFont}
-                  kanjiSize={calculatedKanjiSize}
-                  hanVietFont={inputPanelSettings.hanVietFont}
-                  hanVietSize={calculatedHanVietSize}
-                />
+                <div key={`${kanji.sectionName}-${kanji.kanji}-${index}`} className="relative">
+                  <KanjiCard
+                    kanji={kanji}
+                    isChosen={isChosen}
+                    colors={colors}
+                    onClick={() => handleKanjiClick(kanji)}
+                    showAlreadyPicked={true}
+                    kanjiFont={inputPanelSettings.kanjiFont}
+                    kanjiSize={calculatedKanjiSize}
+                    hanVietFont={inputPanelSettings.hanVietFont}
+                    hanVietSize={calculatedHanVietSize}
+                  />
+                  {isChosen && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-xl font-bold shadow-lg">
+                        ✓
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-4 right-4 bg-gray-900 text-white px-4 py-3 rounded-lg shadow-2xl border border-green-500 animate-fade-in z-50">
+          <div className="flex items-center gap-2">
+            <span className="text-green-500 text-xl">✓</span>
+            <span className="text-sm">{toastMessage}</span>
           </div>
         </div>
       )}

@@ -15,9 +15,7 @@
       "くま"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": [
       "能",
@@ -47,8 +45,8 @@
     ],
     "category": [
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "storage-preservation-containers"
     ],
     "lookalikes": [
       "来",
@@ -80,9 +78,10 @@
       "たか.める"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "商",
@@ -107,11 +106,7 @@
       "ミャク"
     ],
     "kunyomi": [],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "派",
       "旅"
@@ -137,11 +132,7 @@
     "kunyomi": [
       "よろず"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "方",
       "力"
@@ -168,11 +159,7 @@
       "か.わり",
       "か.える"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "恋",
       "蛮"
@@ -197,9 +184,8 @@
     ],
     "kunyomi": [],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "social-hierarchy-rank-class-status",
+      "eating-dining-meals-restaurants"
     ],
     "lookalikes": [
       "専",
@@ -229,11 +215,7 @@
       "おんな",
       "め"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "安",
       "如",
@@ -262,11 +244,7 @@
       "あら-",
       "にい-"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "親",
       "薪",
@@ -332,7 +310,7 @@
       "numbers-time-date-calendar-count",
       "nature-elements-sightseeing",
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking"
+      "eating-dining-meals-restaurants"
     ],
     "lookalikes": [
       "署",
@@ -364,9 +342,8 @@
       "この.む"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "arts-music-sports-culture-activities",
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": [
       "薬",
@@ -395,7 +372,6 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
       "verbs-basic"
     ],
     "lookalikes": [
@@ -432,7 +408,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "materials-metals-substances",
-      "construction-engineering-technology"
+      "construction-engineering-technology",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "全",
@@ -464,8 +441,7 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "犬",
@@ -491,11 +467,7 @@
       "ゼイ"
     ],
     "kunyomi": [],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "説",
       "脱",
@@ -523,8 +495,7 @@
     ],
     "category": [
       "occupations-jobs-employment-company",
-      "work-office-banking-legal",
-      "social-structures"
+      "work-office-banking-legal"
     ],
     "lookalikes": [
       "動",
@@ -555,9 +526,7 @@
       "まな"
     ],
     "category": [
-      "emotions-feelings-happiness-love-states",
-      "abstract-concepts",
-      "social-structures"
+      "emotions-feelings-happiness-love-states"
     ],
     "lookalikes": [
       "受",
@@ -586,9 +555,7 @@
       "しあわ.せ"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
     ],
     "lookalikes": [
       "辛",
@@ -616,8 +583,7 @@
     ],
     "category": [
       "measurements-math-calculation-units",
-      "numbers-time-date-calendar-count",
-      "abstract-concepts"
+      "numbers-time-date-calendar-count"
     ],
     "lookalikes": [
       "団",

@@ -1,0 +1,38 @@
+20251228:
+- Fixed KQL autocomplete bug: suggestions now append to query instead of replacing entire text
+- Added JLPT comparison operator support (e.g., jlpt:>N3, jlpt:<=N4)
+- Fixed JLPT comparison logic: operators now correctly match difficulty (N1 harder than N2)
+
+20251227:
+- Implemented Kanji Query Language (KQL) for advanced search
+- Fixed PNG export to use actual header title instead of default text
+- Separated IndexedDB names for production and localhost URLs
+- Fixed font loading issue when filenames contain whitespace
+- Changed JSON data from kebab-case to camelCase
+
+20251225:
+- Fixed PNG export with correct A4 dimensions and font sizes
+- Separated font manifests: kanji fonts vs header fonts
+- Fixed PDF and asset paths to use BASE_URL for GitHub Pages
+- Fixed TypeScript compilation errors
+- Fixed base path for GitHub Pages deployment
+- Initial commit with board mode functionality
+
+20251224 and earlier (Pre-git):
+- Implemented A4Paper component with responsive scaling (25% min scale)
+- Built Paginator with keyboard shortcuts (arrow keys, Home/End)
+- Created HeaderFooter component with mode-specific templates
+- Implemented Board Mode with configurable grid (4-16 columns)
+- Added Sheet Mode for practice worksheets
+- Built Input Panel with kanji selection and drag-drop reordering
+- Implemented Control Panel with font size controls and mode toggles
+- Created KanjiCard component with JLPT level indicators
+- Set up Redux store with kanji, worksheet, and displaySettings slices
+- Integrated IndexedDB for kanji data storage
+- Loaded JSON kanji data (N5, N4, N3, N2, N1 levels)
+- Implemented PDF export functionality
+- Added mobile responsive design with tab navigation
+- Created font loading system with custom Japanese fonts
+- Set up React 19 + TypeScript + Vite project structure
+
+

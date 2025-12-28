@@ -23,8 +23,8 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
-      "verbs-basic"
+      "verbs-basic",
+      "abstract-qualities-attributes-characteristics"
     ],
     "lookalikes": "公, 介",
     "mnemonics": "To divide something into parts, you use a knife (刀) to cut it into eight (八) pieces. Also, think of using a knife to slice time into minutes.",
@@ -53,7 +53,6 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "nature-elements-sightseeing"
     ],
     "lookalikes": "曰, 目, 白, 田, 旧, 旦",
@@ -79,11 +78,7 @@
       "ひと-",
       "ひと.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "二, ニ, ｜",
     "mnemonics": "One horizontal line represents the number one. It is a single finger held up sideways.",
     "vietMnemonics": "Một nét 一 thẳng băng: chấm công đầu tiên.",
@@ -107,8 +102,7 @@
     ],
     "category": [
       "measurements-math-calculation-units",
-      "numbers-time-date-calendar-count",
-      "abstract-concepts"
+      "numbers-time-date-calendar-count"
     ],
     "lookalikes": "団, 図, 囲, 回",
     "mnemonics": "The king (王) with a jewel (point inside) is surrounded by borders (囗), forming a country.",
@@ -136,8 +130,7 @@
     ],
     "category": [
       "family-people-friend-relations",
-      "family-home-childcare-baby-play",
-      "social-structures"
+      "family-home-childcare-baby-play"
     ],
     "lookalikes": "入, 八, 大",
     "mnemonics": "A picture of a person walking with legs apart. 'Nin' looks like 'knees' (person has knees).",
@@ -163,7 +156,6 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "nature-elements-sightseeing"
     ],
     "lookalikes": "午, 手, 牛",
@@ -191,8 +183,7 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": "太, 犬, 天, 夫, 木",
     "mnemonics": "A person (人) stretching their arms out wide to show how big (一) something is.",
@@ -217,11 +208,7 @@
     "kunyomi": [
       "とお"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "千, ナ, 丈",
     "mnemonics": "A cross shape representing the number ten. Like holding up two crossed index fingers.",
     "vietMnemonics": "Dấu cộng 十 đủ phần: trọn mười, trọn vẹn.",
@@ -245,11 +232,7 @@
       "ふた",
       "ふた.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "一, 三, 工, 土",
     "mnemonics": "Two horizontal lines representing the number two.",
     "vietMnemonics": "Hai vạch 二 song song: khỏi cần đếm lại.",
@@ -274,9 +257,11 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog"
+      "phone-call-communication-interview-dialog",
+      "adjectives-sizes-shapes-colors",
+      "abstract-time-duration-temporal",
+      "abstract-causation-reason-logic"
     ],
     "lookalikes": "末, 未, 木, 休, 体",
     "mnemonics": "A tree (木) with a line (一) at the roots indicating the origin/base. Books are made from paper, which comes from trees.",
@@ -301,9 +286,7 @@
       "うち"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "仲, 虫",
     "mnemonics": "A line going straight through the middle of a square/mouth.",
@@ -328,8 +311,8 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors",
+      "social-hierarchy-rank-class-status"
     ],
     "lookalikes": "畏, 髪",
     "mnemonics": "A person with very long, flowing hair.",
@@ -359,8 +342,7 @@
     ],
     "category": [
       "verbs-action",
-      "verbs-basic",
-      "social-structures"
+      "verbs-basic"
     ],
     "lookalikes": "山, 祟",
     "mnemonics": "Two mountains stacked on top of each other... going out for a hike.",
@@ -385,11 +367,7 @@
       "み.つ",
       "みっ.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "二, 川, ミ",
     "mnemonics": "Three horizontal lines representing the number three.",
     "vietMnemonics": "Ba vạch 三 ngay ngắn: số BA gọi tên.",
@@ -414,8 +392,7 @@
     ],
     "category": [
       "numbers-time-date-calendar-count",
-      "nature-elements-sightseeing",
-      "social-structures"
+      "nature-elements-sightseeing"
     ],
     "lookalikes": "持, 待, 特",
     "mnemonics": "In the old days, monks at the temple (寺) used the sun (日) to tell the time.",
@@ -448,7 +425,6 @@
     ],
     "category": [
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
       "verbs-action",
       "verbs-basic"
     ],
@@ -476,9 +452,7 @@
       "み.せる"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": "貝, 児, 目",
     "mnemonics": "An eye (目) on legs (儿). You walk around to see things.",
@@ -504,8 +478,7 @@
     ],
     "category": [
       "numbers-time-date-calendar-count",
-      "nature-elements-sightseeing",
-      "social-structures"
+      "nature-elements-sightseeing"
     ],
     "lookalikes": "日, 目, 円",
     "mnemonics": "A crescent moon with two clouds passing over it.",
@@ -534,8 +507,7 @@
     ],
     "category": [
       "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "directions-positions-navigation"
     ],
     "lookalikes": "待, 得, 徒",
     "mnemonics": "A person walking (彳) with a cocoon (幺) trailing slowly (夂) behind them.",
@@ -561,8 +533,7 @@
     ],
     "category": [
       "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "directions-positions-navigation"
     ],
     "lookalikes": "剪, 煎",
     "mnemonics": "Before the moon (月) rises, I must trim (刂) the grass (horns/top part).",
@@ -599,9 +570,7 @@
       "な.る"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "abstract-philosophy-truth-justice-virtue"
     ],
     "lookalikes": "先, 牛, 王, 主",
     "mnemonics": "A plant growing out of the ground, symbolizing life.",
@@ -625,11 +594,7 @@
       "いつ",
       "いつ.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "互, 王, 正, 玉",
     "mnemonics": "The number five. Visually, it looks like 5 strokes, or a mix of 'two' (二) and lines crossing.",
     "vietMnemonics": "Nét móc ngoặt: ngó ra thành chữ SỐ NĂM.",
@@ -657,7 +622,9 @@
     "category": [
       "numbers-time-date-calendar-count",
       "nature-elements-sightseeing",
-      "verbs-basic"
+      "verbs-basic",
+      "directions-positions-navigation",
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": "問, 聞, 開, 闇",
     "mnemonics": "The sun (日) shining through the space between the gates (門).",
@@ -695,9 +662,7 @@
       "のぼ.す"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "止, 正, 土, 山",
     "mnemonics": "A ground line (一) with a pointer indicating upwards.",
@@ -721,9 +686,7 @@
       "ひがし"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "車, 束, 果, 練",
     "mnemonics": "The sun (日) rising behind a tree (木) indicates the East.",
@@ -749,11 +712,7 @@
       "よっ.つ",
       "よん"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "回, 西, 匹, 囚, 皿",
     "mnemonics": "A rectangular box with corners. Inside look like legs (儿).",
     "vietMnemonics": "Khung hộp 囗 với đôi chân 儿: nhớ số BỐN.",
@@ -777,9 +736,7 @@
       "いま"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "abstract-time-duration-temporal"
     ],
     "lookalikes": "合, 令, 含, 念, 会",
     "mnemonics": "Under the clock (triangle roof shape), the time is now.",
@@ -811,7 +768,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "materials-metals-substances",
-      "construction-engineering-technology"
+      "construction-engineering-technology",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": "全, 会, 企, 釜",
     "mnemonics": "People (𠆢) want the king's (王) gold nuggets (dots).",
@@ -836,11 +794,7 @@
       "ここの",
       "ここの.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "力, 丸, 刀, 刃",
     "mnemonics": "Looks like a person doing a pushup (curved body).",
     "vietMnemonics": "Một cú móc cong 𠃍: đếm tới CỬU—số chín.",
@@ -868,11 +822,7 @@
       "-い.れ",
       "はい.る"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "人, 八, 久",
     "mnemonics": "Resembles the flap of a tent entrance. To enter.",
     "vietMnemonics": "Hai nét khép miệng lều: xốc màn mà VÀO.",
@@ -896,7 +846,6 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company"
     ],
     "lookalikes": "字, 孚, 覚",
@@ -925,9 +874,10 @@
       "たか.める"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "京, 商, 亭, 亮",
     "mnemonics": "A picture of a tall tower with windows (口).",
@@ -954,9 +904,8 @@
       "まど.か"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "adjectives-sizes-shapes-colors",
+      "social-organizations-groups-associations"
     ],
     "lookalikes": "内, 肉, 丹, 再",
     "mnemonics": "A bank teller's window implies money (Yen). The yen coin is round.",
@@ -984,8 +933,7 @@
     ],
     "category": [
       "family-people-friend-relations",
-      "family-home-childcare-baby-play",
-      "social-structures"
+      "family-home-childcare-baby-play"
     ],
     "lookalikes": "了, 予, 好",
     "mnemonics": "A baby with a big head and arms spread out.",
@@ -1013,9 +961,7 @@
       "はず.れる"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "名, 多, 処",
     "mnemonics": "In the evening (夕), I go outside to smoke/divine (ト).",
@@ -1041,11 +987,7 @@
       "やっ.つ",
       "よう"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "人, 入, 小",
     "mnemonics": "Two lines sloping downwards, looking like a mountain or the number 8 turned sideways.",
     "vietMnemonics": "Hai nét tẻ đôi: tán ra thành TÁM.",
@@ -1071,11 +1013,7 @@
       "むっ.つ",
       "むい"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "大, 穴, 交, 文",
     "mnemonics": "A top hat (lid) on animal legs... six legs?",
     "vietMnemonics": "Mái 亠 che tám 八: gộp gom còn SÁU (mẹo nhớ).",
@@ -1112,7 +1050,9 @@
     "category": [
       "verbs-action",
       "verbs-basic",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
     ],
     "lookalikes": "上, 不, 卞",
     "mnemonics": "A ground line (一) with a pointer indicating downwards.",
@@ -1143,8 +1083,7 @@
     ],
     "category": [
       "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "abstract-causation-reason-logic"
     ],
     "lookalikes": "未, 末, 米, 東, 束",
     "mnemonics": "A tree (木) that has not yet (未) grown... wait, it is coming towards us. Alternatively: Come harvest the rice (looks like 米) hanging on the tree.",
@@ -1169,9 +1108,7 @@
       "いき"
     ],
     "category": [
-      "emotions-feelings-happiness-love-states",
-      "abstract-concepts",
-      "social-structures"
+      "emotions-feelings-happiness-love-states"
     ],
     "lookalikes": "汽, 氛",
     "mnemonics": "Vapor/steam (气) rising from the ground in a cross shape (〆).",
@@ -1198,9 +1135,10 @@
       "さ-"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "少, 水, 木",
     "mnemonics": "A hook (亅) splitting the number eight (八) into smaller pieces.",
@@ -1224,11 +1162,7 @@
       "なな",
       "なな.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "匕, 九, 十",
     "mnemonics": "Looks like the number 7 turned upside down.",
     "vietMnemonics": "Nét chém lệch qua 一: nhớ ngay số BẢY—THẤT.",
@@ -1253,8 +1187,7 @@
     ],
     "category": [
       "nature-elements-sightseeing",
-      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures"
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
     ],
     "lookalikes": "出, 凶",
     "mnemonics": "A pictograph of a mountain with three peaks.",
@@ -1280,8 +1213,7 @@
     ],
     "category": [
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog",
-      "social-structures"
+      "phone-call-communication-interview-dialog"
     ],
     "lookalikes": "活, 語, 詰, 詳",
     "mnemonics": "To speak, you use your tongue (舌) to say words (言).",
@@ -1306,11 +1238,7 @@
     "kunyomi": [
       "おんな"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "安, 奴, 如",
     "mnemonics": "A pictogram of a kneeling woman.",
     "vietMnemonics": "Dáng quỳ tay khum: nét NỮ hiền thục.",
@@ -1333,9 +1261,7 @@
       "きた"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "比, 化, 此",
     "mnemonics": "Two people sitting back to back (匕), trying to keep warm against the cold North wind.",
@@ -1388,7 +1314,7 @@
     "category": [
       "colors-visual-painting-shades-tints",
       "adjectives-basic",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": "白, 日, 首",
     "mnemonics": "One (一) white (白) purity implies the number one hundred (perfection).",
@@ -1468,9 +1394,7 @@
       "-ナ"
     ],
     "category": [
-      "verbs-action",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-action"
     ],
     "lookalikes": "各, 多, 石",
     "mnemonics": "In the evening darkness (夕), you must use your mouth (口) to say your name so people know who you are.",
@@ -1495,8 +1419,7 @@
     ],
     "category": [
       "nature-elements-sightseeing",
-      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures"
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
     ],
     "lookalikes": "三, 州",
     "mnemonics": "Three vertical lines representing the flowing water of a river.",
@@ -1519,11 +1442,7 @@
     "kunyomi": [
       "ち"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "十, 干, 午",
     "mnemonics": "A person sliding down the number ten (十) implies many (a thousand).",
     "vietMnemonics": "Thêm phẩy vào 十: nhảy cái thành NGHÌN—THIÊN.",
@@ -1546,9 +1465,7 @@
       "みず"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "drinking-beverages-alcohol"
     ],
     "lookalikes": "木, 氷, 永",
     "mnemonics": "Pictograph of water splashing.",
@@ -1574,8 +1491,9 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
-      "verbs-basic"
+      "verbs-basic",
+      "directions-positions-navigation",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "平, 伴, 羊",
     "mnemonics": "Three lines cut in half by a vertical stroke.",
@@ -1599,11 +1517,7 @@
     "kunyomi": [
       "おとこ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "勇, 虜",
     "mnemonics": "A man provides the power (力) for the work in the rice field (田).",
     "vietMnemonics": "Sức 力 ngoài ruộng 田: đàn ÔNG—NAM tử hán.",
@@ -1628,9 +1542,7 @@
       "にし"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "四, 酉, 酒, 価",
     "mnemonics": "A bird nesting in the west as the sun sets.",
@@ -1653,7 +1565,6 @@
     "kunyomi": [],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture"
     ],
     "lookalikes": "雷, 雪, 雲",
@@ -1677,7 +1588,6 @@
     "kunyomi": [],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "housing-buildings-architecture",
       "construction-engineering-technology"
@@ -1704,11 +1614,7 @@
       "かた.る",
       "かた.らう"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "話, 悟, 詰, 諾",
     "mnemonics": "The words (言) that I (吾) speak make up my language.",
     "vietMnemonics": "Lời 言 của ‘ta’ 吾: thành NGÔN NGỮ để giao tiếp.",
@@ -1734,7 +1640,7 @@
     "category": [
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": "士, 上, 工, エ",
     "mnemonics": "A sprout growing out of the ground. A cross on a baseline.",
@@ -1763,7 +1669,8 @@
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
       "materials-metals-substances",
-      "construction-engineering-technology"
+      "construction-engineering-technology",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
     ],
     "lookalikes": "本, 休, 大, 未, 末",
     "mnemonics": "A pictograph of a tree, showing branches and roots.",
@@ -1789,9 +1696,7 @@
       "き.こえる"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": "問, 間, 開, 閉",
     "mnemonics": "Putting your ear (耳) to the gate (門) to listen to what is happening inside.",
@@ -1820,8 +1725,7 @@
     ],
     "category": [
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "eating-dining-meals-restaurants"
     ],
     "lookalikes": "良, 養, 倉, 飲",
     "mnemonics": "People (𠆢) need good (良) food to eat to live.",
@@ -1845,9 +1749,7 @@
       "くるま"
     ],
     "category": [
-      "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "vehicles-train-car-travel-transport-driving-moving"
     ],
     "lookalikes": "東, 申, 連, 凍",
     "mnemonics": "A top-down view of a cart: two wheels (top and bottom horizontal lines) connected by an axle (central vertical line).",
@@ -1872,9 +1774,7 @@
       "なん"
     ],
     "category": [
-      "clothing-fashion-dress-shoes-hat",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "clothing-fashion-dress-shoes-hat"
     ],
     "lookalikes": "向, 河, 伺, 同",
     "mnemonics": "A person (亻) carrying something asks, \"Can (可) I put this here?\" or \"What is this?\"",
@@ -1899,9 +1799,7 @@
       "みなみ"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "幸, 商, 献",
     "mnemonics": "A compass pointing south. Also looks like a warm enclosure for tropical plants.",
@@ -1926,9 +1824,9 @@
       "よろず"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
-      "adjectives-basic"
+      "adjectives-basic",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "方, 力, 乃",
     "mnemonics": "One (一) scythe blade cutting 10,000 stalks of grain.",
@@ -1952,11 +1850,7 @@
       "ごと",
       "-ごと.に"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "海, 梅, 母, 毒",
     "mnemonics": "Every person has a mother (母). (Note: The top part looks like a reclining person).",
     "vietMnemonics": "Người 𠂉 và mẹ 母: MỖI ngày đều nhớ công sinh thành.",
@@ -1984,7 +1878,7 @@
     "category": [
       "colors-visual-painting-shades-tints",
       "adjectives-basic",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": "日, 百, 自, 臼",
     "mnemonics": "A drop of light from the sun (日) is white.",
@@ -2011,7 +1905,6 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
     ],
@@ -2039,8 +1932,7 @@
     ],
     "category": [
       "family-people-friend-relations",
-      "family-home-childcare-baby-play",
-      "social-structures"
+      "family-home-childcare-baby-play"
     ],
     "lookalikes": "毋, 毎, 女, 舟",
     "mnemonics": "Based on the kanji for woman (女), adding two dots to represent breasts for nursing.",
@@ -2065,11 +1957,7 @@
       "-び",
       "ほ-"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "人, 大, 炎",
     "mnemonics": "A pictogram of flames rising.",
     "vietMnemonics": "Lửa bốc phừng phừng: HỎA cháy rực.",
@@ -2094,8 +1982,7 @@
     ],
     "category": [
       "adjectives-conditions",
-      "social-structures",
-      "abstract-concepts"
+      "directions-positions-navigation"
     ],
     "lookalikes": "左, 石, 古, 布",
     "mnemonics": "The hand (ナ) that goes to the mouth (口) to eat is the right hand.",
@@ -2123,8 +2010,7 @@
     ],
     "category": [
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog",
-      "social-structures"
+      "phone-call-communication-interview-dialog"
     ],
     "lookalikes": "続, 売, 詰",
     "mnemonics": "Words (言) that sell (売) imply a best-selling book that everyone reads.",
@@ -2148,9 +2034,7 @@
       "とも"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "social-relationships-party-speaking-networking-events"
     ],
     "lookalikes": "反, 父, 支, 抜",
     "mnemonics": "One hand (ナ) reaching out to join another hand (又) in friendship.",
@@ -2175,9 +2059,7 @@
       "ひだり"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation"
     ],
     "lookalikes": "右, 在, 友, 庄",
     "mnemonics": "The hand (ナ) holding the carpenter's square/tool (工) is the left hand (assisting hand).",
@@ -2205,7 +2087,7 @@
     "category": [
       "numbers-time-date-calendar-count",
       "nature-elements-sightseeing",
-      "social-structures"
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": "体, 本, 笨",
     "mnemonics": "A person (亻) leaning against a tree (木) to rest.",
@@ -2230,8 +2112,7 @@
     ],
     "category": [
       "family-people-friend-relations",
-      "family-home-childcare-baby-play",
-      "social-structures"
+      "family-home-childcare-baby-play"
     ],
     "lookalikes": "交, 文, 斧, 谷",
     "mnemonics": "The father holds the stone axes (or crossed sticks) symbolizing authority.",
@@ -2258,8 +2139,7 @@
     ],
     "category": [
       "weather-nature-seasons",
-      "nature-elements-sightseeing",
-      "social-structures"
+      "nature-elements-sightseeing"
     ],
     "lookalikes": "両, 雪, 雲, 零",
     "mnemonics": "Raindrops (four dots) falling from the sky/clouds (top line and enclosure).",

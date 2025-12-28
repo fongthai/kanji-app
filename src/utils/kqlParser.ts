@@ -26,6 +26,7 @@ export type TokenType =
   | 'ON_PREFIX'         // on:/onyomi: → onyomi[]
   | 'KUN_PREFIX'        // kun:/kunyomi: → kunyomi[]
   | 'COM_PREFIX'        // com:/component: → components
+  | 'CAT_PREFIX'        // cat:/category: → category[]
   | 'JLPT_PREFIX'       // jlpt: → jlptLevel
   | 'FREQ_PREFIX'       // freq:/frequency: → frequency
   // Operators
@@ -84,6 +85,8 @@ const PREFIX_TO_FIELD: Record<string, keyof KanjiData> = {
   'kunyomi': 'kunyomi',
   'com': 'components',
   'component': 'components',
+  'cat': 'category',
+  'category': 'category',
   'jlpt': 'jlptLevel',
   'freq': 'frequency',
   'frequency': 'frequency',
@@ -295,6 +298,9 @@ export class KQLTokenizer {
       case 'com':
       case 'component':
         return 'COM_PREFIX';
+      case 'cat':
+      case 'category':
+        return 'CAT_PREFIX';
       case 'jlpt':
         return 'JLPT_PREFIX';
       case 'freq':
@@ -459,6 +465,7 @@ export class KQLParser {
       'ON_PREFIX',
       'KUN_PREFIX',
       'COM_PREFIX',
+      'CAT_PREFIX',
       'JLPT_PREFIX',
       'FREQ_PREFIX',
     ].includes(type);
@@ -701,8 +708,8 @@ export function executeKQLQuery(query: string, kanjis: KanjiData[]): {
   const evaluator = new KQLEvaluator(ast);
   const results = evaluator.evaluate(kanjis);
   
-  // Limit to top 50 results
-  return { results: results.slice(0, 50), errors: [] };
+  // Limit to top 200 results
+  return { results: results.slice(0, 200), errors: [] };
 }
 
 // Syntax validator (for real-time feedback without executing)

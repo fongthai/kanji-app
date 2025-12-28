@@ -19,8 +19,8 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
-      "social-relationships-party-speaking-networking-events"
+      "social-relationships-party-speaking-networking-events",
+      "social-organizations-groups-associations"
     ],
     "lookalikes": "合, 介, 全, 今",
     "mnemonics": "People (person radical) gathering to speak (cloud component) at a meeting.",
@@ -43,11 +43,7 @@
     "kunyomi": [
       "おな.じ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": "回, 向, 司, 伺",
     "mnemonics": "One (one) mouth (mouth) enclosed (border) represents everyone saying the same thing.",
     "vietMnemonics": "Một (Nhất) cái miệng (Khẩu) nằm trong vòng vây (Quynh) thể hiện mọi người **ĐỒNG** ý.",
@@ -76,7 +72,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "family-people-friend-relations",
-      "family-home-childcare-baby-play"
+      "family-home-childcare-baby-play",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "史",
@@ -106,11 +103,11 @@
       "おの.ずから"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
       "adjectives-basic",
       "nature-elements-sightseeing",
-      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "目",
     "mnemonics": "The character for **oneself** (自) used to be the nose, which is what you see first when you look at **yourself** in the mirror. It's essentially the radical **eye** (目) with an extra horizontal line at the top to emphasize the bridge of the nose.",
@@ -136,7 +133,7 @@
     "category": [
       "occupations-jobs-employment-company",
       "work-office-banking-legal",
-      "social-structures"
+      "social-organizations-groups-associations"
     ],
     "lookalikes": [
       "杜",
@@ -168,9 +165,8 @@
       "つか.わす"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "登",
@@ -200,7 +196,7 @@
     "category": [
       "family-people-friend-relations",
       "family-home-childcare-baby-play",
-      "social-structures"
+      "adjectives-appearance-personality"
     ],
     "lookalikes": [
       "都",
@@ -228,9 +224,9 @@
     "kunyomi": [],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
-      "nature-elements-sightseeing"
+      "nature-elements-sightseeing",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "池",
@@ -262,7 +258,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "animals-insects-birds-fish-pets-creatures-wildlife",
-      "nature-elements-sightseeing"
+      "nature-elements-sightseeing",
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": [
       "並"
@@ -291,7 +288,10 @@
     "category": [
       "family-people-friend-relations",
       "family-home-childcare-baby-play",
-      "social-structures"
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation",
+      "social-community-neighborhood-local"
     ],
     "lookalikes": "万, 刀, 房",
     "mnemonics": "To determine the **direction** (方), you need a compass which has a **dot** on top (亠) and a **knife** (刀) to cut a path. Or, imagine a **square** (方) table with a **knife** (刀) on top, pointing in a certain **direction**.",
@@ -317,11 +317,7 @@
       "あら-",
       "にい"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "親",
       "薪"
@@ -349,7 +345,6 @@
     ],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
       "animals-insects-birds-fish-pets-creatures-wildlife",
       "nature-elements-sightseeing"
@@ -380,9 +375,9 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "verbs-basic",
-      "occupations-jobs-employment-company"
+      "occupations-jobs-employment-company",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "圓",
@@ -417,11 +412,7 @@
       "-た.て",
       "-だ.て"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "位",
       "章"
@@ -454,8 +445,7 @@
     "category": [
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "history-culture-events",
-      "social-structures"
+      "history-culture-events"
     ],
     "lookalikes": [
       "関"
@@ -486,8 +476,7 @@
     ],
     "category": [
       "body-health-medicine",
-      "health-care-dental-emergency",
-      "social-structures"
+      "health-care-dental-emergency"
     ],
     "lookalikes": "毛",
     "mnemonics": "The kanji for **hand** (手) is a stylized drawing of a hand with five fingers. It looks like a thumb and four fingers, or a hand reaching out for something.",
@@ -515,7 +504,6 @@
       "weather-nature-seasons",
       "nature-elements-sightseeing",
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
       "verbs-basic"
     ],
     "lookalikes": [
@@ -543,11 +531,7 @@
       "と.う",
       "と.い"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "間",
       "聞"
@@ -581,7 +565,6 @@
     ],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count"
@@ -624,7 +607,10 @@
       "nature-elements-sightseeing",
       "colors-visual-painting-shades-tints",
       "adjectives-basic",
-      "adjectives-conditions"
+      "adjectives-conditions",
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "盟"
@@ -652,7 +638,6 @@
     ],
     "category": [
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
       "occupations-jobs-employment-company",
       "work-office-banking-legal"
     ],
@@ -681,11 +666,7 @@
     "kunyomi": [
       "みやこ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "涼",
       "景",
@@ -716,10 +697,9 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking"
+      "social-hierarchy-rank-class-status"
     ],
     "lookalikes": "自, 曰",
     "mnemonics": "This is a pictograph of an **eye** (目) turned on its side. The inner two lines represent the pupil and the folds of the eyelids.",
@@ -753,9 +733,10 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog"
+      "phone-call-communication-interview-dialog",
+      "adjectives-sizes-shapes-colors",
+      "mail-post-delivery-tracking-shipping"
     ],
     "lookalikes": [
       "連",
@@ -786,8 +767,7 @@
     ],
     "category": [
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog",
-      "social-structures"
+      "phone-call-communication-interview-dialog"
     ],
     "lookalikes": [
       "警",
@@ -815,7 +795,6 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
       "family-people-friend-relations",
       "family-home-childcare-baby-play"
     ],
@@ -848,9 +827,9 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "body-health-medicine",
-      "health-care-dental-emergency"
+      "health-care-dental-emergency",
+      "abstract-qualities-attributes-characteristics"
     ],
     "lookalikes": [
       "休",
@@ -878,8 +857,8 @@
     ],
     "category": [
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "storage-preservation-containers"
     ],
     "lookalikes": "由, 甲, 申, 口",
     "mnemonics": "A pictograph of a **rice field** (田) divided into four plots by paths.",
@@ -908,8 +887,8 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors",
+      "social-hierarchy-rank-class-status"
     ],
     "lookalikes": [
       "王",
@@ -936,9 +915,7 @@
       "つくろ.う"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "social-hierarchy-rank-class-status"
     ],
     "lookalikes": [
       "是",
@@ -966,7 +943,6 @@
       "body-health-medicine",
       "health-care-dental-emergency",
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
       "verbs-basic"
     ],
     "lookalikes": [
@@ -994,8 +970,7 @@
     "kunyomi": [],
     "category": [
       "adjectives-conditions",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-appearance-personality"
     ],
     "lookalikes": [
       "丕",
@@ -1059,7 +1034,7 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking"
+      "storage-preservation-containers"
     ],
     "lookalikes": [
       "中",
@@ -1090,8 +1065,8 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
-      "nature-elements-sightseeing"
+      "nature-elements-sightseeing",
+      "abstract-qualities-attributes-characteristics"
     ],
     "lookalikes": [
       "席",
@@ -1123,8 +1098,7 @@
     ],
     "category": [
       "adjectives-conditions",
-      "social-structures",
-      "abstract-concepts"
+      "abstract-qualities-attributes-characteristics"
     ],
     "lookalikes": [
       "弘",
@@ -1153,8 +1127,8 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
-      "verbs-basic"
+      "verbs-basic",
+      "social-community-neighborhood-local"
     ],
     "lookalikes": [
       "分",
@@ -1183,8 +1157,7 @@
     ],
     "category": [
       "verbs-basic",
-      "history-culture-events",
-      "social-structures"
+      "history-culture-events"
     ],
     "lookalikes": [
       "待",
@@ -1214,7 +1187,7 @@
     "category": [
       "animals-insects-birds-fish-pets-creatures-wildlife",
       "nature-elements-sightseeing",
-      "social-structures"
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
     ],
     "lookalikes": [
       "埋",
@@ -1243,7 +1216,8 @@
     "category": [
       "colors-visual-painting-shades-tints",
       "adjectives-basic",
-      "verbs-basic"
+      "verbs-basic",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "似",
@@ -1274,7 +1248,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "verbs-basic",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "恩",
@@ -1305,7 +1280,6 @@
     "category": [
       "family-people-friend-relations",
       "family-home-childcare-baby-play",
-      "social-structures",
       "housing-buildings-architecture",
       "construction-engineering-technology"
     ],
@@ -1338,7 +1312,6 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "family-people-friend-relations",
       "family-home-childcare-baby-play"
     ],
@@ -1367,9 +1340,7 @@
       "おお.い"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "夕",
@@ -1400,8 +1371,9 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
-      "adjectives-conditions"
+      "adjectives-conditions",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "止",
@@ -1431,8 +1403,9 @@
     ],
     "category": [
       "emotions-feelings-happiness-love-states",
-      "abstract-concepts",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": [
       "官",
@@ -1458,10 +1431,10 @@
     "kunyomi": [],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "body-health-medicine",
-      "health-care-dental-emergency"
+      "health-care-dental-emergency",
+      "social-organizations-groups-associations"
     ],
     "lookalikes": [
       "遠",
@@ -1490,7 +1463,8 @@
     "category": [
       "body-health-medicine",
       "health-care-dental-emergency",
-      "verbs-basic"
+      "verbs-basic",
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "必",
@@ -1515,9 +1489,7 @@
     ],
     "kunyomi": [],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "social-organizations-groups-associations"
     ],
     "lookalikes": [
       "介",
@@ -1546,7 +1518,6 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "animals-insects-birds-fish-pets-creatures-wildlife",
       "nature-elements-sightseeing"
@@ -1579,8 +1550,7 @@
     ],
     "category": [
       "measurements-math-calculation-units",
-      "numbers-time-date-calendar-count",
-      "abstract-concepts"
+      "numbers-time-date-calendar-count"
     ],
     "lookalikes": [
       "支",
@@ -1646,7 +1616,7 @@
     "category": [
       "adjectives-basic",
       "history-culture-events",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "動",
@@ -1677,7 +1647,7 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts"
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": "返, 迫, 辺",
     "mnemonics": "Don't **walk** (辶) too **near** (近) someone holding an **axe** (斤).",
@@ -1703,7 +1673,7 @@
     "category": [
       "verbs-basic",
       "adjectives-basic",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "老",
@@ -1734,11 +1704,7 @@
       "はかりごと",
       "はか.る"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "函",
       "歯"
@@ -1765,8 +1731,7 @@
     ],
     "category": [
       "nature-elements-sightseeing",
-      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures"
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
     ],
     "lookalikes": [
       "梅",
@@ -1825,7 +1790,6 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "verbs-action",
       "verbs-basic"
@@ -1857,10 +1821,10 @@
     ],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
       "education-academic-learning-levels-school-research",
-      "occupations-jobs-employment-company"
+      "occupations-jobs-employment-company",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
     ],
     "lookalikes": [
       "通",
@@ -1889,9 +1853,8 @@
       "つど.う"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "social-relationships-party-speaking-networking-events",
+      "social-cooperation-conflict-interaction"
     ],
     "lookalikes": [
       "焦",
@@ -1920,10 +1883,10 @@
       "わ.ける"
     ],
     "category": [
-      "abstract-concepts",
       "measurements-math-calculation-units",
       "adjectives-basic",
-      "numbers-time-date-calendar-count"
+      "numbers-time-date-calendar-count",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "列",
@@ -1952,8 +1915,7 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "特",
@@ -1984,7 +1946,6 @@
     ],
     "category": [
       "emotions-feelings-happiness-love-states",
-      "abstract-concepts",
       "verbs-action"
     ],
     "lookalikes": [
@@ -2015,9 +1976,9 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking"
+      "abstract-philosophy-truth-justice-virtue",
+      "eating-dining-meals-restaurants"
     ],
     "lookalikes": [
       "晶",
@@ -2047,7 +2008,6 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "verbs-action"
     ],
     "lookalikes": [
@@ -2077,8 +2037,7 @@
     ],
     "category": [
       "food-ingredients-kitchen",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "eating-dining-meals-restaurants"
     ],
     "lookalikes": [
       "列",
@@ -2102,11 +2061,7 @@
       "トク"
     ],
     "kunyomi": [],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "持",
       "時",
@@ -2133,11 +2088,7 @@
       "わたくし",
       "わたし"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "仏",
       "弘"
@@ -2165,9 +2116,7 @@
       "はじ.まる"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": [
       "治",
@@ -2196,7 +2145,7 @@
     "category": [
       "numbers-time-date-calendar-count",
       "nature-elements-sightseeing",
-      "social-structures"
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "乾",
@@ -2224,8 +2173,8 @@
     ],
     "category": [
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "連",
@@ -2255,11 +2204,7 @@
       "お.える",
       "つい"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "冬",
       "絡"
@@ -2288,9 +2233,7 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
-      "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking"
+      "vehicles-train-car-travel-transport-driving-moving"
     ],
     "lookalikes": [
       "治",
@@ -2322,8 +2265,7 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "庄",
@@ -2350,11 +2292,7 @@
       "す.む",
       "す.まう"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "注",
       "柱",
@@ -2384,8 +2322,7 @@
     ],
     "category": [
       "adjectives-conditions",
-      "social-structures",
-      "abstract-concepts"
+      "abstract-philosophy-truth-justice-virtue"
     ],
     "lookalikes": [
       "直",
@@ -2413,9 +2350,7 @@
       "あ.る"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": [
       "右",
@@ -2442,11 +2377,7 @@
     "kunyomi": [
       "くち"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "回",
       "古"
@@ -2474,8 +2405,8 @@
     ],
     "category": [
       "adjectives-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
     ],
     "lookalikes": [
       "小",
@@ -2503,9 +2434,10 @@
     ],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
-      "nature-elements-sightseeing"
+      "nature-elements-sightseeing",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "social-community-neighborhood-local"
     ],
     "lookalikes": [
       "団",
@@ -2534,7 +2466,8 @@
       "work-office-banking-legal",
       "occupations-jobs-employment-company",
       "colors-visual-painting-shades-tints",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "科",
@@ -2563,7 +2496,8 @@
       "housing-buildings-architecture",
       "construction-engineering-technology",
       "occupations-jobs-employment-company",
-      "work-office-banking-legal"
+      "work-office-banking-legal",
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": [
       "土",
@@ -2595,8 +2529,7 @@
     ],
     "category": [
       "housing-buildings-architecture",
-      "construction-engineering-technology",
-      "social-structures"
+      "construction-engineering-technology"
     ],
     "lookalikes": [
       "健",
@@ -2659,11 +2592,7 @@
       "いそ.ぐ",
       "いそ.ぎ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "色",
       "危"
@@ -2698,11 +2627,7 @@
       "や.む",
       "-や.む"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "正",
       "上"
@@ -2727,11 +2652,7 @@
     "kunyomi": [
       "おく.る"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "逆",
       "関"
@@ -2767,8 +2688,7 @@
     ],
     "category": [
       "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "叨",
@@ -2802,8 +2722,7 @@
     ],
     "category": [
       "vehicles-train-car-travel-transport-driving-moving",
-      "daily-life-shopping-eating-cooking",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "伝",
@@ -2831,10 +2750,10 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "nature-elements-sightseeing",
-      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "形",
@@ -2866,7 +2785,6 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "body-health-medicine",
       "health-care-dental-emergency"
     ],
@@ -2897,7 +2815,6 @@
     ],
     "category": [
       "education-academic-learning-levels-school-research",
-      "social-structures",
       "occupations-jobs-employment-company",
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
@@ -2929,9 +2846,7 @@
       "たの.しむ"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "entertainment-games-hobby-relax"
     ],
     "lookalikes": [
       "薬",
@@ -2962,9 +2877,7 @@
       "た.つ"
     ],
     "category": [
-      "verbs-action",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-action"
     ],
     "lookalikes": [
       "超",
@@ -2999,9 +2912,9 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
       "clothing-fashion-dress-shoes-hat",
-      "daily-life-shopping-eating-cooking"
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
     ],
     "lookalikes": [
       "看",
@@ -3062,8 +2975,7 @@
     ],
     "category": [
       "body-health-medicine",
-      "health-care-dental-emergency",
-      "social-structures"
+      "health-care-dental-emergency"
     ],
     "lookalikes": [
       "痛",
@@ -3096,8 +3008,7 @@
     ],
     "category": [
       "materials-metals-substances",
-      "construction-engineering-technology",
-      "social-structures"
+      "construction-engineering-technology"
     ],
     "lookalikes": [
       "盾",
@@ -3123,11 +3034,7 @@
     "kunyomi": [
       "ま.つ"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "持",
       "特",
@@ -3154,11 +3061,7 @@
       "こころ.みる",
       "ため.す"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "誠",
       "戒"
@@ -3184,7 +3087,6 @@
     "category": [
       "family-people-friend-relations",
       "family-home-childcare-baby-play",
-      "social-structures",
       "verbs-basic"
     ],
     "lookalikes": [
@@ -3212,7 +3114,7 @@
     "category": [
       "materials-metals-substances",
       "construction-engineering-technology",
-      "social-structures"
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "鉄",
@@ -3243,11 +3145,7 @@
       "はや.まる",
       "はや.める"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "草",
       "旱"
@@ -3274,11 +3172,7 @@
       "うつ.す",
       "は.える"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "英",
       "画"
@@ -3341,8 +3235,7 @@
     ],
     "category": [
       "animals-insects-birds-fish-pets-creatures-wildlife",
-      "nature-elements-sightseeing",
-      "social-structures"
+      "nature-elements-sightseeing"
     ],
     "lookalikes": [
       "険",
@@ -3370,7 +3263,9 @@
       "nature-elements-sightseeing",
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
       "animals-insects-birds-fish-pets-creatures-wildlife",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
     ],
     "lookalikes": [
       "映",
@@ -3429,7 +3324,6 @@
     ],
     "category": [
       "politics-law-government-police",
-      "social-structures",
       "verbs-action"
     ],
     "lookalikes": [
@@ -3459,8 +3353,7 @@
     ],
     "category": [
       "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "abstract-time-duration-temporal"
     ],
     "lookalikes": [
       "法",
@@ -3488,9 +3381,7 @@
       "あじ.わう"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "cooking-preparation-recipes"
     ],
     "lookalikes": [
       "妹",
@@ -3521,9 +3412,7 @@
       "うつ.し"
     ],
     "category": [
-      "verbs-basic",
-      "social-structures",
-      "abstract-concepts"
+      "verbs-basic"
     ],
     "lookalikes": [
       "与",
@@ -3551,10 +3440,11 @@
     ],
     "category": [
       "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
-      "social-structures",
       "housing-buildings-architecture",
       "media-writing-journalism-internet-newspaper-news",
-      "phone-call-communication-interview-dialog"
+      "phone-call-communication-interview-dialog",
+      "mail-post-delivery-tracking-shipping",
+      "social-community-neighborhood-local"
     ],
     "lookalikes": [
       "学",
@@ -3581,11 +3471,7 @@
       "こた.える",
       "こた.え"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "谷",
       "合"
@@ -3613,8 +3499,7 @@
     ],
     "category": [
       "numbers-time-date-calendar-count",
-      "nature-elements-sightseeing",
-      "social-structures"
+      "nature-elements-sightseeing"
     ],
     "lookalikes": [
       "液",
@@ -3642,11 +3527,7 @@
       "おと",
       "ね"
     ],
-    "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
-    ],
+    "category": [],
     "lookalikes": [
       "意",
       "暗"
@@ -3676,8 +3557,8 @@
     "category": [
       "measurements-math-calculation-units",
       "numbers-time-date-calendar-count",
-      "abstract-concepts",
-      "adjectives-basic"
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
     ],
     "lookalikes": [
       "住",
@@ -3706,9 +3587,8 @@
       "おく.る"
     ],
     "category": [
-      "abstract-concepts",
-      "social-structures",
-      "daily-life-shopping-eating-cooking"
+      "directions-positions-navigation",
+      "abstract-causation-reason-logic"
     ],
     "lookalikes": [
       "掃",
@@ -3736,9 +3616,7 @@
       "ふる-"
     ],
     "category": [
-      "history-culture-events",
-      "social-structures",
-      "abstract-concepts"
+      "history-culture-events"
     ],
     "lookalikes": [
       "固",
@@ -3767,8 +3645,7 @@
     ],
     "category": [
       "family-people-friend-relations",
-      "family-home-childcare-baby-play",
-      "social-structures"
+      "family-home-childcare-baby-play"
     ],
     "lookalikes": [
       "敬",
