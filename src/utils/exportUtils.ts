@@ -532,6 +532,129 @@ export async function exportBoardToPDFVector(
 }
 
 /**
+ * Export Sheet mode as vector-based PDF
+ */
+export async function exportSheetToPDFVector(
+  kanjis: KanjiData[],
+  sheetColumnCount: number,
+  showHeader: boolean,
+  showFooter: boolean,
+  kanjiFont: string,
+  kanjiSize: number,
+  headerText: string,
+  headerFontFamily: string,
+  hanVietFont: string,
+  hanVietSize: number,
+  hanVietOrientation: 'horizontal' | 'vertical',
+  showHanViet: boolean,
+  showJlptIndicator: boolean,
+  showGradeIndicator: boolean,
+  showFrequencyIndicator: boolean,
+  sheetGuideOpacity: number[],
+  sheetTracingOpacity: number[],
+  explanationLineCount: 1 | 2 | 3,
+  onProgress: ExportProgressCallback
+): Promise<boolean> {
+  try {
+    onProgress({
+      currentPage: 0,
+      totalPages: 1,
+      status: 'preparing',
+      message: 'Preparing Sheet PDF document...',
+    });
+
+    // Import PDFSheetDocument dynamically to avoid circular dependencies
+    const { PDFSheetDocument, registerKanjiFont } = await import('../components/pdf/PDFSheetDocument');
+    const { calculateTablesPerPage } = await import('../components/screen/SheetGrid');
+
+    // Calculate total pages
+    const tablesPerPage = calculateTablesPerPage(
+      sheetColumnCount,
+      showHeader,
+      showFooter,
+      explanationLineCount
+    );
+    const totalPages = Math.max(1, Math.ceil(kanjis.length / tablesPerPage));
+
+    // Register and get font names for PDF (with fallback to NotoSansJP)
+    const pdfKanjiFont = registerKanjiFont(kanjiFont);
+    const pdfHeaderFont = headerFontFamily === 'system-ui' ? 'Helvetica' : headerFontFamily;
+    const pdfHanVietFont = registerKanjiFont(hanVietFont);
+
+    // Calculate font size percentages (will be applied to actual cell size in PDF)
+    // kanjiSize is user's percentage (70-110), pass it directly as a multiplier
+    const kanjiFontSizeMultiplier = kanjiSize / 100; // e.g., 90 -> 0.9
+    
+    // For indicators and han-viet, use fixed ratios
+    // These will be calculated in the PDF based on actual cell size
+    const indicatorFontSizeRatio = 0.18; // 18% of cell size
+    const hanVietFontSizeRatio = 0.15 * (hanVietSize / 100); // 15% of cell size, scaled by user's percentage
+
+    onProgress({
+      currentPage: 0,
+      totalPages,
+      status: 'exporting',
+      message: `Generating ${totalPages} page${totalPages > 1 ? 's' : ''}...`,
+    });
+
+    // Create PDF document
+    const document = PDFSheetDocument({
+      kanjis,
+      sheetColumnCount,
+      kanjiFont: pdfKanjiFont,
+      kanjiFontSizeMultiplier,
+      showHeader,
+      showFooter,
+      headerText,
+      headerFont: pdfHeaderFont,
+      hanVietFont: pdfHanVietFont,
+      hanVietFontSizeRatio,
+      hanVietOrientation,
+      indicatorFontSizeRatio,
+      showHanViet,
+      showJlptIndicator,
+      showGradeIndicator,
+      showFrequencyIndicator,
+      sheetGuideOpacity,
+      sheetTracingOpacity,
+      explanationLineCount,
+    });
+
+    // Generate PDF blob
+    const blob = await pdf(document as any).toBlob();
+
+    onProgress({
+      currentPage: totalPages,
+      totalPages,
+      status: 'exporting',
+      message: 'Saving PDF file...',
+    });
+
+    // Save file
+    const filename = `ft-kanji-tool-sheet-${new Date().toISOString().split('T')[0].replace(/-/g, '')}-${Date.now()}.pdf`;
+    saveAs(blob, filename);
+
+    onProgress({
+      currentPage: totalPages,
+      totalPages,
+      status: 'completed',
+      message: 'PDF export completed!',
+    });
+
+    return true;
+  } catch (error) {
+    console.error('Sheet PDF Export error:', error);
+    onProgress({
+      currentPage: 0,
+      totalPages: 1,
+      status: 'error',
+      message: `Export failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    });
+    return false;
+  }
+}
+
+/**
  * Export board mode as PNG images (one per page) in a ZIP file
  * Uses same settings as PDF export
  */

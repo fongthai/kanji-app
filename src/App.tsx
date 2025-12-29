@@ -2,14 +2,21 @@ import { useState, useEffect } from 'react';
 import InputPanel from './features/inputPanel/InputPanel';
 import MainView from './features/mainView/MainView';
 import ControlPanel from './features/controlPanel/ControlPanel';
+import { useAppSelector } from './app/hooks';
 
 type ActivePanel = 'input' | 'main' | 'control';
 
 function App() {
+  const currentMode = useAppSelector(state => state.worksheet.currentMode);
   const [activePanel, setActivePanel] = useState<ActivePanel>('input');
   const [isMobile, setIsMobile] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Save mode to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('kanji-worksheet-mode', currentMode);
+  }, [currentMode]);
 
   // Detect mobile based on screen width
   useEffect(() => {

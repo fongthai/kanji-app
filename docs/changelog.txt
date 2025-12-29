@@ -1,3 +1,5 @@
+20251229:
+- Sheet mode and PDF export for it.
 20251228:
 - Fixed KQL autocomplete bug: suggestions now append to query instead of replacing entire text
 - Added JLPT comparison operator support (e.g., jlpt:>N3, jlpt:<=N4)

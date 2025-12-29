@@ -1,5 +1,30 @@
 # Advanced Search Feature - Kanji Query Language (KQL)
 
+## 🚀 TLDR (Quick Reference)
+
+**What it does**: Powerful kanji search with 53 categories, smart filters, and bulk actions.
+
+**Quick Start**:
+- 🔵 **Static Chips**: Click N5, N4, Top 100 ⭐, KOTY 2025 🏆 for instant filtering
+- 🟢 **Rotating Chips**: 3 random categories change every 45 seconds (Food 🍱, Animals 🐕, etc.)
+- 🟣 **All Categories**: Click "📂 All Categories" for 53 categories organized in 13 groups
+- ✅ **Persistent Results**: Results stay visible after adding kanjis (green ✓ shows chosen ones)
+- ➕ **Bulk Actions**: "Add All X ✚" button adds unique kanjis, shows duplicate count
+
+**Search Examples**:
+- `category:food` → 84 kanjis about food, ingredients, kitchen
+- `category:animals` → 73 kanjis about animals, insects, birds, fish
+- `jlpt:N5 & freq:<100` → Common N5 kanjis
+- `category:food | category:animals` → Food OR animals (157 kanjis)
+
+**Features**:
+- 📊 200 results max (up from 50)
+- 🎯 Smart duplicate detection
+- 💬 Toast notifications (3-second auto-dismiss)
+- 🔄 Manual clear with "Clear Results ×"
+
+---
+
 ## Overview
 
 The Advanced Search feature introduces **Kanji Query Language (KQL)**, a powerful query language that allows users to search for kanjis using field-specific prefixes, logical operators, comparison operators, and complex queries. This feature is designed for both beginners (via Quick Filters UI) and advanced users (via KQL syntax).
@@ -23,22 +48,70 @@ The search interface uses a **minimal inline design** for simplicity and efficie
 - Recent searches stored in localStorage (max 10)
 
 ### Quick Filter Chips ⚡
-- Pre-defined filter chips below the search box
-- One-click filtering for common queries:
-  - **JLPT Levels**: N5, N4, N3
-  - **Frequency**: Common kanjis (freq:<500)
-  - **Recent**: Kanji of the Year (koty:2025)
-- Click chip to apply filter instantly
-- Visual active state when filter is applied
 
-### Rotating Examples
-- Helpful example queries that rotate every 5 seconds
-- Click any example to populate the search box
-- Examples cover common use cases:
-  - Search by Han-Viet reading
-  - Search by English meaning
-  - Combine multiple criteria
-  - Filter by JLPT level and frequency
+**Static Chips** (Always visible, blue background):
+- **N5**: `jlpt:N5` - All N5 level kanjis
+- **N4**: `jlpt:N4` - All N4 level kanjis
+- **Top 100 ⭐**: `freq:<100` - 100 most frequent kanjis
+- **KOTY 2025 🏆**: `freq:<21` - Top 20 most frequent kanjis (Kanji of the Year)
+
+**Rotating Category Chips** (3 random chips, green background):
+- Rotate every 45 seconds with weighted selection
+- Beginner-friendly categories appear more often (Food 🍱, Animals 🐕, Family 👨‍👩‍👧)
+- Medium priority: Body 🧑, Nature 🌲, Weather ⛅, Emotions 😊
+- Lower priority: Construction 🏗️, Materials ⚙️, Philosophy 🤔
+- Click any chip to search that category instantly
+- Smart randomization ensures variety
+
+**Category Browser Button** (Purple background):
+- **📂 All Categories**: Opens full modal with all 53 categories
+- Organized into 13 hierarchical groups:
+  * Beginner Friendly (8), Daily Life (7), Nature & Places (4)
+  * Verbs & Adjectives (6), Work & Education (4), Communication & Media (3)
+  * Social & Politics (5), Abstract Concepts (5), Transportation & Travel (2)
+  * Culture & Entertainment (3), Buildings & Construction (2), Health & Medical (1), Materials & Measurement (2)
+- Multi-select checkboxes with individual kanji counts
+- Live preview: "X categories selected → Y kanjis"
+- Select All / Clear All bulk actions
+- Generates OR query: `category:food | category:animals | ...`
+
+### Search Results Features
+
+**Persistent Results**:
+- Results stay visible after adding kanjis (no auto-clear)
+- Green ✓ checkmark overlay shows already-chosen kanjis
+- Visual feedback prevents duplicate additions
+
+**Bulk Actions**:
+- **Add All X ✚** button (green): Adds all unique kanjis from results
+- Smart duplicate detection: Filters out already-chosen kanjis
+- Summary toast: "Added 80 kanjis (4 already chosen)" or "Added 80 kanjis"
+- **Clear Results ×** button (gray): Manually dismiss results
+
+**Result Limit**: 
+- Displays top 200 results (increased from 50)
+- Results header shows: "Showing top 200 results"
+
+**Toast Notifications**:
+- Green checkmark icon with message
+- Fixed position (bottom-right corner)
+- Auto-dismiss after 3 seconds
+- Examples: "Added 水", "Added 80 kanjis (4 already chosen)"
+
+### Category System
+
+**53 Real Categories** organized into meaningful groups:
+- Food 🍱, Animals 🐕, Family 👨‍👩‍👧, Numbers ⏰, Colors 🎨
+- Body 🧑, Nature 🌲, Weather ⛅, Eating 🍽️, Home 🏠
+- Emotions 😊, Basic Verbs 🏃, Directions 🧭, Transport 🚗
+- And 39 more specialized categories...
+
+**Category Search Syntax**:
+- Prefix: `category:` or `cat:`
+- Example: `category:food-ingredients-kitchen` → 84 kanjis
+- Partial matching: `category:food` matches "food-ingredients-kitchen"
+- OR queries: `category:food | category:animals` → 157 kanjis
+- AND queries: `category:animals & jlpt:N5` → N5 animal kanjis
 
 ### Saved Queries
 - Save button (💾) to store current query
@@ -61,6 +134,7 @@ Search specific fields using prefixes:
 | `vn:` | `vietnamese:` | Vietnamese meaning | `vn:đi` |
 | `on:` | `onyomi:` | Onyomi reading | `on:コウ` |
 | `kun:` | `kunyomi:` | Kunyomi reading | `kun:い` |
+| `cat:` | `category:` | Category | `cat:food` |
 | `com:` | `component:` | Component/radical | `com:行` |
 | `jlpt:` | - | JLPT level | `jlpt:N5` |
 | `freq:` | `frequency:` | Frequency rank | `freq:<100` |
@@ -118,6 +192,12 @@ freq:<=100
 
 # Find kanjis meaning "to go"
 en:"to go"
+
+# Find all food-related kanjis (84 results)
+category:food
+
+# Find all animal-related kanjis (73 results)
+category:animals
 ```
 
 ### Intermediate Examples
@@ -132,8 +212,11 @@ jlpt:N5 AND freq:<500
 # Kanjis with frequency between 100-500
 freq:100-500
 
-# Time-related kanjis at N5 level
-Time AND jlpt:N5
+# Food or animal kanjis (157 results)
+category:food | category:animals
+
+# N5 kanjis in nature category
+jlpt:N5 & category:nature
 
 # Advanced level kanjis (N2 or harder)
 jlpt:>=N2
@@ -162,6 +245,12 @@ jlpt:<=N4
 
 # Advanced kanjis with specific component
 jlpt:>N3 AND com:行
+
+# Multiple categories combined with JLPT filter
+(category:food | category:animals | category:nature) & jlpt:N5
+
+# Daily life categories at beginner level
+(category:eating | category:home | category:family) & jlpt:<=N4
 ```
 
 ## Implementation Architecture
@@ -220,6 +309,7 @@ KQL prefixes map to `KanjiData` interface fields:
 | `vn:` | `vietnameseMeaning` | `vietnamese-meaning` | `string` |
 | `on:` | `onyomi` | `onyomi` | `string[]` |
 | `kun:` | `kunyomi` | `kunyomi` | `string[]` |
+| `cat:` | `category` | `category` | `string[]` (supports partial matching) |
 | `com:` | `components` | `components` | `string` |
 | `jlpt:` | `jlptLevel` | `jlpt-level` | `string` (supports comparison operators) |
 | `freq:` | `frequency` | `frequency` | `number` (supports comparison operators) |
@@ -231,14 +321,17 @@ KQL prefixes map to `KanjiData` interface fields:
 ### Optimization Strategies
 
 1. **Debounced Execution**: 300ms delay after user stops typing
-2. **Result Limiting**: Top 50 results only (prevents UI overload)
+2. **Result Limiting**: Top 200 results only (increased from 50)
 3. **Query Caching**: Recent searches cached in localStorage
 4. **Short-Circuit Evaluation**: `AND`/`OR` operators stop early when possible
 5. **Memoization**: `useMemo` for expensive calculations in React components
+6. **Smart Duplicate Detection**: Set-based filtering for bulk actions
+7. **Weighted Rotation**: Category chips use efficient weighted pool algorithm
 
 ### Memory Management
 
-- **Recent Searches**: Max 10 items (auto-truncate oldest)
+- **Recent Searches**: Max 10 ite200 items (increased from 50)
+- **Category Chips**: 3 rotating chips with 45-second refresh-truncate oldest)
 - **Saved Queries**: Max 10 items (enforced at save time)
 - **Search Results**: Limited to 50 items
 - **LocalStorage Usage**: ~1-2 KB for search history

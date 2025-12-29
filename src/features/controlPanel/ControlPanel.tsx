@@ -3,13 +3,10 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   setBoardColumnCount,
   setSheetColumnCount,
-  setMasterKanjiSize,
   setCurrentMode,
-  setBoardEmptyCellsMode,
   toggleBoardShowHeader,
   toggleBoardShowFooter,
   toggleGrayscaleMode,
-  setCurrentPage,
 } from '../worksheet/worksheetSlice';
 import { setChosenKanjis } from '../kanji/kanjiSlice';
 import {
@@ -31,11 +28,22 @@ import {
   toggleMainPanelShowGradeIndicator,
   toggleMainPanelShowFrequencyIndicator,
   setMainPanelIndicatorPreset,
+  setSheetPanelKanjiFont,
+  setSheetPanelKanjiSize,
+  setSheetPanelHanVietSize,
+  toggleSheetPanelShowHanViet,
+  toggleSheetPanelHanVietOrientation,
+  toggleSheetPanelShowJlptIndicator,
+  toggleSheetPanelShowGradeIndicator,
+  toggleSheetPanelShowFrequencyIndicator,
+  toggleSheetPanelShowExplanationMeaning,
+  toggleSheetPanelShowExplanationMnemonic,
+  setSheetPanelIndicatorPreset,
   setPngQuality,
 } from '../displaySettings/displaySettingsSlice';
 import { FontSizeControl } from '../../components/shared/FontSizeControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
-import { exportToPDF, exportBoardToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
+import { exportBoardToPDFVector, exportSheetToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
 import { loadHeaderFontManifest } from '../../utils/fontLoader';
 import { deleteDatabase } from '../../db/indexedDB';
 
@@ -43,10 +51,10 @@ function ControlPanel() {
   const dispatch = useAppDispatch();
   const worksheet = useAppSelector((state) => state.worksheet);
   const { chosenKanjis, allKanjis } = useAppSelector((state) => state.kanji);
-  const { inputPanel, mainPanel, pngQuality } = useAppSelector((state) => state.displaySettings);
+  const { inputPanel, mainPanel, sheetPanel, pngQuality } = useAppSelector((state) => state.displaySettings);
 
-  // Tab state for Display Settings section
-  const [activeTab, setActiveTab] = useState<'input' | 'main' | 'sheet' | 'board'>('main');
+  // Tab state for Display Settings section (only 'input' and 'main')
+  const [activeTab, setActiveTab] = useState<'input' | 'main'>('main');
 
   // Export state
   const [exportProgress, setExportProgress] = useState<ExportProgress | null>(null);
@@ -127,24 +135,6 @@ function ControlPanel() {
   };
 
   // Export handlers
-  const calculateTotalPages = (): number => {
-    if (worksheet.currentMode === 'board') {
-      // Match BoardGrid calculation
-      const availableWidth = 698;
-      let availableHeight = 1027;
-      if (worksheet.boardShowHeader) availableHeight -= 48;
-      if (worksheet.boardShowFooter) availableHeight -= 40;
-      const gap = 2;
-      const cellSize = Math.floor((availableWidth - (worksheet.boardColumnCount - 1) * gap) / worksheet.boardColumnCount);
-      const rowCount = Math.floor((availableHeight + gap) / (cellSize + gap));
-      const cardsPerPage = rowCount * worksheet.boardColumnCount;
-      return Math.max(1, Math.ceil(chosenKanjis.length / cardsPerPage));
-    } else {
-      // Sheet mode - simplified calculation (20 per page)
-      return Math.max(1, Math.ceil(chosenKanjis.length / 20));
-    }
-  };
-
   const handleExportPDF = async () => {
     if (chosenKanjis.length === 0 || isExporting) return;
 
@@ -152,12 +142,12 @@ function ControlPanel() {
     setIsExporting(true);
 
     try {
-      // Use React-PDF for board mode, keep html2canvas for sheet mode (for now)
+      // Load font manifest to get header font info
+      const fonts = await loadHeaderFontManifest();
+      const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
+      
       if (worksheet.currentMode === 'board') {
-        // Load font manifest to get header font info
-        const fonts = await loadHeaderFontManifest();
-        const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
-        
+        // Board mode - vector PDF
         await exportBoardToPDFVector(
           chosenKanjis,
           worksheet.boardColumnCount,
@@ -180,16 +170,29 @@ function ControlPanel() {
           (progress) => setExportProgress(progress)
         );
       } else {
-        // Sheet mode - use old method for now
-        await exportToPDF(
-          calculateTotalPages,
-          (page: number) => dispatch(setCurrentPage(page)),
-          () => document.querySelector('[data-component="a4-paper"]') as HTMLElement | null,
-          () => worksheet.currentMode,
-          () => worksheet.currentMode === 'board' ? worksheet.boardColumnCount : worksheet.sheetColumnCount,
-          () => chosenKanjis,
-          (progress) => setExportProgress(progress),
-          () => exportCancelledRef.current
+        // Sheet mode - vector PDF
+        const explanationLineCount = (sheetPanel.showExplanationMnemonic ?? false) ? 3 :
+                                     (sheetPanel.showExplanationMeaning ?? true) ? 2 : 1;
+        await exportSheetToPDFVector(
+          chosenKanjis,
+          worksheet.sheetColumnCount,
+          worksheet.boardShowHeader,
+          worksheet.boardShowFooter,
+          sheetPanel.kanjiFont,
+          sheetPanel.kanjiSize,
+          worksheet.headerText,
+          headerFont.family,
+          sheetPanel.hanVietFont,
+          sheetPanel.hanVietSize,
+          sheetPanel.hanVietOrientation,
+          sheetPanel.showHanViet,
+          sheetPanel.showJlptIndicator,
+          sheetPanel.showGradeIndicator,
+          sheetPanel.showFrequencyIndicator,
+          [worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity], // 3 guide line opacity values
+          worksheet.sheetTracingOpacity, // Array of 3 tracing opacity values for P1, P2, P3
+          explanationLineCount,
+          (progress) => setExportProgress(progress)
         );
       }
     } catch (error) {
@@ -364,31 +367,7 @@ function ControlPanel() {
               }`}
               onClick={() => setActiveTab('main')}
             >
-              Main
-            </button>
-            <button
-              className={`px-3 py-2 text-xs font-medium transition-colors border-b-2 ${
-                activeTab === 'sheet'
-                  ? 'text-blue-400 border-blue-400'
-                  : worksheet.currentMode === 'sheet'
-                    ? 'text-gray-400 border-transparent hover:text-gray-300'
-                    : 'text-gray-600 border-transparent opacity-50'
-              }`}
-              onClick={() => setActiveTab('sheet')}
-            >
-              Sheet {worksheet.currentMode !== 'sheet' && <span className="text-[10px]">(inactive)</span>}
-            </button>
-            <button
-              className={`px-3 py-2 text-xs font-medium transition-colors border-b-2 ${
-                activeTab === 'board'
-                  ? 'text-blue-400 border-blue-400'
-                  : worksheet.currentMode === 'board'
-                    ? 'text-gray-400 border-transparent hover:text-gray-300'
-                    : 'text-gray-600 border-transparent opacity-50'
-              }`}
-              onClick={() => setActiveTab('board')}
-            >
-              Board {worksheet.currentMode !== 'board' && <span className="text-[10px]">(inactive)</span>}
+              {worksheet.currentMode === 'board' ? 'Board Settings' : 'Sheet Settings'}
             </button>
           </div>
 
@@ -418,12 +397,16 @@ function ControlPanel() {
               />
             )}
 
-            {/* Main Panel Tab */}
-            {activeTab === 'main' && (
+            {/* Main Panel Tab - Board Mode Settings */}
+            {activeTab === 'main' && worksheet.currentMode === 'board' && (
               <FontSizeControl
                 kanjiFont={mainPanel.kanjiFont}
                 kanjiSize={mainPanel.kanjiSize}
+                kanjiSizeMin={60}
+                kanjiSizeMax={120}
                 hanVietSize={mainPanel.hanVietSize}
+                hanVietSizeMin={50}
+                hanVietSizeMax={100}
                 showHanViet={mainPanel.showHanViet}
                 hanVietOrientation={mainPanel.hanVietOrientation}
                 showJlptIndicator={mainPanel.showJlptIndicator}
@@ -442,96 +425,39 @@ function ControlPanel() {
               />
             )}
 
-            {/* Sheet Tab */}
-            {activeTab === 'sheet' && (
-              <div>
-                {worksheet.currentMode !== 'sheet' && (
-                  <div className="bg-blue-900/20 border border-blue-700/30 rounded p-3 mb-3 text-xs text-blue-300">
-                    💡 Sheet mode is not active. Changes will apply when you switch to Sheet mode.
-                  </div>
-                )}
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <label className="text-xs text-gray-400">Kanji Size</label>
-                      <span className="text-xs text-blue-400 font-semibold">{worksheet.masterKanjiSize}%</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="130"
-                      max="170"
-                      step="10"
-                      value={worksheet.masterKanjiSize}
-                      onChange={(e) => dispatch(setMasterKanjiSize(Number(e.target.value)))}
-                      className="w-full h-2 accent-blue-600"
-                    />
-                  </div>
-                </div>
-              </div>
+            {/* Main Panel Tab - Sheet Mode Settings */}
+            {activeTab === 'main' && worksheet.currentMode === 'sheet' && (
+              <FontSizeControl
+                kanjiFont={sheetPanel.kanjiFont}
+                kanjiSize={sheetPanel.kanjiSize}
+                kanjiSizeMin={70}
+                kanjiSizeMax={120}
+                hanVietSize={sheetPanel.hanVietSize}
+                hanVietSizeMin={50}
+                hanVietSizeMax={100}
+                showHanViet={sheetPanel.showHanViet}
+                hanVietOrientation={sheetPanel.hanVietOrientation}
+                showJlptIndicator={sheetPanel.showJlptIndicator}
+                showGradeIndicator={sheetPanel.showGradeIndicator}
+                showFrequencyIndicator={sheetPanel.showFrequencyIndicator}
+                indicatorPreset={sheetPanel.indicatorPreset}
+                showExplanationMeaning={sheetPanel.showExplanationMeaning}
+                showExplanationMnemonic={sheetPanel.showExplanationMnemonic}
+                onKanjiFontChange={(font) => dispatch(setSheetPanelKanjiFont(font))}
+                onKanjiSizeChange={(size) => dispatch(setSheetPanelKanjiSize(size))}
+                onHanVietSizeChange={(size) => dispatch(setSheetPanelHanVietSize(size))}
+                onToggleShowHanViet={() => dispatch(toggleSheetPanelShowHanViet())}
+                onToggleHanVietOrientation={() => dispatch(toggleSheetPanelHanVietOrientation())}
+                onToggleShowJlptIndicator={() => dispatch(toggleSheetPanelShowJlptIndicator())}
+                onToggleShowGradeIndicator={() => dispatch(toggleSheetPanelShowGradeIndicator())}
+                onToggleShowFrequencyIndicator={() => dispatch(toggleSheetPanelShowFrequencyIndicator())}
+                onIndicatorPresetChange={(preset) => dispatch(setSheetPanelIndicatorPreset(preset))}
+                onToggleShowExplanationMeaning={() => dispatch(toggleSheetPanelShowExplanationMeaning())}
+                onToggleShowExplanationMnemonic={() => dispatch(toggleSheetPanelShowExplanationMnemonic())}
+              />
             )}
 
-            {/* Board Tab */}
-            {activeTab === 'board' && (
-              <div>
-                {worksheet.currentMode !== 'board' && (
-                  <div className="bg-blue-900/20 border border-blue-700/30 rounded p-3 mb-3 text-xs text-blue-300">
-                    💡 Board mode is not active. Changes will apply when you switch to Board mode.
-                  </div>
-                )}
-                <div className="space-y-3">
-                  <div>
-                    <label className="block text-xs text-gray-400 mb-2">Empty Cells</label>
-                    <div className="flex gap-2">
-                      <label className="flex-1">
-                        <input
-                          type="radio"
-                          name="emptyCellsMode"
-                          value="hide"
-                          checked={worksheet.boardEmptyCellsMode === 'hide'}
-                          onChange={() => dispatch(setBoardEmptyCellsMode('hide'))}
-                          className="sr-only"
-                        />
-                        <div className={`py-1.5 px-3 rounded text-xs text-center cursor-pointer transition-colors ${
-                          worksheet.boardEmptyCellsMode === 'hide' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                        }`}>
-                          Hide
-                        </div>
-                      </label>
-                      <label className="flex-1">
-                        <input
-                          type="radio"
-                          name="emptyCellsMode"
-                          value="row"
-                          checked={worksheet.boardEmptyCellsMode === 'row'}
-                          onChange={() => dispatch(setBoardEmptyCellsMode('row'))}
-                          className="sr-only"
-                        />
-                        <div className={`py-1.5 px-3 rounded text-xs text-center cursor-pointer transition-colors ${
-                          worksheet.boardEmptyCellsMode === 'row' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                        }`}>
-                          Row
-                        </div>
-                      </label>
-                      <label className="flex-1">
-                        <input
-                          type="radio"
-                          name="emptyCellsMode"
-                          value="page"
-                          checked={worksheet.boardEmptyCellsMode === 'page'}
-                          onChange={() => dispatch(setBoardEmptyCellsMode('page'))}
-                          className="sr-only"
-                        />
-                        <div className={`py-1.5 px-3 rounded text-xs text-center cursor-pointer transition-colors ${
-                          worksheet.boardEmptyCellsMode === 'page' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                        }`}>
-                          Page
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+
           </div>
         </div>
 

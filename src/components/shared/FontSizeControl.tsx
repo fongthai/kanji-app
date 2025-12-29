@@ -5,7 +5,11 @@ import { loadKanjiFontManifest, preloadFont, type FontInfo } from '../../utils/f
 interface FontSizeControlProps {
   kanjiFont: string;
   kanjiSize: number;
+  kanjiSizeMin?: number; // Optional: default 60
+  kanjiSizeMax?: number; // Optional: default 120
   hanVietSize: number;
+  hanVietSizeMin?: number; // Optional: default 50
+  hanVietSizeMax?: number; // Optional: default 100
   showHanViet: boolean;
   hanVietOrientation: 'horizontal' | 'vertical';
   // Individual indicator flags
@@ -13,6 +17,9 @@ interface FontSizeControlProps {
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
   indicatorPreset: IndicatorPreset;
+  // Explanation flags (optional - only for Sheet mode)
+  showExplanationMeaning?: boolean;
+  showExplanationMnemonic?: boolean;
   onKanjiFontChange: (font: string) => void;
   onKanjiSizeChange: (size: number) => void;
   onHanVietSizeChange: (size: number) => void;
@@ -23,18 +30,27 @@ interface FontSizeControlProps {
   onToggleShowGradeIndicator: () => void;
   onToggleShowFrequencyIndicator: () => void;
   onIndicatorPresetChange: (preset: IndicatorPreset) => void;
+  // Explanation toggles (optional - only for Sheet mode)
+  onToggleShowExplanationMeaning?: () => void;
+  onToggleShowExplanationMnemonic?: () => void;
 }
 
 export const FontSizeControl = memo(function FontSizeControl({
   kanjiFont,
   kanjiSize,
+  kanjiSizeMin = 60,
+  kanjiSizeMax = 120,
   hanVietSize,
+  hanVietSizeMin = 50,
+  hanVietSizeMax = 100,
   showHanViet,
   hanVietOrientation,
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
   indicatorPreset,
+  showExplanationMeaning,
+  showExplanationMnemonic,
   onKanjiFontChange,
   onKanjiSizeChange,
   onHanVietSizeChange,
@@ -44,6 +60,8 @@ export const FontSizeControl = memo(function FontSizeControl({
   onToggleShowGradeIndicator,
   onToggleShowFrequencyIndicator,
   onIndicatorPresetChange,
+  onToggleShowExplanationMeaning,
+  onToggleShowExplanationMnemonic,
 }: FontSizeControlProps) {
   // Accordion state
   const [openSection, setOpenSection] = useState<'kanji' | 'indicators' | 'hanviet' | null>('kanji');
@@ -70,12 +88,8 @@ export const FontSizeControl = memo(function FontSizeControl({
     setOpenSection(openSection === section ? null : section);
   };
 
-  // Both panels now use percentage scale: 60% - 120% for kanji, 50% - 100% for hanViet
-  const kanjiMinSize = 60;
-  const kanjiMaxSize = 120;
+  // Use min/max from props (defaults: 60%-120% for kanji, 50%-100% for hanViet)
   const kanjiStep = 0.1; // Smooth stepless experience
-  const hanVietMinSize = 50;
-  const hanVietMaxSize = 100;
   const hanVietStep = 0.1;
   
   // Size labels - both panels show percentages
@@ -122,8 +136,8 @@ export const FontSizeControl = memo(function FontSizeControl({
                 </label>
                 <input
                   type="range"
-                  min={kanjiMinSize}
-                  max={kanjiMaxSize}
+                  min={kanjiSizeMin}
+                  max={kanjiSizeMax}
                   step={kanjiStep}
                   value={kanjiSize}
                   onChange={(e) => onKanjiSizeChange(parseFloat(e.target.value))}
@@ -164,35 +178,67 @@ export const FontSizeControl = memo(function FontSizeControl({
                 <option value="custom">Custom</option>
               </select>
             </div>
-            <div className="flex gap-4 flex-wrap">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={showJlptIndicator}
-                  onChange={onToggleShowJlptIndicator}
-                  className="w-3.5 h-3.5 accent-blue-600"
-                />
-                <span className="text-xs text-gray-300">JLPT</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={showGradeIndicator}
-                  onChange={onToggleShowGradeIndicator}
-                  className="w-3.5 h-3.5 accent-blue-600"
-                />
-                <span className="text-xs text-gray-300">Grade</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={showFrequencyIndicator}
-                  onChange={onToggleShowFrequencyIndicator}
-                  className="w-3.5 h-3.5 accent-blue-600"
-                />
-                <span className="text-xs text-gray-300">Frequency</span>
-              </label>
+            
+            {/* Master kanji indicators */}
+            <div>
+              <label className="block text-xs text-gray-400 mb-1.5">Master kanji:</label>
+              <div className="flex gap-4 flex-wrap">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showJlptIndicator}
+                    onChange={onToggleShowJlptIndicator}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">JLPT</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showGradeIndicator}
+                    onChange={onToggleShowGradeIndicator}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">Grade</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showFrequencyIndicator}
+                    onChange={onToggleShowFrequencyIndicator}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">Frequency</span>
+                </label>
+              </div>
             </div>
+            
+            {/* Explanation section (only shown if props provided - Sheet mode only) */}
+            {showExplanationMeaning !== undefined && (
+              <div>
+                <label className="block text-xs text-gray-400 mb-1.5">Explanation:</label>
+                <div className="flex gap-4 flex-wrap">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={showExplanationMeaning}
+                      onChange={onToggleShowExplanationMeaning}
+                      className="w-3.5 h-3.5 accent-blue-600"
+                    />
+                    <span className="text-xs text-gray-300">Meaning</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={showExplanationMnemonic}
+                      onChange={onToggleShowExplanationMnemonic}
+                      className="w-3.5 h-3.5 accent-blue-600"
+                    />
+                    <span className="text-xs text-gray-300">Mnemonic</span>
+                  </label>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -245,8 +291,8 @@ export const FontSizeControl = memo(function FontSizeControl({
               </div>
               <input
                 type="range"
-                min={hanVietMinSize}
-                max={hanVietMaxSize}
+                min={hanVietSizeMin}
+                max={hanVietSizeMax}
                 step={hanVietStep}
                 value={hanVietSize}
                 onChange={(e) => onHanVietSizeChange(parseFloat(e.target.value))}

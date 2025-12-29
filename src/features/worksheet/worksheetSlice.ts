@@ -1,6 +1,17 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
 
+// Load saved mode from localStorage
+function loadSavedMode(): 'sheet' | 'board' {
+  if (typeof window !== 'undefined') {
+    const savedMode = localStorage.getItem('kanji-worksheet-mode');
+    if (savedMode === 'board' || savedMode === 'sheet') {
+      return savedMode;
+    }
+  }
+  return 'board'; // Default fallback
+}
+
 interface WorksheetState {
   // Board mode settings
   boardColumnCount: number;
@@ -11,6 +22,10 @@ interface WorksheetState {
   // Sheet mode settings
   sheetColumnCount: number;
   masterKanjiSize: number;
+  sheetShowHanViet: boolean; // Show Han-viet in master cell
+  sheetShowIndicators: boolean; // Show JLPT, freq, grade badges
+  sheetGuideOpacity: number; // Guide lines opacity (0-100)
+  sheetTracingOpacity: [number, number, number]; // P1, P2, P3 guiding kanji opacity
   
   // Header/Footer settings (global across all modes)
   headerText: string;
@@ -49,6 +64,10 @@ const initialState: WorksheetState = {
   // Sheet mode defaults
   sheetColumnCount: 6,
   masterKanjiSize: 150,
+  sheetShowHanViet: true,
+  sheetShowIndicators: true,
+  sheetGuideOpacity: 50,
+  sheetTracingOpacity: [60, 40, 25],
   
   // Header/Footer defaults
   headerText: loadHeaderText(),
@@ -58,7 +77,7 @@ const initialState: WorksheetState = {
   // Shared defaults
   hanVietOrientation: 'vertical',
   currentPage: 1,
-  currentMode: 'board',
+  currentMode: loadSavedMode(),
   grayscaleMode: false,
 };
 
@@ -87,6 +106,18 @@ const worksheetSlice = createSlice({
     },
     setMasterKanjiSize: (state, action: PayloadAction<number>) => {
       state.masterKanjiSize = action.payload;
+    },
+    toggleSheetShowHanViet: (state) => {
+      state.sheetShowHanViet = !state.sheetShowHanViet;
+    },
+    toggleSheetShowIndicators: (state) => {
+      state.sheetShowIndicators = !state.sheetShowIndicators;
+    },
+    setSheetGuideOpacity: (state, action: PayloadAction<number>) => {
+      state.sheetGuideOpacity = Math.max(0, Math.min(100, action.payload));
+    },
+    setSheetTracingOpacity: (state, action: PayloadAction<[number, number, number]>) => {
+      state.sheetTracingOpacity = action.payload;
     },
     
     // Shared actions
@@ -132,6 +163,10 @@ export const {
   toggleBoardShowFooter,
   setSheetColumnCount,
   setMasterKanjiSize,
+  toggleSheetShowHanViet,
+  toggleSheetShowIndicators,
+  setSheetGuideOpacity,
+  setSheetTracingOpacity,
   setHanVietOrientation,
   setCurrentPage,
   setCurrentMode,

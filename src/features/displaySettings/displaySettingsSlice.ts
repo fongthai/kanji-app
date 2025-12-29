@@ -14,11 +14,15 @@ export interface FontSizeSettings {
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
   indicatorPreset: IndicatorPreset;
+  // Explanation flags (only used in sheetPanel, optional for others)
+  showExplanationMeaning?: boolean;
+  showExplanationMnemonic?: boolean;
 }
 
 interface DisplaySettingsState {
   inputPanel: FontSizeSettings;
-  mainPanel: FontSizeSettings;
+  mainPanel: FontSizeSettings; // Used for Board mode
+  sheetPanel: FontSizeSettings; // Used for Sheet mode
   pngQuality: 200 | 300 | 600; // DPI: Low (web), Medium (standard), HQ (print)
 }
 const initialState: DisplaySettingsState = {
@@ -47,6 +51,22 @@ const initialState: DisplaySettingsState = {
     showGradeIndicator: false,
     showFrequencyIndicator: true,
     indicatorPreset: 'custom' as IndicatorPreset,
+  },
+  sheetPanel: {
+    kanjiFont: 'KanjiStrokeOrders',
+    kanjiSize: 90, // Percentage scale: 70%-110%, default 90%
+    hanVietFont: 'system-ui',
+    hanVietSize: 68, // Percentage scale: 50%-100%, default 68%
+    showHanViet: true, // Default: show Hán-Việt
+    hanVietOrientation: 'vertical', // Default: vertical
+    // Indicator defaults: JLPT=on, Grade=off, Frequency=on
+    showJlptIndicator: true,
+    showGradeIndicator: false,
+    showFrequencyIndicator: true,
+    indicatorPreset: 'custom' as IndicatorPreset,
+    // Explanation defaults: Meaning on, Mnemonic off (matches 'study' preset)
+    showExplanationMeaning: true,
+    showExplanationMnemonic: false,
   },
   pngQuality: 300, // Default: Medium quality (300 DPI)
 };
@@ -129,6 +149,59 @@ const displaySettingsSlice = createSlice({
       state.mainPanel.showFrequencyIndicator = preset.showFrequency;
       state.mainPanel.indicatorPreset = action.payload;
     },
+    // Sheet Panel actions
+    setSheetPanelKanjiFont: (state, action: PayloadAction<string>) => {
+      state.sheetPanel.kanjiFont = action.payload;
+    },
+    setSheetPanelKanjiSize: (state, action: PayloadAction<number>) => {
+      state.sheetPanel.kanjiSize = action.payload;
+    },
+    setSheetPanelHanVietFont: (state, action: PayloadAction<string>) => {
+      state.sheetPanel.hanVietFont = action.payload;
+    },
+    setSheetPanelHanVietSize: (state, action: PayloadAction<number>) => {
+      state.sheetPanel.hanVietSize = action.payload;
+    },
+    toggleSheetPanelShowHanViet: (state) => {
+      state.sheetPanel.showHanViet = !state.sheetPanel.showHanViet;
+    },
+    toggleSheetPanelHanVietOrientation: (state) => {
+      state.sheetPanel.hanVietOrientation = state.sheetPanel.hanVietOrientation === 'vertical' ? 'horizontal' : 'vertical';
+    },
+    toggleSheetPanelShowJlptIndicator: (state) => {
+      state.sheetPanel.showJlptIndicator = !state.sheetPanel.showJlptIndicator;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    toggleSheetPanelShowGradeIndicator: (state) => {
+      state.sheetPanel.showGradeIndicator = !state.sheetPanel.showGradeIndicator;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    toggleSheetPanelShowFrequencyIndicator: (state) => {
+      state.sheetPanel.showFrequencyIndicator = !state.sheetPanel.showFrequencyIndicator;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    toggleSheetPanelShowExplanationMeaning: (state) => {
+      state.sheetPanel.showExplanationMeaning = !state.sheetPanel.showExplanationMeaning;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    toggleSheetPanelShowExplanationMnemonic: (state) => {
+      state.sheetPanel.showExplanationMnemonic = !state.sheetPanel.showExplanationMnemonic;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    setSheetPanelIndicatorPreset: (state, action: PayloadAction<IndicatorPreset>) => {
+      const preset = INDICATOR_PRESETS[action.payload];
+      state.sheetPanel.showJlptIndicator = preset.showJlpt;
+      state.sheetPanel.showGradeIndicator = preset.showGrade;
+      state.sheetPanel.showFrequencyIndicator = preset.showFrequency;
+      // Also set explanation flags (Sheet mode specific)
+      if (preset.showExplanationMeaning !== undefined) {
+        state.sheetPanel.showExplanationMeaning = preset.showExplanationMeaning;
+      }
+      if (preset.showExplanationMnemonic !== undefined) {
+        state.sheetPanel.showExplanationMnemonic = preset.showExplanationMnemonic;
+      }
+      state.sheetPanel.indicatorPreset = action.payload;
+    },
     setPngQuality: (state, action: PayloadAction<200 | 300 | 600>) => {
       state.pngQuality = action.payload;
     },
@@ -156,6 +229,18 @@ export const {
   toggleMainPanelShowGradeIndicator,
   toggleMainPanelShowFrequencyIndicator,
   setMainPanelIndicatorPreset,
+  setSheetPanelKanjiFont,
+  setSheetPanelKanjiSize,
+  setSheetPanelHanVietFont,
+  setSheetPanelHanVietSize,
+  toggleSheetPanelShowHanViet,
+  toggleSheetPanelHanVietOrientation,
+  toggleSheetPanelShowJlptIndicator,
+  toggleSheetPanelShowGradeIndicator,
+  toggleSheetPanelShowFrequencyIndicator,
+  toggleSheetPanelShowExplanationMeaning,
+  toggleSheetPanelShowExplanationMnemonic,
+  setSheetPanelIndicatorPreset,
   setPngQuality,
 } = displaySettingsSlice.actions;
 

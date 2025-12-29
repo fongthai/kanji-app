@@ -166,6 +166,9 @@ export interface IndicatorSettings {
   showJlpt: boolean;
   showGrade: boolean;
   showFrequency: boolean;
+  // Explanation flags (only used in Sheet mode) - Line 1 always shown
+  showExplanationMeaning?: boolean;
+  showExplanationMnemonic?: boolean;
 }
 
 /**
@@ -176,21 +179,29 @@ export const INDICATOR_PRESETS: Record<IndicatorPreset, IndicatorSettings> = {
     showJlpt: false,
     showGrade: false,
     showFrequency: false,
+    showExplanationMeaning: false,
+    showExplanationMnemonic: false,
   },
   study: {
     showJlpt: true,
     showGrade: true,
     showFrequency: false,
+    showExplanationMeaning: true,
+    showExplanationMnemonic: false,
   },
   advanced: {
     showJlpt: true,
     showGrade: true,
     showFrequency: true,
+    showExplanationMeaning: true,
+    showExplanationMnemonic: true,
   },
   custom: {
     showJlpt: true,
     showGrade: false,
     showFrequency: true,
+    showExplanationMeaning: true,
+    showExplanationMnemonic: true,
   },
 } as const;
 
