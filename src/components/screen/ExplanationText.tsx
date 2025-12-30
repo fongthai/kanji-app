@@ -35,15 +35,6 @@ export const ExplanationText: React.FC<ExplanationTextProps> = ({
       setMeasuredMaxWidth(width);
     }
   }, []);
-  // Helper function to truncate text
-  const truncate = (text: string, maxLength: number): string => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength - 3) + '...';
-  };
-  
-  // Calculate max characters based on width (approximate)
-  // More generous estimation to use available space (avg char width ~5px at base font size)
-  const estimatedMaxChars = Math.floor(maxWidth / 5);
   
   // Build Line 1: KANJI | HAN-VIET | ON: ONYOMI | KUN: KUNYOMI | 🤯LOOKALIKES🤔
   const line1Parts: string[] = [
