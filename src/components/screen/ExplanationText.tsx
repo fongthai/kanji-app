@@ -69,16 +69,6 @@ export const ExplanationText: React.FC<ExplanationTextProps> = ({
   const estimatedMaxCharsForLine1 = Math.floor(measuredMaxWidth / 5);
   const line1OverflowsVisually = line1FullText.length > estimatedMaxCharsForLine1;
   
-  // DEBUG LOGS
-  console.log('=== ExplanationText Debug ===');
-  console.log('Kanji:', kanji.kanji);
-  console.log('maxWidth:', maxWidth);
-  console.log('measuredMaxWidth:', measuredMaxWidth);
-  console.log('estimatedMaxCharsForLine1:', estimatedMaxCharsForLine1);
-  console.log('line1FullText length:', line1FullText.length);
-  console.log('line1OverflowsVisually:', line1OverflowsVisually);
-  console.log('=============================');
-  
   return (
     <>
       {/* Hidden element to measure reference string width */}
