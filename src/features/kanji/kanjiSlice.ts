@@ -14,7 +14,7 @@ export interface KanjiData {
   vietnameseMnemonic?: string;
   lucThu?: string;
   components?: string;
-  lookalikes?: string;
+  lookalikes?: string | string[];
   frequency?: number;
   category?: string[];
   orderIndex?: number; // Preserve original position in JSON file

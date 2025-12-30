@@ -62,7 +62,7 @@ const initialState: WorksheetState = {
   boardShowFooter: true,
   
   // Sheet mode defaults
-  sheetColumnCount: 6,
+  sheetColumnCount: 8,
   masterKanjiSize: 150,
   sheetShowHanViet: true,
   sheetShowIndicators: true,

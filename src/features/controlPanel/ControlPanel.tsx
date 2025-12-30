@@ -43,7 +43,7 @@ import {
 } from '../displaySettings/displaySettingsSlice';
 import { FontSizeControl } from '../../components/shared/FontSizeControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
-import { exportBoardToPDFVector, exportSheetToPDFVector, exportBoardToPNG, type ExportProgress } from '../../utils/exportUtils';
+import { exportBoardToPDFVector, exportSheetToPDFVector, exportBoardToPNG, exportSheetToPNG, type ExportProgress } from '../../utils/exportUtils';
 import { loadHeaderFontManifest } from '../../utils/fontLoader';
 import { deleteDatabase } from '../../db/indexedDB';
 
@@ -213,33 +213,63 @@ function ControlPanel() {
       const fonts = await loadHeaderFontManifest();
       const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
       
-      await exportBoardToPNG(
-        chosenKanjis,
-        {
-          boardColumnCount: worksheet.boardColumnCount,
-          showEmptyCells: worksheet.boardEmptyCellsMode !== 'hide',
-          centerCards: false, // Default value
-          showHeader: worksheet.boardShowHeader,
-          showFooter: worksheet.boardShowFooter,
-        },
-        {
-          kanjiFont: mainPanel.kanjiFont,
-          hanVietFont: mainPanel.hanVietFont,
-          hanVietOrientation: mainPanel.hanVietOrientation,
-          showHanViet: mainPanel.showHanViet,
-          showJlptIndicator: mainPanel.showJlptIndicator,
-          showGradeIndicator: mainPanel.showGradeIndicator,
-          showFrequencyIndicator: mainPanel.showFrequencyIndicator,
-          kanjiSize: mainPanel.kanjiSize,
-          hanVietSize: mainPanel.hanVietSize,
-        },
-        pngQuality,
-        worksheet.headerText,
-        headerFont.family,
-        headerFont.filename,
-        (progress) => setExportProgress(progress),
-        () => exportCancelledRef.current
-      );
+      if (worksheet.currentMode === 'board') {
+        // Board mode - PNG export
+        await exportBoardToPNG(
+          chosenKanjis,
+          {
+            boardColumnCount: worksheet.boardColumnCount,
+            showEmptyCells: worksheet.boardEmptyCellsMode !== 'hide',
+            centerCards: false,
+            showHeader: worksheet.boardShowHeader,
+            showFooter: worksheet.boardShowFooter,
+          },
+          {
+            kanjiFont: mainPanel.kanjiFont,
+            hanVietFont: mainPanel.hanVietFont,
+            hanVietOrientation: mainPanel.hanVietOrientation,
+            showHanViet: mainPanel.showHanViet,
+            showJlptIndicator: mainPanel.showJlptIndicator,
+            showGradeIndicator: mainPanel.showGradeIndicator,
+            showFrequencyIndicator: mainPanel.showFrequencyIndicator,
+            kanjiSize: mainPanel.kanjiSize,
+            hanVietSize: mainPanel.hanVietSize,
+          },
+          pngQuality,
+          worksheet.headerText,
+          headerFont.family,
+          headerFont.filename,
+          (progress) => setExportProgress(progress),
+          () => exportCancelledRef.current
+        );
+      } else {
+        // Sheet mode - PNG export
+        const explanationLineCount = (sheetPanel.showExplanationMnemonic ?? false) ? 3 :
+                                     (sheetPanel.showExplanationMeaning ?? true) ? 2 : 1;
+        await exportSheetToPNG(
+          chosenKanjis,
+          worksheet.sheetColumnCount,
+          worksheet.boardShowHeader,
+          worksheet.boardShowFooter,
+          sheetPanel.kanjiFont,
+          sheetPanel.kanjiSize,
+          worksheet.headerText,
+          headerFont.family,
+          sheetPanel.hanVietFont,
+          sheetPanel.hanVietSize,
+          sheetPanel.hanVietOrientation,
+          sheetPanel.showHanViet,
+          sheetPanel.showJlptIndicator,
+          sheetPanel.showGradeIndicator,
+          sheetPanel.showFrequencyIndicator,
+          [worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity],
+          worksheet.sheetTracingOpacity,
+          explanationLineCount,
+          pngQuality,
+          (progress) => setExportProgress(progress),
+          () => exportCancelledRef.current
+        );
+      }
     } catch (error) {
       console.error('Export PNG failed:', error);
     } finally {
@@ -405,8 +435,8 @@ function ControlPanel() {
                 kanjiSizeMin={60}
                 kanjiSizeMax={120}
                 hanVietSize={mainPanel.hanVietSize}
-                hanVietSizeMin={50}
-                hanVietSizeMax={100}
+                hanVietSizeMin={35}
+                hanVietSizeMax={65}
                 showHanViet={mainPanel.showHanViet}
                 hanVietOrientation={mainPanel.hanVietOrientation}
                 showJlptIndicator={mainPanel.showJlptIndicator}
@@ -433,8 +463,8 @@ function ControlPanel() {
                 kanjiSizeMin={70}
                 kanjiSizeMax={120}
                 hanVietSize={sheetPanel.hanVietSize}
-                hanVietSizeMin={50}
-                hanVietSizeMax={100}
+                hanVietSizeMin={35}
+                hanVietSizeMax={65}
                 showHanViet={sheetPanel.showHanViet}
                 hanVietOrientation={sheetPanel.hanVietOrientation}
                 showJlptIndicator={sheetPanel.showJlptIndicator}

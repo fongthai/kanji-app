@@ -8,8 +8,8 @@ interface FontSizeControlProps {
   kanjiSizeMin?: number; // Optional: default 60
   kanjiSizeMax?: number; // Optional: default 120
   hanVietSize: number;
-  hanVietSizeMin?: number; // Optional: default 50
-  hanVietSizeMax?: number; // Optional: default 100
+  hanVietSizeMin?: number; // Optional: default 35
+  hanVietSizeMax?: number; // Optional: default 65
   showHanViet: boolean;
   hanVietOrientation: 'horizontal' | 'vertical';
   // Individual indicator flags
@@ -41,8 +41,8 @@ export const FontSizeControl = memo(function FontSizeControl({
   kanjiSizeMin = 60,
   kanjiSizeMax = 120,
   hanVietSize,
-  hanVietSizeMin = 50,
-  hanVietSizeMax = 100,
+  hanVietSizeMin = 35,
+  hanVietSizeMax = 65,
   showHanViet,
   hanVietOrientation,
   showJlptIndicator,

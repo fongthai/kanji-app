@@ -153,10 +153,10 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
               onChange={handleInputChange}
               onBlur={handleInputBlur}
               onKeyDown={handleInputKeyDown}
-              className="w-16 px-2 py-1 text-center text-sm border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
+              className="w-16 px-2 py-1 text-center text-sm font-semibold text-blue-700 bg-blue-50 border-2 border-blue-300 rounded focus:border-blue-500 focus:bg-white focus:outline-none"
               title="Enter page number and press Enter"
             />
-            <span className="text-gray-600">/</span>
+            <span className="text-gray-600 font-medium">/</span>
             <span className="w-16 px-2 py-1 text-center text-sm text-gray-600 bg-gray-50 rounded">
               {totalPages}
             </span>

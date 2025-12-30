@@ -655,6 +655,219 @@ export async function exportSheetToPDFVector(
 }
 
 /**
+ * Export Sheet mode as PNG (via PDF → PNG conversion)
+ */
+export async function exportSheetToPNG(
+  kanjis: KanjiData[],
+  sheetColumnCount: number,
+  showHeader: boolean,
+  showFooter: boolean,
+  kanjiFont: string,
+  kanjiSize: number,
+  headerText: string,
+  headerFontFamily: string,
+  hanVietFont: string,
+  hanVietSize: number,
+  hanVietOrientation: 'horizontal' | 'vertical',
+  showHanViet: boolean,
+  showJlptIndicator: boolean,
+  showGradeIndicator: boolean,
+  showFrequencyIndicator: boolean,
+  sheetGuideOpacity: number[],
+  sheetTracingOpacity: number[],
+  explanationLineCount: 1 | 2 | 3,
+  pngQuality: 200 | 300 | 600,
+  onProgress: ExportProgressCallback,
+  checkCancelled: CancelCheck
+): Promise<boolean> {
+  try {
+    // Step 1: Generate PDF first
+    onProgress({
+      currentPage: 0,
+      totalPages: 1,
+      status: 'preparing',
+      message: 'Generating PDF for conversion...',
+    });
+
+    // Import PDFSheetDocument and calculate pages
+    const { PDFSheetDocument, registerKanjiFont } = await import('../components/pdf/PDFSheetDocument');
+    const { calculateTablesPerPage } = await import('../components/screen/SheetGrid');
+
+    const tablesPerPage = calculateTablesPerPage(
+      sheetColumnCount,
+      showHeader,
+      showFooter,
+      explanationLineCount
+    );
+    const totalPages = Math.max(1, Math.ceil(kanjis.length / tablesPerPage));
+
+    // Register fonts
+    const pdfKanjiFont = registerKanjiFont(kanjiFont);
+    const pdfHeaderFont = headerFontFamily === 'system-ui' ? 'Helvetica' : headerFontFamily;
+    const pdfHanVietFont = registerKanjiFont(hanVietFont);
+
+    const kanjiFontSizeMultiplier = kanjiSize / 100;
+    const indicatorFontSizeRatio = 0.18;
+    const hanVietFontSizeRatio = 0.15 * (hanVietSize / 100);
+
+    // Create PDF document
+    const document = PDFSheetDocument({
+      kanjis,
+      sheetColumnCount,
+      kanjiFont: pdfKanjiFont,
+      kanjiFontSizeMultiplier,
+      showHeader,
+      showFooter,
+      headerText,
+      headerFont: pdfHeaderFont,
+      hanVietFont: pdfHanVietFont,
+      hanVietFontSizeRatio,
+      hanVietOrientation,
+      indicatorFontSizeRatio,
+      showHanViet,
+      showJlptIndicator,
+      showGradeIndicator,
+      showFrequencyIndicator,
+      sheetGuideOpacity,
+      sheetTracingOpacity,
+      explanationLineCount,
+    });
+
+    const pdfBlob = await pdf(document as any).toBlob();
+
+    if (checkCancelled()) {
+      onProgress({
+        currentPage: 0,
+        totalPages,
+        status: 'cancelled',
+        message: 'Export cancelled',
+      });
+      return false;
+    }
+
+    // Step 2: Convert PDF to PNG using pdf.js
+    onProgress({
+      currentPage: 0,
+      totalPages,
+      status: 'exporting',
+      message: 'Converting PDF to PNG...',
+    });
+
+    const pdfjsLib = await import('pdfjs-dist');
+    // Use the worker from the npm package instead of CDN
+    const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.mjs?url');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker.default;
+
+    const arrayBuffer = await pdfBlob.arrayBuffer();
+    const pdfDocument = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    const zip = new JSZip();
+    const pngBlobs: Blob[] = [];
+    const scale = pngQuality / 72;
+    const qualityLabel = `${pngQuality}dpi`;
+
+    // Convert each page
+    for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+      if (checkCancelled()) {
+        onProgress({
+          currentPage: pageNum - 1,
+          totalPages,
+          status: 'cancelled',
+          message: 'Export cancelled',
+        });
+        return false;
+      }
+
+      onProgress({
+        currentPage: pageNum,
+        totalPages,
+        status: 'exporting',
+        message: `Converting page ${pageNum} of ${totalPages} to PNG...`,
+      });
+
+      const page = await pdfDocument.getPage(pageNum);
+      const viewport = page.getViewport({ scale });
+
+      // Create canvas
+      const canvas = globalThis.document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Failed to get canvas context');
+
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+
+      // Render PDF page to canvas
+      const renderContext = {
+        canvasContext: context,
+        viewport: viewport,
+        canvas: canvas,
+      };
+
+      await page.render(renderContext).promise;
+
+      const blob = await new Promise<Blob>((resolve, reject) => {
+        canvas.toBlob((b: Blob | null) => {
+          if (b) resolve(b);
+          else reject(new Error('Failed to create PNG blob'));
+        }, 'image/png');
+      });
+
+      pngBlobs.push(blob);
+
+      if (totalPages > 1) {
+        const filename = `page-${pageNum.toString().padStart(2, '0')}.png`;
+        zip.file(filename, blob);
+      }
+
+      canvas.width = 0;
+      canvas.height = 0;
+    }
+
+    // Step 3: Save file(s)
+    if (totalPages === 1) {
+      onProgress({
+        currentPage: totalPages,
+        totalPages,
+        status: 'exporting',
+        message: 'Saving PNG file...',
+      });
+
+      const filename = `ft-kanji-sheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.png`;
+      saveAs(pngBlobs[0], filename);
+    } else {
+      onProgress({
+        currentPage: totalPages,
+        totalPages,
+        status: 'exporting',
+        message: 'Creating ZIP archive...',
+      });
+
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
+      const filename = `ft-kanji-sheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.zip`;
+      saveAs(zipBlob, filename);
+    }
+
+    onProgress({
+      currentPage: totalPages,
+      totalPages,
+      status: 'completed',
+      message: 'PNG export completed!',
+    });
+
+    return true;
+  } catch (error) {
+    console.error('Sheet PNG Export error:', error);
+    onProgress({
+      currentPage: 0,
+      totalPages: 1,
+      status: 'error',
+      message: `Export failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    });
+    return false;
+  }
+}
+
+/**
  * Export board mode as PNG images (one per page) in a ZIP file
  * Uses same settings as PDF export
  */
