@@ -7,3 +7,4 @@ KosugiMaru-Regular.woff2
 NotoSansJP-Regular.ttf
 YujiBoku-Regular.ttf
 mitimasu.ttf
+MPLUSRounded1c-Regular.ttf

@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
   container: {
     fontSize: 9,
     color: '#374151',
+    fontFamily: 'NotoSansJP-Regular', // Supports Vietnamese + Japanese + Unicode symbols
   },
   line1: {
     marginBottom: 2,
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
   line3: {
     color: '#6b7280',
     marginBottom: 2,
-    fontSize: 8, // Slightly smaller to distinguish from other lines
+    fontSize: 8,
   },
 });
 
@@ -32,32 +33,30 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
     return text.slice(0, maxLength - 3) + '...';
   };
   
-  // Estimate max characters based on width (approximate: 1pt ≈ 1.33px, avg char width ~4.5 points at 9pt font)
-  // More generous estimation to use available space
+  // Estimate max characters based on width
   const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 4.5);
   
-  // Build Line 1: KANJI | HAN-VIET | ON: ONYOMI | KUN: KUNYOMI | 🤯LOOKALIKES🤔
+  // Build Line 1: KANJI | HAN-VIET | ON: ONYOMI | KUN: KUNYOMI | ⚠ LOOKALIKES ⚠
   const line1Parts: string[] = [
     kanji.kanji,
     kanji.hanViet,
     `ON: ${kanji.onyomi.join(', ')}`,
     `KUN: ${kanji.kunyomi.join(', ')}`,
   ];
-  // Only add lookalikes if the field exists and is not empty
   if (kanji.lookalikes) {
     const lookalikeText = Array.isArray(kanji.lookalikes) 
       ? kanji.lookalikes.join(', ') 
       : kanji.lookalikes;
     if (lookalikeText.trim()) {
-      line1Parts.push(`🤯 ${lookalikeText} 🤔`);
+      line1Parts.push(`⚠ ${lookalikeText} ⚠`);
     }
   }
   const line1FullText = line1Parts.filter(Boolean).join(' | ');
   
-  // Build Line 2 content: 🇻🇳 VIETNAMESE-MEANING | 🇺🇸 ENGLISH-MEANING
+  // Build Line 2 content: ★ VN: VIETNAMESE-MEANING | ★ EN: ENGLISH-MEANING
   const line2Parts: string[] = [
-    kanji.vietnameseMeaning ? `🇻🇳 ${kanji.vietnameseMeaning}` : '',
-    kanji.meaning ? `🇺🇸 ${kanji.meaning}` : '',
+    kanji.vietnameseMeaning ? `★ VN: ${kanji.vietnameseMeaning}` : '',
+    kanji.meaning ? `★ EN: ${kanji.meaning}` : '',
   ];
   const meaningText = line2Parts.filter(Boolean).join(' | ');
   

@@ -49,6 +49,55 @@ Font.register({
   fontWeight: 'normal',
 });
 
+Font.register({
+  family: 'MPLUSRounded1c-Regular',
+  src: `${BASE_URL}fonts/MPLUSRounded1c-Regular.ttf`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: 'Bangers-Regular',
+  src: `${BASE_URL}fonts/Bangers-Regular.ttf`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: 'Vollkorn-ExtraBold',
+  src: `${BASE_URL}fonts/Vollkorn-ExtraBold.ttf`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: '02UtsukushiMincho',
+  src: `${BASE_URL}fonts/02UtsukushiMincho.ttf`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: 'A-OTF Outai Kaisho Std Light',
+  src: `${BASE_URL}fonts/A-OTF Outai Kaisho Std Light.otf`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: 'HGMaruGothicMPRO',
+  src: `${BASE_URL}fonts/HGMaruGothicMPRO.TTF`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
+Font.register({
+  family: 'KosugiMaru-Regular',
+  src: `${BASE_URL}fonts/KosugiMaru-Regular.woff2`,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+});
+
 // Register hyphenation callback for better text handling
 Font.registerHyphenationCallback(word => [word]);
 

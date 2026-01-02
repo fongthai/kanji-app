@@ -208,8 +208,16 @@ export function BoardHeader({ visible }: BoardHeaderProps) {
       
       {/* Tooltip */}
       {showTooltip && !isEditing && (
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-gray-800 text-white text-xs px-3 py-1 rounded shadow-lg whitespace-nowrap z-[9999]">
-          Click text to change font • Double-click text to edit • Click background to change animation ({animationNames[headerAnimationStyle]})
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-gray-800 text-white px-4 py-2 rounded shadow-lg z-[9999] max-w-2xl">
+          <div className="text-lg font-semibold mb-1" style={{ fontFamily: currentFont.family }}>
+            {headerText}
+          </div>
+          <div className="text-sm opacity-90">
+            Current Font: <span className="font-medium">{currentFont.name}</span>
+          </div>
+          <div className="text-sm opacity-75 mt-1 border-t border-gray-600 pt-1">
+            Click text to change font • Double-click text to edit • Click background to change animation ({animationNames[headerAnimationStyle]})
+          </div>
         </div>
       )}
     </div>
