@@ -25,6 +25,11 @@ const A4_HEIGHT_MM = 297;
 // 300 DPI dimensions for PNG (kept for reference, not currently used)
 const PNG_DPI = 300;
 
+// PDF/PNG indicator and text size ratios (as % of cell size)
+const PDF_INDICATOR_RATIO = 0.15;  // 15% of cell size for PDF exports
+const PNG_INDICATOR_RATIO = 0.18;  // 18% of cell size for PNG exports
+const BASE_HANVIET_RATIO = 0.15;   // 15% of cell size base (scaled by user's hanVietSize %)
+
 export interface ExportProgress {
   currentPage: number;
   totalPages: number;
@@ -425,6 +430,7 @@ export async function exportBoardToPDFVector(
   headerText: string,
   headerFontFamily: string,
   headerFontFilename: string,
+  grayscaleMode: boolean,
   onProgress: ExportProgressCallback
 ): Promise<boolean> {
   try {
@@ -495,6 +501,7 @@ export async function exportBoardToPDFVector(
       headerText,
       headerFontFamily: headerFontFamily === 'system-ui' ? 'Helvetica' : headerFontFamily,
       headerFontFilename,
+      grayscaleMode,
     });
 
     // Generate PDF blob
@@ -553,6 +560,7 @@ export async function exportSheetToPDFVector(
   sheetGuideOpacity: number[],
   sheetTracingOpacity: number[],
   explanationLineCount: 1 | 2 | 3,
+  grayscaleMode: boolean,
   onProgress: ExportProgressCallback
 ): Promise<boolean> {
   try {
@@ -587,8 +595,8 @@ export async function exportSheetToPDFVector(
     
     // For indicators and han-viet, use fixed ratios
     // These will be calculated in the PDF based on actual cell size
-    const indicatorFontSizeRatio = 0.18; // 18% of cell size
-    const hanVietFontSizeRatio = 0.15 * (hanVietSize / 100); // 15% of cell size, scaled by user's percentage
+    const indicatorFontSizeRatio = PDF_INDICATOR_RATIO;
+    const hanVietFontSizeRatio = BASE_HANVIET_RATIO * (hanVietSize / 100); // Base ratio scaled by user's percentage
 
     onProgress({
       currentPage: 0,
@@ -618,6 +626,7 @@ export async function exportSheetToPDFVector(
       sheetGuideOpacity,
       sheetTracingOpacity,
       explanationLineCount,
+      grayscaleMode,
     });
 
     // Generate PDF blob
@@ -676,6 +685,7 @@ export async function exportSheetToPNG(
   sheetGuideOpacity: number[],
   sheetTracingOpacity: number[],
   explanationLineCount: 1 | 2 | 3,
+  grayscaleMode: boolean,
   pngQuality: 200 | 300 | 600,
   onProgress: ExportProgressCallback,
   checkCancelled: CancelCheck
@@ -707,8 +717,8 @@ export async function exportSheetToPNG(
     const pdfHanVietFont = registerKanjiFont(hanVietFont);
 
     const kanjiFontSizeMultiplier = kanjiSize / 100;
-    const indicatorFontSizeRatio = 0.18;
-    const hanVietFontSizeRatio = 0.15 * (hanVietSize / 100);
+    const indicatorFontSizeRatio = PNG_INDICATOR_RATIO;
+    const hanVietFontSizeRatio = BASE_HANVIET_RATIO * (hanVietSize / 100);
 
     // Create PDF document
     const document = PDFSheetDocument({
@@ -731,6 +741,7 @@ export async function exportSheetToPNG(
       sheetGuideOpacity,
       sheetTracingOpacity,
       explanationLineCount,
+      grayscaleMode,
     });
 
     const pdfBlob = await pdf(document as any).toBlob();
@@ -895,6 +906,7 @@ export async function exportBoardToPNG(
   headerText: string,
   headerFontFamily: string,
   headerFontFilename: string,
+  grayscaleMode: boolean,
   onProgress: ExportProgressCallback,
   checkCancelled: CancelCheck
 ): Promise<boolean> {
@@ -965,6 +977,7 @@ export async function exportBoardToPNG(
       headerText,
       headerFontFamily,
       headerFontFilename,
+      grayscaleMode,
     });
 
     const pdfBlob = await pdf(document as any).toBlob();

@@ -19,6 +19,7 @@ interface PDFWritingTableProps {
   showFrequencyIndicator: boolean;
   sheetGuideOpacity: number[];
   sheetTracingOpacity: number[];
+  grayscaleMode: boolean;
 }
 
 export function PDFWritingTable({
@@ -37,6 +38,7 @@ export function PDFWritingTable({
   showFrequencyIndicator,
   sheetGuideOpacity,
   sheetTracingOpacity,
+  grayscaleMode,
 }: PDFWritingTableProps) {
   // Use Board mode approach: borders are INSIDE cell dimensions
   // Total columns = 2 (master takes 2 columns) + practice columns
@@ -106,6 +108,7 @@ export function PDFWritingTable({
           showJlptIndicator={showJlptIndicator}
           showGradeIndicator={showGradeIndicator}
           showFrequencyIndicator={showFrequencyIndicator}
+          grayscaleMode={grayscaleMode}
         />
       </View>
       

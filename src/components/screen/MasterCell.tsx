@@ -8,6 +8,7 @@ import {
   getGradeColor,
   formatFrequency,
   getFrequencyColor,
+  getKanjiColorByJlptLevel,
 } from '../../constants/indicators';
 
 interface MasterCellProps {
@@ -143,7 +144,7 @@ export const MasterCell: React.FC<MasterCellProps> = ({
                 width: `${indicatorSize}rem`,
                 height: `${indicatorSize}rem`,
                 borderRadius: '2px',
-                backgroundColor: grayscaleMode ? '#666666' : getJlptColor(kanji.jlptLevel),
+                backgroundColor: getJlptColor(kanji.jlptLevel),
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -168,7 +169,7 @@ export const MasterCell: React.FC<MasterCellProps> = ({
                 width: `${indicatorSize}rem`,
                 height: `${indicatorSize}rem`,
                 borderRadius: '50%',
-                backgroundColor: grayscaleMode ? '#888888' : getGradeColor(kanji.gradeLevel),
+                backgroundColor: getGradeColor(kanji.gradeLevel),
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -195,7 +196,7 @@ export const MasterCell: React.FC<MasterCellProps> = ({
                   top: `${INDICATOR_PADDING}px`,
                   right: `${INDICATOR_PADDING}px`,
                 }),
-                backgroundColor: grayscaleMode ? '#999999' : getFrequencyColor(kanji.frequency),
+                backgroundColor: getFrequencyColor(kanji.frequency),
                 color: '#ffffff',
                 borderRadius: '3px',
                 padding: '0.1rem 0.3rem',
@@ -219,7 +220,7 @@ export const MasterCell: React.FC<MasterCellProps> = ({
             fontFamily: actualKanjiFont,
             fontSize: `${kanjiSizeRem}rem`,
             lineHeight: 1,
-            color: '#000000',
+            color: grayscaleMode ? '#000000' : getKanjiColorByJlptLevel(kanji.jlptLevel),
           }}
         >
           {kanji.kanji}

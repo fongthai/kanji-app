@@ -4,11 +4,13 @@ import { getGradeColor } from '../../constants/indicators';
 interface PDFGradeIndicatorProps {
   gradeLevel: number | string;
   size?: number; // Size in points, default 20
+  grayscaleMode?: boolean;
 }
 
 export const PDFGradeIndicator: React.FC<PDFGradeIndicatorProps> = ({ 
   gradeLevel,
-  size = 20 
+  size = 20,
+  grayscaleMode = false,
 }) => {
   const color = getGradeColor(gradeLevel);
   
@@ -20,13 +22,14 @@ export const PDFGradeIndicator: React.FC<PDFGradeIndicatorProps> = ({
       width: size,
       height: size,
       borderRadius: size / 2, // Full circle
-      backgroundColor: color,
+      backgroundColor: grayscaleMode ? '#ffffff' : color,
+      border: grayscaleMode ? '1pt solid #000000' : undefined,
       justifyContent: 'center',
       alignItems: 'center',
     },
     text: {
       fontSize: size * 0.5, // 50% of badge size
-      color: '#fff',
+      color: grayscaleMode ? '#000000' : '#fff',
       fontWeight: 'bold',
     },
   });

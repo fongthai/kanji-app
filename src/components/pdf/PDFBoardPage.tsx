@@ -31,6 +31,7 @@ interface PDFBoardPageProps {
   showFooter: boolean;
   headerText: string;
   headerFont: string; // Font family for header text
+  grayscaleMode: boolean;
 }
 
 const styles = StyleSheet.create({
@@ -43,34 +44,22 @@ const styles = StyleSheet.create({
   },
   header: {
     height: HEADER_HEIGHT,
-    flexDirection: 'column',
-    backgroundColor: 'white',
-  },
-  headerBackground: {
-    height: 42, // Animation rectangle equivalent
-    backgroundColor: '#E0F2FE', // Light blue background
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  headerGap1: {
-    height: 4,
     backgroundColor: 'white',
   },
-  headerLine: {
-    height: 2,
-    backgroundColor: '#9CA3AF',
-  },
-  headerGap2: {
-    height: 2,
-    backgroundColor: 'white',
+  headerBox: {
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingTop: 4,
+    paddingBottom: 4,
+    border: '2px solid #333333',
   },
   headerText: {
-    fontSize: 20, // 2rem equivalent (~20pt)
-    color: '#1F2937',
+    fontSize: 18,
+    color: '#000000',
     textAlign: 'center',
-    maxHeight: 38,
-    lineHeight: 1.2,
   },
   gridContainer: {
     flex: 1,
@@ -120,6 +109,7 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
   showFooter,
   headerText,
   headerFont,
+  grayscaleMode,
 }) => {
   // Calculate available height for grid (A4 height minus padding, header, footer)
   const A4_HEIGHT_PX = 842; // 297mm at 72dpi
@@ -138,18 +128,22 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
       {/* Header */}
       {showHeader && (
         <View style={styles.header}>
-          {/* Background Rectangle with Text */}
-          <View style={styles.headerBackground}>
-            <Text style={[styles.headerText, { fontFamily: headerFont }]}>
+          <View style={[
+            styles.headerBox,
+            !grayscaleMode ? {
+              backgroundColor: '#667eea',
+              borderColor: '#5a67d8',
+              borderWidth: 2,
+            } : {}
+          ]}>
+            <Text style={[
+              styles.headerText,
+              { fontFamily: headerFont === 'Helvetica' ? 'NotoSansJP-Regular' : headerFont },
+              !grayscaleMode ? { color: '#ffffff' } : {}
+            ]}>
               {headerText}
             </Text>
           </View>
-          {/* Gap 1 */}
-          <View style={styles.headerGap1} />
-          {/* Horizontal Line */}
-          <View style={styles.headerLine} />
-          {/* Gap 2 */}
-          <View style={styles.headerGap2} />
         </View>
       )}
       
@@ -158,6 +152,7 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
         <PDFBoardGrid
           kanjis={kanjis}
           columnCount={columnCount}
+          grayscaleMode={grayscaleMode}
           cellSize={cellSize}
           gap={gap}
           kanjiFont={kanjiFont}

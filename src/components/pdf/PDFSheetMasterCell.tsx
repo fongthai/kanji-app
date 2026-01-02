@@ -26,6 +26,7 @@ interface PDFSheetMasterCellProps {
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
+  grayscaleMode: boolean;
 }
 
 export function PDFSheetMasterCell({
@@ -41,6 +42,7 @@ export function PDFSheetMasterCell({
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
+  grayscaleMode,
 }: PDFSheetMasterCellProps) {
   // Guide line settings
   const guideColor = '#cccccc';
@@ -64,7 +66,7 @@ export function PDFSheetMasterCell({
       <Text key={idx} style={{
         fontSize: hanVietFontSize,
         fontFamily: hanVietFont,
-        color: '#9ca3af',
+        color: grayscaleMode ? '#000000' : '#9ca3af',
         lineHeight: hanVietFontSize * 1.3,
         letterSpacing: hanVietFontSize * 0.05,
         textAlign: 'center',
@@ -78,12 +80,12 @@ export function PDFSheetMasterCell({
     <View style={[styles.cell, { width: cellSize, height: cellSize }]}>
       {/* JLPT Indicator */}
       {showJlptIndicator && kanji.jlptLevel && (
-        <PDFJLPTIndicator level={kanji.jlptLevel} size={indicatorFontSize} />
+        <PDFJLPTIndicator level={kanji.jlptLevel} size={indicatorFontSize} grayscaleMode={grayscaleMode} />
       )}
       
       {/* Grade Indicator */}
       {showGradeIndicator && kanji.gradeLevel && (
-        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} size={indicatorFontSize} />
+        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} size={indicatorFontSize} grayscaleMode={grayscaleMode} />
       )}
       
       {/* Guide lines */}
@@ -209,7 +211,7 @@ export function PDFSheetMasterCell({
           <Text style={{
             fontSize: hanVietFontSize,
             fontFamily: hanVietFont,
-            color: '#9ca3af',
+            color: grayscaleMode ? '#000000' : '#9ca3af',
           }}>
             {hanVietMeanings.join(', ')}
           </Text>
@@ -222,6 +224,7 @@ export function PDFSheetMasterCell({
           frequency={kanji.frequency} 
           size={indicatorFontSize} 
           orientation={hanVietOrientation}
+          grayscaleMode={grayscaleMode}
         />
       )}
     </View>

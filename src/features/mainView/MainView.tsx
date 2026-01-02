@@ -113,7 +113,7 @@ function MainView() {
             <div className="flex flex-col h-full" style={{ overflow: 'visible' }}>
               <BoardHeader visible={worksheet.boardShowHeader} />
               
-              <div className="flex-1" style={{ overflow: 'auto' }}>
+              <div className="flex-1" style={{ overflow: 'hidden' }}>
                 {chosenKanjis.length === 0 ? (
                   <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
                     Select kanji from the Input Panel to generate practice worksheet

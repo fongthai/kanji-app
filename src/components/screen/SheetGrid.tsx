@@ -31,7 +31,7 @@ export function SheetGrid({
   // Calculate dimensions (fixed, unscaled A4)
   const horizontalMargin = 40; // 20px on each side
   const verticalMargin = 40; // Top and bottom margins
-  const outerTableSpacing = 16; // Space between OUTER-TABLEs
+  const outerTableSpacing = 6; // Space between OUTER-TABLEs
   const outerTablePadding = 16; // Padding inside OUTER-TABLE
   const explanationHeight = 20 * explanationLineCount; // Dynamic: 20px per line
   const explanationBottomMargin = 12;
@@ -54,13 +54,16 @@ export function SheetGrid({
     const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
     const writingTableHeight = cellSize * 2 + borderWidth * 3; // 2 rows + borders
     
+    const outerTableBorder = 4; // border-2 = 2px top + 2px bottom
+    
     // Total OUTER-TABLE height
     return (
       outerTablePadding + // top padding
       explanationHeight +
       explanationBottomMargin +
       writingTableHeight +
-      outerTablePadding // bottom padding
+      outerTablePadding + // bottom padding
+      outerTableBorder // outer table border
     );
   }, [sheetColumnCount, availableWidth, explanationLineCount, explanationHeight]);
   
@@ -117,17 +120,17 @@ export function calculateTablesPerPage(
   showFooter: boolean,
   explanationLineCount: number
 ): number {
-  // Match PDF layout dimensions
+  // Screen layout dimensions (pixels at 96 DPI)
   const contentPadding = 20; // Horizontal padding on each side
-  const verticalPadding = 10; // Vertical padding
-  const outerTableSpacing = 16;
+  const verticalPadding = 20; // Vertical padding on EACH side (p-5 = 20px top + 20px bottom)
+  const outerTableSpacing = 6; // Space between OUTER-TABLEs (must match component value)
   const outerTablePadding = 16;
   const explanationHeight = 20 * explanationLineCount; // Dynamic: 20px per line
   const explanationBottomMargin = 12;
   
   const availableWidth = A4_WIDTH - (contentPadding * 2);
   
-  let availableHeight = A4_HEIGHT - (verticalPadding * 2);
+  let availableHeight = A4_HEIGHT - (verticalPadding * 2); // 40px total vertical padding
   if (showHeader) availableHeight -= BOARD_HEADER_HEIGHT;
   if (showFooter) availableHeight -= BOARD_FOOTER_HEIGHT;
   
@@ -139,12 +142,68 @@ export function calculateTablesPerPage(
   const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
   const writingTableHeight = cellSize * 2 + borderWidth * 3;
   
+  const outerTableBorder = 4; // border-2 = 2px top + 2px bottom
+  
   const outerTableHeight = (
     outerTablePadding +
     explanationHeight +
     explanationBottomMargin +
     writingTableHeight +
-    outerTablePadding
+    outerTablePadding +
+    outerTableBorder // outer table border
+  );
+  
+  const heightPerTable = outerTableHeight + outerTableSpacing;
+  const count = Math.floor((availableHeight + outerTableSpacing) / heightPerTable);
+  return Math.max(1, count);
+}
+
+// PDF-specific calculation using PDF dimensions (points at 72 DPI)
+export function calculateTablesPerPagePDF(
+  sheetColumnCount: number,
+  showHeader: boolean,
+  showFooter: boolean,
+  explanationLineCount: number,
+  marginTop: number,
+  marginBottom: number,
+  marginLeft: number,
+  marginRight: number
+): number {
+  const A4_WIDTH_PT = 595;
+  const A4_HEIGHT_PT = 842;
+  // PDF-specific heights - must match PDFSheetPage component
+  const HEADER_HEIGHT_PT = 35; // PDF_HEADER_HEIGHT from PDFSheetPage
+  const FOOTER_HEIGHT_PT = 30; // PDF_FOOTER_HEIGHT from PDFSheetPage
+  
+  // Aggressively compressed to compensate for narrower PDF width (different aspect ratio)
+  const outerTableSpacing = 3; // Screen: 6px, PDF: minimal spacing
+  const outerTablePadding = 10; // Screen: 16px, PDF: compressed
+  const explanationHeight = 14 * explanationLineCount; // Screen: 20px/line, PDF: compressed
+  const explanationBottomMargin = 6; // Screen: 12px, PDF: compressed
+  
+  const availableWidth = A4_WIDTH_PT - (marginLeft + marginRight);
+  
+  let availableHeight = A4_HEIGHT_PT - (marginTop + marginBottom);
+  if (showHeader) availableHeight -= HEADER_HEIGHT_PT;
+  if (showFooter) availableHeight -= FOOTER_HEIGHT_PT;
+  
+  // Calculate OUTER-TABLE height
+  const totalColumns = 2 + sheetColumnCount;
+  const borderWidth = 1;
+  const totalBorderWidth = (totalColumns + 1) * borderWidth;
+  const innerWidth = availableWidth - (outerTablePadding * 2) - (2 * 2); // 2pt border on each side
+  const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
+  const writingTableHeight = cellSize * 2 + borderWidth * 3;
+  
+  const outerTableBorder = 4; // border: 2pt = 4pt total (top + bottom)
+  
+  const outerTableHeight = (
+    outerTablePadding +
+    explanationHeight +
+    explanationBottomMargin +
+    writingTableHeight +
+    outerTablePadding +
+    outerTableBorder
   );
   
   const heightPerTable = outerTableHeight + outerTableSpacing;

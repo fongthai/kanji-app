@@ -1,7 +1,7 @@
 import { Document, Font } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
-import { PDFSheetPage } from './PDFSheetPage';
-import { calculateTablesPerPage } from '../screen/SheetGrid';
+import { PDFSheetPage, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM, MARGIN_LEFT } from './PDFSheetPage';
+import { calculateTablesPerPagePDF } from '../screen/SheetGrid';
 
 // Get base URL for asset paths
 const BASE_URL = import.meta.env.BASE_URL;
@@ -175,6 +175,7 @@ interface PDFSheetDocumentProps {
   sheetGuideOpacity: number[];
   sheetTracingOpacity: number[];
   explanationLineCount?: 1 | 2 | 3;
+  grayscaleMode: boolean;
 }
 
 export function PDFSheetDocument({
@@ -197,13 +198,19 @@ export function PDFSheetDocument({
   sheetGuideOpacity,
   sheetTracingOpacity,
   explanationLineCount = 3,
+  grayscaleMode,
 }: PDFSheetDocumentProps) {
-  // Calculate how many tables fit per page
-  const tablesPerPage = calculateTablesPerPage(
+  // Use imported margins from PDFSheetPage to ensure consistency
+  // Calculate how many tables fit per page using PDF-specific dimensions
+  const tablesPerPage = calculateTablesPerPagePDF(
     sheetColumnCount,
     showHeader,
     showFooter,
-    explanationLineCount
+    explanationLineCount,
+    MARGIN_TOP,
+    MARGIN_BOTTOM,
+    MARGIN_LEFT,
+    MARGIN_RIGHT
   );
   
   // Split kanjis into pages
@@ -242,6 +249,7 @@ export function PDFSheetDocument({
           sheetGuideOpacity={sheetGuideOpacity}
           sheetTracingOpacity={sheetTracingOpacity}
           explanationLineCount={explanationLineCount}
+          grayscaleMode={grayscaleMode}
         />
       ))}
     </Document>

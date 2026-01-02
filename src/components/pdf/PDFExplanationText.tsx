@@ -34,7 +34,8 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
   };
   
   // Estimate max characters based on width
-  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 4.5);
+  // Increased multiplier for more generous text display (was 4.5, now 3.1)
+  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 3.1);
   
   // Build Line 1: KANJI | HAN-VIET | ON: ONYOMI | KUN: KUNYOMI | ⚠ LOOKALIKES ⚠
   const line1Parts: string[] = [

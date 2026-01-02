@@ -20,6 +20,7 @@ interface PDFBoardGridProps {
   showEmptyCells: boolean;
   centerCards: boolean;
   availableHeight: number; // Add this to calculate centering
+  grayscaleMode: boolean;
 }
 
 export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({ 
@@ -39,6 +40,7 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   showFrequencyIndicator,
   showEmptyCells,
   availableHeight,
+  grayscaleMode,
   // centerCards - not used, grid is conditionally centered based on space
 }) => {
   // Calculate actual row count based on kanji count
@@ -106,6 +108,7 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
             showJlptIndicator={showJlptIndicator}
             showGradeIndicator={showGradeIndicator}
             showFrequencyIndicator={showFrequencyIndicator}
+            grayscaleMode={grayscaleMode}
           />
         );
       })}

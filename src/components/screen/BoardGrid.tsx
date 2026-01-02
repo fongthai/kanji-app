@@ -122,7 +122,7 @@ export function BoardGrid({
 
   return (
     <div 
-      className="grid h-full"
+      className="grid"
       style={{
         gridTemplateColumns: `repeat(${columnCount}, ${cellSize}px)`,
         gap: `${GRID_GAP}px`,
@@ -130,6 +130,7 @@ export function BoardGrid({
         alignContent: shouldCenter ? 'center' : 'start',
         paddingTop: `${topBottomPadding}px`,
         paddingBottom: `${topBottomPadding}px`,
+        minHeight: shouldCenter ? '100%' : 'auto',
       }}
     >
       {cells.map((kanji, index) => {

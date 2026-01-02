@@ -18,6 +18,7 @@ interface PDFKanjiCardProps {
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
+  grayscaleMode: boolean;
 }
 
 export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({ 
@@ -33,6 +34,7 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
+  grayscaleMode,
 }) => {
   // Parse han-viet meanings (comma or slash separated)
   const hanVietMeanings = kanji.hanViet
@@ -68,7 +70,7 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
       fontSize: kanjiFontSize,
       fontFamily: kanjiFont,
       textAlign: 'center',
-      color: getKanjiColorByJlptLevel(kanji.jlptLevel),
+      color: grayscaleMode ? '#000000' : getKanjiColorByJlptLevel(kanji.jlptLevel),
     },
     // First meaning - right side
     hanVietRight: {
@@ -113,12 +115,12 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
     hanVietHorizontalText: {
       fontSize: hanVietFontSize,
       fontFamily: hanVietFont,
-      color: '#9ca3af',
+      color: grayscaleMode ? '#000000' : '#9ca3af',
     },
     hanVietVerticalChar: {
       fontSize: hanVietFontSize,
       fontFamily: hanVietFont,
-      color: '#9ca3af', // Match screen color
+      color: grayscaleMode ? '#000000' : '#9ca3af',
       lineHeight: hanVietFontSize * 1.3, // Match screen lineHeight 1.3
       letterSpacing: hanVietFontSize * 0.05, // Match screen letterSpacing 0.05em
       textAlign: 'center',
@@ -129,12 +131,12 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
     <View style={styles.card}>
       {/* JLPT Indicator */}
       {showJlptIndicator && kanji.jlptLevel && (
-        <PDFJLPTIndicator level={kanji.jlptLevel} size={indicatorFontSize} />
+        <PDFJLPTIndicator level={kanji.jlptLevel} size={indicatorFontSize} grayscaleMode={grayscaleMode} />
       )}
       
       {/* Grade Indicator */}
       {showGradeIndicator && kanji.gradeLevel && (
-        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} size={indicatorFontSize} />
+        <PDFGradeIndicator gradeLevel={kanji.gradeLevel} size={indicatorFontSize} grayscaleMode={grayscaleMode} />
       )}
       
       {/* Main Kanji */}
@@ -182,6 +184,7 @@ export const PDFKanjiCard: React.FC<PDFKanjiCardProps> = ({
           frequency={kanji.frequency} 
           size={indicatorFontSize} 
           orientation={hanVietOrientation}
+          grayscaleMode={grayscaleMode}
         />
       )}
     </View>

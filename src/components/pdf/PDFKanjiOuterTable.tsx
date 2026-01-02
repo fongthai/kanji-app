@@ -5,12 +5,12 @@ import { PDFWritingTable } from './PDFWritingTable';
 
 const styles = StyleSheet.create({
   outerTable: {
-    border: '1px solid #d1d5db',
+    border: '2px solid #d1d5db',
     backgroundColor: '#f9fafb',
-    padding: 12,
+    padding: 10, // Compressed for tighter PDF layout
   },
   explanationSection: {
-    marginBottom: 12,
+    marginBottom: 6, // Compressed for tighter PDF layout
   },
 });
 
@@ -31,6 +31,7 @@ interface PDFKanjiOuterTableProps {
   sheetGuideOpacity: number[];
   sheetTracingOpacity: number[];
   explanationLineCount?: 1 | 2 | 3;
+  grayscaleMode: boolean;
 }
 
 export function PDFKanjiOuterTable({
@@ -50,6 +51,7 @@ export function PDFKanjiOuterTable({
   sheetGuideOpacity,
   sheetTracingOpacity,
   explanationLineCount = 3,
+  grayscaleMode,
 }: PDFKanjiOuterTableProps) {
   // Border and padding are inside availableWidth (like Board mode approach)
   // Don't set explicit width - let it take full available space
@@ -80,6 +82,7 @@ export function PDFKanjiOuterTable({
         showFrequencyIndicator={showFrequencyIndicator}
         sheetGuideOpacity={sheetGuideOpacity}
         sheetTracingOpacity={sheetTracingOpacity}
+        grayscaleMode={grayscaleMode}
       />
     </View>
   );

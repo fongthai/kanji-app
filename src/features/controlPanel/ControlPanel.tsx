@@ -167,6 +167,7 @@ function ControlPanel() {
           worksheet.headerText,
           headerFont.family,
           headerFont.filename,
+          worksheet.grayscaleMode,
           (progress) => setExportProgress(progress)
         );
       } else {
@@ -192,6 +193,7 @@ function ControlPanel() {
           [worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity], // 3 guide line opacity values
           worksheet.sheetTracingOpacity, // Array of 3 tracing opacity values for P1, P2, P3
           explanationLineCount,
+          worksheet.grayscaleMode,
           (progress) => setExportProgress(progress)
         );
       }
@@ -239,6 +241,7 @@ function ControlPanel() {
           worksheet.headerText,
           headerFont.family,
           headerFont.filename,
+          worksheet.grayscaleMode,
           (progress) => setExportProgress(progress),
           () => exportCancelledRef.current
         );
@@ -265,6 +268,7 @@ function ControlPanel() {
           [worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity, worksheet.sheetGuideOpacity],
           worksheet.sheetTracingOpacity,
           explanationLineCount,
+          worksheet.grayscaleMode,
           pngQuality,
           (progress) => setExportProgress(progress),
           () => exportCancelledRef.current
