@@ -2,10 +2,17 @@ import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFBoardGrid } from './PDFBoardGrid';
 import { getFooterText } from '../../constants/appText';
-
-const PADDING = 48;
-const HEADER_HEIGHT = 50;
-const FOOTER_HEIGHT = 40;
+import {
+  A4_HEIGHT_PT,
+  PDF_MARGIN_TOP,
+  PDF_MARGIN_RIGHT,
+  PDF_MARGIN_BOTTOM,
+  PDF_MARGIN_LEFT,
+  PDF_HEADER_HEIGHT,
+  PDF_FOOTER_HEIGHT,
+  PDF_HEADER_TO_CONTENT_SPACING,
+  PDF_CONTENT_TO_FOOTER_SPACING,
+} from '../../constants/pdfDimensions';
 
 interface PDFBoardPageProps {
   kanjis: KanjiData[];
@@ -31,6 +38,7 @@ interface PDFBoardPageProps {
   showFooter: boolean;
   headerText: string;
   headerFont: string; // Font family for header text
+  availableWidth: number;
   grayscaleMode: boolean;
 }
 
@@ -38,12 +46,16 @@ const styles = StyleSheet.create({
   page: {
     width: '210mm',
     height: '297mm',
-    padding: PADDING,
+    paddingTop: PDF_MARGIN_TOP,
+    paddingRight: PDF_MARGIN_RIGHT,
+    paddingBottom: PDF_MARGIN_BOTTOM,
+    paddingLeft: PDF_MARGIN_LEFT,
     backgroundColor: '#ffffff',
     position: 'relative',
   },
   header: {
-    height: HEADER_HEIGHT,
+    height: PDF_HEADER_HEIGHT,
+    marginBottom: PDF_HEADER_TO_CONTENT_SPACING,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -63,15 +75,14 @@ const styles = StyleSheet.create({
   },
   gridContainer: {
     flex: 1,
+    alignItems: 'center', // Center grid horizontally
+    justifyContent: 'flex-start', // Align to top
   },
   footer: {
-    position: 'absolute',
-    bottom: PADDING,
-    left: PADDING,
-    right: PADDING,
-    height: FOOTER_HEIGHT,
+    height: PDF_FOOTER_HEIGHT,
+    marginTop: PDF_CONTENT_TO_FOOTER_SPACING,
     flexDirection: 'row',
-    justifyContent: 'space-between', // Changed from 'center'
+    justifyContent: 'space-between',
     alignItems: 'center',
     borderTop: '1pt solid #9CA3AF',
     paddingTop: 8,
@@ -109,18 +120,19 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
   showFooter,
   headerText,
   headerFont,
+  availableWidth,
   grayscaleMode,
 }) => {
-  // Calculate available height for grid (A4 height minus padding, header, footer)
-  const A4_HEIGHT_PX = 842; // 297mm at 72dpi
-  let availableHeight = A4_HEIGHT_PX - (PADDING * 2); // Subtract top and bottom padding
+  // Calculate available height for grid (A4 height minus margins, header, footer)
+  // Note: Header/footer spacing is handled by CSS margins, not subtracted from available height
+  let availableHeight = A4_HEIGHT_PT - PDF_MARGIN_TOP - PDF_MARGIN_BOTTOM;
   
   if (showHeader) {
-    availableHeight -= HEADER_HEIGHT;
+    availableHeight -= PDF_HEADER_HEIGHT;
   }
   
   if (showFooter) {
-    availableHeight -= FOOTER_HEIGHT;
+    availableHeight -= PDF_FOOTER_HEIGHT;
   }
   
   return (
@@ -168,6 +180,7 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
           showEmptyCells={showEmptyCells}
           centerCards={centerCards}
           availableHeight={availableHeight}
+          availableWidth={availableWidth}
         />
       </View>
       

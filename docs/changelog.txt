@@ -1,3 +1,56 @@
+20250103:
+- Fixed Board mode PDF/PNG export proportional scaling issue
+- Implemented consistent scaling from screen pixels to PDF points
+- Added PDF_SCALE_FACTOR constant (595pt/698px = ~0.8524) for accurate dimension conversion
+- Board mode PDFs now match on-screen layout capacity (e.g., 6 columns × 48 kanjis fits on 1 page)
+- Previous issue: inconsistent scaling caused last rows to overflow to unnecessary 2nd page
+- Applied proportional scaling to header, footer, gap, and padding dimensions
+- Updated PDFBoardPage component with proper constants structure
+- Aligned Board mode export logic with Sheet mode's proven scaling approach
+
+20250102:
+- Implemented comprehensive grayscale mode for PDF/PNG exports
+- Added grayscale toggle affecting headers, kanji, and indicators differently
+- PDF headers: purple background with white text (color) vs black border with black text (grayscale)
+- PDF indicators (JLPT, Grade, Frequency): white background with black border/text in grayscale mode
+- On-screen Sheet mode: master kanji now uses JLPT-level colors (matching Board mode)
+- On-screen grayscale mode: only affects kanji text color, keeps indicators colored for visibility
+- Fixed Board mode PDF header font to use NotoSansJP fallback (matching Sheet mode)
+- Updated all PDF components (Sheet/Board) with conditional grayscale styling
+- Ensured consistent behavior across Board and Sheet modes for both screen and export
+- Better PDF/PNG layout with improved Vietnamese font handling
+- Fixed PDF/PNG export compatibility issues
+- Added new header fonts: Bangers, MPLUSRounded1c, Vollkorn-ExtraBold
+- Improved ExplanationText component with better text truncation
+- Enhanced BoardHeader component styling
+
+20250101:
+- (No commits - holiday break)
+
+20251231:
+- Cleaned up ExplanationText component by removing debug logs
+- Removed unused variables from ExplanationText component
+- Code quality improvements
+
+20251230:
+- Implemented PNG export for Sheet mode with configurable DPI (200/300/600)
+- Created complete Sheet mode UI with master cell and practice cells (2×2 + configurable columns)
+- Added explanation text display showing Han-Viet, English meaning, and Vietnamese mnemonics
+- Implemented MasterCell component with guide lines and JLPT/Grade/Frequency indicators
+- Created PracticeCell component with guide lines and optional tracing kanji
+- Built WritingTable layout (2×2 master cell + practice cells in 2 rows)
+- Added KanjiOuterTable wrapper with explanation text and writing table
+- Implemented SheetGrid to display multiple kanji outer tables
+- Enhanced FontSizeControl to support different ranges for input/main/sheet panels
+- Added Sheet Panel display settings (separate from Board Panel)
+- Improved ExplanationText with multi-line support and text wrapping
+- Updated Control Panel with Sheet-specific controls (columns, guide opacity, tracing opacity)
+- Added sheet mode settings to worksheetSlice (column count, guide/tracing opacity)
+- Created PDF export components for Sheet mode (PDFSheetDocument, PDFSheetPage, etc.)
+- Implemented PDF export function for Sheet mode (exportSheetToPDFVector)
+- Added PNG export function for Sheet mode (exportSheetToPNG)
+- Updated MainView to render Sheet mode with A4Paper scaling
+
 20251229:
 - Sheet mode and PDF export for it.
 20251228:

@@ -11,12 +11,19 @@ import {
   calculateBoardCardsPerPage,
   calculateFontSizes,
 } from './layoutCalculations';
-import { A4_WIDTH, GRID_GAP } from '../constants/boardDimensions';
+import { GRID_GAP } from '../constants/boardDimensions';
+import {
+  A4_WIDTH_PT,
+  A4_HEIGHT_PT,
+  PDF_MARGIN_TOP,
+  PDF_MARGIN_RIGHT,
+  PDF_MARGIN_BOTTOM,
+  PDF_MARGIN_LEFT,
+  PDF_HEADER_HEIGHT,
+  PDF_FOOTER_HEIGHT,
+  PDF_CARD_BORDER_TOTAL,
+} from '../constants/pdfDimensions';
 import { FOOTER_TEXT } from '../constants/appText';
-
-// A4 dimensions in points (for React-PDF)
-const A4_WIDTH_PT = 595;
-const A4_HEIGHT_PT = 842;
 
 // A4 dimensions in mm
 const A4_WIDTH_MM = 210;
@@ -29,6 +36,9 @@ const PNG_DPI = 300;
 const PDF_INDICATOR_RATIO = 0.15;  // 15% of cell size for PDF exports
 const PNG_INDICATOR_RATIO = 0.18;  // 18% of cell size for PNG exports
 const BASE_HANVIET_RATIO = 0.15;   // 15% of cell size base (scaled by user's hanVietSize %)
+
+// PDF Board mode scale factor (for gap calculations)
+const PDF_SCALE_FACTOR = 0.8524;  // Approximate ratio for gap scaling
 
 export interface ExportProgress {
   currentPage: number;
@@ -441,26 +451,43 @@ export async function exportBoardToPDFVector(
       message: 'Preparing PDF document...',
     });
 
-    // Calculate layout dimensions
-    const scaleFactor = A4_WIDTH_PT / A4_WIDTH; // ~0.85
-    const paddingPt = 48;
-    const headerHeightPt = showHeader ? 57 * scaleFactor : 0;
-    const footerHeightPt = showFooter ? 45 * scaleFactor : 0;
-    const gapPt = GRID_GAP * scaleFactor;
+    // Calculate layout dimensions using shared PDF constants
+    // Note: Header/footer spacing is handled by CSS margins in PDFBoardPage, not part of height calculation
+    const headerHeightPt = showHeader ? PDF_HEADER_HEIGHT : 0;
+    const footerHeightPt = showFooter ? PDF_FOOTER_HEIGHT : 0;
+    const gapPt = GRID_GAP * PDF_SCALE_FACTOR;
 
-    const availableWidth = A4_WIDTH_PT - (2 * paddingPt);
-    const availableHeight = A4_HEIGHT_PT - (2 * paddingPt) - headerHeightPt - footerHeightPt;
+    const availableWidth = A4_WIDTH_PT - PDF_MARGIN_LEFT - PDF_MARGIN_RIGHT;
+    const availableHeight = A4_HEIGHT_PT - PDF_MARGIN_TOP - PDF_MARGIN_BOTTOM - headerHeightPt - footerHeightPt;
 
     const cellSize = calculateBoardCellSize(availableWidth, columnCount, gapPt);
     const rowCount = calculateRowCount(availableHeight, cellSize, gapPt);
     const cardsPerPage = calculateBoardCardsPerPage(columnCount, rowCount);
 
-    // Calculate font sizes
+    // Calculate actual card size (accounting for 2pt border on each side)
+    const actualCardSize = cellSize - PDF_CARD_BORDER_TOTAL;
+
+    console.log('=== PDF BOARD EXPORT DEBUG ===');
+    console.log('availableWidth:', availableWidth);
+    console.log('columnCount:', columnCount);
+    console.log('gapPt:', gapPt);
+    console.log('cellSize (calculated):', cellSize);
+    console.log('actualCardSize (cellSize - 4):', actualCardSize);
+    console.log('PDF_CARD_BORDER_TOTAL:', PDF_CARD_BORDER_TOTAL);
+
+    // Calculate font sizes based on actual card content area, not total cell size
     const { kanjiFontSize: kanjiFontSizePt, indicatorFontSize, hanVietFontSize: hanVietFontSizePt } = calculateFontSizes(
-      cellSize,
+      actualCardSize,
       kanjiFontSize,
       hanVietFontSize
     );
+
+    console.log('kanjiFontSize input %:', kanjiFontSize);
+    console.log('hanVietFontSize input %:', hanVietFontSize);
+    console.log('kanjiFontSizePt (output):', kanjiFontSizePt);
+    console.log('hanVietFontSizePt (output):', hanVietFontSizePt);
+    console.log('indicatorFontSize:', indicatorFontSize);
+    console.log('============================');
 
     const totalPages = Math.ceil(kanjis.length / cardsPerPage);
 
@@ -501,6 +528,7 @@ export async function exportBoardToPDFVector(
       headerText,
       headerFontFamily: headerFontFamily === 'system-ui' ? 'Helvetica' : headerFontFamily,
       headerFontFilename,
+      availableWidth,
       grayscaleMode,
     });
 
@@ -923,27 +951,27 @@ export async function exportBoardToPNG(
     const pdfKanjiFont = displaySettings.kanjiFont === 'system-ui' ? 'NotoSansJP-Regular' : displaySettings.kanjiFont;
     const pdfHanVietFont = displaySettings.hanVietFont === 'system-ui' ? 'NotoSansJP-Regular' : displaySettings.hanVietFont;
 
-    // Calculate layout using correct A4 dimensions at 72 DPI (PDF standard)
-    // A4 = 210mm x 297mm = 595pt x 842pt at 72 DPI
-    const A4_WIDTH_PT = 595;
-    const A4_HEIGHT_PT = 842;
-    const paddingPt = 48;
-    const headerHeightPt = boardSettings.showHeader ? 50 : 0;
-    const footerHeightPt = boardSettings.showFooter ? 40 : 0;
-    const gapPt = 4; // Match GRID_GAP
+    // Calculate layout dimensions using shared PDF constants
+    // Note: Header/footer spacing is handled by CSS margins in PDFBoardPage, not part of height calculation
+    const headerHeightPt = boardSettings.showHeader ? PDF_HEADER_HEIGHT : 0;
+    const footerHeightPt = boardSettings.showFooter ? PDF_FOOTER_HEIGHT : 0;
+    const gapPt = GRID_GAP * PDF_SCALE_FACTOR;
     
-    const availableWidth = A4_WIDTH_PT - (2 * paddingPt);  // 595 - 96 = 499
-    const availableHeight = A4_HEIGHT_PT - (2 * paddingPt) - headerHeightPt - footerHeightPt; // 842 - 96 - header - footer
+    const availableWidth = A4_WIDTH_PT - PDF_MARGIN_LEFT - PDF_MARGIN_RIGHT;
+    const availableHeight = A4_HEIGHT_PT - PDF_MARGIN_TOP - PDF_MARGIN_BOTTOM - headerHeightPt - footerHeightPt;
     
     const cellSize = Math.floor((availableWidth - (boardSettings.boardColumnCount - 1) * gapPt) / boardSettings.boardColumnCount);
     const rowCount = Math.floor((availableHeight + gapPt) / (cellSize + gapPt));
     const cardsPerPage = boardSettings.boardColumnCount * rowCount;
     const totalPages = Math.ceil(chosenKanjis.length / cardsPerPage);
 
+    // Calculate actual card size (accounting for 2pt border on each side)
+    const actualCardSize = cellSize - PDF_CARD_BORDER_TOTAL;
+
     // Calculate font sizes in points (PDF uses points, not rem)
-    // Base sizes: Kanji 75% of cell, Han-Viet 20% of kanji
+    // Base sizes: Kanji 75% of actual card, Han-Viet 20% of kanji
     // Then apply user's percentage adjustments (60-120%)
-    const baseKanjiFontSize = cellSize * 0.75;
+    const baseKanjiFontSize = actualCardSize * 0.75;
     const kanjiSizePercentage = Math.max(60, Math.min(120, displaySettings.kanjiSize));
     const kanjiFontSize = baseKanjiFontSize * (kanjiSizePercentage / 100);
     
@@ -977,6 +1005,7 @@ export async function exportBoardToPNG(
       headerText,
       headerFontFamily,
       headerFontFilename,
+      availableWidth,
       grayscaleMode,
     });
 

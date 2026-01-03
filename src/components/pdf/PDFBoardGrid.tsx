@@ -1,6 +1,7 @@
 import { View, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFKanjiCard } from './PDFKanjiCard';
+import { PDF_CARD_BORDER_TOTAL } from '../../constants/pdfDimensions';
 
 interface PDFBoardGridProps {
   kanjis: KanjiData[];
@@ -20,6 +21,7 @@ interface PDFBoardGridProps {
   showEmptyCells: boolean;
   centerCards: boolean;
   availableHeight: number; // Add this to calculate centering
+  availableWidth: number; // Add this to use full width
   grayscaleMode: boolean;
 }
 
@@ -40,6 +42,7 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   showFrequencyIndicator,
   showEmptyCells,
   availableHeight,
+  availableWidth,
   grayscaleMode,
   // centerCards - not used, grid is conditionally centered based on space
 }) => {
@@ -68,8 +71,18 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   const shouldCenter = remainingSpace < 70;
   const topPadding = shouldCenter ? Math.floor(remainingSpace / 2) : 0;
   
-  // Calculate exact grid width to ensure proper column wrapping
-  const gridWidth = columnCount * cellSize + (columnCount - 1) * gap;
+  // Calculate actual card size (matching filled cards)
+  const actualCardSize = cellSize - PDF_CARD_BORDER_TOTAL;
+  
+  console.log('=== PDF BOARD GRID DEBUG ===');
+  console.log('cellSize (prop):', cellSize);
+  console.log('actualCardSize:', actualCardSize);
+  console.log('columnCount:', columnCount);
+  console.log('gap:', gap);
+  console.log('availableWidth (prop):', availableWidth);
+  console.log('gridWidth (using availableWidth):', availableWidth);
+  console.log('availableHeight:', availableHeight);
+  console.log('===========================');
   
   const styles = StyleSheet.create({
     grid: {
@@ -77,12 +90,13 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
       flexWrap: 'wrap',
       gap: gap,
       paddingTop: topPadding,
-      width: gridWidth,
+      width: availableWidth, // Use full available width
     },
     emptyCell: {
-      width: cellSize,
-      height: cellSize,
-      border: '1pt dashed #ccc',
+      width: actualCardSize,
+      height: actualCardSize,
+      border: '2pt dashed #ccc',
+      borderRadius: 4,
     },
   });
   

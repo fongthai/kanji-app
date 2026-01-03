@@ -41,7 +41,7 @@ const initialState: DisplaySettingsState = {
   },
   mainPanel: {
     kanjiFont: 'KanjiStrokeOrders',
-    kanjiSize: 90, // Percentage scale: 60%-120%, default at midpoint (90%)
+    kanjiSize: 110, // Percentage scale: 60%-120%, default 110%
     hanVietFont: 'system-ui',
     hanVietSize: 50, // Percentage scale: 35%-65%, default 50%
     showHanViet: true, // Default: show Hán-Việt
@@ -54,7 +54,7 @@ const initialState: DisplaySettingsState = {
   },
   sheetPanel: {
     kanjiFont: 'KanjiStrokeOrders',
-    kanjiSize: 90, // Percentage scale: 70%-110%, default 90%
+    kanjiSize: 110, // Percentage scale: 70%-110%, default 110%
     hanVietFont: 'system-ui',
     hanVietSize: 50, // Percentage scale: 35%-65%, default 50%
     showHanViet: true, // Default: show Hán-Việt

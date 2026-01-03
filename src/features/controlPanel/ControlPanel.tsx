@@ -5,7 +5,6 @@ import {
   setSheetColumnCount,
   setCurrentMode,
   toggleBoardShowHeader,
-  toggleBoardShowFooter,
   toggleGrayscaleMode,
 } from '../worksheet/worksheetSlice';
 import { setChosenKanjis } from '../kanji/kanjiSlice';
@@ -364,15 +363,6 @@ function ControlPanel() {
                 className="w-3.5 h-3.5 accent-blue-600"
               />
               <span className="text-gray-300">Header</span>
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={worksheet.boardShowFooter}
-                onChange={() => dispatch(toggleBoardShowFooter())}
-                className="w-3.5 h-3.5 accent-blue-600"
-              />
-              <span className="text-gray-300">Footer</span>
             </label>
           </div>
         </div>

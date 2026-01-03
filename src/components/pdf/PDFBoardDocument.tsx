@@ -153,6 +153,7 @@ interface PDFDocumentProps {
   headerText: string;
   headerFontFamily: string;
   headerFontFilename: string;
+  availableWidth: number;
   grayscaleMode: boolean;
 }
 
@@ -180,6 +181,7 @@ export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({
   headerText,
   headerFontFamily,
   headerFontFilename,
+  availableWidth,
   grayscaleMode,
 }) => {
   // Register header font if needed
@@ -218,7 +220,10 @@ export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({
               showHeader={showHeader}
               showFooter={showFooter}
               headerText={headerText}
-              headerFont={headerFont}              grayscaleMode={grayscaleMode}            />
+              headerFont={headerFont}
+              availableWidth={availableWidth}
+              grayscaleMode={grayscaleMode}
+            />
           </Page>
         );
       })}

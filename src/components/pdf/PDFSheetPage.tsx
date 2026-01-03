@@ -2,32 +2,27 @@ import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFKanjiOuterTable } from './PDFKanjiOuterTable';
 import { getFooterText } from '../../constants/appText';
-
-// PDF Page Margins - Minimized for maximum vertical space
-export const MARGIN_TOP = 25;
-export const MARGIN_RIGHT = 25;
-export const MARGIN_BOTTOM = 25;
-export const MARGIN_LEFT = 35;
-
-// PDF-specific header/footer heights (compressed to fit more content)
-export const PDF_HEADER_HEIGHT = 45;
-export const PDF_FOOTER_HEIGHT = 30;
-
-// PDF spacing constants
-export const PDF_OUTER_TABLE_SPACING = 8; // Gap between outer-tables
-export const PDF_HEADER_TO_CONTENT_SPACING = 8; // Gap from header to first outer-table
-export const PDF_CONTENT_TO_FOOTER_SPACING = 8; // Gap from last outer-table to footer
-
-const A4_WIDTH_PT = 595;
+import {
+  A4_WIDTH_PT,
+  PDF_MARGIN_TOP,
+  PDF_MARGIN_RIGHT,
+  PDF_MARGIN_BOTTOM,
+  PDF_MARGIN_LEFT,
+  PDF_HEADER_HEIGHT,
+  PDF_FOOTER_HEIGHT,
+  PDF_OUTER_TABLE_SPACING,
+  PDF_HEADER_TO_CONTENT_SPACING,
+  PDF_CONTENT_TO_FOOTER_SPACING,
+} from '../../constants/pdfDimensions';
 
 const styles = StyleSheet.create({
   page: {
     width: '210mm',
     height: '297mm',
-    paddingTop: MARGIN_TOP,
-    paddingRight: MARGIN_RIGHT,
-    paddingBottom: MARGIN_BOTTOM,
-    paddingLeft: MARGIN_LEFT,
+    paddingTop: PDF_MARGIN_TOP,
+    paddingRight: PDF_MARGIN_RIGHT,
+    paddingBottom: PDF_MARGIN_BOTTOM,
+    paddingLeft: PDF_MARGIN_LEFT,
     backgroundColor: '#ffffff',
     fontFamily: 'NotoSansJP-Regular',
   },
@@ -121,7 +116,7 @@ export function PDFSheetPage({
   grayscaleMode,
 }: PDFSheetPageProps) {
   // Calculate available dimensions using defined margins
-  const availableWidth = A4_WIDTH_PT - (MARGIN_LEFT + MARGIN_RIGHT); // 595 - 40 = 555pt
+  const availableWidth = A4_WIDTH_PT - (PDF_MARGIN_LEFT + PDF_MARGIN_RIGHT); // 595 - 60 = 535pt
   
   return (
     <Page size="A4" style={styles.page}>

@@ -1,6 +1,7 @@
 import { Document, Font } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
-import { PDFSheetPage, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM, MARGIN_LEFT } from './PDFSheetPage';
+import { PDFSheetPage } from './PDFSheetPage';
+import { PDF_MARGIN_TOP, PDF_MARGIN_RIGHT, PDF_MARGIN_BOTTOM, PDF_MARGIN_LEFT } from '../../constants/pdfDimensions';
 import { calculateTablesPerPagePDF } from '../screen/SheetGrid';
 
 // Get base URL for asset paths
@@ -207,10 +208,10 @@ export function PDFSheetDocument({
     showHeader,
     showFooter,
     explanationLineCount,
-    MARGIN_TOP,
-    MARGIN_BOTTOM,
-    MARGIN_LEFT,
-    MARGIN_RIGHT
+    PDF_MARGIN_TOP,
+    PDF_MARGIN_BOTTOM,
+    PDF_MARGIN_LEFT,
+    PDF_MARGIN_RIGHT
   );
   
   // Split kanjis into pages

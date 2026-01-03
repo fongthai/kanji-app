@@ -61,8 +61,10 @@ export const calculateFontSizes = (
   kanjiSizePercentage: number,
   hanVietSizePercentage: number
 ) => {
-  // Base kanji: 75% of cell size
-  const baseKanjiFontSize = cellSize * 0.75;
+  // Base kanji: 65% of cell size (maximized for PDF glyph rendering)
+  // At 110% default: 71.5% fill, At 115% tested max: 74.75% fill
+  // Higher percentage causes PDFKit rendering failures. Use lineHeight: 1 to remove font leading.
+  const baseKanjiFontSize = cellSize * 0.7;
   
   // Apply user's percentage adjustment
   const kanjiFontSize = baseKanjiFontSize * (kanjiSizePercentage / 100);
