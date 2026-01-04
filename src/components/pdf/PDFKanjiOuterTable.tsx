@@ -58,8 +58,10 @@ export function PDFKanjiOuterTable({
   const outerPadding = 12;
   const innerWidth = availableWidth - (outerPadding * 2);
   
+  console.log(`[PDFKanjiOuterTable] Rendering kanji: ${kanji.kanji}`);
+  
   return (
-    <View style={styles.outerTable}>
+    <View style={styles.outerTable} wrap={false}>
       {/* Explanation Text */}
       <View style={styles.explanationSection}>
         <PDFExplanationText kanji={kanji} maxWidth={innerWidth} lineCount={explanationLineCount} />

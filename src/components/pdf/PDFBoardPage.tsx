@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFBoardGrid } from './PDFBoardGrid';
+import { PDFWatermark } from './PDFWatermark';
 import { getFooterText } from '../../constants/appText';
+import { shouldShowWatermark } from '../../utils/featureControl';
+import { WATERMARK_OPACITY_BOARD } from '../../constants/watermark';
 import {
   A4_HEIGHT_PT,
   PDF_MARGIN_TOP,
@@ -191,6 +194,9 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
           <Text style={styles.footerText}>Page {pageNumber} of {totalPages}</Text>
         </View>
       )}
+      
+      {/* Watermark */}
+      {shouldShowWatermark() && <PDFWatermark grayscaleMode={grayscaleMode} opacity={WATERMARK_OPACITY_BOARD} />}
     </View>
   );
 };

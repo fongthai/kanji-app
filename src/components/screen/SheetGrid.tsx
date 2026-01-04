@@ -171,21 +171,29 @@ export function calculateTablesPerPagePDF(
 ): number {
   const A4_WIDTH_PT = 595;
   const A4_HEIGHT_PT = 842;
-  // PDF-specific heights - must match PDFSheetPage component
-  const HEADER_HEIGHT_PT = 35; // PDF_HEADER_HEIGHT from PDFSheetPage
-  const FOOTER_HEIGHT_PT = 30; // PDF_FOOTER_HEIGHT from PDFSheetPage
+  // Must match actual constants from pdfDimensions.ts
+  const HEADER_HEIGHT_PT = 45; // PDF_HEADER_HEIGHT
+  const FOOTER_HEIGHT_PT = 30; // PDF_FOOTER_HEIGHT
+  const HEADER_TO_CONTENT_SPACING = 8; // PDF_HEADER_TO_CONTENT_SPACING
+  const CONTENT_TO_FOOTER_SPACING = 8; // PDF_CONTENT_TO_FOOTER_SPACING
+  const OUTER_TABLE_SPACING = 8; // PDF_OUTER_TABLE_SPACING
   
-  // Aggressively compressed to compensate for narrower PDF width (different aspect ratio)
-  const outerTableSpacing = 3; // Screen: 6px, PDF: minimal spacing
-  const outerTablePadding = 10; // Screen: 16px, PDF: compressed
-  const explanationHeight = 14 * explanationLineCount; // Screen: 20px/line, PDF: compressed
-  const explanationBottomMargin = 6; // Screen: 12px, PDF: compressed
+  // Must match PDFKanjiOuterTable styles
+  const outerTablePadding = 10; // styles.outerTable.padding
+  const explanationHeight = 14 * explanationLineCount;
+  const explanationBottomMargin = 6; // styles.explanationSection.marginBottom
   
   const availableWidth = A4_WIDTH_PT - (marginLeft + marginRight);
   
   let availableHeight = A4_HEIGHT_PT - (marginTop + marginBottom);
-  if (showHeader) availableHeight -= HEADER_HEIGHT_PT;
-  if (showFooter) availableHeight -= FOOTER_HEIGHT_PT;
+  if (showHeader) {
+    availableHeight -= HEADER_HEIGHT_PT;
+    availableHeight -= HEADER_TO_CONTENT_SPACING;
+  }
+  if (showFooter) {
+    availableHeight -= FOOTER_HEIGHT_PT;
+    availableHeight -= CONTENT_TO_FOOTER_SPACING;
+  }
   
   // Calculate OUTER-TABLE height
   const totalColumns = 2 + sheetColumnCount;
@@ -206,7 +214,7 @@ export function calculateTablesPerPagePDF(
     outerTableBorder
   );
   
-  const heightPerTable = outerTableHeight + outerTableSpacing;
-  const count = Math.floor((availableHeight + outerTableSpacing) / heightPerTable);
+  const heightPerTable = outerTableHeight + OUTER_TABLE_SPACING;
+  const count = Math.floor(availableHeight / heightPerTable);
   return Math.max(1, count);
 }

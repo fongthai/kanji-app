@@ -67,7 +67,7 @@ const initialState: WorksheetState = {
   sheetShowHanViet: true,
   sheetShowIndicators: true,
   sheetGuideOpacity: 50,
-  sheetTracingOpacity: [60, 40, 25],
+  sheetTracingOpacity: [40, 25, 15],
   
   // Header/Footer defaults
   headerText: loadHeaderText(),

@@ -120,10 +120,19 @@ function generateMetadata(
  */
 function generateFilename(mode: string, extension: 'pdf' | 'png' | 'zip', pageNumber?: number): string {
   const now = new Date();
-  const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-  const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, ''); // HHMMSS
+  // Format: YYMMDD
+  const year = now.getFullYear().toString().slice(-2);
+  const month = (now.getMonth() + 1).toString().padStart(2, '0');
+  const day = now.getDate().toString().padStart(2, '0');
+  const dateStr = `${year}${month}${day}`;
+  
+  // Format: HHMMSS
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const timeStr = `${hours}${minutes}${seconds}`;
 
-  const base = `ft-kanji-tool-${mode}-${dateStr}-${timeStr}`;
+  const base = `ft-kanji-${mode}-${dateStr}-${timeStr}`;
   
   if (pageNumber !== undefined) {
     const pageNum = pageNumber.toString().padStart(2, '0');
@@ -543,7 +552,7 @@ export async function exportBoardToPDFVector(
     });
 
     // Save file
-    const filename = `ft-kanji-tool-board-${new Date().toISOString().split('T')[0].replace(/-/g, '')}-${Date.now()}.pdf`;
+    const filename = generateFilename('board', 'pdf');
     saveAs(blob, filename);
 
     onProgress({
@@ -668,7 +677,7 @@ export async function exportSheetToPDFVector(
     });
 
     // Save file
-    const filename = `ft-kanji-tool-sheet-${new Date().toISOString().split('T')[0].replace(/-/g, '')}-${Date.now()}.pdf`;
+    const filename = generateFilename('sheet', 'pdf');
     saveAs(blob, filename);
 
     onProgress({
@@ -803,7 +812,6 @@ export async function exportSheetToPNG(
     const zip = new JSZip();
     const pngBlobs: Blob[] = [];
     const scale = pngQuality / 72;
-    const qualityLabel = `${pngQuality}dpi`;
 
     // Convert each page
     for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
@@ -871,7 +879,7 @@ export async function exportSheetToPNG(
         message: 'Saving PNG file...',
       });
 
-      const filename = `ft-kanji-sheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.png`;
+      const filename = generateFilename('sheet', 'png');
       saveAs(pngBlobs[0], filename);
     } else {
       onProgress({
@@ -882,7 +890,7 @@ export async function exportSheetToPNG(
       });
 
       const zipBlob = await zip.generateAsync({ type: 'blob' });
-      const filename = `ft-kanji-sheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.zip`;
+      const filename = generateFilename('sheet', 'zip');
       saveAs(zipBlob, filename);
     }
 
@@ -1096,7 +1104,6 @@ export async function exportBoardToPNG(
     }
 
     // Step 4: Download - single PNG or ZIP
-    const qualityLabel = pngQuality === 200 ? 'low' : pngQuality === 300 ? 'medium' : 'hq';
     
     if (totalPages === 1) {
       // Single page - download PNG directly
@@ -1107,7 +1114,7 @@ export async function exportBoardToPNG(
         message: 'Saving PNG file...',
       });
       
-      const filename = `kanji-worksheet-${qualityLabel}-${new Date().toISOString().split('T')[0]}.png`;
+      const filename = generateFilename('board', 'png');
       saveAs(pngBlobs[0], filename);
     } else {
       // Multiple pages - create ZIP
@@ -1119,7 +1126,7 @@ export async function exportBoardToPNG(
       });
 
       const zipBlob = await zip.generateAsync({ type: 'blob' });
-      const filename = `kanji-worksheets-${qualityLabel}-${new Date().toISOString().split('T')[0]}.zip`;
+      const filename = generateFilename('board', 'zip');
       saveAs(zipBlob, filename);
     }
 

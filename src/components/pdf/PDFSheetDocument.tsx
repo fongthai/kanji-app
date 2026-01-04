@@ -215,14 +215,25 @@ export function PDFSheetDocument({
   );
   
   // Split kanjis into pages
-  const totalPages = Math.max(1, Math.ceil(kanjis.length / tablesPerPage));
   const pages: KanjiData[][] = [];
   
-  for (let i = 0; i < totalPages; i++) {
-    const start = i * tablesPerPage;
-    const end = start + tablesPerPage;
-    pages.push(kanjis.slice(start, end));
+  // Distribute kanjis across pages based on tablesPerPage
+  for (let i = 0; i < kanjis.length; i += tablesPerPage) {
+    const pageKanjis = kanjis.slice(i, i + tablesPerPage);
+    if (pageKanjis.length > 0) {
+      pages.push(pageKanjis);
+    }
   }
+  
+  // Recalculate total pages after filtering empty pages
+  const actualTotalPages = pages.length;
+  
+  console.log('[PDFSheetDocument]', {
+    totalKanjis: kanjis.length,
+    tablesPerPage,
+    pagesCreated: actualTotalPages,
+    kanjiCounts: pages.map(p => p.length),
+  });
   
   return (
     <Document>
@@ -246,7 +257,7 @@ export function PDFSheetDocument({
           showGradeIndicator={showGradeIndicator}
           showFrequencyIndicator={showFrequencyIndicator}
           currentPage={pageIndex + 1}
-          totalPages={totalPages}
+          totalPages={actualTotalPages}
           sheetGuideOpacity={sheetGuideOpacity}
           sheetTracingOpacity={sheetTracingOpacity}
           explanationLineCount={explanationLineCount}

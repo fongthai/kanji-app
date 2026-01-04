@@ -34,15 +34,37 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
   };
   
   // Estimate max characters based on width
-  // Increased multiplier for more generous text display (was 4.5, now 3.1)
-  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 3.1);
+  // Conservative estimate to prevent wrapping (adjusted to 4 for wider glyphs)
+  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 3.75);
+  
+  // Helper to render text with bold labels (ON:, KUN:, ★ VN:, ★ EN:, ⚠)
+  const renderWithBold = (text: string) => {
+    const pattern = /(\bON:|\bKUN:|★ VN:|★ EN:|⚠)/g;
+    const parts = text.split(pattern);
+    
+    return (
+      <>
+        {parts.map((part, i) => {
+          const shouldBold = part === 'ON:' || part === 'KUN:' || part === '★ VN:' || part === '★ EN:' || part === '⚠';
+          return shouldBold 
+            ? <Text key={i} style={{ fontFamily: 'Vollkorn-ExtraBold' }}>{part}</Text>
+            : <Text key={i}>{part}</Text>;
+        })}
+      </>
+    );
+  };
   
   // Build Line 1: KANJI | HAN-VIET | ON: ONYOMI | KUN: KUNYOMI | ⚠ LOOKALIKES ⚠
+  const hasKunyomi = kanji.kunyomi.length > 0;
+  const kunPart = hasKunyomi 
+    ? `KUN: ${kanji.kunyomi.join(', ')}`
+    : `KUN:\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0`; // Non-breaking spaces for manual writing
+  
   const line1Parts: string[] = [
     kanji.kanji,
     kanji.hanViet,
     `ON: ${kanji.onyomi.join(', ')}`,
-    `KUN: ${kanji.kunyomi.join(', ')}`,
+    kunPart,
   ];
   if (kanji.lookalikes) {
     const lookalikeText = Array.isArray(kanji.lookalikes) 
@@ -66,47 +88,43 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
     ? truncate(kanji.vietnameseMnemonic, estimatedMaxChars)
     : '';
   
-  // Layout logic: Line 1 has priority and never truncates
-  let actualLine1: string;
-  let actualLine2: string;
+  // Algorithm: Ensure lines 1+2 always take exactly 2 physical lines
+  let line1A: string; // Physical line 1
+  let line2: string;  // Physical line 2
   
   if (line1FullText.length <= estimatedMaxChars) {
-    // Line 1 fits completely
-    actualLine1 = line1FullText;
-    // Line 2 shows meanings (truncate if needed)
-    actualLine2 = truncate(meaningText, estimatedMaxChars);
+    // Line 1 fits in one physical line
+    line1A = line1FullText;
+    // Line 2 is just meanings
+    line2 = meaningText;
   } else {
-    // Line 1 overflows - find last safe split point (after " | ")
-    let splitPos = estimatedMaxChars;
-    const lastSeparator = line1FullText.lastIndexOf(' | ', estimatedMaxChars);
+    // Line 1 is too long - split it
+    line1A = line1FullText.substring(0, estimatedMaxChars);
+    const line1B = line1FullText.substring(estimatedMaxChars);
     
-    // If we found a separator before the limit, split there
-    // Otherwise, split at the limit but ensure we don't break emojis
-    if (lastSeparator > 0 && lastSeparator > estimatedMaxChars * 0.7) {
-      // Use separator if it's not too far back (within 30% of limit)
-      splitPos = lastSeparator + 3; // +3 to include " | "
-    }
-    
-    actualLine1 = line1FullText.substring(0, splitPos).trimEnd();
-    const line1Overflow = line1FullText.substring(splitPos).trimStart();
-    
-    // Line 2: overflow + separator + meanings
-    const line2Combined = meaningText ? `${line1Overflow} | ${meaningText}` : line1Overflow;
-    actualLine2 = truncate(line2Combined, estimatedMaxChars);
+    // Line 2: Combine line1B + meaningLine
+    line2 = meaningText 
+      ? `${line1B} | ${meaningText}` 
+      : line1B;
   }
+  
+  // Truncate line2 if needed
+  const line2Final = truncate(line2, estimatedMaxChars);
   
   return (
     <View style={[styles.container, { maxWidth }]}>
-      {/* Line 1 */}
-      <Text style={styles.line1}>{actualLine1}</Text>
+      {/* Physical Line 1: line1A */}
+      <Text style={styles.line1}>{renderWithBold(line1A)}</Text>
       
-      {/* Line 2 - Always show if line 1 overflows OR if lineCount >= 2 */}
-      {(line1FullText.length > estimatedMaxChars || (lineCount >= 2 && actualLine2)) && (
-        <Text style={styles.line2}>{actualLine2}</Text>
+      {/* Physical Line 2: line1B + meanings (or just meanings) */}
+      {lineCount >= 2 && line2Final && (
+        <Text style={styles.line2}>{renderWithBold(line2Final)}</Text>
       )}
       
-      {/* Line 3 */}
-      {lineCount >= 3 && line3 && <Text style={styles.line3}>{line3}</Text>}
+      {/* Physical Line 3: Vietnamese mnemonics */}
+      {lineCount >= 3 && line3 && (
+        <Text style={styles.line3}>{line3}</Text>
+      )}
     </View>
   );
 }

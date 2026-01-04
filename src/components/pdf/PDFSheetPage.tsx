@@ -1,7 +1,10 @@
 import { Page, View, Text, StyleSheet } from '@react-pdf/renderer';
 import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFKanjiOuterTable } from './PDFKanjiOuterTable';
+import { PDFWatermark } from './PDFWatermark';
 import { getFooterText } from '../../constants/appText';
+import { shouldShowWatermark } from '../../utils/featureControl';
+import { WATERMARK_OPACITY_SHEET } from '../../constants/watermark';
 import {
   A4_WIDTH_PT,
   PDF_MARGIN_TOP,
@@ -45,12 +48,12 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   content: {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     paddingTop: PDF_HEADER_TO_CONTENT_SPACING,
     paddingBottom: PDF_CONTENT_TO_FOOTER_SPACING,
     gap: PDF_OUTER_TABLE_SPACING,
+    flex: 1, // Take up remaining space to push footer to bottom
   },
   footer: {
     height: PDF_FOOTER_HEIGHT,
@@ -118,6 +121,11 @@ export function PDFSheetPage({
   // Calculate available dimensions using defined margins
   const availableWidth = A4_WIDTH_PT - (PDF_MARGIN_LEFT + PDF_MARGIN_RIGHT); // 595 - 60 = 535pt
   
+  console.log(`[PDFSheetPage] Page ${currentPage}/${totalPages}:`, {
+    kanjiCount: kanjis.length,
+    kanjis: kanjis.map(k => k.kanji).join(''),
+  });
+  
   return (
     <Page size="A4" style={styles.page}>
       {/* Header */}
@@ -175,6 +183,9 @@ export function PDFSheetPage({
           <Text>Page {currentPage} of {totalPages}</Text>
         </View>
       )}
+      
+      {/* Watermark */}
+      {shouldShowWatermark() && <PDFWatermark grayscaleMode={grayscaleMode} opacity={WATERMARK_OPACITY_SHEET} />}
     </Page>
   );
 }
