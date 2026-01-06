@@ -1,18 +1,32 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import InputPanel from './features/inputPanel/InputPanel';
 import MainView from './features/mainView/MainView';
 import ControlPanel from './features/controlPanel/ControlPanel';
 import { FAB } from './components/FAB';
+import { TranslationEditor } from './components/TranslationEditor';
 import { useAppSelector } from './app/hooks';
 
 type ActivePanel = 'input' | 'main' | 'control';
 
 function App() {
+  const { t } = useTranslation();
   const currentMode = useAppSelector(state => state.worksheet.currentMode);
   const [activePanel, setActivePanel] = useState<ActivePanel>('input');
   const [isMobile, setIsMobile] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Update document title based on current language
+  useEffect(() => {
+    document.title = t('app.title');
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', t('app.tagline'));
+    }
+  }, [t]);
 
   // Save mode to localStorage when it changes
   useEffect(() => {
@@ -122,6 +136,9 @@ function App() {
 
         {/* Floating Action Button */}
         <FAB />
+
+        {/* Translation Editor (Dev Only) */}
+        {import.meta.env.DEV && <TranslationEditor />}
       </div>
     );
   }
@@ -137,6 +154,9 @@ function App() {
 
       {/* Floating Action Button */}
       <FAB />
+
+      {/* Translation Editor (Dev Only) */}
+      {import.meta.env.DEV && <TranslationEditor />}
     </div>
   );
 }

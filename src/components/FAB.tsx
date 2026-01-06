@@ -8,6 +8,8 @@ export const FAB: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [currentTime, setCurrentTime] = useState('');
+  const [showTooltip, setShowTooltip] = useState(false);
   const fabRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -29,6 +31,24 @@ export const FAB: React.FC = () => {
     updatePosition();
     window.addEventListener('resize', updatePosition);
     return () => window.removeEventListener('resize', updatePosition);
+  }, []);
+
+  // Update time every minute
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      setCurrentTime(`${hours}:${minutes}`);
+    };
+
+    // Set initial time
+    updateTime();
+
+    // Update every minute (60000ms)
+    const interval = setInterval(updateTime, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   // Close menu when clicking outside
@@ -134,6 +154,53 @@ export const FAB: React.FC = () => {
     return i18n.language === 'vi' ? '🇻🇳' : '🇬🇧';
   };
 
+  // Calculate tooltip position to avoid overflow
+  const getTooltipPosition = () => {
+    if (!fabRef.current) return {};
+
+    const fabSize = 56;
+    const tooltipWidth = 250; // Approximate width
+    const tooltipHeight = 40; // Approximate height
+    const gap = 8;
+    const margin = 10; // Minimum distance from viewport edge
+
+    const style: React.CSSProperties = {};
+
+    // Check if tooltip should be above or below
+    const spaceBelow = window.innerHeight - (position.y + fabSize);
+    const shouldBeAbove = spaceBelow < tooltipHeight + gap;
+
+    if (shouldBeAbove) {
+      style.bottom = `${fabSize + gap}px`;
+    } else {
+      style.top = `${fabSize + gap}px`;
+    }
+
+    // Calculate horizontal positioning relative to viewport
+    const fabCenterX = position.x + fabSize / 2;
+    const tooltipLeftIfCentered = fabCenterX - tooltipWidth / 2;
+    const tooltipRightIfCentered = fabCenterX + tooltipWidth / 2;
+
+    // Determine the best horizontal position
+    if (tooltipLeftIfCentered < margin) {
+      // Would overflow left - anchor to left edge with margin
+      const offset = margin - tooltipLeftIfCentered;
+      style.left = '50%';
+      style.transform = `translateX(calc(-50% + ${offset}px))`;
+    } else if (tooltipRightIfCentered > window.innerWidth - margin) {
+      // Would overflow right - anchor to right edge with margin
+      const overflow = tooltipRightIfCentered - (window.innerWidth - margin);
+      style.left = '50%';
+      style.transform = `translateX(calc(-50% - ${overflow}px))`;
+    } else {
+      // Fits perfectly centered
+      style.left = '50%';
+      style.transform = 'translateX(-50%)';
+    }
+
+    return style;
+  };
+
   // Calculate menu position to avoid overflow
   const getMenuPosition = () => {
     if (!fabRef.current) return {};
@@ -228,15 +295,39 @@ export const FAB: React.FC = () => {
         ref={buttonRef}
         onMouseDown={handleMouseDown}
         onClick={toggleMenu}
-        className={`w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl transition-all duration-200 ${
+        onMouseEnter={() => !isOpen && setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        className={`w-14 h-14 rounded-full shadow-lg flex flex-col items-center justify-center transition-all duration-200 ${
           isOpen
             ? 'bg-red-600 hover:bg-red-700 rotate-45'
             : 'bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
         }`}
         aria-label={isOpen ? t('fab.close_menu') : t('fab.open_menu')}
       >
-        {isOpen ? '×' : getCurrentLanguageFlag()}
+        {isOpen ? (
+          <span className="text-3xl">×</span>
+        ) : (
+          <>
+            <span className="text-2xl leading-none" style={{ animation: 'windBlow 3s ease-in-out infinite', transformOrigin: 'center left' }}>
+              {getCurrentLanguageFlag()}
+            </span>
+            <span className="text-[10px] font-mono text-white/90 mt-0.5 leading-none">{currentTime}</span>
+          </>
+        )}
       </button>
+
+      {/* Tooltip */}
+      {showTooltip && !isOpen && (
+        <div
+          className="absolute px-3 py-2 bg-gray-900 text-white text-xs rounded-lg shadow-xl whitespace-nowrap pointer-events-none z-50 border border-gray-700"
+          style={{
+            ...getTooltipPosition(),
+            animation: 'fadeInUp 0.2s ease-out'
+          }}
+        >
+          {t('fab.tooltip')}
+        </div>
+      )}
 
       {/* Inline CSS for animations */}
       <style>{`
@@ -248,6 +339,21 @@ export const FAB: React.FC = () => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        @keyframes windBlow {
+          0%, 100% {
+            transform: skewY(0deg) scaleX(1);
+          }
+          25% {
+            transform: skewY(3deg) scaleX(1.05);
+          }
+          50% {
+            transform: skewY(-2deg) scaleX(0.98);
+          }
+          75% {
+            transform: skewY(4deg) scaleX(1.08);
           }
         }
       `}</style>

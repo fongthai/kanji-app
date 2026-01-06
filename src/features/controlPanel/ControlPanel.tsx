@@ -353,7 +353,7 @@ function ControlPanel() {
                 onChange={() => dispatch(toggleGrayscaleMode())}
                 className="w-3.5 h-3.5 accent-blue-600"
               />
-              <span className="text-gray-300">Grayscale</span>
+              <span className="text-gray-300">{t('controls:worksheet.grayscale')}</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input
@@ -509,9 +509,9 @@ function ControlPanel() {
               className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
             />
             <div className="flex justify-between text-[10px] text-gray-500">
-              <span>Low</span>
-              <span>Medium</span>
-              <span>HQ</span>
+              <span>{t('controls:quality.low')}</span>
+              <span>{t('controls:quality.medium')}</span>
+              <span>{t('controls:quality.hq')}</span>
             </div>
           </div>
         </div>

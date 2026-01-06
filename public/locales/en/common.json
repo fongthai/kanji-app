@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Kanji Worksheet Generator",
+    "title": "Fong Thai Kanji App",
     "tagline": "Practice Japanese kanji with customizable worksheets"
   },
   "modes": {
@@ -41,5 +41,6 @@
     "toggle_menu": "Toggle menu",
     "switch_language": "Switch language",
     "open_menu": "Open menu",
-    "close_menu": "Close menu"  }
+    "close_menu": "Close menu",
+    "tooltip": "Click for options or drag to move me around"  }
 }

@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Tạo Bảng Luyện Tập Kanji",
+    "title": "App học Kanji Fong Thai",
     "tagline": "Luyện tập chữ Kanji với bảng tùy chỉnh"
   },
   "modes": {
@@ -41,5 +41,6 @@
     "toggle_menu": "Bật/Tắt menu",
     "switch_language": "Chuyển ngôn ngữ",
     "open_menu": "Mở menu",
-    "close_menu": "Đóng menu"  }
+    "close_menu": "Đóng menu",
+    "tooltip": "Nhấp để xem tùy chọn hoặc kéo để di chuyển"  }
 }
