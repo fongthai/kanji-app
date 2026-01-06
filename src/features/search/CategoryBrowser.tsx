@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../app/hooks';
 import { CATEGORY_CHIPS } from './categoryChips';
 
@@ -9,8 +10,8 @@ interface CategoryBrowserProps {
 }
 
 // Hierarchical category groups
-const CATEGORY_GROUPS = {
-  'Beginner Friendly': [
+const CATEGORY_GROUPS: Record<string, string[]> = {
+  'beginner_friendly': [
     'category:food-ingredients-kitchen',
     'category:animals-insects-birds-fish-pets-creatures-wildlife',
     'category:family-people-friend-relations',
@@ -20,7 +21,7 @@ const CATEGORY_GROUPS = {
     'category:body-health-medicine',
     'category:emotions-feelings-happiness-love-states',
   ],
-  'Daily Life': [
+  'daily_life': [
     'category:eating-dining-meals-restaurants',
     'category:cooking-preparation-recipes',
     'category:drinking-beverages-alcohol',
@@ -29,13 +30,13 @@ const CATEGORY_GROUPS = {
     'category:storage-preservation-containers',
     'category:clothing-fashion-dress-shoes-hat',
   ],
-  'Nature & Places': [
+  'nature_places': [
     'category:nature-elements-sightseeing',
     'category:weather-nature-seasons',
     'category:geography-places-countries-cities-mountains-rivers-lakes-landmarks',
     'category:farming-fishing-crops-gardening-flowers-fruits-vegetables-trees',
   ],
-  'Verbs & Adjectives': [
+  'verbs_adjectives': [
     'category:verbs-basic',
     'category:verbs-action',
     'category:adjectives-basic',
@@ -43,18 +44,18 @@ const CATEGORY_GROUPS = {
     'category:adjectives-appearance-personality',
     'category:adjectives-conditions',
   ],
-  'Work & Education': [
+  'work_education': [
     'category:work-office-banking-legal',
     'category:occupations-jobs-employment-company',
     'category:education-academic-learning-levels-school-research',
     'category:economics-finance-money-business',
   ],
-  'Communication & Media': [
+  'communication_media': [
     'category:phone-call-communication-interview-dialog',
     'category:media-writing-journalism-internet-newspaper-news',
     'category:mail-post-delivery-tracking-shipping',
   ],
-  'Social & Politics': [
+  'social_politics': [
     'category:social-relationships-party-speaking-networking-events',
     'category:social-hierarchy-rank-class-status',
     'category:social-organizations-groups-associations',
@@ -62,47 +63,49 @@ const CATEGORY_GROUPS = {
     'category:social-cooperation-conflict-interaction',
     'category:politics-law-government-police',
   ],
-  'Abstract Concepts': [
+  'abstract_concepts': [
     'category:abstract-philosophy-truth-justice-virtue',
     'category:abstract-qualities-attributes-characteristics',
     'category:abstract-quantity-amount-measure',
     'category:abstract-time-duration-temporal',
     'category:abstract-causation-reason-logic',
   ],
-  'Transportation & Travel': [
+  'transportation_travel': [
     'category:vehicles-train-car-travel-transport-driving-moving',
     'category:directions-positions-navigation',
   ],
-  'Culture & Entertainment': [
+  'culture_entertainment': [
     'category:arts-music-sports-culture-activities',
     'category:entertainment-games-hobby-relax',
     'category:history-culture-events',
   ],
-  'Buildings & Construction': [
+  'buildings_construction': [
     'category:housing-buildings-architecture',
     'category:construction-engineering-technology',
   ],
-  'Health & Medical': [
+  'health_medical': [
     'category:health-care-dental-emergency',
   ],
-  'Materials & Measurement': [
+  'materials_measurement': [
     'category:materials-metals-substances',
     'category:measurements-math-calculation-units',
   ],
 };
 
 export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ isOpen, onClose, onApply }) => {
+  const { t } = useTranslation(['controls', 'categories']);
   const allKanjis = useAppSelector((state) => state.kanji.allKanjis);
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
 
-  // Create a map of query -> label for easy lookup
+  // Create a map of query -> translated label for easy lookup
   const queryToLabel = useMemo(() => {
     const map = new Map<string, string>();
     CATEGORY_CHIPS.forEach(chip => {
-      map.set(chip.query, chip.label);
+      const translatedLabel = t(`categories:${chip.labelKey}`);
+      map.set(chip.query, `${translatedLabel} ${chip.emoji}`);
     });
     return map;
-  }, []);
+  }, [t]);
 
   // Count kanjis per category
   const categoryCounts = useMemo(() => {
@@ -170,9 +173,9 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ isOpen, onClos
         {/* Header */}
         <div className="p-4 border-b border-gray-700 flex justify-between items-center">
           <div>
-            <h2 className="text-xl font-bold text-white">Category Browser</h2>
+            <h2 className="text-xl font-bold text-white">{t('controls:search.category_browser_title')}</h2>
             <p className="text-sm text-gray-400 mt-1">
-              Select categories to filter kanjis
+              {t('controls:search.category_browser_subtitle')}
             </p>
           </div>
           <button
@@ -185,10 +188,10 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ isOpen, onClos
 
         {/* Category Groups */}
         <div className="flex-1 overflow-y-auto p-4">
-          {Object.entries(CATEGORY_GROUPS).map(([groupName, queries]) => (
-            <div key={groupName} className="mb-6">
+          {Object.entries(CATEGORY_GROUPS).map(([groupKey, queries]) => (
+            <div key={groupKey} className="mb-6">
               <h3 className="text-lg font-semibold text-blue-400 mb-3">
-                {groupName}
+                {t(`controls:category_groups.${groupKey}`)}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {queries.map(query => {
@@ -228,22 +231,22 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ isOpen, onClos
               onClick={handleSelectAll}
               className="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
             >
-              Select All
+              {t('controls:search.select_all')}
             </button>
             <button
               onClick={handleClearAll}
               className="px-3 py-2 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded transition-colors"
             >
-              Clear All
+              {t('common:buttons.clear_all')}
             </button>
           </div>
           
           <div className="flex gap-4 items-center">
             <div className="text-sm text-gray-300">
-              <span className="font-semibold text-green-400">{selectedCategories.size}</span> categories selected
+              <span className="font-semibold text-green-400">{selectedCategories.size}</span> {t('controls:search.categories_selected')}
               {selectedCategories.size > 0 && (
                 <span className="ml-2">
-                  → <span className="font-semibold text-blue-400">{totalKanjiCount}</span> kanjis
+                  → <span className="font-semibold text-blue-400">{totalKanjiCount}</span> {t('controls:search.kanjis')}
                 </span>
               )}
             </div>
@@ -257,7 +260,7 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ isOpen, onClos
                   : 'bg-green-600 hover:bg-green-700 text-white'
               }`}
             >
-              Apply Filter
+              {t('controls:search.apply_filter')}
             </button>
           </div>
         </div>

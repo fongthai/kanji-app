@@ -1,4 +1,5 @@
 import { memo, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { IndicatorPreset } from '../../constants/indicators';
 import { loadKanjiFontManifest, preloadFont, type FontInfo } from '../../utils/fontLoader';
 
@@ -63,6 +64,7 @@ export const FontSizeControl = memo(function FontSizeControl({
   onToggleShowExplanationMeaning,
   onToggleShowExplanationMnemonic,
 }: FontSizeControlProps) {
+  const { t } = useTranslation('controls');
   // Accordion state
   const [openSection, setOpenSection] = useState<'kanji' | 'indicators' | 'hanviet' | null>('kanji');
   
@@ -107,7 +109,7 @@ export const FontSizeControl = memo(function FontSizeControl({
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-blue-400 uppercase tracking-wide">
             <span className="text-base">🔤</span>
-            <span>Kanji Character</span>
+            <span>{t('display.kanji_character')}</span>
           </div>
           <span className={`text-gray-400 transition-transform text-xs ${openSection === 'kanji' ? 'rotate-180' : ''}`}>
             ▼
@@ -117,7 +119,7 @@ export const FontSizeControl = memo(function FontSizeControl({
           <div className="pb-3 px-1">
             <div className="grid gap-3 lg:grid-cols-2">
               <div>
-                <label className="block text-xs text-gray-400 mb-1">Font</label>
+                <label className="block text-xs text-gray-400 mb-1">{t('display.font')}</label>
                 <select
                   value={kanjiFont}
                   onChange={(e) => onKanjiFontChange(e.target.value)}
@@ -132,7 +134,7 @@ export const FontSizeControl = memo(function FontSizeControl({
               </div>
               <div>
                 <label className="block text-xs text-gray-400 mb-1">
-                  Size: {getSizeLabel(kanjiSize)}
+                  {t('display.size')}: {getSizeLabel(kanjiSize)}
                 </label>
                 <input
                   type="range"
@@ -157,7 +159,7 @@ export const FontSizeControl = memo(function FontSizeControl({
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-blue-400 uppercase tracking-wide">
             <span className="text-base">🏷️</span>
-            <span>Indicators</span>
+            <span>{t('display.indicators')}</span>
           </div>
           <span className={`text-gray-400 transition-transform text-xs ${openSection === 'indicators' ? 'rotate-180' : ''}`}>
             ▼
@@ -199,7 +201,7 @@ export const FontSizeControl = memo(function FontSizeControl({
                     onChange={onToggleShowGradeIndicator}
                     className="w-3.5 h-3.5 accent-blue-600"
                   />
-                  <span className="text-xs text-gray-300">Grade</span>
+                  <span className="text-xs text-gray-300">{t('display.grade')}</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -208,7 +210,7 @@ export const FontSizeControl = memo(function FontSizeControl({
                     onChange={onToggleShowFrequencyIndicator}
                     className="w-3.5 h-3.5 accent-blue-600"
                   />
-                  <span className="text-xs text-gray-300">Frequency</span>
+                  <span className="text-xs text-gray-300">{t('display.frequency')}</span>
                 </label>
               </div>
             </div>
@@ -268,7 +270,7 @@ export const FontSizeControl = memo(function FontSizeControl({
                     onChange={onToggleShowHanViet}
                     className="w-3.5 h-3.5 accent-blue-600"
                   />
-                  <span className="text-xs text-gray-300">Show</span>
+                  <span className="text-xs text-gray-300">{t('display.show')}</span>
                 </label>
               </div>
               <div>
@@ -278,16 +280,16 @@ export const FontSizeControl = memo(function FontSizeControl({
                   disabled={!showHanViet}
                   className="text-xs px-2 py-1 bg-gray-700 text-gray-200 rounded border border-gray-600 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {hanVietOrientation === 'vertical' ? '↓ Vertical' : '→ Horizontal'}
+                  {hanVietOrientation === 'vertical' ? t('display.vertical') : t('display.horizontal')}
                 </button>
               </div>
             </div>
             <div>
               <label className="block text-xs text-gray-400 mb-1">
-                Size: {getSizeLabel(hanVietSize)}
+                {t('display.size')}: {getSizeLabel(hanVietSize)}
               </label>
               <div className="text-xs text-gray-500 italic mb-1">
-                Affects both Hán-Việt text and indicator badges
+                {t('display.affects_text_badges')}
               </div>
               <input
                 type="range"

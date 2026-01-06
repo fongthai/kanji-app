@@ -1,0 +1,8 @@
+{
+  "progress": {
+    "preparing": "Preparing document...",
+    "exporting": "Exporting...",
+    "saving": "Saving file...",
+    "complete": "Complete!"
+  }
+}

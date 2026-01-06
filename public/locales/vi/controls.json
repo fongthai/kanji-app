@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "global_options": "Tùy Chọn Chung",
+    "data_management": "Quản Lý Dữ Liệu",
+    "display_settings": "Cài Đặt Hiển Thị",
+    "png_quality": "Chất Lượng Xuất PNG"
+  },
+  "export": {
+    "title": "Xuất",
+    "pdf": "PDF",
+    "png": "PNG",
+    "pdf_tooltip": "Xuất sheet dưới dạng PDF",
+    "png_tooltip": "Xuất sheet dưới dạng ảnh PNG"
+  },
+  "data": {
+    "save_list": "Lưu danh sách kanji",
+    "save_tooltip": "Lưu các kanji đã chọn dưới dạng tệp văn bản",
+    "load_list": "Tải danh sách kanji",
+    "reset": "Reset Dữ Liệu",
+    "reset_tooltip": "Xóa cơ sở dữ liệu và tải lại"
+  },
+  "search": {
+    "save_query": "Lưu Truy Vấn",
+    "load_saved": "Tải Truy Vấn Đã Lưu",
+    "try_label": "ⓘ Thử:",
+    "all_categories": "Tất Cả Thể Loại",
+    "add_all": "Thêm Tất Cả",
+    "add_all_tooltip": "Thêm tất cả kanji không trùng vào danh sách đã chọn",
+    "clear_results": "Xóa Kết Quả",
+    "clear_results_tooltip": "Xóa kết quả tìm kiếm",
+    "delete": "Xóa",
+    "browse_categories_tooltip": "Duyệt tất cả 53 thể loại",
+    "category_browser_title": "Trình Duyệt Thể Loại",
+    "category_browser_subtitle": "Chọn thể loại để lọc kanji",
+    "select_all": "Chọn Tất Cả",
+    "categories_selected": "thể loại đã chọn",
+    "kanjis": "kanji",
+    "apply_filter": "Áp Dụng Bộ Lọc"
+  },
+  "display": {
+    "title": "Hiển Thị",
+    "input": "Input",
+    "board_settings": "Cài Đặt Board",
+    "sheet_settings": "Cài Đặt Sheet",
+    "kanji_character": "Ký Tự Kanji",
+    "font": "Phông Chữ",
+    "size": "Kích Thước",
+    "show": "Hiển Thị",
+    "vertical": "↓ Dọc",
+    "horizontal": "→ Ngang",
+    "affects_text_badges": "Ảnh hưởng đến cả chữ Hán-Việt và các huy hiệu chỉ báo",
+    "indicators": "Chỉ Báo",
+    "grade": "Cấp Độ",
+    "frequency": "Tần Suất",
+    "kanji_size": "Kích Thước Kanji",
+    "surround_text_size": "Kích Thước Chữ Xung Quanh"
+  },
+  "quality": {
+    "low": "Thấp (Web)",
+    "medium": "Trung Bình (Chuẩn)",
+    "hq": "Cao (In Ấn)"
+  },
+  "worksheet": {
+    "title": "Bảng Tập Viết",
+    "columns": "Số Cột",
+    "show_header": "Hiển Thị header",
+    "show_footer": "Hiển Thị footer",
+    "grayscale": "Chế độ trắng đen"
+  },
+  "category_groups": {
+    "beginner_friendly": "Dành Cho Người Mới",
+    "daily_life": "Cuộc Sống Hàng Ngày",
+    "nature_places": "Thiên Nhiên & Địa Điểm",
+    "verbs_adjectives": "Động Từ & Tính Từ",
+    "work_education": "Công Việc & Giáo Dục",
+    "communication_media": "Giao Tiếp & Truyền Thông",
+    "social_politics": "Xã Hội & Chính Trị",
+    "abstract_concepts": "Khái Niệm Trửu Tượng",
+    "transportation_travel": "Giao Thông & Du Lịch",
+    "culture_entertainment": "Văn Hóa & Giải Trí",
+    "buildings_construction": "Tòa Nhà & Xây Dựng",
+    "health_medical": "Sức Khỏe & Y Tế",
+    "materials_measurement": "Vật Liệu & Đo Lường"
+  }
+}

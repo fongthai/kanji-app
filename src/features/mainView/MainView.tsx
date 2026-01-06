@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../app/hooks';
+import { useTranslation } from 'react-i18next';
 import { A4Paper } from '../../components/screen/A4Paper';
 import { Paginator } from '../../components/shared/Paginator';
 import { BoardGrid } from '../../components/screen/BoardGrid';
@@ -8,6 +9,7 @@ import { BoardFooter } from '../../components/screen/BoardFooter';
 import { useState, useEffect } from 'react';
 
 function MainView() {
+  const { t } = useTranslation('messages');
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
   const currentMode = useAppSelector((state) => state.worksheet.currentMode);
   const currentPage = useAppSelector((state) => state.worksheet.currentPage);
@@ -86,7 +88,7 @@ function MainView() {
               <div className="flex-1 overflow-hidden">
                 {chosenKanjis.length === 0 ? (
                   <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
-                    Select kanji from the Input Panel to generate worksheet
+                    {t('empty_state.select_kanji')}
                   </div>
                 ) : (
                   <BoardGrid

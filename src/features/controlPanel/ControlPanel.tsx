@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   setBoardColumnCount,
@@ -47,6 +48,7 @@ import { loadHeaderFontManifest } from '../../utils/fontLoader';
 import { deleteDatabase } from '../../db/indexedDB';
 
 function ControlPanel() {
+  const { t } = useTranslation(['common', 'controls', 'messages']);
   const dispatch = useAppDispatch();
   const worksheet = useAppSelector((state) => state.worksheet);
   const { chosenKanjis, allKanjis } = useAppSelector((state) => state.kanji);
@@ -67,7 +69,7 @@ function ControlPanel() {
 
   const handleExport = () => {
     if (chosenKanjis.length === 0) {
-      alert('No kanjis selected to export');
+      alert(t('messages:validation.no_kanjis'));
       return;
     }
 
@@ -100,7 +102,7 @@ function ControlPanel() {
         .filter((k): k is NonNullable<typeof k> => k !== undefined);
 
       if (matchedKanjis.length === 0) {
-        alert('No matching kanjis found in the imported file');
+        alert(t('messages:validation.no_matching_kanjis'));
         return;
       }
 
@@ -128,7 +130,7 @@ function ControlPanel() {
         }, 100);
       } catch (error) {
         console.error('[ControlPanel] Error deleting database:', error);
-        alert('Failed to delete database. Please try manually: Open DevTools Console and run:\nindexedDB.deleteDatabase("ft-kanji-database")');
+        alert(t('messages:errors.delete_database_failed'));
       }
     }
   };
@@ -292,8 +294,6 @@ function ControlPanel() {
 
   return (
     <div data-testid="control-panel" className="bg-gray-800 rounded-lg p-4 border border-gray-700 h-full flex flex-col overflow-hidden">
-      <h2 className="text-lg font-semibold mb-4">Control Panel</h2>
-
       <div className="flex-1 overflow-y-scroll pr-2 space-y-4">
         {/* VIEW MODE */}
         <div className="pb-3 border-b border-gray-700">
@@ -304,7 +304,7 @@ function ControlPanel() {
               }`}
               onClick={() => dispatch(setCurrentMode('sheet'))}
             >
-              Sheet
+              {t('common:modes.sheet')}
             </button>
             <button
               className={`flex-1 py-2 px-3 rounded text-sm font-medium transition-colors ${
@@ -312,19 +312,19 @@ function ControlPanel() {
               }`}
               onClick={() => dispatch(setCurrentMode('board'))}
             >
-              Board
+              {t('common:modes.board')}
             </button>
           </div>
         </div>
 
         {/* GLOBAL OPTIONS */}
         <div className="pb-3 border-b border-gray-700">
-          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Global Options</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.global_options')}</h3>
           
           {/* Column Count */}
           <div className="mb-3">
             <div className="flex items-center justify-between mb-1">
-              <label className="text-xs text-gray-400">Columns</label>
+              <label className="text-xs text-gray-400">{t('controls:worksheet.columns')}</label>
               <span className="text-sm text-blue-400 font-semibold">{columnCount}</span>
             </div>
             <input
@@ -369,7 +369,7 @@ function ControlPanel() {
 
         {/* DISPLAY SETTINGS (TABS) */}
         <div className="pb-3 border-b border-gray-700">
-          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Display Settings</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.display_settings')}</h3>
           
           {/* Tabs */}
           <div className="flex gap-1 mb-3 border-b border-gray-700">
@@ -381,7 +381,7 @@ function ControlPanel() {
               }`}
               onClick={() => setActiveTab('input')}
             >
-              Input
+              {t('controls:display.input')}
             </button>
             <button
               className={`px-3 py-2 text-xs font-medium transition-colors border-b-2 ${
@@ -391,7 +391,7 @@ function ControlPanel() {
               }`}
               onClick={() => setActiveTab('main')}
             >
-              {worksheet.currentMode === 'board' ? 'Board Settings' : 'Sheet Settings'}
+              {worksheet.currentMode === 'board' ? t('controls:display.board_settings') : t('controls:display.sheet_settings')}
             </button>
           </div>
 
@@ -487,11 +487,11 @@ function ControlPanel() {
 
         {/* PNG EXPORT QUALITY */}
         <div className="pb-3 border-b border-gray-700">
-          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">PNG Export Quality</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.png_quality')}</h3>
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-300">
-                {pngQuality === 200 ? 'Low (Web)' : pngQuality === 300 ? 'Medium (Standard)' : 'HQ (Print)'}
+                {pngQuality === 200 ? t('controls:quality.low') : pngQuality === 300 ? t('controls:quality.medium') : t('controls:quality.hq')}
               </span>
               <span className="text-xs text-gray-400">{pngQuality} dpi</span>
             </div>
@@ -518,7 +518,7 @@ function ControlPanel() {
 
         {/* DATA MANAGEMENT */}
         <div>
-          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Data Management</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.data_management')}</h3>
           <div className="space-y-2">
             {/* Row 1: PDF and PNG Export */}
             <div className="flex gap-2">
@@ -526,21 +526,21 @@ function ControlPanel() {
                 onClick={handleExportPDF}
                 disabled={chosenKanjis.length === 0 || isExporting}
                 className="flex-1 py-2 px-3 rounded text-xs bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
-                title="Export worksheet as PDF"
+                title={t('controls:export.pdf_tooltip')}
               >
                 {isExporting && exportProgress?.status === 'exporting' 
                   ? `📄 ${exportProgress.currentPage}/${exportProgress.totalPages}`
-                  : '📄 PDF Export'}
+                  : `📄 ${t('common:buttons.export_pdf')}`}
               </button>
               <button
                 onClick={handleExportPNG}
                 disabled={chosenKanjis.length === 0 || isExporting}
                 className="flex-1 py-2 px-3 rounded text-xs bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
-                title="Export worksheet as PNG images"
+                title={t('controls:export.png_tooltip')}
               >
                 {isExporting && exportProgress?.status === 'exporting'
                   ? `🖼️ ${exportProgress.currentPage}/${exportProgress.totalPages}`
-                  : '🖼️ PNG Export'}
+                  : `🖼️ ${t('common:buttons.export_png')}`}
               </button>
             </div>
             {/* Row 2: Save, Load, Reset */}
@@ -549,9 +549,9 @@ function ControlPanel() {
                 onClick={handleExport}
                 disabled={chosenKanjis.length === 0}
                 className="flex-1 py-2 px-3 rounded text-xs bg-green-600 hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
-                title="Save chosen kanjis as text file"
+                title={t('controls:data.save_tooltip')}
               >
-                💾 Save kanji list
+                💾 {t('controls:data.save_list')}
               </button>
               <label className="flex-1">
                 <input
@@ -561,16 +561,16 @@ function ControlPanel() {
                   className="hidden"
                 />
                 <div className="py-2 px-3 rounded text-xs bg-blue-600 hover:bg-blue-700 text-center cursor-pointer transition-colors">
-                  📂 Load kanji list
+                  📂 {t('controls:data.load_list')}
                 </div>
               </label>
               <button
                 onClick={handleReloadData}
                 disabled={isExporting}
                 className="flex-1 py-2 px-3 rounded bg-orange-600 hover:bg-orange-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors text-xs"
-                title="Clear database and reload"
+                title={t('controls:data.reset_tooltip')}
               >
-                🔄 Reset Data
+                🔄 {t('controls:data.reset')}
               </button>
             </div>
           </div>

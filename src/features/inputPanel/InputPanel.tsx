@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addKanji, removeKanji, setAllKanjis, clearChosenKanjis, reorderChosenKanjis, type KanjiData } from '../kanji/kanjiSlice';
 import { seedKanjisFromJSON, checkIfDataExists, getAllKanjis } from '../../db/indexedDB';
@@ -114,6 +115,7 @@ const getSectionColor = () => {
 };
 
 function InputPanel() {
+  const { t } = useTranslation(['common', 'messages']);
   const dispatch = useAppDispatch();
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
   const inputPanelSettings = useAppSelector((state) => state.displaySettings.inputPanel);
@@ -339,7 +341,6 @@ function InputPanel() {
   if (loading) {
     return (
       <div className="bg-gray-800 rounded-lg p-4 border border-gray-700 overflow-y-auto">
-        <h2 className="text-lg font-semibold mb-4">Input Panel</h2>
         <div className="text-center py-8 text-gray-400">Loading kanji data...</div>
       </div>
     );
@@ -347,8 +348,6 @@ function InputPanel() {
 
   return (
     <div data-testid="input-panel" className="bg-gray-800 rounded-lg p-4 border border-gray-700 overflow-y-auto h-full">
-      <h2 className="text-lg font-semibold mb-4">Input Panel</h2>
-      
       {/* Search Component with Tabs */}
       <div className="mb-3 overflow-visible">
         <KanjiSearch kanjiColors={kanjiColors} />
@@ -361,15 +360,15 @@ function InputPanel() {
         >
           <div className="flex items-center gap-2">
             <span className="text-gray-400">{chosenExpanded ? '▼' : '▶'}</span>
-            <strong>CHOSEN KANJIS ({chosenKanjis.length})</strong>
+            <strong>{t('common:labels.chosen_kanjis')} ({chosenKanjis.length})</strong>
           </div>
           {chosenKanjis.length > 0 && (
             <button
               onClick={(e) => { e.stopPropagation(); dispatch(clearChosenKanjis()); }}
               className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white text-sm rounded transition-colors"
-              title="Clear all chosen kanjis"
+              title={t('common:tooltips.clear_all_kanjis')}
             >
-              Clear All
+              {t('common:buttons.clear_all')}
             </button>
           )}
         </div>
@@ -436,16 +435,16 @@ function InputPanel() {
                     <button
                       onClick={(e) => { e.stopPropagation(); addAllFromSection(index); }}
                       className="px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white text-xs rounded transition-colors"
-                      title="Add all kanjis from this section"
+                      title={t('common:tooltips.add_all_section')}
                     >
-                      Add All
+                      {t('common:buttons.add_all')}
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); clearSection(index); }}
                       className="px-2 py-1 bg-red-600 hover:bg-red-500 text-white text-xs rounded transition-colors"
-                      title="Clear all kanjis from this section"
+                      title={t('common:tooltips.clear_section')}
                     >
-                      Clear
+                      {t('common:buttons.clear')}
                     </button>
                   </>
                 )}

@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "empty_cells": "Empty Cells",
+    "empty_cells_hide": "Hide",
+    "empty_cells_row": "Complete Row",
+    "empty_cells_page": "Complete Page",
+    "center_cards": "Center Cards"
+  }
+}

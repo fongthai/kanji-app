@@ -35,7 +35,7 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
   
   // Estimate max characters based on width
   // Conservative estimate to prevent wrapping (adjusted to 4 for wider glyphs)
-  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 3.75);
+  const estimatedMaxChars = Math.floor((maxWidth / 1.33) / 3);
   
   // Helper to render text with bold labels (ON:, KUN:, ★ VN:, ★ EN:, ⚠)
   const renderWithBold = (text: string) => {
@@ -108,8 +108,11 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
       : line1B;
   }
   
-  // Truncate line2 if needed
-  const line2Final = truncate(line2, estimatedMaxChars);
+  // Truncate line2 only if it exceeds estimatedMaxChars (same as line1A)
+  // This ensures both lines can display the same number of characters
+  const line2Final = line2.length > estimatedMaxChars 
+    ? truncate(line2, estimatedMaxChars)
+    : line2;
   
   return (
     <View style={[styles.container, { maxWidth }]}>

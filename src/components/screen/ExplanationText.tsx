@@ -69,15 +69,9 @@ export const ExplanationText: React.FC<ExplanationTextProps> = ({
   // Line 3: VIET-MNEMONICS
   const line3 = kanji.vietnameseMnemonic || '';
   
-  // Helper function to truncate text
-  const truncate = (text: string, maxLength: number): string => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength - 3) + '...';
-  };
-  
   // Conservative estimate to match PDF behavior (divide by 4 for wider glyphs)
   // Use same formula as PDF: (width / 1.33) / 4
-  const estimatedMaxChars = Math.floor((measuredMaxWidth / 1.33) / 3.53);
+  const estimatedMaxChars = Math.floor((measuredMaxWidth / 1.33) / 3.9);
   
   // Helper to render text with bold labels (ON:, KUN:, 🇻🇳, 🇺🇸)
   const renderWithBold = (text: string) => {
@@ -113,8 +107,9 @@ export const ExplanationText: React.FC<ExplanationTextProps> = ({
       : line1B;
   }
   
-  // Truncate line2 if needed
-  const line2Final = truncate(line2, estimatedMaxChars);
+  // Don't manually truncate line2 - let CSS text-ellipsis handle overflow like line1A
+  // This ensures both lines can display the same number of characters
+  const line2Final = line2;
   
   return (
     <>

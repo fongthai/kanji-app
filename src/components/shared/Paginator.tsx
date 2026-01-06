@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../app/hooks';
 import { setCurrentPage } from '../../features/worksheet/worksheetSlice';
 
@@ -9,6 +10,7 @@ interface PaginatorProps {
 }
 
 export function Paginator({ currentPage, totalPages, onHeightChange }: PaginatorProps) {
+  const { t } = useTranslation('common');
   const dispatch = useAppDispatch();
   const containerRef = useRef<HTMLDivElement>(null);
   const [inputPage, setInputPage] = useState(currentPage.toString());
@@ -128,9 +130,9 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
         onClick={handleFirst}
         disabled={currentPage === 1}
         className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        title="First page (Home)"
+        title={t('buttons.first_page')}
       >
-        First
+        {t('buttons.first')}
       </button>
 
       {/* Previous Button */}
@@ -138,9 +140,9 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
         onClick={handlePrevious}
         disabled={currentPage === 1}
         className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        title="Previous page (←)"
+        title={t('buttons.prev_page')}
       >
-        ← Prev
+        {t('buttons.prev')}
       </button>
 
       {/* Page Input / Total */}
@@ -172,9 +174,9 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
         onClick={handleNext}
         disabled={currentPage === totalPages}
         className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        title="Next page (→)"
+        title={t('buttons.next_page')}
       >
-        Next →
+        {t('buttons.next')}
       </button>
 
       {/* Last Button */}
@@ -182,9 +184,9 @@ export function Paginator({ currentPage, totalPages, onHeightChange }: Paginator
         onClick={handleLast}
         disabled={currentPage === totalPages}
         className="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        title="Last page (End)"
+        title={t('buttons.last_page')}
       >
-        Last
+        {t('buttons.last')}
       </button>
     </div>
   );

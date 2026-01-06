@@ -1,0 +1,19 @@
+{
+  "export": {
+    "success": "Xuất thành công!",
+    "error": "Xuất thất bại: {{error}}",
+    "preparing": "Đang chuẩn bị...",
+    "generating": "Đang tạo {{current}}/{{total}} trang..."
+  },
+  "validation": {
+    "no_kanjis": "Vui lòng chọn ít nhất một kanji",
+    "no_matching_kanjis": "Không tìm thấy kanji nào khớp với tệp đã tải lên",
+    "loading": "Đang tải dữ liệu kanji..."
+  },
+  "errors": {
+    "delete_database_failed": "Xóa cơ sở dữ liệu thất bại. Vui lòng thử thủ công: Mở DevTools Console và chạy lệnh:\nindexedDB.deleteDatabase('ft-kanji-database')"
+  },
+  "empty_state": {
+    "select_kanji": "Chọn kanji từ panel bên trái để thấy dữ liệu hiện ra ở đây."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "progress": {
+    "preparing": "Đang chuẩn bị tài liệu...",
+    "exporting": "Đang xuất...",
+    "saving": "Đang lưu file...",
+    "complete": "Hoàn thành!"
+  }
+}

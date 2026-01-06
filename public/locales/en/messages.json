@@ -1,0 +1,19 @@
+{
+  "export": {
+    "success": "Exported successfully!",
+    "error": "Export failed: {{error}}",
+    "preparing": "Preparing...",
+    "generating": "Generating {{current}}/{{total}} pages..."
+  },
+  "validation": {
+    "no_kanjis": "Please select at least one kanji",
+    "no_matching_kanjis": "No matching kanjis found in the imported file",
+    "loading": "Loading kanji data..."
+  },
+  "errors": {
+    "delete_database_failed": "Failed to delete database. Please try manually: Open DevTools Console and run:\nindexedDB.deleteDatabase('ft-kanji-database')"
+  },
+  "empty_state": {
+    "select_kanji": "Select kanji from the Input Panel to generate worksheet"
+  }
+}

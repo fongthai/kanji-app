@@ -30,7 +30,7 @@ const initialState: DisplaySettingsState = {
     kanjiFont: 'KleeOne-Regular',
     kanjiSize: 75, // Percentage scale: 60%-120%, default 75%
     hanVietFont: 'system-ui',
-    hanVietSize: 50, // Percentage scale: 35%-65%, default 50%
+    hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
     hanVietOrientation: 'vertical', // Default: vertical
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
@@ -43,7 +43,7 @@ const initialState: DisplaySettingsState = {
     kanjiFont: 'KanjiStrokeOrders',
     kanjiSize: 110, // Percentage scale: 60%-120%, default 110%
     hanVietFont: 'system-ui',
-    hanVietSize: 50, // Percentage scale: 35%-65%, default 50%
+    hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
     hanVietOrientation: 'vertical', // Default: vertical
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
@@ -56,7 +56,7 @@ const initialState: DisplaySettingsState = {
     kanjiFont: 'KanjiStrokeOrders',
     kanjiSize: 110, // Percentage scale: 70%-110%, default 110%
     hanVietFont: 'system-ui',
-    hanVietSize: 50, // Percentage scale: 35%-65%, default 50%
+    hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
     hanVietOrientation: 'vertical', // Default: vertical
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on

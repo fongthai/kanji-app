@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import InputPanel from './features/inputPanel/InputPanel';
 import MainView from './features/mainView/MainView';
 import ControlPanel from './features/controlPanel/ControlPanel';
+import { FAB } from './components/FAB';
 import { useAppSelector } from './app/hooks';
 
 type ActivePanel = 'input' | 'main' | 'control';
@@ -118,6 +119,9 @@ function App() {
           {activePanel === 'main' && <MainView />}
           {activePanel === 'control' && <ControlPanel />}
         </div>
+
+        {/* Floating Action Button */}
+        <FAB />
       </div>
     );
   }
@@ -130,6 +134,9 @@ function App() {
         <MainView />
         <ControlPanel />
       </div>
+
+      {/* Floating Action Button */}
+      <FAB />
     </div>
   );
 }

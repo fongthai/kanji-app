@@ -3,6 +3,7 @@ import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { PDFJLPTIndicator } from './PDFJLPTIndicator';
 import { PDFGradeIndicator } from './PDFGradeIndicator';
 import { PDFFrequencyBadge } from './PDFFrequencyBadge';
+import { getKanjiColorByJlptLevel } from '../../constants/indicators';
 
 const styles = StyleSheet.create({
   cell: {
@@ -140,6 +141,7 @@ export function PDFSheetMasterCell({
           left: (cellSize - kanjiFontSize) / 2,
           fontSize: kanjiFontSize,
           fontFamily: kanjiFont,
+          color: grayscaleMode ? '#000000' : getKanjiColorByJlptLevel(kanji.jlptLevel),
           textAlign: 'center',
           width: kanjiFontSize,
         }}

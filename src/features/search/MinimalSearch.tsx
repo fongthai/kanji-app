@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../app/hooks';
 import type { KanjiData } from '../kanji/kanjiSlice';
 import { executeKQLQuery, getKQLSuggestions, validateKQLSyntax } from '../../utils/kqlParser';
@@ -13,6 +14,7 @@ interface MinimalSearchProps {
 }
 
 export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, onToast }) => {
+  const { t } = useTranslation(['common', 'controls', 'categories']);
   const allKanjis = useAppSelector((state) => state.kanji.allKanjis);
   
   const [query, setQuery] = useState('');
@@ -442,7 +444,7 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
           <button
             onClick={handleSaveQuery}
             className="px-2 py-1.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm flex-shrink-0"
-            title="Save Query"
+            title={t('controls:search.save_query')}
           >
             💾
           </button>
@@ -451,7 +453,7 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
             <button
               onClick={() => setShowSavedDropdown(!showSavedDropdown)}
               className="px-2 py-1.5 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors text-sm flex-shrink-0"
-              title="Load Saved Queries"
+              title={t('controls:search.load_saved')}
             >
               📚
             </button>
@@ -482,7 +484,7 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
                           <button
                             onClick={(e) => handleDeleteSavedQuery(index, e)}
                             className="ml-2 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
-                            title="Delete"
+                            title={t('controls:search.delete')}
                           >
                             ×
                           </button>
@@ -560,7 +562,7 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               }`}
             >
-              {chip.label}
+              {t(`categories:${chip.labelKey}`)} {chip.emoji}
               {isActive && (
                 <span
                   onClick={(e) => handleRemoveChip(chip.query, e)}
@@ -577,15 +579,15 @@ export const MinimalSearch: React.FC<MinimalSearchProps> = ({ onResultsChange, o
         <button
           onClick={() => setShowCategoryBrowser(true)}
           className="px-3 py-1 rounded-full text-sm transition-colors bg-purple-600 text-white hover:bg-purple-700"
-          title="Browse all 53 categories"
+          title={t('controls:search.browse_categories_tooltip')}
         >
-          📂 All Categories
+          📂 {t('controls:search.all_categories')}
         </button>
       </div>
 
       {/* Rotating Example */}
       <div className="text-xs text-gray-400 h-5 flex items-center">
-        <span className="mr-1 flex-shrink-0">ⓘ Try:</span>
+        <span className="mr-1 flex-shrink-0">{t('controls:search.try_label')}</span>
         <code
           onClick={handleExampleClick}
           className="cursor-pointer text-blue-400 hover:underline truncate"

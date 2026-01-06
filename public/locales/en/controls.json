@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "global_options": "Global Options",
+    "data_management": "Data Management",
+    "display_settings": "Display Settings",
+    "png_quality": "PNG Export Quality"
+  },
+  "export": {
+    "title": "Export",
+    "pdf": "PDF",
+    "png": "PNG",
+    "pdf_tooltip": "Export worksheet as PDF",
+    "png_tooltip": "Export worksheet as PNG images"
+  },
+  "data": {
+    "save_list": "Save kanji list",
+    "save_tooltip": "Save chosen kanjis as text file",
+    "load_list": "Load kanji list",
+    "reset": "Reset Data",
+    "reset_tooltip": "Clear database and reload"
+  },
+  "search": {
+    "save_query": "Save Query",
+    "load_saved": "Load Saved Queries",
+    "try_label": "ⓘ Try:",
+    "all_categories": "All Categories",
+    "add_all": "Add All",
+    "add_all_tooltip": "Add all unique kanjis to chosen",
+    "clear_results": "Clear Results",
+    "clear_results_tooltip": "Clear search results",
+    "delete": "Delete",
+    "browse_categories_tooltip": "Browse all 53 categories",
+    "category_browser_title": "Category Browser",
+    "category_browser_subtitle": "Select categories to filter kanjis",
+    "select_all": "Select All",
+    "categories_selected": "categories selected",
+    "kanjis": "kanjis",
+    "apply_filter": "Apply Filter"
+  },
+  "display": {
+    "title": "Display",
+    "input": "Input",
+    "board_settings": "Board Settings",
+    "sheet_settings": "Sheet Settings",
+    "kanji_character": "Kanji Character",
+    "font": "Font",
+    "size": "Size",
+    "show": "Show",
+    "vertical": "↓ Vertical",
+    "horizontal": "→ Horizontal",
+    "affects_text_badges": "Affects both Hán-Việt text and indicator badges",
+    "indicators": "Indicators",
+    "grade": "Grade",
+    "frequency": "Frequency",
+    "kanji_size": "Kanji Size",
+    "surround_text_size": "Surround Text Size"
+  },
+  "quality": {
+    "low": "Low (Web)",
+    "medium": "Medium (Standard)",
+    "hq": "HQ (Print)"
+  },
+  "worksheet": {
+    "title": "Worksheet",
+    "columns": "Columns",
+    "show_header": "Show Header",
+    "show_footer": "Show Footer",
+    "grayscale": "Grayscale"  },
+  "category_groups": {
+    "beginner_friendly": "Beginner Friendly",
+    "daily_life": "Daily Life",
+    "nature_places": "Nature & Places",
+    "verbs_adjectives": "Verbs & Adjectives",
+    "work_education": "Work & Education",
+    "communication_media": "Communication & Media",
+    "social_politics": "Social & Politics",
+    "abstract_concepts": "Abstract Concepts",
+    "transportation_travel": "Transportation & Travel",
+    "culture_entertainment": "Culture & Entertainment",
+    "buildings_construction": "Buildings & Construction",
+    "health_medical": "Health & Medical",
+    "materials_measurement": "Materials & Measurement"  }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { addKanji } from '../kanji/kanjiSlice';
 import type { KanjiData } from '../kanji/kanjiSlice';
@@ -10,6 +11,7 @@ interface KanjiSearchProps {
 }
 
 export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
+  const { t } = useTranslation('controls');
   const dispatch = useAppDispatch();
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
   const inputPanelSettings = useAppSelector((state) => state.displaySettings.inputPanel);
@@ -96,16 +98,16 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
               <button
                 onClick={handleAddAll}
                 className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-sm rounded transition-colors"
-                title="Add all unique kanjis to chosen"
+                title={t('search.add_all_tooltip')}
               >
-                Add All {searchResults.length} ✚
+                {t('search.add_all')} {searchResults.length} ➕
               </button>
               <button
                 onClick={handleClearResults}
                 className="px-3 py-1 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded transition-colors"
-                title="Clear search results"
+                title={t('search.clear_results_tooltip')}
               >
-                Clear Results ×
+                {t('search.clear_results')} ×
               </button>
             </div>
           </div>

@@ -1,0 +1,45 @@
+{
+  "app": {
+    "title": "Tạo Bảng Luyện Tập Kanji",
+    "tagline": "Luyện tập chữ Kanji với bảng tùy chỉnh"
+  },
+  "modes": {
+    "sheet": "Chế Độ Sheet",
+    "board": "Chế Độ Board",
+    "vocab": "Từ Vựng",
+    "quiz": "Câu Đố"
+  },
+  "buttons": {
+    "export_pdf": "Xuất PDF",
+    "export_png": "Xuất PNG",
+    "clear_all": "Xóa Tất Cả",
+    "add_all": "Thêm Tất Cả",
+    "clear": "Xóa",
+    "reload_data": "Tải Lại Dữ Liệu",
+    "close": "Đóng",
+    "first": "Đầu",
+    "first_page": "Trang đầu (Home)",
+    "prev": "← Trước",
+    "prev_page": "Trang trước (←)",
+    "next": "Sau →",
+    "next_page": "Trang sau (→)",
+    "last": "Cuối",
+    "last_page": "Trang cuối (End)"
+  },
+  "labels": {
+    "language": "Ngôn Ngữ",
+    "chosen_kanjis": "KANJI ĐÃ CHỌN",
+    "page_of": "Trang {{current}} / {{total}}",
+    "generated_by": "Tạo bởi Fong Thai Kanji App vào {{date}} lúc {{time}}"
+  },
+  "tooltips": {
+    "clear_all_kanjis": "Xóa tất cả kanji đã chọn",
+    "add_all_section": "Thêm tất cả kanji từ mục này",
+    "clear_section": "Xóa tất cả kanji từ mục này"  },
+  "fab": {
+    "about": "Giới Thiệu",
+    "toggle_menu": "Bật/Tắt menu",
+    "switch_language": "Chuyển ngôn ngữ",
+    "open_menu": "Mở menu",
+    "close_menu": "Đóng menu"  }
+}

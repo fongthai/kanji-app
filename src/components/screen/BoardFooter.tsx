@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getFooterText } from '../../constants/appText';
 
 interface BoardFooterProps {
@@ -9,10 +10,11 @@ interface BoardFooterProps {
 }
 
 export function BoardFooter({ currentPage, totalPages, visible, timestamp }: BoardFooterProps) {
+  const { t } = useTranslation('common');
   if (!visible) return null;
   
   // Regenerate footer text when timestamp changes (or on mount)
-  const footerText = useMemo(() => getFooterText(), [timestamp]);
+  const footerText = useMemo(() => getFooterText(t), [timestamp, t]);
   
   return (
     <div 
@@ -41,7 +43,7 @@ export function BoardFooter({ currentPage, totalPages, visible, timestamp }: Boa
         
         {/* Right: Page numbers */}
         <p className="text-sm text-gray-600">
-          Page {currentPage} of {totalPages}
+          {t('labels.page_of', { current: currentPage, total: totalPages })}
         </p>
       </div>
     </div>
