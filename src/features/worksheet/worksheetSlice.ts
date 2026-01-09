@@ -9,7 +9,7 @@ function loadSavedMode(): 'sheet' | 'board' | 'quiz' {
       return savedMode;
     }
   }
-  return 'board'; // Default fallback
+  return 'quiz'; // Default fallback
 }
 
 interface WorksheetState {

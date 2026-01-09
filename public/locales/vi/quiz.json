@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Cài Đặt Quiz",
-    "description": "Tùy chỉnh quiz của bạn và bắt đầu luyện tập!",
+    "description": "Tùy chỉnh quiz kanji của bạn",
     "level": {
       "title": "Chọn Cấp Độ",
       "difficulty": "Độ Khó",
@@ -34,9 +34,34 @@
       "roundRobinDesc": "Luân chuyển đều các loại câu hỏi",
       "randomDesc": "Loại câu hỏi ngẫu nhiên cho mỗi kanji"
     },
+    "startQuiz": "Bắt Đầu Quiz",
+    "showMe": "Hiển thị",
+    "illAnswerWith": "Tôi sẽ trả lời bằng",
+    "in": "với",
+    "order": "thứ tự, cho tôi",
+    "secondsPerQuestion": "giây mỗi câu hỏi",
+    "kanjiAvailable": "{{count}} kanji{{plural}} khả dụng cho quiz",
+    "noKanjisMatch": "Không có kanji nào phù hợp với lựa chọn của bạn. Vui lòng điều chỉnh bộ lọc.",
+    "giveMe": "Cho tôi",
+    "all": "tất cả",
+    "random10": "ngẫu nhiên 10",
+    "random20": "ngẫu nhiên 20",
+    "random30": "ngẫu nhiên 30",
+    "random50": "ngẫu nhiên 50",
+    "random100": "ngẫu nhiên 100",
+    "from": "từ",
+    "levels": "cấp độ:",
+    "kanji": "kanji",
+    "vocabularies": "từ vựng",
+    "soon": "Sắp Tới",
+    "selectAll": "Chọn Tất Cả",
+    "clear": "Xóa",
+    "sequential": "tuần tự",
+    "random": "ngẫu nhiên",
     "startQuiz": "Bắt Đầu Quiz"
   },
   "quiz": {
+    "title": "Quiz",
     "question": "Câu {{current}} / {{total}}",
     "next": "Tiếp Theo",
     "finish": "Hoàn Thành Quiz",
@@ -69,7 +94,17 @@
     "backToSettings": "Quay Lại Cài Đặt",
     "saveQuiz": "Lưu Quiz Này",
     "restartQuiz": "Làm Lại Quiz Này",
-    "newQuiz": "Bắt Đầu Quiz Mới"
+    "newQuiz": "Bắt Đầu Quiz Mới",
+    "format": "Định dạng",
+    "unlimited": "Không Giới Hạn",
+    "grade": "Lớp"
+  },
+  "resumeQuiz": {
+    "title": "Tiếp Tục Quiz?",
+    "description": "Bạn có một quiz chưa hoàn thành. Bạn muốn làm gì?",
+    "continueQuiz": "Tiếp Tục Quiz Hiện Tại",
+    "startNewQuiz": "Bắt Đầu Quiz Mới",
+    "cancel": "Hủy"
   },
   "interruption": {
     "title": "Quiz Đang Tiến Hành",
@@ -83,7 +118,8 @@
     "quitWithoutSaving": "Thoát Không Lưu",
     "quitAndCalculate": "Thoát & Tính Kết Quả",
     "cancel": "Tiếp Tục Quiz"
-  },  "errors": {
+  },
+  "errors": {
     "insufficientKanjis": "Không đủ kanji cho cấp độ và số câu hỏi đã chọn",
     "noQuestionType": "Vui lòng chọn ít nhất một loại câu hỏi",
     "generationFailed": "Không thể tạo câu hỏi quiz"

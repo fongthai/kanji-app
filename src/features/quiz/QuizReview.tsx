@@ -182,10 +182,10 @@ const QuizReview: React.FC = () => {
           <div className="space-y-1 text-gray-300">
             <p>{t('review.level')}: {currentResult.settings.levelType === 'jlpt' 
               ? currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join(', ')
-              : `Grade ${currentResult.settings.selectedGradeLevels.join(', ')}`
+              : `${t('review.grade')} ${currentResult.settings.selectedGradeLevels.join(', ')}`
             }</p>
-            <p>{t('review.timeLimit')}: {currentResult.settings.maxTimePerQuestion === 0 ? 'Unlimited' : `${currentResult.settings.maxTimePerQuestion}s`}</p>
-            <p>Format: {currentResult.settings.showField} → {currentResult.settings.askField}</p>
+            <p>{t('review.timeLimit')}: {currentResult.settings.maxTimePerQuestion === 0 ? t('review.unlimited') : `${currentResult.settings.maxTimePerQuestion}s`}</p>
+            <p>{t('review.format')}: {currentResult.settings.showField} → {currentResult.settings.askField}</p>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 {
   "settings": {
     "title": "Quiz Settings",
-    "description": "Configure your quiz preferences and start practicing!",
+    "description": "Configure your kanji quiz",
     "level": {
       "title": "Select Level",
       "difficulty": "Difficulty",
@@ -36,9 +36,34 @@
       "roundRobinDesc": "Cycle through all question types evenly",
       "randomDesc": "Random question type for each kanji"
     },
+    "startQuiz": "Start Quiz",
+    "showMe": "Show me",
+    "illAnswerWith": "I'll answer with",
+    "in": "in",
+    "order": "order, give me",
+    "secondsPerQuestion": "seconds per question",
+    "kanjiAvailable": "{{count}} kanji{{plural}} available for the quiz",
+    "noKanjisMatch": "No kanjis match your selection. Please adjust your filters.",
+    "giveMe": "Give me",
+    "all": "all",
+    "random10": "random 10",
+    "random20": "random 20",
+    "random30": "random 30",
+    "random50": "random 50",
+    "random100": "random 100",
+    "from": "from",
+    "levels": "levels:",
+    "kanji": "kanji",
+    "vocabularies": "vocabularies",
+    "soon": "Soon",
+    "selectAll": "Select All",
+    "clear": "Clear",
+    "sequential": "sequential",
+    "random": "random",
     "startQuiz": "Start Quiz"
   },
   "quiz": {
+    "title": "Quiz",
     "question": "Question {{current}} of {{total}}",
     "next": "Next",
     "finish": "Finish Quiz",
@@ -71,7 +96,17 @@
     "backToSettings": "Back to Settings",
     "saveQuiz": "Save This Quiz",
     "restartQuiz": "Restart Same Quiz",
-    "newQuiz": "Start New Quiz"
+    "newQuiz": "Start New Quiz",
+    "format": "Format",
+    "unlimited": "Unlimited",
+    "grade": "Grade"
+  },
+  "resumeQuiz": {
+    "title": "Resume Quiz?",
+    "description": "You have an unfinished quiz. What would you like to do?",
+    "continueQuiz": "Continue Current Quiz",
+    "startNewQuiz": "Start New Quiz",
+    "cancel": "Cancel"
   },
   "interruption": {
     "title": "Quiz in Progress",
@@ -79,13 +114,15 @@
     "continue": "Continue Quiz",
     "startNew": "Start New Quiz",
     "cancel": "Cancel"
-  },  "quit": {
+  },
+  "quit": {
     "title": "Quit Quiz?",
     "description": "Do you want to quit this quiz?",
     "quitWithoutSaving": "Quit Without Saving",
     "quitAndCalculate": "Quit & Calculate Results",
     "cancel": "Continue Quiz"
-  },  "errors": {
+  },
+  "errors": {
     "insufficientKanjis": "Not enough kanjis available for selected level and question count",
     "noQuestionType": "Please select at least one question type",
     "generationFailed": "Failed to generate quiz questions"

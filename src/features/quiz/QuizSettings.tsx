@@ -25,7 +25,7 @@ import { generateQuestions } from '../../utils/questionGenerator';
 import { useState, useEffect } from 'react';
 
 const QuizSettings: React.FC = () => {
-  const { ready } = useTranslation('quiz');
+  const { t, ready } = useTranslation('quiz');
   const dispatch = useAppDispatch();
   
   const settings = useAppSelector(state => state.quiz.settings);
@@ -175,27 +175,27 @@ const QuizSettings: React.FC = () => {
     <>
       <div className="flex flex-col h-full overflow-y-auto p-4 md:p-6">
         <div className="text-center mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">Quiz Settings</h1>
-          <p className="text-sm text-gray-400 mt-1">Configure your kanji quiz</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-white">{t('settings.title')}</h1>
+          <p className="text-sm text-gray-400 mt-1">{t('settings.description')}</p>
         </div>
 
         <div className="max-w-5xl mx-auto w-full space-y-6">
           <div className="bg-gray-700 rounded-xl p-6 space-y-6">
             
             <div className="flex flex-wrap items-center gap-2 text-white text-base md:text-lg">
-              <span className="text-gray-300">Give me</span>
+              <span className="text-gray-300">{t('settings.giveMe')}</span>
               
               <select
                 value={settings.numberSelection}
                 onChange={(e) => dispatch(setNumberSelection(e.target.value as NumberSelection))}
                 className="px-3 py-2 bg-gray-800 text-white rounded border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-medium"
               >
-                <option value="all">all</option>
-                <option value="random-10">random 10</option>
-                <option value="random-20">random 20</option>
-                <option value="random-30">random 30</option>
-                <option value="random-50">random 50</option>
-                <option value="random-100">random 100</option>
+                <option value="all">{t('settings.all') || 'all'}</option>
+                <option value="random-10">{t('settings.random10') || 'random 10'}</option>
+                <option value="random-20">{t('settings.random20') || 'random 20'}</option>
+                <option value="random-30">{t('settings.random30') || 'random 30'}</option>
+                <option value="random-50">{t('settings.random50') || 'random 50'}</option>
+                <option value="random-100">{t('settings.random100') || 'random 100'}</option>
               </select>
 
               <label className="flex items-center gap-2 px-3 py-2 bg-gray-800 rounded cursor-pointer hover:bg-gray-750 transition-colors">
@@ -205,7 +205,7 @@ const QuizSettings: React.FC = () => {
                   onChange={(e) => dispatch(setIncludeKanji(e.target.checked))}
                   className="w-4 h-4 rounded border-gray-600 text-blue-600 focus:ring-1 focus:ring-blue-500"
                 />
-                <span className="font-medium">kanji</span>
+                <span className="font-medium">{t('settings.kanji')}</span>
               </label>
 
               <label className="flex items-center gap-2 px-3 py-2 bg-gray-800 rounded cursor-not-allowed opacity-60 relative">
@@ -215,15 +215,15 @@ const QuizSettings: React.FC = () => {
                   disabled
                   className="w-4 h-4 rounded border-gray-600 text-blue-600 cursor-not-allowed"
                 />
-                <span className="font-medium">vocabularies</span>
+                <span className="font-medium">{t('settings.vocabularies')}</span>
                 <span className="ml-1 px-2 py-0.5 bg-blue-600 text-white text-xs rounded-full">
-                  🔜 Soon
+                  🔜 {t('settings.soon')}
                 </span>
               </label>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-white text-base md:text-lg">
-              <span className="text-gray-300">from</span>
+              <span className="text-gray-300">{t('settings.from')}</span>
               
               <select
                 value={settings.levelType}
@@ -231,10 +231,10 @@ const QuizSettings: React.FC = () => {
                 className="px-3 py-2 bg-gray-800 text-white rounded border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-medium"
               >
                 <option value="jlpt">JLPT</option>
-                <option value="grade">Grade</option>
+                <option value="grade">{t('settings.level.grade')}</option>
               </select>
 
-              <span className="text-gray-300">levels:</span>
+              <span className="text-gray-300">{t('settings.levels')}</span>
             </div>
 
             <div className="bg-gray-800 rounded-lg p-4 space-y-3">
@@ -245,13 +245,13 @@ const QuizSettings: React.FC = () => {
                       onClick={handleSelectAllJlpt}
                       className="px-3 py-1 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
                     >
-                      Select All
+                      {t('settings.selectAll')}
                     </button>
                     <button
                       onClick={handleSelectNoneJlpt}
                       className="px-3 py-1 text-xs bg-gray-600 hover:bg-gray-700 text-white rounded transition-colors"
                     >
-                      Clear
+                      {t('settings.clear')}
                     </button>
                   </>
                 ) : (
@@ -260,13 +260,13 @@ const QuizSettings: React.FC = () => {
                       onClick={handleSelectAllGrade}
                       className="px-3 py-1 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
                     >
-                      Select All
+                      {t('settings.selectAll')}
                     </button>
                     <button
                       onClick={handleSelectNoneGrade}
                       className="px-3 py-1 text-xs bg-gray-600 hover:bg-gray-700 text-white rounded transition-colors"
                     >
-                      Clear
+                      {t('settings.clear')}
                     </button>
                   </>
                 )}
@@ -308,7 +308,7 @@ const QuizSettings: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-white text-base md:text-lg">
-              <span className="text-gray-300">Show me</span>
+              <span className="text-gray-300">{t('settings.showMe')}</span>
               
               <select
                 value={settings.showField}
@@ -322,7 +322,7 @@ const QuizSettings: React.FC = () => {
                 ))}
               </select>
 
-              <span className="text-gray-300">, I'll answer with</span>
+              <span className="text-gray-300">{t('settings.illAnswerWith')}</span>
               
               {settings.showField === 'kanji' ? (
                 <div className="flex flex-wrap gap-2">
@@ -356,18 +356,18 @@ const QuizSettings: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-white text-base md:text-lg">
-              <span className="text-gray-300">in</span>
+              <span className="text-gray-300">{t('settings.in')}</span>
               
               <select
                 value={settings.questionOrder}
                 onChange={(e) => dispatch(setQuestionOrder(e.target.value as 'sequential' | 'random'))}
                 className="px-3 py-2 bg-gray-800 text-white rounded border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-medium"
               >
-                <option value="sequential">sequential</option>
-                <option value="random">random</option>
+                <option value="sequential">{t('settings.questionOrder.sequential')}</option>
+                <option value="random">{t('settings.questionOrder.random')}</option>
               </select>
 
-              <span className="text-gray-300">order, give me</span>
+              <span className="text-gray-300">{t('settings.order')}</span>
               
               <select
                 value={settings.maxTimePerQuestion}
@@ -377,18 +377,18 @@ const QuizSettings: React.FC = () => {
                 <option value={10}>10</option>
                 <option value={30}>30</option>
                 <option value={60}>60</option>
-                <option value={0}>unlimited</option>
+                <option value={0}>{t('settings.unlimited')}</option>
               </select>
 
-              <span className="text-gray-300">seconds per question</span>
+              <span className="text-gray-300">{t('settings.secondsPerQuestion')}</span>
             </div>
           </div>
 
           <div className="text-center">
             <p className={`text-lg font-semibold ${availableCount > 0 ? 'text-green-400' : 'text-red-400'}`}>
               {availableCount > 0 
-                ? `${availableCount} kanji${availableCount > 1 ? 's' : ''} available for the quiz`
-                : 'No kanjis match your selection. Please adjust your filters.'}
+                ? t('settings.kanjiAvailable', { count: availableCount, plural: availableCount > 1 ? 's' : '' })
+                : t('settings.noKanjisMatch')}
             </p>
           </div>
 
@@ -401,7 +401,7 @@ const QuizSettings: React.FC = () => {
                 : 'bg-gray-800 text-gray-600 cursor-not-allowed'
             }`}
           >
-            Start Quiz
+            {t('settings.startQuiz')}
           </button>
         </div>
       </div>
@@ -410,29 +410,29 @@ const QuizSettings: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
           <div className="bg-gray-800 rounded-xl p-6 max-w-md w-full space-y-4 shadow-2xl">
             <h3 className="text-2xl font-bold text-white text-center">
-              Quiz in Progress
+              {t('resumeQuiz.title')}
             </h3>
             <p className="text-gray-300 text-center">
-              You have an active quiz. Do you want to continue or start a new one?
+              {t('resumeQuiz.description')}
             </p>
             <div className="flex flex-col gap-3">
               <button
                 onClick={handleResumeQuiz}
                 className="w-full py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors"
               >
-                Continue Current Quiz
+                {t('resumeQuiz.continueQuiz')}
               </button>
               <button
                 onClick={handleStartNewQuiz}
                 className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
               >
-                Start New Quiz
+                {t('resumeQuiz.startNewQuiz')}
               </button>
               <button
                 onClick={handleCancelInterruption}
                 className="w-full py-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg font-semibold transition-colors"
               >
-                Cancel
+                {t('resumeQuiz.cancel')}
               </button>
             </div>
           </div>
