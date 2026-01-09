@@ -20,7 +20,7 @@ export const LanguageSwitcher = () => {
         className="bg-gray-700 text-white px-3 py-2 rounded border border-gray-600 hover:border-gray-500 focus:outline-none focus:border-blue-500"
       >
         <option value="vi">🇻🇳 Tiếng Việt</option>
-        <option value="en">🇺🇸 English</option>
+        <option value="en">🇬🇧 English</option>
       </select>
     </div>
   );

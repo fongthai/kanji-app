@@ -381,8 +381,8 @@ function InputPanel() {
   const handleCountdownComplete = () => {
     setShowCountdown(false);
     
-    // Create 20 random kanjis from section (or less if section has fewer)
-    const quizCount = Math.min(20, quizSectionKanjis.length);
+    // Create 10 random kanjis from section (or less if section has fewer)
+    const quizCount = Math.min(10, quizSectionKanjis.length);
     const randomKanjis: KanjiData[] = [];
     const available = [...quizSectionKanjis];
     
@@ -420,7 +420,7 @@ function InputPanel() {
     };
 
     // Generate questions from random kanjis using full kanji pool for wrong answers
-    const questions = generateQuestions(quizSettings, allKanjis);
+    const questions = generateQuestions(quizSettings, allKanjis, randomKanjis);
     
     if (questions.length === 0) {
       alert('Could not generate questions. Please try again.');

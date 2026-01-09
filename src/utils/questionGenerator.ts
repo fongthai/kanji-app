@@ -191,21 +191,29 @@ export function selectWrongAnswers(
  */
 export function generateQuestions(
   settings: QuizSettings,
-  allKanjis: Kanji[]
+  allKanjis: Kanji[],
+  preFilteredKanjis?: Kanji[]
 ): QuizQuestion[] {
-  // Filter kanjis by level
-  let levelSelection: string[] | number[];
-  if (settings.levelType === 'jlpt') {
-    levelSelection = settings.selectedJlptLevels;
+  let filteredKanjis: Kanji[];
+
+  // If preFilteredKanjis is provided, use those directly (for quick quiz from sections)
+  if (preFilteredKanjis && preFilteredKanjis.length > 0) {
+    filteredKanjis = preFilteredKanjis;
   } else {
-    levelSelection = settings.selectedGradeLevels;
+    // Filter kanjis by level
+    let levelSelection: string[] | number[];
+    if (settings.levelType === 'jlpt') {
+      levelSelection = settings.selectedJlptLevels;
+    } else {
+      levelSelection = settings.selectedGradeLevels;
+    }
+
+    filteredKanjis = filterKanjisByLevel(
+      settings.levelType,
+      levelSelection,
+      allKanjis
+    );
   }
-  
-  let filteredKanjis = filterKanjisByLevel(
-    settings.levelType,
-    levelSelection,
-    allKanjis
-  );
 
   // Filter kanjis to only those with required fields for showField/askFields
   const requiredFields = [settings.showField, ...settings.askFields];

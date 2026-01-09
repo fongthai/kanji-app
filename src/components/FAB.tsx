@@ -151,7 +151,7 @@ export const FAB: React.FC = () => {
   };
 
   const getCurrentLanguageFlag = () => {
-    return i18n.language === 'vi' ? '🇻🇳' : '🇬🇧';
+    return i18n.language === 'vi' ? '🇬🇧' : '🇻🇳';
   };
 
   // Calculate tooltip position to avoid overflow
