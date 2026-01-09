@@ -2,10 +2,10 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { DEFAULT_HEADER_TEXT } from '../../constants/appText';
 
 // Load saved mode from localStorage
-function loadSavedMode(): 'sheet' | 'board' {
+function loadSavedMode(): 'sheet' | 'board' | 'quiz' {
   if (typeof window !== 'undefined') {
     const savedMode = localStorage.getItem('kanji-worksheet-mode');
-    if (savedMode === 'board' || savedMode === 'sheet') {
+    if (savedMode === 'board' || savedMode === 'sheet' || savedMode === 'quiz') {
       return savedMode;
     }
   }
@@ -35,7 +35,7 @@ interface WorksheetState {
   // Shared settings
   hanVietOrientation: 'vertical' | 'horizontal';
   currentPage: number;
-  currentMode: 'sheet' | 'board';
+  currentMode: 'sheet' | 'board' | 'quiz';
   grayscaleMode: boolean;
 }
 
@@ -127,7 +127,7 @@ const worksheetSlice = createSlice({
     setCurrentPage: (state, action: PayloadAction<number>) => {
       state.currentPage = action.payload;
     },
-    setCurrentMode: (state, action: PayloadAction<'sheet' | 'board'>) => {
+    setCurrentMode: (state, action: PayloadAction<'sheet' | 'board' | 'quiz'>) => {
       state.currentMode = action.payload;
       state.currentPage = 1; // Reset to first page when switching modes
     },

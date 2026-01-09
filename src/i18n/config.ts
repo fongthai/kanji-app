@@ -11,7 +11,7 @@ i18n
     fallbackLng: 'vi', // Default: Vietnamese
     supportedLngs: ['vi', 'en'],
     defaultNS: 'common',
-    ns: ['common', 'sheet', 'board', 'controls', 'messages', 'export', 'categories'],
+    ns: ['common', 'sheet', 'board', 'controls', 'messages', 'export', 'categories', 'quiz'],
     
     detection: {
       order: ['querystring', 'localStorage', 'navigator'],

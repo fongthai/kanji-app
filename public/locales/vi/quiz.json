@@ -1,0 +1,91 @@
+{
+  "settings": {
+    "title": "Cài Đặt Quiz",
+    "description": "Tùy chỉnh quiz của bạn và bắt đầu luyện tập!",
+    "level": {
+      "title": "Chọn Cấp Độ",
+      "difficulty": "Độ Khó",
+      "jlpt": "JLPT",
+      "grade": "Lớp",
+      "beginner": "Sơ Cấp (N5/N4)",
+      "intermediate": "Trung Cấp (N3)",
+      "advanced": "Nâng Cao (N2/N1)"
+    },
+    "availableKanjis": "{{count}} kanji khả dụng",
+    "questionCount": {
+      "title": "Số Lượng Câu Hỏi",
+      "questions": "câu hỏi"
+    },
+    "timeLimit": {
+      "title": "Thời Gian Mỗi Câu",
+      "seconds": "giây"
+    },
+    "questionTypes": {
+      "title": "Loại Câu Hỏi",
+      "kanjiToHanViet": "Kanji → Hán Việt",
+      "hanVietToKanji": "Hán Việt → Kanji",
+      "kanjiToMeaning": "Kanji → Nghĩa Tiếng Việt",
+      "kanjiToOnyomi": "Kanji → Onyomi",      "onyomiToKanji": "Onyomi → Kanji",      "meaningToKanji": "Nghĩa Tiếng Việt → Kanji"
+    },
+    "questionOrder": {
+      "title": "Thứ Tự Câu Hỏi",
+      "roundRobin": "Luân Phiên",
+      "random": "Ngẫu Nhiên",
+      "roundRobinDesc": "Luân chuyển đều các loại câu hỏi",
+      "randomDesc": "Loại câu hỏi ngẫu nhiên cho mỗi kanji"
+    },
+    "startQuiz": "Bắt Đầu Quiz"
+  },
+  "quiz": {
+    "question": "Câu {{current}} / {{total}}",
+    "next": "Tiếp Theo",
+    "finish": "Hoàn Thành Quiz",
+    "timeout": "Hết giờ!",
+    "yourAnswer": "Câu Trả Lời Của Bạn",
+    "correctAnswer": "Đáp Án Đúng"
+  },
+  "progress": {
+    "question": "Câu {{current}} / {{total}}",
+    "progress": "Hoàn thành {{percent}}%"
+  },
+  "review": {
+    "title": "Kết Quả Quiz",
+    "quiz": "Quiz",
+    "outOf10": "trên 10",
+    "correct": "đúng",
+    "timeStats": "Thống Kê Thời Gian",
+    "totalTime": "Tổng Thời Gian",
+    "avgTimePerQuestion": "Thời Gian Trung Bình",
+    "quizSettings": "Cài Đặt Quiz",
+    "level": "Cấp Độ",
+    "timeLimit": "Giới Hạn Thời Gian",
+    "typeBreakdown": "Hiệu Suất Theo Loại Câu Hỏi",
+    "detailedAnswers": "Chi Tiết Câu Trả Lời",
+    "yourAnswer": "Câu Trả Lời Của Bạn",
+    "correctAnswer": "Đáp Án Đúng",
+    "timeTaken": "Thời Gian",
+    "noAnswer": "Không trả lời (hết giờ)",
+    "noResults": "Chưa có kết quả quiz. Hãy làm quiz đầu tiên!",
+    "backToSettings": "Quay Lại Cài Đặt",
+    "saveQuiz": "Lưu Quiz Này",
+    "restartQuiz": "Làm Lại Quiz Này",
+    "newQuiz": "Bắt Đầu Quiz Mới"
+  },
+  "interruption": {
+    "title": "Quiz Đang Tiến Hành",
+    "description": "Bạn có một quiz chưa hoàn thành. Bạn muốn làm gì?",
+    "continue": "Tiếp Tục Quiz",
+    "startNew": "Bắt Đầu Quiz Mới",
+    "cancel": "Hủy"
+  },  "quit": {
+    "title": "Thoát Quiz?",
+    "description": "Bạn có muốn thoát quiz này không?",
+    "quitWithoutSaving": "Thoát Không Lưu",
+    "quitAndCalculate": "Thoát & Tính Kết Quả",
+    "cancel": "Tiếp Tục Quiz"
+  },  "errors": {
+    "insufficientKanjis": "Không đủ kanji cho cấp độ và số câu hỏi đã chọn",
+    "noQuestionType": "Vui lòng chọn ít nhất một loại câu hỏi",
+    "generationFailed": "Không thể tạo câu hỏi quiz"
+  }
+}

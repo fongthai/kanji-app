@@ -314,10 +314,19 @@ function ControlPanel() {
             >
               {t('common:modes.board')}
             </button>
+            <button
+              className={`flex-1 py-2 px-3 rounded text-sm font-medium transition-colors ${
+                worksheet.currentMode === 'quiz' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+              onClick={() => dispatch(setCurrentMode('quiz'))}
+            >
+              {t('common:modes.quiz')}
+            </button>
           </div>
         </div>
 
-        {/* GLOBAL OPTIONS */}
+        {/* GLOBAL OPTIONS - Hidden in Quiz Mode */}
+        {worksheet.currentMode !== 'quiz' && (
         <div className="pb-3 border-b border-gray-700">
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.global_options')}</h3>
           
@@ -366,8 +375,10 @@ function ControlPanel() {
             </label>
           </div>
         </div>
+        )}
 
-        {/* DISPLAY SETTINGS (TABS) */}
+        {/* DISPLAY SETTINGS (TABS) - Hidden in Quiz Mode */}
+        {worksheet.currentMode !== 'quiz' && (
         <div className="pb-3 border-b border-gray-700">
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.display_settings')}</h3>
           
@@ -484,8 +495,10 @@ function ControlPanel() {
 
           </div>
         </div>
+        )}
 
-        {/* PNG EXPORT QUALITY */}
+        {/* PNG EXPORT QUALITY - Hidden in Quiz Mode */}
+        {worksheet.currentMode !== 'quiz' && (
         <div className="pb-3 border-b border-gray-700">
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.png_quality')}</h3>
           <div className="space-y-2">
@@ -515,12 +528,14 @@ function ControlPanel() {
             </div>
           </div>
         </div>
+        )}
 
         {/* DATA MANAGEMENT */}
         <div>
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{t('controls:sections.data_management')}</h3>
           <div className="space-y-2">
-            {/* Row 1: PDF and PNG Export */}
+            {/* Row 1: PDF and PNG Export - Hidden in Quiz Mode */}
+            {worksheet.currentMode !== 'quiz' && (
             <div className="flex gap-2">
               <button
                 onClick={handleExportPDF}
@@ -543,6 +558,7 @@ function ControlPanel() {
                   : `🖼️ ${t('common:buttons.export_png')}`}
               </button>
             </div>
+            )}
             {/* Row 2: Save, Load, Reset */}
             <div className="flex gap-2">
               <button

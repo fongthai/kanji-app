@@ -1,3 +1,24 @@
+// Simple error boundary for runtime errors
+import React from 'react';
+
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: any}> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: any) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(_error: any, _info: any) {
+    // log error if needed
+  }
+  render() {
+    if (this.state.hasError) {
+      return <div style={{color: 'red', padding: 32}}><h2>App Error</h2><pre>{String(this.state.error)}</pre></div>;
+    }
+    return this.props.children;
+  }
+}
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import InputPanel from './features/inputPanel/InputPanel';
@@ -145,19 +166,21 @@ function App() {
 
   // Desktop/Tablet landscape layout
   return (
-    <div className="h-screen bg-gray-900 text-gray-100 p-4 overflow-hidden">
-      <div className="grid gap-5 h-full w-full grid-cols-[20%_1fr_20%] md:grid-cols-[25%_1fr_25%] lg:grid-cols-[28%_1fr_28%] xl:grid-cols-[30%_1fr_30%] 2xl:grid-cols-[35%_1fr_35%]">
-        <InputPanel />
-        <MainView />
-        <ControlPanel />
+    <ErrorBoundary>
+      <div className="h-screen bg-gray-900 text-gray-100 p-4 overflow-hidden">
+        <div className="grid gap-5 h-full w-full grid-cols-[20%_1fr_20%] md:grid-cols-[25%_1fr_25%] lg:grid-cols-[28%_1fr_28%] xl:grid-cols-[30%_1fr_30%] 2xl:grid-cols-[35%_1fr_35%]">
+          <InputPanel />
+          <MainView />
+          <ControlPanel />
+        </div>
+
+        {/* Floating Action Button */}
+        <FAB />
+
+        {/* Translation Editor (Dev Only) */}
+        {import.meta.env.DEV && <TranslationEditor />}
       </div>
-
-      {/* Floating Action Button */}
-      <FAB />
-
-      {/* Translation Editor (Dev Only) */}
-      {import.meta.env.DEV && <TranslationEditor />}
-    </div>
+    </ErrorBoundary>
   );
 }
 

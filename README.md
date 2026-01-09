@@ -3,7 +3,15 @@
 ## 📝 TL;DR
 
 **🇻🇳 Tiếng Việt:**  
-Ứng dụng web hỗ trọ viêc học Hán Tự (kanji) dành cho người Việt học tiếng Nhật. Tìm kiếm, chọn chữ theo cấp độ JLPT (N5-N1), hiển thị âm Hán Việt, tùy chỉnh kích thước font và số cột, xuất PDF chất lượng cao định dạng A4 chuẩn in ấn. Phù hợp với mọi người từ người tự học cho đến thầy cô muốn tạo tài liệu dạy tiếng Nhật.
+Ứng dụng web hỗ trọ viêc học Hán Tự (kanji) và từ vưng dành cho người Việt học tiếng Nhật.
+Các tính năng chính:
+- Sheet mode: Tạo bảng tập viết kanji, tuỳ chỉnh thoải mái từ danh sách từ vựng (theo trình độ, theo chủ đề, theo gợi ý hoặc seach, ...), font chữ, kích thước, số cột, hiển thị Hán Việt, jlpt level, grade level, frequency, nghĩa, âm on, âm kun, ...
+- Board mode: Tạo file kiểu ma trận chữ, size to, để in treo hay dán tường.
+- Quiz mode: Chế độ chơi game để test và tính điểm. Kiểm tra khả năng và hơn thua với bạn bè, xã hội
+- Vocabulary mode: Chế độ học từ vựng và ứng dụng thực tế vào cách dùng, ngữ cảnh.
+- Excercise mode: Chế độ tạo bài tập từ kanji hoặc/và từ vựng. Rất hữu ích cho thầy cô tạo bài test cho học sinh, cũng hữu ích cho cá nhân người học tự tạo bài tập và làm.
+
+Ngoại trừ Quiz mode là để chơi game, các mode còn lại là để in ấn, tùy chỉnh được kích thước font và số cột, xuất PDF chất lượng cao định dạng A4 chuẩn in ấn. Phù hợp với mọi người từ người tự học cho đến thầy cô muốn tạo tài liệu dạy tiếng Nhật.
 
 **🇬🇧 English:**  
 Web app for supporting Kanji learners - especially Vietnamese who like to use Hán Việt (Sino-Vietnamese) Search and select kanji by JLPT level (N5-N1), display Sino-Vietnamese readings (Hán Việt), customize font sizes and column layouts, export print-ready A4 PDFs at 600 DPI. 

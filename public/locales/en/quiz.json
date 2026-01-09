@@ -1,0 +1,93 @@
+{
+  "settings": {
+    "title": "Quiz Settings",
+    "description": "Configure your quiz preferences and start practicing!",
+    "level": {
+      "title": "Select Level",
+      "difficulty": "Difficulty",
+      "jlpt": "JLPT",
+      "grade": "Grade",
+      "beginner": "Beginner (N5/N4)",
+      "intermediate": "Intermediate (N3)",
+      "advanced": "Advanced (N2/N1)"
+    },
+    "availableKanjis": "{{count}} kanji available",
+    "questionCount": {
+      "title": "Number of Questions",
+      "questions": "questions"
+    },
+    "timeLimit": {
+      "title": "Time Limit per Question",
+      "seconds": "seconds"
+    },
+    "questionTypes": {
+      "title": "Question Types",
+      "kanjiToHanViet": "Kanji → Han-Viet",
+      "hanVietToKanji": "Han-Viet → Kanji",
+      "kanjiToMeaning": "Kanji → English Meaning",
+      "kanjiToOnyomi": "Kanji → Onyomi",
+      "onyomiToKanji": "Onyomi → Kanji",
+      "meaningToKanji": "English Meaning → Kanji"
+    },
+    "questionOrder": {
+      "title": "Question Order",
+      "roundRobin": "Round Robin",
+      "random": "Random",
+      "roundRobinDesc": "Cycle through all question types evenly",
+      "randomDesc": "Random question type for each kanji"
+    },
+    "startQuiz": "Start Quiz"
+  },
+  "quiz": {
+    "question": "Question {{current}} of {{total}}",
+    "next": "Next",
+    "finish": "Finish Quiz",
+    "timeout": "Time's up!",
+    "yourAnswer": "Your Answer",
+    "correctAnswer": "Correct Answer"
+  },
+  "progress": {
+    "question": "Question {{current}} of {{total}}",
+    "progress": "{{percent}}% Complete"
+  },
+  "review": {
+    "title": "Quiz Results",
+    "quiz": "Quiz",
+    "outOf10": "out of 10",
+    "correct": "correct",
+    "timeStats": "Time Statistics",
+    "totalTime": "Total Time",
+    "avgTimePerQuestion": "Average Time",
+    "quizSettings": "Quiz Settings",
+    "level": "Level",
+    "timeLimit": "Time Limit",
+    "typeBreakdown": "Performance by Question Type",
+    "detailedAnswers": "Detailed Answers",
+    "yourAnswer": "Your Answer",
+    "correctAnswer": "Correct Answer",
+    "timeTaken": "Time Taken",
+    "noAnswer": "No Answer (timeout)",
+    "noResults": "No quiz results yet. Take your first quiz!",
+    "backToSettings": "Back to Settings",
+    "saveQuiz": "Save This Quiz",
+    "restartQuiz": "Restart Same Quiz",
+    "newQuiz": "Start New Quiz"
+  },
+  "interruption": {
+    "title": "Quiz in Progress",
+    "description": "You have an unfinished quiz. What would you like to do?",
+    "continue": "Continue Quiz",
+    "startNew": "Start New Quiz",
+    "cancel": "Cancel"
+  },  "quit": {
+    "title": "Quit Quiz?",
+    "description": "Do you want to quit this quiz?",
+    "quitWithoutSaving": "Quit Without Saving",
+    "quitAndCalculate": "Quit & Calculate Results",
+    "cancel": "Continue Quiz"
+  },  "errors": {
+    "insufficientKanjis": "Not enough kanjis available for selected level and question count",
+    "noQuestionType": "Please select at least one question type",
+    "generationFailed": "Failed to generate quiz questions"
+  }
+}

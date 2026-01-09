@@ -6,6 +6,7 @@ import { BoardGrid } from '../../components/screen/BoardGrid';
 import { SheetGrid, calculateTablesPerPage } from '../../components/screen/SheetGrid';
 import { BoardHeader } from '../../components/screen/BoardHeader';
 import { BoardFooter } from '../../components/screen/BoardFooter';
+import Quiz from '../quiz/Quiz';
 import { useState, useEffect } from 'react';
 
 function MainView() {
@@ -73,6 +74,19 @@ function MainView() {
   const totalPages = Math.max(1, Math.ceil(chosenKanjis.length / cardsPerPage));
   const startIndex = (currentPage - 1) * cardsPerPage;
 
+  // Quiz Mode Rendering
+  if (currentMode === 'quiz') {
+    return (
+      <div
+        data-testid="main-view"
+        className="bg-gray-700 rounded-lg p-4 flex flex-col h-full overflow-hidden"
+      >
+        <Quiz />
+      </div>
+    );
+  }
+
+  // Sheet & Board Mode Rendering
   return (
     <div
       data-testid="main-view"

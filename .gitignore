@@ -26,6 +26,7 @@ dist-ssr
 # My own patterns
 scripts/*
 docs/*
+to-do/*
 !docs/README.md
 !docs/changelog.txt
 !docs/color-coded.md
@@ -37,5 +38,3 @@ public/json/n1-*.json
 !public/json/n1-G.json
 public/json/n2-*.json
 !public/json/n2-B.json
-public/json/n3-*.json
-!public/json/n3-B.json

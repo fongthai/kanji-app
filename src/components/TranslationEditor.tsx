@@ -18,7 +18,7 @@ export const TranslationEditor: React.FC = () => {
   const [loadingNamespace, setLoadingNamespace] = useState(false);
   const [dataVersion, setDataVersion] = useState(0);
 
-  const namespaces = ['common', 'controls', 'categories', 'messages', 'sheet', 'board', 'export'];
+  const namespaces = ['common', 'controls', 'categories', 'messages', 'sheet', 'board', 'export', 'quiz'];
 
   // Lazy load namespace when switching tabs
   useEffect(() => {

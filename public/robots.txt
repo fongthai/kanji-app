@@ -1,0 +1,36 @@
+# Kanji Worksheet Generator - Robots Configuration
+# Block search engines from indexing data files
+
+User-agent: *
+# Allow main application
+Allow: /
+
+# Block data files from being indexed
+Disallow: /json/
+Disallow: /fonts/
+Disallow: /locales/
+
+# Block common scrapers and bots
+User-agent: Bytespider
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Crawl delay for other bots
+Crawl-delay: 10
+
+# Sitemap (optional - update with your actual domain)
+# Sitemap: https://your-domain.com/sitemap.xml

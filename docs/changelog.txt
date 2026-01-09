@@ -1,3 +1,15 @@
+20250107:
+- Implemented Quiz Mode (Phase 1 - Core Functionality)
+- Created Redux quiz slice with full state management (settings, active quiz, history)
+- Built QuizSettings component with level selection, question count, time limits, and interruption handling
+- Implemented QuizCard component with countdown timer, answer options, and keyboard shortcuts (A/B/C/D, Enter)
+- Created QuizReview component with detailed statistics and answer review
+- Added question generator with smart wrong-answer selection (lookalikes, same onyomi, similar hanviet, same category, random)
+- Integrated Quiz mode into Control Panel (3rd mode alongside Sheet/Board)
+- Added complete English and Vietnamese translations for Quiz mode
+- Implemented localStorage persistence for quiz settings, active quiz, and history (max 50)
+- Fixed i18n translation loading for Quiz namespace
+
 20250103:
 - Fixed Board mode PDF/PNG export proportional scaling issue
 - Implemented consistent scaling from screen pixels to PDF points
