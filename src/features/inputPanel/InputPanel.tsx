@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addKanji, removeKanji, setAllKanjis, clearChosenKanjis, reorderChosenKanjis, type KanjiData } from '../kanji/kanjiSlice';
 import { seedKanjisFromJSON, checkIfDataExists, getAllKanjis } from '../../db/indexedDB';
+import { startQuiz, setQuizQuestions, type QuizSettings } from '../quiz/quizSlice';
+import { generateQuestions } from '../../utils/questionGenerator';
+import QuizCountdown from '../../components/QuizCountdown';
 import { KanjiSearch } from '../search/KanjiSearch';
 import { KanjiCard } from '../../components/screen/KanjiCard';
 import { SECTION_COLOR_PAIRS } from '../../constants/indicators';
@@ -115,8 +118,9 @@ const getSectionColor = () => {
 };
 
 function InputPanel() {
-  const { t } = useTranslation(['common', 'messages']);
+  const { t } = useTranslation(['common', 'messages', 'quiz']);
   const dispatch = useAppDispatch();
+  const allKanjis = useAppSelector((state) => state.kanji.allKanjis);
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
   const inputPanelSettings = useAppSelector((state) => state.displaySettings.inputPanel);
   const [loading, setLoading] = useState(true);
@@ -124,7 +128,29 @@ function InputPanel() {
   const [chosenExpanded, setChosenExpanded] = useState(false);
   const [kanjiColors, setKanjiColors] = useState<Map<string, { header: string; body: string; border: string; chosenBorder: string; text: string }>>(new Map());
   const [isLoadingData, setIsLoadingData] = useState(false);
+  const [showCountdown, setShowCountdown] = useState(false);
+  const [quizSectionKanjis, setQuizSectionKanjis] = useState<KanjiData[]>([]);
+  const [showAskFieldMenu, setShowAskFieldMenu] = useState(false);
+  const [showAnswerTypeMenu, setShowAnswerTypeMenu] = useState<boolean>(false);
+  const [selectedAnswerTypes, setSelectedAnswerTypes] = useState<Set<'hanViet' | 'onyomi' | 'vietnamese' | 'english'>>(new Set(['hanViet']));
   const loadDataAttemptedRef = useRef(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const chosenMenuRef = useRef<HTMLDivElement>(null);
+
+  // Handle click outside to close menus
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowAskFieldMenu(false);
+      }
+      if (chosenMenuRef.current && !chosenMenuRef.current.contains(event.target as Node)) {
+        setShowAnswerTypeMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Fixed card size: always 4.05rem (based on 3rem kanji * 1.35)
   const fixedCardSize = 4.05;
@@ -338,6 +364,74 @@ function InputPanel() {
     });
   };
 
+  const startQuizFromSection = (sectionIndex: number, _askField: 'hanViet' | 'onyomi' | 'vietnamese' | 'english') => {
+    // Get section kanjis (use full list if sectionIndex >= 0, otherwise use chosen)
+    const sectionKanjis = sectionIndex >= 0 ? sections[sectionIndex].kanjis : chosenKanjis;
+    
+    if (sectionKanjis.length === 0) {
+      alert('This section has no kanjis');
+      return;
+    }
+    
+    setQuizSectionKanjis(sectionKanjis);
+    setShowAskFieldMenu(false);
+    setShowCountdown(true);
+  };
+
+  const handleCountdownComplete = () => {
+    setShowCountdown(false);
+    
+    // Create 20 random kanjis from section (or less if section has fewer)
+    const quizCount = Math.min(20, quizSectionKanjis.length);
+    const randomKanjis: KanjiData[] = [];
+    const available = [...quizSectionKanjis];
+    
+    for (let i = 0; i < quizCount; i++) {
+      const randomIndex = Math.floor(Math.random() * available.length);
+      randomKanjis.push(available[randomIndex]);
+      available.splice(randomIndex, 1);
+    }
+
+    // Extract unique JLPT levels from the random kanjis
+    const jlptLevelsSet = new Set<string>();
+    randomKanjis.forEach(k => {
+      if (k.jlptLevel) {
+        jlptLevelsSet.add(k.jlptLevel);
+      }
+    });
+    const selectedJlptLevels = Array.from(jlptLevelsSet);
+
+    // Convert selected answer types to array for askFields
+    const askFieldsArray = Array.from(selectedAnswerTypes);
+
+    // Create quiz settings with defaults
+    const quizSettings: QuizSettings = {
+      numberSelection: 'all',
+      levelType: 'jlpt',
+      selectedJlptLevels: selectedJlptLevels,
+      selectedGradeLevels: [],
+      showField: 'kanji',
+      askField: askFieldsArray[0],
+      askFields: askFieldsArray as any,
+      questionOrder: 'sequential',
+      maxTimePerQuestion: 30,
+      includeKanji: true,
+      includeVocabulary: false,
+    };
+
+    // Generate questions from random kanjis using full kanji pool for wrong answers
+    const questions = generateQuestions(quizSettings, allKanjis);
+    
+    if (questions.length === 0) {
+      alert('Could not generate questions. Please try again.');
+      return;
+    }
+
+    // Start the quiz
+    dispatch(startQuiz({ allKanjis }));
+    dispatch(setQuizQuestions(questions));
+  };
+
   if (loading) {
     return (
       <div className="bg-gray-800 rounded-lg p-4 border border-gray-700 overflow-y-auto">
@@ -362,15 +456,82 @@ function InputPanel() {
             <span className="text-gray-400">{chosenExpanded ? '▼' : '▶'}</span>
             <strong>{t('common:labels.chosen_kanjis')} ({chosenKanjis.length})</strong>
           </div>
-          {chosenKanjis.length > 0 && (
-            <button
-              onClick={(e) => { e.stopPropagation(); dispatch(clearChosenKanjis()); }}
-              className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white text-sm rounded transition-colors"
-              title={t('common:tooltips.clear_all_kanjis')}
-            >
-              {t('common:buttons.clear_all')}
-            </button>
-          )}
+          <div className="flex gap-2 items-center">
+            {chosenKanjis.length > 0 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); dispatch(clearChosenKanjis()); }}
+                  className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white text-sm rounded transition-colors"
+                  title={t('common:tooltips.clear_all_kanjis')}
+                >
+                  {t('common:buttons.clear_all')}
+                </button>
+                <div className="relative">
+                  <button
+                    onClick={(e) => { 
+                      e.stopPropagation(); 
+                      if (chosenKanjis.length >= 20) {
+                        setShowAnswerTypeMenu(!showAnswerTypeMenu);
+                      } else {
+                        alert(`Need at least 20 kanjis for quiz (have ${chosenKanjis.length})`);
+                      }
+                    }}
+                    className="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white text-sm rounded transition-colors"
+                    title={t('common:tooltips.quiz_this_section')}
+                  >
+                    {t('quiz:settings.quickQuiz')}
+                  </button>
+                  {showAnswerTypeMenu && (
+                    <div ref={chosenMenuRef} className="absolute right-0 mt-1 bg-gray-900 border border-gray-700 rounded shadow-lg z-50 min-w-52">
+                      <div className="p-2 border-b border-gray-700 text-white text-xs font-semibold px-3 py-2">
+                        Choose answer types (select at least 1):
+                      </div>
+                      <div className="p-2 space-y-2">
+                        {['hanViet', 'onyomi', 'vietnamese', 'english'].map((type) => (
+                          <label key={type} onClick={(e) => e.stopPropagation()} className="flex items-center gap-2 hover:bg-gray-800 px-2 py-1 rounded cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={selectedAnswerTypes.has(type as any)}
+                              onChange={(e) => {
+                                e.stopPropagation();
+                                const newTypes = new Set(selectedAnswerTypes);
+                                if (e.target.checked) {
+                                  newTypes.add(type as any);
+                                } else if (newTypes.size > 1) {
+                                  newTypes.delete(type as any);
+                                }
+                                setSelectedAnswerTypes(newTypes);
+                              }}
+                              className="w-4 h-4"
+                            />
+                            <span className="text-white text-sm">
+                              {type === 'hanViet' && 'Hán-Việt'}
+                              {type === 'onyomi' && 'Onyomi'}
+                              {type === 'vietnamese' && 'Vietnamese'}
+                              {type === 'english' && 'English'}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                      <div className="border-t border-gray-700 p-2">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setQuizSectionKanjis(chosenKanjis);
+                            setShowAnswerTypeMenu(false);
+                            setShowCountdown(true);
+                          }}
+                          className="w-full px-3 py-2 bg-green-600 hover:bg-green-500 text-white text-sm rounded transition-colors font-medium"
+                        >
+                          Start Quiz
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+          </div>
         </div>
         {chosenExpanded && (
           <DndContext
@@ -446,6 +607,60 @@ function InputPanel() {
                     >
                       {t('common:buttons.clear')}
                     </button>
+                    <div className="relative">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setShowAskFieldMenu(!showAskFieldMenu); }}
+                        className="px-2 py-1 bg-green-600 hover:bg-green-500 text-white text-xs rounded transition-colors font-medium"
+                        title="Start quick quiz"
+                      >
+                        {t('quiz:settings.quickQuiz')}
+                      </button>
+                      {showAskFieldMenu && (
+                        <div ref={menuRef} className="absolute right-0 mt-1 bg-gray-900 border border-gray-700 rounded shadow-lg z-50 min-w-52">
+                          <div className="p-2 border-b border-gray-700 text-white text-xs font-semibold px-3 py-2">
+                            Choose answer types (select at least 1):
+                          </div>
+                          <div className="p-2 space-y-2">
+                            {['hanViet', 'onyomi', 'vietnamese', 'english'].map((type) => (
+                              <label key={type} onClick={(e) => e.stopPropagation()} className="flex items-center gap-2 hover:bg-gray-800 px-2 py-1 rounded cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={selectedAnswerTypes.has(type as any)}
+                                  onChange={(e) => {
+                                    e.stopPropagation();
+                                    const newTypes = new Set(selectedAnswerTypes);
+                                    if (e.target.checked) {
+                                      newTypes.add(type as any);
+                                    } else if (newTypes.size > 1) {
+                                      newTypes.delete(type as any);
+                                    }
+                                    setSelectedAnswerTypes(newTypes);
+                                  }}
+                                  className="w-4 h-4"
+                                />
+                                <span className="text-white text-sm">
+                                  {type === 'hanViet' && 'Hán-Việt'}
+                                  {type === 'onyomi' && 'Onyomi'}
+                                  {type === 'vietnamese' && 'Vietnamese'}
+                                  {type === 'english' && 'English'}
+                                </span>
+                              </label>
+                            ))}
+                          </div>
+                          <div className="border-t border-gray-700 p-2">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                startQuizFromSection(index, Array.from(selectedAnswerTypes)[0]);
+                              }}
+                              className="w-full px-3 py-2 bg-green-600 hover:bg-green-500 text-white text-sm rounded transition-colors font-medium"
+                            >
+                              Start Quiz
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </>
                 )}
               </div>
@@ -484,6 +699,8 @@ function InputPanel() {
         </div>
       );
       })}
+      
+      {showCountdown && <QuizCountdown onComplete={handleCountdownComplete} />}
     </div>
   );
 }

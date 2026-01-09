@@ -31,7 +31,7 @@
       "title": "Thứ Tự Câu Hỏi",
       "roundRobin": "Luân Phiên",
       "random": "Ngẫu Nhiên",
-      "roundRobinDesc": "Luân chuyển đều các loại câu hỏi",
+      "sequential": "Tuần Tự",
       "randomDesc": "Loại câu hỏi ngẫu nhiên cho mỗi kanji"
     },
     "startQuiz": "Bắt Đầu Quiz",
@@ -56,9 +56,8 @@
     "soon": "Sắp Tới",
     "selectAll": "Chọn Tất Cả",
     "clear": "Xóa",
-    "sequential": "tuần tự",
-    "random": "ngẫu nhiên",
-    "startQuiz": "Bắt Đầu Quiz"
+    "startQuiz": "Bắt Đầu Quiz",
+    "quickQuiz": "Quiz"
   },
   "quiz": {
     "title": "Quiz",

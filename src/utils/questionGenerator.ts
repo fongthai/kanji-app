@@ -245,10 +245,19 @@ export function generateQuestions(
 
   // Generate questions based on showField/askFields (cycle through askFields)
   const questions: QuizQuestion[] = [];
+  const questionSet = new Set<string>(); // Track question uniqueness
   
   for (let i = 0; i < selectedKanjis.length; i++) {
     const askField = settings.askFields[i % settings.askFields.length];
-    questions.push(createQuestionFromFields(selectedKanjis[i], settings.showField, askField, filteredKanjis));
+    const question = createQuestionFromFields(selectedKanjis[i], settings.showField, askField, filteredKanjis);
+    
+    // Create a unique key for this question to avoid duplicates
+    const questionKey = `${question.questionText}-${question.type}`;
+    
+    if (!questionSet.has(questionKey)) {
+      questions.push(question);
+      questionSet.add(questionKey);
+    }
   }
 
   return questions;

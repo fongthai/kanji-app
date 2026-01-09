@@ -33,7 +33,7 @@
       "title": "Question Order",
       "roundRobin": "Round Robin",
       "random": "Random",
-      "roundRobinDesc": "Cycle through all question types evenly",
+      "sequential": "Sequential",
       "randomDesc": "Random question type for each kanji"
     },
     "startQuiz": "Start Quiz",
@@ -58,9 +58,8 @@
     "soon": "Soon",
     "selectAll": "Select All",
     "clear": "Clear",
-    "sequential": "sequential",
-    "random": "random",
-    "startQuiz": "Start Quiz"
+    "startQuiz": "Start Quiz",
+    "quickQuiz": "Quiz"
   },
   "quiz": {
     "title": "Quiz",
