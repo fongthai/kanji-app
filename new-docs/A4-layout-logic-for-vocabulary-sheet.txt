@@ -1,0 +1,13 @@
+A4paper has its own margins. It has an optional header, and footer: those has their own padding.
+For each vocab we have them in a VOCAB-OUTER-TABLE with 2 columns:
+
+- the right column is for the practice cells which has 2 rows and 1 columns, cell-size is configurable, cells are combined as one rectangle for 1 row, numbers of cell is equal to number of character of the vocab. One vocab can has at least 1 character, so the rectangle can be from 1 or more cells.
+- the left column: is for the learning data: vocabulary, hanViet, furigana, vietnameseMeaning/englishMeaning, exampleSentencesInJapanese, exampleSentenceVietnamTranslate/exampleSentenceEnglishTranslate, ... for now (can add more fields in the future). These fields exampleSentencesInJapanese, exampleSentenceVietnamTranslate/exampleSentenceEnglishTranslate are array, can have more than 1 sentence. And many fields visibility is controlled via toggles to turn them on/off. Some vocab can has value or not for some certain fields while the other can have.
+
+So you need to know:
+- What is the height available for the viewport
+- What is printed/showed for each VOCAB-OUTER-TABLE to calculate its height.
+- What is the height for the next VOCAB-OUTER-TABLE?
+- Is the space left enough for the next VOCAB-OUTER-TABLE? If not, it needs to go to next page.
+
+That's the logic, please mind all the margins, paddings, borbers, text size, ... to have a good layout and avoid overflow issue and make sure the responsive is working fine.

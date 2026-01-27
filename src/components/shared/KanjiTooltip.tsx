@@ -21,7 +21,7 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
   // Helper function to lookup han-viet for a kanji character
   const getHanViet = (kanjiChar: string): string | null => {
     const found = allKanjis.find(k => k.kanji === kanjiChar);
-    return found?.hanViet || null;
+    return found ? found.hanViet.join(', ') : null;
   };
 
   const handleMouseEnter = (e: React.MouseEvent) => {
@@ -129,18 +129,16 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
   if (kanji.gradeLevel) infoParts.push(`Grade ${kanji.gradeLevel}`);
   if (kanji.frequency) infoParts.push(`Freq ${kanji.frequency}`);
   const infoText = infoParts.join(' • ');
-  
-  // Parse components (comma-separated)
-  const componentsList = kanji.components
-    ? kanji.components.split(',').map(c => c.trim()).filter(c => c.length > 0)
-    : [];
-  
-  // Parse lookalikes (comma-separated or array for legacy data)
+
+  // Parse components
+  const componentsList = kanji.components || [];
+
+  // Parse lookalikes (array or string for legacy data)
   const lookalikesList = kanji.lookalikes
-    ? (typeof kanji.lookalikes === 'string' 
+    ? (typeof kanji.lookalikes === 'string'
         ? kanji.lookalikes.split(',').map(l => l.trim()).filter(l => l.length > 0)
-        : Array.isArray(kanji.lookalikes) 
-          ? kanji.lookalikes 
+        : Array.isArray(kanji.lookalikes)
+          ? kanji.lookalikes
           : [])
     : [];
 
@@ -182,9 +180,9 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
             {/* READINGS Section */}
             <div className="mb-2 pb-2 border-b border-gray-700">
               <div className="text-xs font-semibold text-gray-400 mb-1">📖 READINGS</div>
-              {kanji.hanViet && (
+              {kanji.hanViet.length > 0 && (
                 <div className="text-lg font-semibold text-blue-300 mb-1">
-                  {kanji.hanViet}
+                  {kanji.hanViet.join(', ')}
                 </div>
               )}
               {readingsText && (
@@ -193,16 +191,16 @@ export const KanjiTooltip: React.FC<KanjiTooltipProps> = ({ kanji, children }) =
                 </div>
               )}
             </div>
-            
+
             {/* MEANINGS Section */}
             <div className="mb-2 pb-2 border-b border-gray-700">
               <div className="text-xs font-semibold text-gray-400 mb-1">📝 MEANINGS</div>
               <div className="text-sm">
-                <span className="text-gray-300">{kanji.meaning}</span>
-                {kanji.vietnameseMeaning && (
+                <span className="text-gray-300">{kanji.englishMeaning.join(', ')}</span>
+                {kanji.vietnameseMeaning.length > 0 && (
                   <>
                     {' • '}
-                    <span className="text-green-300">{kanji.vietnameseMeaning}</span>
+                    <span className="text-green-300">{kanji.vietnameseMeaning.join(', ')}</span>
                   </>
                 )}
               </div>

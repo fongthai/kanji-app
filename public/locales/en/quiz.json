@@ -98,7 +98,15 @@
     "newQuiz": "Start New Quiz",
     "format": "Format",
     "unlimited": "Unlimited",
-    "grade": "Grade"
+    "grade": "Grade",
+    "quizType": "Quiz Type",
+    "quickQuiz": "Quick Quiz",
+    "customQuiz": "Custom Quiz",
+    "competingQuiz": "Competing Quiz",
+    "panel": "Panel",
+    "unknown": "Unknown",
+    "chosenKanjis": "Chosen Kanjis",
+    "randomKanjis": "Random Kanjis"
   },
   "resumeQuiz": {
     "title": "Resume Quiz?",

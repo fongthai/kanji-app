@@ -34,7 +34,19 @@ to-do/*
 !docs/advance-search-feature-EN.md
 
 # Ignore specific JLPT level JSON files (except specific ones)
-public/json/n1-*.json
-!public/json/n1-G.json
-public/json/n2-*.json
-!public/json/n2-B.json
+public/data/kanji/n1-*.json
+!public/data/kanji/n1-G.json
+public/data/kanji/n2-*.json
+!public/data/kanji/n2-B.json
+
+# Ignore koty-2025 file
+public/data/koty-2025.json
+
+# Ignore vocabulary JSON files, only allow N5 and Minna no Nihongo books
+public/data/vocabulary/n1*.json
+public/data/vocabulary/n2*.json
+public/data/vocabulary/n3*.json
+public/data/vocabulary/N3*.json
+public/data/vocabulary/n4*.json
+!public/data/vocabulary/n5-*.json
+!public/data/vocabulary/minna*.json 

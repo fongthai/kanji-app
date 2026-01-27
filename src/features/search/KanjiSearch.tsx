@@ -25,8 +25,8 @@ export const KanjiSearch: React.FC<KanjiSearchProps> = ({ kanjiColors }) => {
   const kanjiFontSizePercentage = Math.max(60, Math.min(120, inputPanelSettings.kanjiSize));
   const calculatedKanjiSize = baseKanjiFontSize * (kanjiFontSizePercentage / 100);
   
-  const baseHanVietSize = baseKanjiFontSize * 0.20; // 0.6rem
-  const hanVietSizePercentage = Math.max(60, Math.min(120, inputPanelSettings.hanVietSize));
+  const baseHanVietSize = baseKanjiFontSize * 0.25; // 0.75rem
+  const hanVietSizePercentage = Math.max(35, Math.min(65, inputPanelSettings.hanVietSize));
   const calculatedHanVietSize = baseHanVietSize * (hanVietSizePercentage / 100);
 
   // Fixed card size: always 4.05rem (same as InputPanel sections)

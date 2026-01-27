@@ -17,9 +17,6 @@ export const PDFJLPTIndicator: React.FC<PDFJLPTIndicatorProps> = ({
   
   const styles = StyleSheet.create({
     indicator: {
-      position: 'absolute',
-      top: 2,
-      left: 2,
       width: size,
       height: size,
       borderRadius: 2, // Square with slight rounding
@@ -27,6 +24,7 @@ export const PDFJLPTIndicator: React.FC<PDFJLPTIndicatorProps> = ({
       border: grayscaleMode ? '1pt solid #000000' : undefined,
       justifyContent: 'center',
       alignItems: 'center',
+      flexShrink: 0, // Don't shrink in flex container
     },
     text: {
       fontSize: size * 0.5, // 50% of badge size

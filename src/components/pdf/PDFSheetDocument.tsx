@@ -128,11 +128,15 @@ Font.registerHyphenationCallback(word => [word]);
  * Returns the font family name to use in PDF (fallback to NotoSansJP if registration fails)
  */
 export function registerKanjiFont(fontFamily: string): string {
-  // System font or already registered
-  if (fontFamily === 'system-ui') {
+  // Clean font family name (remove CSS fallbacks and quotes)
+  let cleaned = fontFamily.split(',')[0].trim();
+  cleaned = cleaned.replace(/^['"]|['"]$/g, '');
+
+  // System font
+  if (cleaned === 'system-ui') {
     return 'NotoSansJP-Regular';
   }
-  
+
   // Already in the registered list
   const registeredFonts = [
     'KanjiStrokeOrders',
@@ -146,13 +150,13 @@ export function registerKanjiFont(fontFamily: string): string {
     'HGMaruGothicMPRO',
     'KosugiMaru-Regular',
   ];
-  
-  if (registeredFonts.includes(fontFamily)) {
-    return fontFamily;
+
+  if (registeredFonts.includes(cleaned)) {
+    return cleaned;
   }
-  
+
   // Font not registered, use fallback
-  console.warn(`Font ${fontFamily} not registered, using NotoSansJP-Regular`);
+  console.warn(`Font ${cleaned} not registered, using NotoSansJP-Regular`);
   return 'NotoSansJP-Regular';
 }
 

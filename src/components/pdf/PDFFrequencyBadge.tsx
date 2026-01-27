@@ -3,15 +3,17 @@ import { View, Text, StyleSheet } from '@react-pdf/renderer';
 interface PDFFrequencyBadgeProps {
   frequency: number;
   size?: number; // Size in points, default 20pt
-  orientation?: 'vertical' | 'horizontal'; // Han-Viet text orientation
+  orientation?: 'vertical' | 'horizontal'; // Han-Viet text orientation (for Sheet mode positioning)
   grayscaleMode?: boolean;
+  inContainer?: boolean; // True when used in centered indicator container (Board mode)
 }
 
-export const PDFFrequencyBadge: React.FC<PDFFrequencyBadgeProps> = ({ 
+export const PDFFrequencyBadge: React.FC<PDFFrequencyBadgeProps> = ({
   frequency,
   size = 20,
   orientation = 'vertical',
   grayscaleMode = false,
+  inContainer = false,
 }) => {
   // Calculate badge width based on frequency digits (#17, #123, etc.)
   const digits = String(frequency).length;
@@ -32,14 +34,17 @@ export const PDFFrequencyBadge: React.FC<PDFFrequencyBadgeProps> = ({
   
   const styles = StyleSheet.create({
     badge: {
-      position: 'absolute',
-      // Position based on orientation: bottom-left for vertical, top-right for horizontal
-      ...(orientation === 'vertical' ? {
-        bottom: 2,
-        left: 2,
-      } : {
-        top: 2,
-        right: 2,
+      // Only use absolute positioning for Sheet mode (when NOT in container)
+      ...(!inContainer && {
+        position: 'absolute',
+        // Position based on orientation: bottom-left for vertical, top-right for horizontal
+        ...(orientation === 'vertical' ? {
+          bottom: 2,
+          left: 2,
+        } : {
+          top: 2,
+          right: 2,
+        }),
       }),
       width: badgeWidth,
       height: size,
@@ -50,6 +55,7 @@ export const PDFFrequencyBadge: React.FC<PDFFrequencyBadgeProps> = ({
       alignItems: 'center',
       paddingLeft: 1,
       paddingRight: 1,
+      flexShrink: 0, // Don't shrink in flex container (Board mode)
     },
     text: {
       fontSize: size * 0.52, // Increased from 0.45 for better readability

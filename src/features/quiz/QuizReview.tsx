@@ -199,35 +199,35 @@ const QuizReview: React.FC = () => {
       <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-400">Quiz Type</p>
+            <p className="text-sm text-gray-400">{t('review.quizType')}</p>
             <p className="text-lg font-semibold text-white capitalize">
-              {currentResult.settings.quizType === 'quick' ? 'Quick Quiz' : 
-               currentResult.settings.quizType === 'custom' ? 'Custom Quiz' : 
-               'Competing Quiz'}
+              {currentResult.settings.quizType === 'quick' ? t('review.quickQuiz') :
+               currentResult.settings.quizType === 'custom' ? t('review.customQuiz') :
+               t('review.competingQuiz')}
             </p>
           </div>
           <div>
             <p className="text-sm text-gray-400">
-              {currentResult.settings.quizType === 'quick' ? 'Panel' : 'Level'}
+              {currentResult.settings.quizType === 'quick' ? t('review.panel') : t('review.level')}
             </p>
             <p className="text-lg font-semibold text-white">
-              {currentResult.settings.quizType === 'quick' 
-                ? currentResult.settings.sourceSection || 'Unknown'
+              {currentResult.settings.quizType === 'quick'
+                ? currentResult.settings.sourceSection || t('review.unknown')
                 : currentResult.settings.levelType === 'jlpt'
                 ? currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join(', ')
-                : `Grade ${currentResult.settings.selectedGradeLevels.join(', ')}`}
+                : `${t('review.grade')} ${currentResult.settings.selectedGradeLevels.join(', ')}`}
             </p>
           </div>
           {currentResult.settings.quizType === 'quick' && (
             <>
               <div>
-                <p className="text-sm text-gray-400">Chosen Kanjis</p>
+                <p className="text-sm text-gray-400">{t('review.chosenKanjis')}</p>
                 <p className="text-lg font-semibold text-white">
                   {currentResult.settings.chosenCount || 0}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-gray-400">Random Kanjis</p>
+                <p className="text-sm text-gray-400">{t('review.randomKanjis')}</p>
                 <p className="text-lg font-semibold text-white">
                   {currentResult.settings.randomCount || 0}
                 </p>

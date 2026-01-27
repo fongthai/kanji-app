@@ -75,9 +75,9 @@ export function selectWrongAnswers(
   
   // Get correct answer to avoid duplicates
   let correctAnswer = '';
-  if (questionType === 'kanjiToHanViet') correctAnswer = correctKanji.hanViet;
+  if (questionType === 'kanjiToHanViet') correctAnswer = correctKanji.hanViet.join(', ');
   else if (questionType === 'hanVietToKanji') correctAnswer = correctKanji.kanji;
-  else if (questionType === 'kanjiToMeaning') correctAnswer = correctKanji.meaning;
+  else if (questionType === 'kanjiToMeaning') correctAnswer = correctKanji.englishMeaning.join(', ');
   else if (questionType === 'kanjiToOnyomi') correctAnswer = getFirstValue(correctKanji.onyomi, 40);
   else if (questionType === 'onyomiToKanji') correctAnswer = correctKanji.kanji;
   else if (questionType === 'meaningToKanji') correctAnswer = correctKanji.kanji;
@@ -93,13 +93,13 @@ export function selectWrongAnswers(
 
   // Helper to get answer from kanji based on question type
   const getAnswer = (k: Kanji): string => {
-    if (questionType === 'kanjiToHanViet') return truncateText(k.hanViet, 80);
+    if (questionType === 'kanjiToHanViet') return truncateText(k.hanViet.join(', '), 80);
     if (questionType === 'hanVietToKanji') return k.kanji;
-    if (questionType === 'kanjiToMeaning') return truncateText(k.meaning, 80);
+    if (questionType === 'kanjiToMeaning') return truncateText(k.englishMeaning.join(', '), 80);
     if (questionType === 'kanjiToOnyomi') return getFirstValue(k.onyomi, 40);
     if (questionType === 'onyomiToKanji') return k.kanji;
     if (questionType === 'meaningToKanji') return k.kanji;
-    return truncateText(k.meaning, 80);
+    return truncateText(k.englishMeaning.join(', '), 80);
   };
 
   // Filter out the correct kanji and the one being excluded
@@ -146,15 +146,18 @@ export function selectWrongAnswers(
   }
 
   // Priority 4: Similar hanviet (first character match)
-  if (wrongAnswers.length < 3 && correctKanji.hanViet) {
-    const firstChar = correctKanji.hanViet.split(/[,\s]/)[0];
-    const similarHanViet = candidates.filter(k =>
-      k.hanViet && k.hanViet.startsWith(firstChar)
-    );
-    shuffle(similarHanViet);
-    for (const k of similarHanViet) {
-      if (tryAdd(getAnswer(k))) {
-        if (wrongAnswers.length >= 3) break;
+  if (wrongAnswers.length < 3 && correctKanji.hanViet.length > 0) {
+    const hanVietArray = correctKanji.hanViet;
+    if (hanVietArray.length > 0) {
+      const firstChar = hanVietArray[0] || '';
+      const similarHanViet = candidates.filter(k => {
+        return k.hanViet.some(hv => hv.startsWith(firstChar));
+      });
+      shuffle(similarHanViet);
+      for (const k of similarHanViet) {
+        if (tryAdd(getAnswer(k))) {
+          if (wrongAnswers.length >= 3) break;
+        }
       }
     }
   }
@@ -220,10 +223,16 @@ export function generateQuestions(
   filteredKanjis = filteredKanjis.filter(k => {
     for (const field of requiredFields) {
       if (field === 'kanji') continue; // Kanji always exists
-      if (field === 'hanViet' && (!k.hanViet || k.hanViet.trim() === '')) return false;
+      if (field === 'hanViet') {
+        if (!k.hanViet || k.hanViet.length === 0 || !k.hanViet[0]) return false;
+      }
       if (field === 'onyomi' && (!k.onyomi || k.onyomi.length === 0 || !k.onyomi[0])) return false;
-      if (field === 'vietnamese' && (!k.vietnameseMeaning || k.vietnameseMeaning.trim() === '')) return false;
-      if (field === 'english' && (!k.meaning || k.meaning.trim() === '')) return false;
+      if (field === 'vietnamese') {
+        if (!k.vietnameseMeaning || k.vietnameseMeaning.length === 0 || !k.vietnameseMeaning[0]) return false;
+      }
+      if (field === 'english') {
+        if (!k.englishMeaning || k.englishMeaning.length === 0 || !k.englishMeaning[0]) return false;
+      }
     }
     return true;
   });
@@ -279,13 +288,13 @@ function getFieldValue(kanji: Kanji, field: 'kanji' | 'hanViet' | 'onyomi' | 'vi
     case 'kanji':
       return kanji.kanji;
     case 'hanViet':
-      return truncateText(kanji.hanViet, 80);
+      return truncateText(kanji.hanViet.join(', '), 80);
     case 'onyomi':
       return getFirstValue(kanji.onyomi, 40);
     case 'vietnamese':
-      return truncateText(kanji.vietnameseMeaning || kanji.meaning, 80);
+      return truncateText(kanji.vietnameseMeaning.join(', '), 80);
     case 'english':
-      return truncateText(kanji.meaning, 80);
+      return truncateText(kanji.englishMeaning.join(', '), 80);
     default:
       return '';
   }

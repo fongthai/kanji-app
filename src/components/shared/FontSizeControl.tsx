@@ -13,6 +13,8 @@ interface FontSizeControlProps {
   hanVietSizeMax?: number; // Optional: default 65
   showHanViet: boolean;
   hanVietOrientation: 'horizontal' | 'vertical';
+  showVietnameseMeaning: boolean;
+  showEnglishMeaning: boolean;
   // Individual indicator flags
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
@@ -24,12 +26,14 @@ interface FontSizeControlProps {
   onKanjiFontChange: (font: string) => void;
   onKanjiSizeChange: (size: number) => void;
   onHanVietSizeChange: (size: number) => void;
-  onToggleShowHanViet: () => void;
-  onToggleHanVietOrientation: () => void;
   // Individual indicator toggles
   onToggleShowJlptIndicator: () => void;
   onToggleShowGradeIndicator: () => void;
   onToggleShowFrequencyIndicator: () => void;
+  onToggleShowHanViet: () => void;
+  onToggleHanVietOrientation: () => void;
+  onToggleShowVietnameseMeaning: () => void;
+  onToggleShowEnglishMeaning: () => void;
   onIndicatorPresetChange: (preset: IndicatorPreset) => void;
   // Explanation toggles (optional - only for Sheet mode)
   onToggleShowExplanationMeaning?: () => void;
@@ -46,6 +50,8 @@ export const FontSizeControl = memo(function FontSizeControl({
   hanVietSizeMax = 65,
   showHanViet,
   hanVietOrientation,
+  showVietnameseMeaning,
+  showEnglishMeaning,
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
@@ -55,27 +61,29 @@ export const FontSizeControl = memo(function FontSizeControl({
   onKanjiFontChange,
   onKanjiSizeChange,
   onHanVietSizeChange,
-  onToggleShowHanViet,
-  onToggleHanVietOrientation,
   onToggleShowJlptIndicator,
   onToggleShowGradeIndicator,
   onToggleShowFrequencyIndicator,
+  onToggleShowHanViet,
+  onToggleHanVietOrientation,
+  onToggleShowVietnameseMeaning,
+  onToggleShowEnglishMeaning,
   onIndicatorPresetChange,
   onToggleShowExplanationMeaning,
   onToggleShowExplanationMnemonic,
 }: FontSizeControlProps) {
   const { t } = useTranslation('controls');
   // Accordion state
-  const [openSection, setOpenSection] = useState<'kanji' | 'indicators' | 'hanviet' | null>('kanji');
-  
+  const [openSection, setOpenSection] = useState<'kanji' | 'indicators' | null>('kanji');
+
   // Font manifest state
   const [availableFonts, setAvailableFonts] = useState<FontInfo[]>([]);
-  
+
   // Load kanji fonts on mount
   useEffect(() => {
     loadKanjiFontManifest().then(setAvailableFonts);
   }, []);
-  
+
   // Preload font when it's selected
   useEffect(() => {
     const font = availableFonts.find(f => f.family === kanjiFont);
@@ -85,8 +93,8 @@ export const FontSizeControl = memo(function FontSizeControl({
       });
     }
   }, [kanjiFont, availableFonts]);
-  
-  const toggleSection = (section: 'kanji' | 'indicators' | 'hanviet') => {
+
+  const toggleSection = (section: 'kanji' | 'indicators') => {
     setOpenSection(openSection === section ? null : section);
   };
 
@@ -180,7 +188,7 @@ export const FontSizeControl = memo(function FontSizeControl({
                 <option value="custom">Custom</option>
               </select>
             </div>
-            
+
             {/* Master kanji indicators */}
             <div>
               <label className="block text-xs text-gray-400 mb-1.5">Master kanji:</label>
@@ -214,7 +222,54 @@ export const FontSizeControl = memo(function FontSizeControl({
                 </label>
               </div>
             </div>
-            
+
+            {/* Meaning indicators (Han-Viet, Vietnamese, English) */}
+            <div>
+              <label className="block text-xs text-gray-400 mb-1.5">Meaning indicators:</label>
+              <div className="flex gap-4 flex-wrap">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showHanViet}
+                    onChange={onToggleShowHanViet}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">Hán-Việt</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showVietnameseMeaning}
+                    onChange={onToggleShowVietnameseMeaning}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">Vietnamese</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={showEnglishMeaning}
+                    onChange={onToggleShowEnglishMeaning}
+                    className="w-3.5 h-3.5 accent-blue-600"
+                  />
+                  <span className="text-xs text-gray-300">English</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Han-Viet Orientation (only visible if Han-Viet is shown alone, without Vietnamese/English meanings) */}
+            {showHanViet && !showVietnameseMeaning && !showEnglishMeaning && (
+              <div>
+                <button
+                  type="button"
+                  onClick={onToggleHanVietOrientation}
+                  className="text-xs px-2 py-1 bg-gray-700 text-gray-200 rounded border border-gray-600 hover:bg-gray-600"
+                >
+                  Hán-Việt: {hanVietOrientation === 'vertical' ? t('display.vertical') : t('display.horizontal')}
+                </button>
+              </div>
+            )}
+
             {/* Explanation section (only shown if props provided - Sheet mode only) */}
             {showExplanationMeaning !== undefined && (
               <div>
@@ -241,52 +296,11 @@ export const FontSizeControl = memo(function FontSizeControl({
                 </div>
               </div>
             )}
-          </div>
-        )}
-      </div>
 
-      {/* Hán-Việt & Sizing Section - Collapsible */}
-      <div>
-        <button
-          onClick={() => toggleSection('hanviet')}
-          className="w-full py-2 flex items-center justify-between text-left hover:bg-gray-800/30 transition-colors rounded px-1"
-        >
-          <div className="flex items-center gap-2 text-xs font-semibold text-blue-400 uppercase tracking-wide">
-            <span className="text-base">📝</span>
-            <span>Hán-Việt & Sizing</span>
-          </div>
-          <span className={`text-gray-400 transition-transform text-xs ${openSection === 'hanviet' ? 'rotate-180' : ''}`}>
-            ▼
-          </span>
-        </button>
-        {openSection === 'hanviet' && (
-          <div className="pt-2 px-1 space-y-3">
-            <div className="grid gap-3 lg:grid-cols-2">
-              <div>
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={showHanViet}
-                    onChange={onToggleShowHanViet}
-                    className="w-3.5 h-3.5 accent-blue-600"
-                  />
-                  <span className="text-xs text-gray-300">{t('display.show')}</span>
-                </label>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  onClick={onToggleHanVietOrientation}
-                  disabled={!showHanViet}
-                  className="text-xs px-2 py-1 bg-gray-700 text-gray-200 rounded border border-gray-600 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {hanVietOrientation === 'vertical' ? t('display.vertical') : t('display.horizontal')}
-                </button>
-              </div>
-            </div>
+            {/* Surround-Text Size Slider */}
             <div>
               <label className="block text-xs text-gray-400 mb-1">
-                {t('display.size')}: {getSizeLabel(hanVietSize)}
+                Surround-Text Size: {getSizeLabel(hanVietSize)}
               </label>
               <div className="text-xs text-gray-500 italic mb-1">
                 {t('display.affects_text_badges')}
@@ -298,13 +312,14 @@ export const FontSizeControl = memo(function FontSizeControl({
                 step={hanVietStep}
                 value={hanVietSize}
                 onChange={(e) => onHanVietSizeChange(parseFloat(e.target.value))}
-                disabled={!showHanViet && !showJlptIndicator && !showGradeIndicator && !showFrequencyIndicator}
+                disabled={!showHanViet && !showJlptIndicator && !showGradeIndicator && !showFrequencyIndicator && !showVietnameseMeaning && !showEnglishMeaning}
                 className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
           </div>
         )}
       </div>
+
     </div>
   );
 });

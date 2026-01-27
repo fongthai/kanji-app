@@ -35,6 +35,8 @@ interface PDFBoardPageProps {
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
+  showVietnameseMeaning?: boolean;
+  showEnglishMeaning?: boolean;
   showEmptyCells: boolean;
   centerCards: boolean;
   showHeader: boolean;
@@ -63,12 +65,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderBottomColor: '#333333',
   },
   headerBox: {
     paddingLeft: 12,
     paddingRight: 12,
-    paddingTop: 4,
-    paddingBottom: 4,
+    paddingTop: 2,
+    paddingBottom: 2,
     border: '2px solid #333333',
   },
   headerText: {
@@ -99,7 +103,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({ 
+export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
   kanjis,
   pageNumber,
   totalPages,
@@ -117,6 +121,8 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
+  showVietnameseMeaning = false,
+  showEnglishMeaning = false,
   showEmptyCells,
   centerCards,
   showHeader,
@@ -180,6 +186,8 @@ export const PDFBoardPage: React.FC<PDFBoardPageProps> = ({
           showJlptIndicator={showJlptIndicator}
           showGradeIndicator={showGradeIndicator}
           showFrequencyIndicator={showFrequencyIndicator}
+          showVietnameseMeaning={showVietnameseMeaning}
+          showEnglishMeaning={showEnglishMeaning}
           showEmptyCells={showEmptyCells}
           centerCards={centerCards}
           availableHeight={availableHeight}

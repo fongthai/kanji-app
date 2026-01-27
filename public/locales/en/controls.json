@@ -79,5 +79,18 @@
     "culture_entertainment": "Culture & Entertainment",
     "buildings_construction": "Buildings & Construction",
     "health_medical": "Health & Medical",
-    "materials_measurement": "Materials & Measurement"  }
+    "materials_measurement": "Materials & Measurement"
+  },
+  "vocabulary": {
+    "font": "Font",
+    "vocabulary_font": "Vocabulary Font",
+    "layout": "Layout",
+    "practice_cell_size": "Practice Cell Size",
+    "show_han_viet_reading": "Show Han-Viet Reading",
+    "show_vietnamese_meaning": "Show Vietnamese Meaning",
+    "show_english_meaning": "Show English Meaning",
+    "show_explanation": "Show Explanation",
+    "show_example_sentence": "Show Example Sentence (JP)",
+    "show_example_translation": "Show Example Translation"
+  }
 }

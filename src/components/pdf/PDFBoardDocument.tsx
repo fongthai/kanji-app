@@ -145,6 +145,8 @@ interface PDFDocumentProps {
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
+  showVietnameseMeaning?: boolean;
+  showEnglishMeaning?: boolean;
   showEmptyCells: boolean;
   centerCards: boolean;
   showHeader: boolean;
@@ -157,7 +159,7 @@ interface PDFDocumentProps {
   grayscaleMode: boolean;
 }
 
-export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({ 
+export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({
   kanjis,
   columnCount,
   cellSize,
@@ -173,6 +175,8 @@ export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
+  showVietnameseMeaning = false,
+  showEnglishMeaning = false,
   showEmptyCells,
   centerCards,
   showHeader,
@@ -215,6 +219,8 @@ export const PDFBoardDocument: React.FC<PDFDocumentProps> = ({
               showJlptIndicator={showJlptIndicator}
               showGradeIndicator={showGradeIndicator}
               showFrequencyIndicator={showFrequencyIndicator}
+              showVietnameseMeaning={showVietnameseMeaning}
+              showEnglishMeaning={showEnglishMeaning}
               showEmptyCells={showEmptyCells}
               centerCards={centerCards}
               showHeader={showHeader}

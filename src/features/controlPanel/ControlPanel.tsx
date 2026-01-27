@@ -21,12 +21,16 @@ import {
   toggleInputPanelShowJlptIndicator,
   toggleInputPanelShowGradeIndicator,
   toggleInputPanelShowFrequencyIndicator,
+  toggleInputPanelShowVietnameseMeaning,
+  toggleInputPanelShowEnglishMeaning,
   setInputPanelIndicatorPreset,
   toggleMainPanelShowHanViet,
   toggleMainPanelHanVietOrientation,
   toggleMainPanelShowJlptIndicator,
   toggleMainPanelShowGradeIndicator,
   toggleMainPanelShowFrequencyIndicator,
+  toggleMainPanelShowVietnameseMeaning,
+  toggleMainPanelShowEnglishMeaning,
   setMainPanelIndicatorPreset,
   setSheetPanelKanjiFont,
   setSheetPanelKanjiSize,
@@ -36,23 +40,45 @@ import {
   toggleSheetPanelShowJlptIndicator,
   toggleSheetPanelShowGradeIndicator,
   toggleSheetPanelShowFrequencyIndicator,
+  toggleSheetPanelShowVietnameseMeaning,
+  toggleSheetPanelShowEnglishMeaning,
   toggleSheetPanelShowExplanationMeaning,
   toggleSheetPanelShowExplanationMnemonic,
   setSheetPanelIndicatorPreset,
   setPngQuality,
+  setVocabSheetFont,
+  toggleVocabShowHanViet,
+  toggleVocabShowVietnameseMeaning,
+  toggleVocabShowEnglishMeaning,
+  toggleVocabShowExplanation,
+  toggleVocabShowExampleSentence,
+  toggleVocabShowExampleTranslation,
+  setVocabPracticeCellSize,
 } from '../displaySettings/displaySettingsSlice';
 import { FontSizeControl } from '../../components/shared/FontSizeControl';
+import { VocabularySheetControl } from '../../components/shared/VocabularySheetControl';
 import { ExportProgressModal } from '../../components/shared/ExportProgressModal';
-import { exportBoardToPDFVector, exportSheetToPDFVector, exportBoardToPNG, exportSheetToPNG, type ExportProgress } from '../../utils/exportUtils';
+import {
+  exportBoardToPDFVector,
+  exportSheetToPDFVector,
+  exportBoardToPNG,
+  exportSheetToPNG,
+  exportVocabularySheetToPDFVector,
+  exportVocabularySheetToPNG,
+  type ExportProgress
+} from '../../utils/exportUtils';
 import { loadHeaderFontManifest } from '../../utils/fontLoader';
+import { setSkipWatermarkFlag } from '../../utils/featureControl';
 import { deleteDatabase } from '../../db/indexedDB';
 
 function ControlPanel() {
-  const { t } = useTranslation(['common', 'controls', 'messages']);
+  const { t, i18n } = useTranslation(['common', 'controls', 'messages']);
   const dispatch = useAppDispatch();
   const worksheet = useAppSelector((state) => state.worksheet);
+  const filterMode = useAppSelector((state) => state.worksheet.filterMode);
   const { chosenKanjis, allKanjis } = useAppSelector((state) => state.kanji);
-  const { inputPanel, mainPanel, sheetPanel, pngQuality } = useAppSelector((state) => state.displaySettings);
+  const chosenVocabularies = useAppSelector((state) => state.vocabulary.chosenVocabularies);
+  const { inputPanel, mainPanel, sheetPanel, vocabularySheet, pngQuality } = useAppSelector((state) => state.displaySettings);
 
   // Tab state for Display Settings section (only 'input' and 'main')
   const [activeTab, setActiveTab] = useState<'input' | 'main'>('main');
@@ -135,18 +161,53 @@ function ControlPanel() {
     }
   };
 
+  // Helper to detect Command+Shift (Mac) or Control+Shift (Windows/Linux)
+  const isSkipWatermarkModifier = (e: React.MouseEvent) => {
+    const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    return isMac ? (e.metaKey && e.shiftKey) : (e.ctrlKey && e.shiftKey);
+  };
+
   // Export handlers
-  const handleExportPDF = async () => {
-    if (chosenKanjis.length === 0 || isExporting) return;
+  const handleExportPDF = async (e?: React.MouseEvent) => {
+    // Check for items based on filter mode
+    const hasItems = filterMode === 'vocabulary' ? chosenVocabularies.length > 0 : chosenKanjis.length > 0;
+    if (!hasItems || isExporting) return;
 
     exportCancelledRef.current = false;
     setIsExporting(true);
+
+    // Detect modifier key for skipping watermark
+    const skipWatermarkFlag = e ? isSkipWatermarkModifier(e) : false;
+    setSkipWatermarkFlag(skipWatermarkFlag);
 
     try {
       // Load font manifest to get header font info
       const fonts = await loadHeaderFontManifest();
       const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
-      
+
+      // Vocabulary sheet export
+      if (filterMode === 'vocabulary' && worksheet.currentMode === 'sheet') {
+        await exportVocabularySheetToPDFVector(
+          chosenVocabularies,
+          worksheet.boardShowHeader,
+          worksheet.boardShowFooter,
+          worksheet.headerText,
+          vocabularySheet.vocabularyFont,
+          vocabularySheet.showHanViet,
+          vocabularySheet.showVietnameseMeaning,
+          vocabularySheet.showEnglishMeaning,
+          vocabularySheet.showExplanation,
+          vocabularySheet.showExampleSentence,
+          vocabularySheet.showExampleTranslation,
+          vocabularySheet.practiceCellSize,
+          i18n.language,
+          setExportProgress,
+          () => exportCancelledRef.current
+        );
+        setIsExporting(false);
+        return;
+      }
+
       if (worksheet.currentMode === 'board') {
         // Board mode - vector PDF
         await exportBoardToPDFVector(
@@ -165,11 +226,13 @@ function ControlPanel() {
           mainPanel.showJlptIndicator,
           mainPanel.showGradeIndicator,
           mainPanel.showFrequencyIndicator,
+          mainPanel.showVietnameseMeaning,
+          mainPanel.showEnglishMeaning,
           worksheet.headerText,
           headerFont.family,
           headerFont.filename,
           worksheet.grayscaleMode,
-          (progress) => setExportProgress(progress)
+          (progress: ExportProgress) => setExportProgress(progress)
         );
       } else {
         // Sheet mode - vector PDF
@@ -202,20 +265,51 @@ function ControlPanel() {
       console.error('Export PDF failed:', error);
     } finally {
       setIsExporting(false);
+      setSkipWatermarkFlag(false); // Reset watermark flag after export
     }
   };
 
-  const handleExportPNG = async () => {
-    if (chosenKanjis.length === 0 || isExporting) return;
+  const handleExportPNG = async (e?: React.MouseEvent) => {
+    // Check for items based on filter mode
+    const hasItems = filterMode === 'vocabulary' ? chosenVocabularies.length > 0 : chosenKanjis.length > 0;
+    if (!hasItems || isExporting) return;
 
     exportCancelledRef.current = false;
     setIsExporting(true);
+
+    // Detect modifier key for skipping watermark
+    const skipWatermarkFlag = e ? isSkipWatermarkModifier(e) : false;
+    setSkipWatermarkFlag(skipWatermarkFlag);
 
     try {
       // Load font manifest to get header font info
       const fonts = await loadHeaderFontManifest();
       const headerFont = fonts[worksheet.headerFontIndex] || fonts[0];
-      
+
+      // Vocabulary sheet export
+      if (filterMode === 'vocabulary' && worksheet.currentMode === 'sheet') {
+        await exportVocabularySheetToPNG(
+          chosenVocabularies,
+          worksheet.boardShowHeader,
+          worksheet.boardShowFooter,
+          worksheet.headerText,
+          vocabularySheet.vocabularyFont,
+          vocabularySheet.showHanViet,
+          vocabularySheet.showVietnameseMeaning,
+          vocabularySheet.showEnglishMeaning,
+          vocabularySheet.showExplanation,
+          vocabularySheet.showExampleSentence,
+          vocabularySheet.showExampleTranslation,
+          vocabularySheet.practiceCellSize,
+          i18n.language,
+          pngQuality,
+          setExportProgress,
+          () => exportCancelledRef.current
+        );
+        setIsExporting(false);
+        return;
+      }
+
       if (worksheet.currentMode === 'board') {
         // Board mode - PNG export
         await exportBoardToPNG(
@@ -235,6 +329,8 @@ function ControlPanel() {
             showJlptIndicator: mainPanel.showJlptIndicator,
             showGradeIndicator: mainPanel.showGradeIndicator,
             showFrequencyIndicator: mainPanel.showFrequencyIndicator,
+            showVietnameseMeaning: mainPanel.showVietnameseMeaning,
+            showEnglishMeaning: mainPanel.showEnglishMeaning,
             kanjiSize: mainPanel.kanjiSize,
             hanVietSize: mainPanel.hanVietSize,
           },
@@ -243,7 +339,7 @@ function ControlPanel() {
           headerFont.family,
           headerFont.filename,
           worksheet.grayscaleMode,
-          (progress) => setExportProgress(progress),
+          (progress: ExportProgress) => setExportProgress(progress),
           () => exportCancelledRef.current
         );
       } else {
@@ -279,6 +375,7 @@ function ControlPanel() {
       console.error('Export PNG failed:', error);
     } finally {
       setIsExporting(false);
+      setSkipWatermarkFlag(false); // Reset watermark flag after export
     }
   };
 
@@ -416,6 +513,8 @@ function ControlPanel() {
                 hanVietSize={inputPanel.hanVietSize}
                 showHanViet={inputPanel.showHanViet}
                 hanVietOrientation={inputPanel.hanVietOrientation}
+                showVietnameseMeaning={inputPanel.showVietnameseMeaning}
+                showEnglishMeaning={inputPanel.showEnglishMeaning}
                 showJlptIndicator={inputPanel.showJlptIndicator}
                 showGradeIndicator={inputPanel.showGradeIndicator}
                 showFrequencyIndicator={inputPanel.showFrequencyIndicator}
@@ -423,11 +522,13 @@ function ControlPanel() {
                 onKanjiFontChange={(font) => dispatch(setInputPanelKanjiFont(font))}
                 onKanjiSizeChange={(size) => dispatch(setInputPanelKanjiSize(size))}
                 onHanVietSizeChange={(size) => dispatch(setInputPanelHanVietSize(size))}
-                onToggleShowHanViet={() => dispatch(toggleInputPanelShowHanViet())}
-                onToggleHanVietOrientation={() => dispatch(toggleInputPanelHanVietOrientation())}
                 onToggleShowJlptIndicator={() => dispatch(toggleInputPanelShowJlptIndicator())}
                 onToggleShowGradeIndicator={() => dispatch(toggleInputPanelShowGradeIndicator())}
                 onToggleShowFrequencyIndicator={() => dispatch(toggleInputPanelShowFrequencyIndicator())}
+                onToggleShowHanViet={() => dispatch(toggleInputPanelShowHanViet())}
+                onToggleHanVietOrientation={() => dispatch(toggleInputPanelHanVietOrientation())}
+                onToggleShowVietnameseMeaning={() => dispatch(toggleInputPanelShowVietnameseMeaning())}
+                onToggleShowEnglishMeaning={() => dispatch(toggleInputPanelShowEnglishMeaning())}
                 onIndicatorPresetChange={(preset) => dispatch(setInputPanelIndicatorPreset(preset))}
               />
             )}
@@ -444,6 +545,8 @@ function ControlPanel() {
                 hanVietSizeMax={65}
                 showHanViet={mainPanel.showHanViet}
                 hanVietOrientation={mainPanel.hanVietOrientation}
+                showVietnameseMeaning={mainPanel.showVietnameseMeaning}
+                showEnglishMeaning={mainPanel.showEnglishMeaning}
                 showJlptIndicator={mainPanel.showJlptIndicator}
                 showGradeIndicator={mainPanel.showGradeIndicator}
                 showFrequencyIndicator={mainPanel.showFrequencyIndicator}
@@ -451,17 +554,19 @@ function ControlPanel() {
                 onKanjiFontChange={(font) => dispatch(setMainPanelKanjiFont(font))}
                 onKanjiSizeChange={(size) => dispatch(setMainPanelKanjiSize(size))}
                 onHanVietSizeChange={(size) => dispatch(setMainPanelHanVietSize(size))}
-                onToggleShowHanViet={() => dispatch(toggleMainPanelShowHanViet())}
-                onToggleHanVietOrientation={() => dispatch(toggleMainPanelHanVietOrientation())}
                 onToggleShowJlptIndicator={() => dispatch(toggleMainPanelShowJlptIndicator())}
                 onToggleShowGradeIndicator={() => dispatch(toggleMainPanelShowGradeIndicator())}
                 onToggleShowFrequencyIndicator={() => dispatch(toggleMainPanelShowFrequencyIndicator())}
+                onToggleShowHanViet={() => dispatch(toggleMainPanelShowHanViet())}
+                onToggleHanVietOrientation={() => dispatch(toggleMainPanelHanVietOrientation())}
+                onToggleShowVietnameseMeaning={() => dispatch(toggleMainPanelShowVietnameseMeaning())}
+                onToggleShowEnglishMeaning={() => dispatch(toggleMainPanelShowEnglishMeaning())}
                 onIndicatorPresetChange={(preset) => dispatch(setMainPanelIndicatorPreset(preset))}
               />
             )}
 
-            {/* Main Panel Tab - Sheet Mode Settings */}
-            {activeTab === 'main' && worksheet.currentMode === 'sheet' && (
+            {/* Main Panel Tab - Sheet Mode Settings (Kanji) */}
+            {activeTab === 'main' && worksheet.currentMode === 'sheet' && filterMode === 'kanji' && (
               <FontSizeControl
                 kanjiFont={sheetPanel.kanjiFont}
                 kanjiSize={sheetPanel.kanjiSize}
@@ -472,6 +577,8 @@ function ControlPanel() {
                 hanVietSizeMax={65}
                 showHanViet={sheetPanel.showHanViet}
                 hanVietOrientation={sheetPanel.hanVietOrientation}
+                showVietnameseMeaning={sheetPanel.showVietnameseMeaning}
+                showEnglishMeaning={sheetPanel.showEnglishMeaning}
                 showJlptIndicator={sheetPanel.showJlptIndicator}
                 showGradeIndicator={sheetPanel.showGradeIndicator}
                 showFrequencyIndicator={sheetPanel.showFrequencyIndicator}
@@ -481,14 +588,38 @@ function ControlPanel() {
                 onKanjiFontChange={(font) => dispatch(setSheetPanelKanjiFont(font))}
                 onKanjiSizeChange={(size) => dispatch(setSheetPanelKanjiSize(size))}
                 onHanVietSizeChange={(size) => dispatch(setSheetPanelHanVietSize(size))}
-                onToggleShowHanViet={() => dispatch(toggleSheetPanelShowHanViet())}
-                onToggleHanVietOrientation={() => dispatch(toggleSheetPanelHanVietOrientation())}
                 onToggleShowJlptIndicator={() => dispatch(toggleSheetPanelShowJlptIndicator())}
                 onToggleShowGradeIndicator={() => dispatch(toggleSheetPanelShowGradeIndicator())}
                 onToggleShowFrequencyIndicator={() => dispatch(toggleSheetPanelShowFrequencyIndicator())}
+                onToggleShowHanViet={() => dispatch(toggleSheetPanelShowHanViet())}
+                onToggleHanVietOrientation={() => dispatch(toggleSheetPanelHanVietOrientation())}
+                onToggleShowVietnameseMeaning={() => dispatch(toggleSheetPanelShowVietnameseMeaning())}
+                onToggleShowEnglishMeaning={() => dispatch(toggleSheetPanelShowEnglishMeaning())}
                 onIndicatorPresetChange={(preset) => dispatch(setSheetPanelIndicatorPreset(preset))}
                 onToggleShowExplanationMeaning={() => dispatch(toggleSheetPanelShowExplanationMeaning())}
                 onToggleShowExplanationMnemonic={() => dispatch(toggleSheetPanelShowExplanationMnemonic())}
+              />
+            )}
+
+            {/* Main Panel Tab - Sheet Mode Settings (Vocabulary) */}
+            {activeTab === 'main' && worksheet.currentMode === 'sheet' && filterMode === 'vocabulary' && (
+              <VocabularySheetControl
+                vocabularyFont={vocabularySheet.vocabularyFont}
+                showHanViet={vocabularySheet.showHanViet}
+                showVietnameseMeaning={vocabularySheet.showVietnameseMeaning}
+                showEnglishMeaning={vocabularySheet.showEnglishMeaning}
+                showExplanation={vocabularySheet.showExplanation}
+                showExampleSentence={vocabularySheet.showExampleSentence}
+                showExampleTranslation={vocabularySheet.showExampleTranslation}
+                practiceCellSize={vocabularySheet.practiceCellSize}
+                onVocabularyFontChange={(font) => dispatch(setVocabSheetFont(font))}
+                onToggleShowHanViet={() => dispatch(toggleVocabShowHanViet())}
+                onToggleShowVietnameseMeaning={() => dispatch(toggleVocabShowVietnameseMeaning())}
+                onToggleShowEnglishMeaning={() => dispatch(toggleVocabShowEnglishMeaning())}
+                onToggleShowExplanation={() => dispatch(toggleVocabShowExplanation())}
+                onToggleShowExampleSentence={() => dispatch(toggleVocabShowExampleSentence())}
+                onToggleShowExampleTranslation={() => dispatch(toggleVocabShowExampleTranslation())}
+                onPracticeCellSizeChange={(size) => dispatch(setVocabPracticeCellSize(size))}
               />
             )}
 
@@ -538,18 +669,18 @@ function ControlPanel() {
             {worksheet.currentMode !== 'quiz' && (
             <div className="flex gap-2">
               <button
-                onClick={handleExportPDF}
-                disabled={chosenKanjis.length === 0 || isExporting}
+                onClick={(e) => handleExportPDF(e as React.MouseEvent)}
+                disabled={(filterMode === 'vocabulary' ? chosenVocabularies.length === 0 : chosenKanjis.length === 0) || isExporting}
                 className="flex-1 py-2 px-3 rounded text-xs bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
                 title={t('controls:export.pdf_tooltip')}
               >
-                {isExporting && exportProgress?.status === 'exporting' 
+                {isExporting && exportProgress?.status === 'exporting'
                   ? `📄 ${exportProgress.currentPage}/${exportProgress.totalPages}`
                   : `📄 ${t('common:buttons.export_pdf')}`}
               </button>
               <button
-                onClick={handleExportPNG}
-                disabled={chosenKanjis.length === 0 || isExporting}
+                onClick={(e) => handleExportPNG(e as React.MouseEvent)}
+                disabled={(filterMode === 'vocabulary' ? chosenVocabularies.length === 0 : chosenKanjis.length === 0) || isExporting}
                 className="flex-1 py-2 px-3 rounded text-xs bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
                 title={t('controls:export.png_tooltip')}
               >

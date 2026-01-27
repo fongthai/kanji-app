@@ -1,0 +1,857 @@
+{
+  "description": "JLPT N5 vocabulary set C",
+  "book": "JLPT N5",
+  "unit": "N5 Unit 03",
+  "vocabularies": [
+    {
+      "vocabulary": "貼る",
+      "furigana": "はる",
+      "hanViet": "",
+      "vietnameseMeaning": "dán, gắn cho",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "半",
+      "furigana": "はん",
+      "hanViet": "BÁN",
+      "vietnameseMeaning": "một nửa",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "番号",
+      "furigana": "ばんごう",
+      "hanViet": "PHIÊN HÀO",
+      "vietnameseMeaning": "số hiệu",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "東",
+      "furigana": "ひがし",
+      "hanViet": "ĐÔNG",
+      "vietnameseMeaning": "phía đông",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "弾く",
+      "furigana": "ひく",
+      "hanViet": "ĐÀN",
+      "vietnameseMeaning": "gảy, búng, chơi nhạc cụ",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "左",
+      "furigana": "ひだり",
+      "hanViet": "TẢ",
+      "vietnameseMeaning": "bên trái",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "百",
+      "furigana": "ひゃく",
+      "hanViet": "BÁCH",
+      "vietnameseMeaning": "một trăm",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "昼ご飯",
+      "furigana": "ひるごはん",
+      "hanViet": "TRÚ PHẠN",
+      "vietnameseMeaning": "bữa trưa",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "犬",
+      "furigana": "いぬ",
+      "hanViet": "KHUYỂN",
+      "vietnameseMeaning": "con chó",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "吹く",
+      "furigana": "ふく",
+      "hanViet": "XUY",
+      "vietnameseMeaning": "thổi",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "二人",
+      "furigana": "ふたり",
+      "hanViet": "NHỊ NHÂN",
+      "vietnameseMeaning": "hai người",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "古い",
+      "furigana": "ふるい",
+      "hanViet": "CỔ",
+      "vietnameseMeaning": "cũ, cổ",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "下手",
+      "furigana": "へた",
+      "hanViet": "HẠ THỦ",
+      "vietnameseMeaning": "kém, không giỏi",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "勉強",
+      "furigana": "べんきょうする",
+      "hanViet": "MIỄN CƯỜNG",
+      "vietnameseMeaning": "việc học hành, sự học hành",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "嫌",
+      "furigana": "いや",
+      "hanViet": "HIỀM",
+      "vietnameseMeaning": "khó chịu, ghét",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "外",
+      "furigana": "ほか",
+      "hanViet": "NGOẠI",
+      "vietnameseMeaning": "bên ngoài, phía ngoài",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "居る",
+      "furigana": "いる",
+      "hanViet": "CƯ",
+      "vietnameseMeaning": "có",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "本棚",
+      "furigana": "ほんだな",
+      "hanViet": "BỔN BẰNG",
+      "vietnameseMeaning": "giá sách, kệ sách",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "毎月",
+      "furigana": "まいげつ/まいつき",
+      "hanViet": "MỖI NGUYỆT",
+      "vietnameseMeaning": "hàng tháng, mỗi tháng",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "毎日",
+      "furigana": "まいにち",
+      "hanViet": "MỖI NHẬT",
+      "vietnameseMeaning": "hàng ngày",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "毎晩",
+      "furigana": "まいばん",
+      "hanViet": "MỖI VÃN",
+      "vietnameseMeaning": "đêm đêm",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "待つ",
+      "furigana": "まつ",
+      "hanViet": "ĐÃI",
+      "vietnameseMeaning": "chờ đợi",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "磨く",
+      "furigana": "みがく",
+      "hanViet": "MA",
+      "vietnameseMeaning": "chải, đánh răng, mài vật gì đó",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "短い",
+      "furigana": "みじかい",
+      "hanViet": "ĐOẢN",
+      "vietnameseMeaning": "ngắn",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "店",
+      "furigana": "みせ",
+      "hanViet": "ĐIẾM",
+      "vietnameseMeaning": "cửa hàng, cửa hiệu",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "道",
+      "furigana": "みち",
+      "hanViet": "ĐẠO",
+      "vietnameseMeaning": "con đường, con phố",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "上",
+      "furigana": "うえ",
+      "hanViet": "THƯỢNG",
+      "vietnameseMeaning": "trên, mặt trên",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "皆さん",
+      "furigana": "みなさん",
+      "hanViet": "GIAI",
+      "vietnameseMeaning": "mọi người",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "耳",
+      "furigana": "みみ",
+      "hanViet": "NHĨ",
+      "vietnameseMeaning": "cái tai",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "大きな",
+      "furigana": "おおきな",
+      "hanViet": "ĐẠI",
+      "vietnameseMeaning": "to",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "向こう",
+      "furigana": "むこう",
+      "hanViet": "HƯỚNG",
+      "vietnameseMeaning": "hướng tới, hướng đến địa điểm nào đó",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "目",
+      "furigana": "め",
+      "hanViet": "MỤC",
+      "vietnameseMeaning": "con mắt",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "お茶",
+      "furigana": "おちゃ",
+      "hanViet": "TRÀ",
+      "vietnameseMeaning": "chè",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "降りる",
+      "furigana": "おりる",
+      "hanViet": "HÀNG",
+      "vietnameseMeaning": "bước xuống",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "持つ",
+      "furigana": "もつ",
+      "hanViet": "TRÌ",
+      "vietnameseMeaning": "cầm, nắm",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "傘",
+      "furigana": "かさ",
+      "hanViet": "TÁN",
+      "vietnameseMeaning": "cái ô",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "果物",
+      "furigana": "くだもの",
+      "hanViet": "QUẢ VẬT",
+      "vietnameseMeaning": "hoa quả, trái cây",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "野菜",
+      "furigana": "やさい",
+      "hanViet": "DÃ THÁI",
+      "vietnameseMeaning": "rau",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "曇る",
+      "furigana": "くもる",
+      "hanViet": "ĐÀM",
+      "vietnameseMeaning": "nhiều mây",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "公園",
+      "furigana": "こうえん",
+      "hanViet": "CÔNG VIÊN",
+      "vietnameseMeaning": "công viên",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "子供",
+      "furigana": "こども",
+      "hanViet": "TỬ CUNG",
+      "vietnameseMeaning": "trẻ con",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "八つ",
+      "furigana": "やっつ",
+      "hanViet": "BÁT",
+      "vietnameseMeaning": "tám cái, tám chiếc",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "寒い",
+      "furigana": "さむい",
+      "hanViet": "HÀN",
+      "vietnameseMeaning": "lạnh",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "昨夜",
+      "furigana": "ゆうべ",
+      "hanViet": "TẠC DẠ",
+      "vietnameseMeaning": "đêm hôm qua",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "雪",
+      "furigana": "ゆき",
+      "hanViet": "TUYẾT",
+      "vietnameseMeaning": "tuyết",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "八日",
+      "furigana": "ようか",
+      "hanViet": "BÁT NHẬT",
+      "vietnameseMeaning": "ngày mồng tám",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "四日",
+      "furigana": "よっか",
+      "hanViet": "TỨ NHẬT",
+      "vietnameseMeaning": "ngày mùng bốn",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "自動車",
+      "furigana": "じどうしゃ",
+      "hanViet": "TỰ ĐỘNG XA",
+      "vietnameseMeaning": "mô tô",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "写真",
+      "furigana": "しゃしん",
+      "hanViet": "TẢ CHÂN",
+      "vietnameseMeaning": "ảnh",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    },
+    {
+      "vocabulary": "新聞",
+      "furigana": "しんぶん",
+      "hanViet": "TÂN VĂN",
+      "vietnameseMeaning": "báo, tờ báo",
+      "explanation": "",
+      "englishMeaning": "",
+      "jlptLevel": "N5",
+      "category": [
+        "jlpt",
+        "n5"
+      ],
+      "exampleSentencesInJapanese": [],
+      "exampleSentencesInJapaneseHiragana": [],
+      "exampleSentencesVietnameseTranslate": [],
+      "exampleSentencesEnglishTranslate": []
+    }
+  ]
+}

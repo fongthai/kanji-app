@@ -2,6 +2,8 @@
  * Layout calculation utilities for both screen and PDF rendering
  */
 
+import { getIndicatorColumnMultiplier } from '../constants/indicators';
+
 // A4 dimensions at 300 DPI (for reference, actual use is in constants)
 export const A4_WIDTH_MM = 210;
 export const A4_HEIGHT_MM = 297;
@@ -31,13 +33,33 @@ export const calculateBoardCellSize = (
 
 /**
  * Calculate how many rows fit in available height
+ * Uses an improved calculation that accounts for rounding differences
+ * by checking actual space needed per row
+ * Adds a small tolerance (10pt) to account for layout rounding and CSS spacing
  */
 export const calculateRowCount = (
   availableHeight: number,
   cellSize: number,
   gap: number
 ): number => {
-  return Math.floor((availableHeight + gap) / (cellSize + gap));
+  // Add a small tolerance to account for rounding and CSS layout quirks
+  // This allows rows that are very close to fitting to actually fit
+  const tolerance = 10;
+  const effectiveHeight = availableHeight + tolerance;
+
+  let rowCount = 0;
+  // Keep adding rows until we run out of space
+  // Space needed for N rows: N * cellSize + (N - 1) * gap
+  while (true) {
+    const nextRowCount = rowCount + 1;
+    const spaceNeeded = nextRowCount * cellSize + (nextRowCount - 1) * gap;
+    if (spaceNeeded <= effectiveHeight) {
+      rowCount = nextRowCount;
+    } else {
+      break;
+    }
+  }
+  return rowCount;
 };
 
 /**
@@ -55,24 +77,29 @@ export const calculateBoardCardsPerPage = (
  * @param cellSize - Size of the cell in pixels/points
  * @param kanjiSizePercentage - User's kanji size setting (60-120)
  * @param hanVietSizePercentage - User's surround text size setting (60-120)
+ * @param columnCount - Optional: Number of columns in the grid (4-15) for indicator multiplier
  */
 export const calculateFontSizes = (
   cellSize: number,
   kanjiSizePercentage: number,
-  hanVietSizePercentage: number
+  hanVietSizePercentage: number,
+  columnCount?: number
 ) => {
   // Base kanji: 65% of cell size (maximized for PDF glyph rendering)
   // At 110% default: 71.5% fill, At 115% tested max: 74.75% fill
   // Higher percentage causes PDFKit rendering failures. Use lineHeight: 1 to remove font leading.
   const baseKanjiFontSize = cellSize * 0.7;
-  
+
   // Apply user's percentage adjustment
   const kanjiFontSize = baseKanjiFontSize * (kanjiSizePercentage / 100);
-  
-  // Indicator and Han-viet: 20% of base kanji size
-  const baseIndicatorSize = baseKanjiFontSize * 0.20;
-  const indicatorFontSize = baseIndicatorSize * (hanVietSizePercentage / 100);
-  
+
+  // Indicator and Han-viet: 25% of base kanji size
+  const baseIndicatorSize = baseKanjiFontSize * 0.25;
+
+  // Apply column-based multiplier if columnCount provided
+  const columnMultiplier = columnCount ? getIndicatorColumnMultiplier(columnCount) : 1.0;
+  const indicatorFontSize = baseIndicatorSize * (hanVietSizePercentage / 100) * columnMultiplier;
+
   return {
     kanjiFontSize,
     indicatorFontSize,

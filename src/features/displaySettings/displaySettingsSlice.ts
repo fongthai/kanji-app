@@ -8,6 +8,8 @@ export interface FontSizeSettings {
   hanVietFont: string;
   hanVietSize: number;
   showHanViet: boolean;
+  showVietnameseMeaning: boolean; // NEW: Extended indicators - Vietnamese meaning (Board mode)
+  showEnglishMeaning: boolean; // NEW: Extended indicators - English meaning (Board mode)
   hanVietOrientation: 'horizontal' | 'vertical'; // New: text orientation
   // New: Individual indicator toggles
   showJlptIndicator: boolean;
@@ -19,10 +21,22 @@ export interface FontSizeSettings {
   showExplanationMnemonic?: boolean;
 }
 
+interface VocabularySheetSettings {
+  vocabularyFont: string; // Font for vocabulary text
+  showHanViet: boolean;
+  showVietnameseMeaning: boolean;
+  showEnglishMeaning: boolean;
+  showExplanation: boolean; // Show explanation (additional notes)
+  showExampleSentence: boolean; // Show Japanese example sentence
+  showExampleTranslation: boolean; // Show translated example sentence (VI or EN based on language)
+  practiceCellSize: number; // Cell size in pixels (30-60, default: 40)
+}
+
 interface DisplaySettingsState {
   inputPanel: FontSizeSettings;
   mainPanel: FontSizeSettings; // Used for Board mode
   sheetPanel: FontSizeSettings; // Used for Sheet mode
+  vocabularySheet: VocabularySheetSettings; // Vocabulary sheet settings
   pngQuality: 200 | 300 | 600; // DPI: Low (web), Medium (standard), HQ (print)
 }
 const initialState: DisplaySettingsState = {
@@ -32,7 +46,9 @@ const initialState: DisplaySettingsState = {
     hanVietFont: 'system-ui',
     hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
-    hanVietOrientation: 'vertical', // Default: vertical
+    showVietnameseMeaning: false, // Default: hide Vietnamese (Input Panel)
+    showEnglishMeaning: false, // Default: hide English (Input Panel)
+    hanVietOrientation: 'horizontal', // Default: horizontal
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
     showJlptIndicator: true,
     showGradeIndicator: false,
@@ -41,11 +57,13 @@ const initialState: DisplaySettingsState = {
   },
   mainPanel: {
     kanjiFont: 'KanjiStrokeOrders',
-    kanjiSize: 110, // Percentage scale: 60%-120%, default 110%
+    kanjiSize: 100, // Percentage scale: 60%-120%, default 100%
     hanVietFont: 'system-ui',
     hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
-    hanVietOrientation: 'vertical', // Default: vertical
+    showVietnameseMeaning: true, // Default: show Vietnamese (Board mode)
+    showEnglishMeaning: false, // Default: hide English (Board mode)
+    hanVietOrientation: 'horizontal', // Default: horizontal
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
     showJlptIndicator: true,
     showGradeIndicator: false,
@@ -58,7 +76,9 @@ const initialState: DisplaySettingsState = {
     hanVietFont: 'system-ui',
     hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
-    hanVietOrientation: 'vertical', // Default: vertical
+    showVietnameseMeaning: false, // Default: hide Vietnamese (Sheet mode)
+    showEnglishMeaning: false, // Default: hide English (Sheet mode)
+    hanVietOrientation: 'horizontal', // Default: horizontal
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
     showJlptIndicator: true,
     showGradeIndicator: false,
@@ -67,6 +87,16 @@ const initialState: DisplaySettingsState = {
     // Explanation defaults: Meaning on, Mnemonic off (matches 'study' preset)
     showExplanationMeaning: true,
     showExplanationMnemonic: false,
+  },
+  vocabularySheet: {
+    vocabularyFont: 'NotoSansJP-Regular', // Default font for vocabulary text
+    showHanViet: true,
+    showVietnameseMeaning: true,
+    showEnglishMeaning: false,
+    showExplanation: false, // Default: hide explanation
+    showExampleSentence: false, // Default: hide example sentences
+    showExampleTranslation: false, // Default: hide translations
+    practiceCellSize: 40, // Default: 40px per cell
   },
   pngQuality: 300, // Default: Medium quality (300 DPI)
 };
@@ -142,6 +172,33 @@ const displaySettingsSlice = createSlice({
       state.mainPanel.showFrequencyIndicator = !state.mainPanel.showFrequencyIndicator;
       state.mainPanel.indicatorPreset = 'custom';
     },
+    // NEW: Extended indicators for Board mode
+    toggleMainPanelShowVietnameseMeaning: (state) => {
+      state.mainPanel.showVietnameseMeaning = !state.mainPanel.showVietnameseMeaning;
+      state.mainPanel.indicatorPreset = 'custom';
+    },
+    toggleMainPanelShowEnglishMeaning: (state) => {
+      state.mainPanel.showEnglishMeaning = !state.mainPanel.showEnglishMeaning;
+      state.mainPanel.indicatorPreset = 'custom';
+    },
+    // NEW: Extended indicators for Input Panel
+    toggleInputPanelShowVietnameseMeaning: (state) => {
+      state.inputPanel.showVietnameseMeaning = !state.inputPanel.showVietnameseMeaning;
+      state.inputPanel.indicatorPreset = 'custom';
+    },
+    toggleInputPanelShowEnglishMeaning: (state) => {
+      state.inputPanel.showEnglishMeaning = !state.inputPanel.showEnglishMeaning;
+      state.inputPanel.indicatorPreset = 'custom';
+    },
+    // NEW: Extended indicators for Sheet Panel
+    toggleSheetPanelShowVietnameseMeaning: (state) => {
+      state.sheetPanel.showVietnameseMeaning = !state.sheetPanel.showVietnameseMeaning;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
+    toggleSheetPanelShowEnglishMeaning: (state) => {
+      state.sheetPanel.showEnglishMeaning = !state.sheetPanel.showEnglishMeaning;
+      state.sheetPanel.indicatorPreset = 'custom';
+    },
     setMainPanelIndicatorPreset: (state, action: PayloadAction<IndicatorPreset>) => {
       const preset = INDICATOR_PRESETS[action.payload];
       state.mainPanel.showJlptIndicator = preset.showJlpt;
@@ -202,6 +259,32 @@ const displaySettingsSlice = createSlice({
       }
       state.sheetPanel.indicatorPreset = action.payload;
     },
+    // Vocabulary sheet actions
+    setVocabSheetFont: (state, action: PayloadAction<string>) => {
+      state.vocabularySheet.vocabularyFont = action.payload;
+    },
+    toggleVocabShowHanViet: (state) => {
+      state.vocabularySheet.showHanViet = !state.vocabularySheet.showHanViet;
+    },
+    toggleVocabShowVietnameseMeaning: (state) => {
+      state.vocabularySheet.showVietnameseMeaning = !state.vocabularySheet.showVietnameseMeaning;
+    },
+    toggleVocabShowEnglishMeaning: (state) => {
+      state.vocabularySheet.showEnglishMeaning = !state.vocabularySheet.showEnglishMeaning;
+    },
+    toggleVocabShowExplanation: (state) => {
+      state.vocabularySheet.showExplanation = !state.vocabularySheet.showExplanation;
+    },
+    toggleVocabShowExampleSentence: (state) => {
+      state.vocabularySheet.showExampleSentence = !state.vocabularySheet.showExampleSentence;
+    },
+    toggleVocabShowExampleTranslation: (state) => {
+      state.vocabularySheet.showExampleTranslation = !state.vocabularySheet.showExampleTranslation;
+    },
+    setVocabPracticeCellSize: (state, action: PayloadAction<number>) => {
+      // Clamp value between 30 and 60
+      state.vocabularySheet.practiceCellSize = Math.max(30, Math.min(60, action.payload));
+    },
     setPngQuality: (state, action: PayloadAction<200 | 300 | 600>) => {
       state.pngQuality = action.payload;
     },
@@ -222,12 +305,16 @@ export const {
   toggleInputPanelShowJlptIndicator,
   toggleInputPanelShowGradeIndicator,
   toggleInputPanelShowFrequencyIndicator,
+  toggleInputPanelShowVietnameseMeaning,
+  toggleInputPanelShowEnglishMeaning,
   setInputPanelIndicatorPreset,
   toggleMainPanelShowHanViet,
   toggleMainPanelHanVietOrientation,
   toggleMainPanelShowJlptIndicator,
   toggleMainPanelShowGradeIndicator,
   toggleMainPanelShowFrequencyIndicator,
+  toggleMainPanelShowVietnameseMeaning,
+  toggleMainPanelShowEnglishMeaning,
   setMainPanelIndicatorPreset,
   setSheetPanelKanjiFont,
   setSheetPanelKanjiSize,
@@ -238,9 +325,19 @@ export const {
   toggleSheetPanelShowJlptIndicator,
   toggleSheetPanelShowGradeIndicator,
   toggleSheetPanelShowFrequencyIndicator,
+  toggleSheetPanelShowVietnameseMeaning,
+  toggleSheetPanelShowEnglishMeaning,
   toggleSheetPanelShowExplanationMeaning,
   toggleSheetPanelShowExplanationMnemonic,
   setSheetPanelIndicatorPreset,
+  setVocabSheetFont,
+  toggleVocabShowHanViet,
+  toggleVocabShowVietnameseMeaning,
+  toggleVocabShowEnglishMeaning,
+  toggleVocabShowExplanation,
+  toggleVocabShowExampleSentence,
+  toggleVocabShowExampleTranslation,
+  setVocabPracticeCellSize,
   setPngQuality,
 } = displaySettingsSlice.actions;
 

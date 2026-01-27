@@ -14,7 +14,7 @@ export const PDF_MARGIN_LEFT = 35;
 export const PDF_MARGIN_RIGHT = 25;
 
 // PDF-specific header/footer heights (compressed to fit more content)
-export const PDF_HEADER_HEIGHT = 45;
+export const PDF_HEADER_HEIGHT = 40;
 export const PDF_FOOTER_HEIGHT = 30;
 
 // PDF spacing constants

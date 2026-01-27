@@ -20,7 +20,7 @@ i18n
     },
     
     backend: {
-      loadPath: '/kanji-app/locales/{{lng}}/{{ns}}.json',
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`,
     },
     
     interpolation: {

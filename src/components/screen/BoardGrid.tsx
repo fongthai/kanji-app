@@ -3,7 +3,7 @@ import type { KanjiData } from '../../features/kanji/kanjiSlice';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { removeKanji } from '../../features/kanji/kanjiSlice';
 import { A4_WIDTH, A4_HEIGHT, BOARD_HEADER_HEIGHT, BOARD_FOOTER_HEIGHT, GRID_GAP } from '../../constants/boardDimensions';
-import { getKanjiColorByJlptLevel } from '../../constants/indicators';
+import { getKanjiColorByJlptLevel, getIndicatorColumnMultiplier } from '../../constants/indicators';
 
 interface BoardGridProps {
   kanjis: KanjiData[];
@@ -74,11 +74,14 @@ export function BoardGrid({
   // Convert to rem for KanjiCard
   const kanjiFontSize = kanjiFontSizePx / 16;
   
-  // Indicator and Han-viet: 20% of base kanji size
-  // Both controlled by Surround-Text slider (60% - 120%)
-  const baseIndicatorSizePx = baseKanjiFontSizePx * 0.20;
-  const hanVietSizePercentage = Math.max(60, Math.min(120, mainDisplaySettings.hanVietSize)); // Clamp 60-120
-  const indicatorFontSizePx = baseIndicatorSizePx * (hanVietSizePercentage / 100);
+  // Indicator and Han-viet: 25% of base kanji size
+  // Both controlled by Surround-Text slider (35% - 65%)
+  const baseIndicatorSizePx = baseKanjiFontSizePx * 0.25;
+  const hanVietSizePercentage = Math.max(35, Math.min(65, mainDisplaySettings.hanVietSize)); // Clamp 35-65
+
+  // Apply column-based multiplier (additive boost for smaller column counts)
+  const columnMultiplier = getIndicatorColumnMultiplier(columnCount);
+  const indicatorFontSizePx = baseIndicatorSizePx * (hanVietSizePercentage / 100) * columnMultiplier;
   const indicatorFontSize = indicatorFontSizePx / 16;
   
   // Han-viet uses same size as indicator
@@ -164,15 +167,17 @@ export function BoardGrid({
             <KanjiCard
               variant="board"
               kanji={kanji}
-              colors={{ 
+              colors={{
                 body: '#ffffff',
                 border: '#000000',
-                text: finalTextColor 
+                text: finalTextColor
               }}
               kanjiFont={mainDisplaySettings.kanjiFont}
               kanjiSize={kanjiFontSize}
               hanVietFont={mainDisplaySettings.hanVietFont}
               hanVietSize={hanVietFontSize}
+              showVietnameseMeaning={mainDisplaySettings.showVietnameseMeaning}
+              showEnglishMeaning={mainDisplaySettings.showEnglishMeaning}
               onDoubleClick={() => handleRemoveKanji(kanji)}
             />
           </div>

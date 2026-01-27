@@ -1,8 +1,8 @@
 /**
  * Kanji Query Language (KQL) Parser
- * 
+ *
  * Syntax:
- * - Prefixes: char:/kanji:, hanviet:/hv:, en:/english:, vn:/vietnamese:, 
+ * - Prefixes: char:/kanji:, hanviet:/hv:, en:/english:, vn:/vietnamese:,
  *             on:/onyomi:, kun:/kunyomi:, com:/component:, jlpt:, freq:/frequency:
  * - Operators: AND/&, OR/|, NOT/!, parentheses ()
  * - Comparison: <, >, <=, >=, ranges (e.g., freq:100-500)
@@ -75,8 +75,8 @@ const PREFIX_TO_FIELD: Record<string, keyof KanjiData> = {
   'kanji': 'kanji',
   'hanviet': 'hanViet',
   'hv': 'hanViet',
-  'en': 'meaning',
-  'english': 'meaning',
+  'en': 'englishMeaning',
+  'english': 'englishMeaning',
   'vn': 'vietnameseMeaning',
   'vietnamese': 'vietnameseMeaning',
   'on': 'onyomi',
@@ -647,31 +647,53 @@ export class KQLEvaluator {
   
   private evaluateFieldSearch(node: { field: keyof KanjiData | 'default'; value: string; exact: boolean }, kanji: KanjiData): boolean {
     const searchValue = node.value.toLowerCase();
-    
+
     // Default search: search all text fields
     if (node.field === 'default') {
       const textFields = [
         kanji.kanji,
-        kanji.hanViet,
-        kanji.meaning,
-        kanji.vietnameseMeaning,
+        kanji.hanViet.join(', '),
+        kanji.englishMeaning.join(', '),
+        kanji.vietnameseMeaning.join(', '),
       ];
-      
+
       return textFields.some(field => {
         if (!field) return false;
         const fieldValue = field.toLowerCase();
         return node.exact ? fieldValue === searchValue : fieldValue.includes(searchValue);
       });
     }
-    
+
     // Field-specific search
     // Cast to any to avoid TypeScript issues with dynamic field access
     const fieldValue = (kanji as any)[node.field];
-    
+
     if (fieldValue == null) {
       return false;
     }
-    
+
+    // Handle special fields that can be string or array
+    if (node.field === 'hanViet') {
+      const hanVietArray = Array.isArray(fieldValue) ? fieldValue : [];
+      return hanVietArray.some(item => {
+        const itemValue = item.toLowerCase();
+        return node.exact ? itemValue === searchValue : itemValue.includes(searchValue);
+      });
+    }
+
+    if (node.field === 'components') {
+      const componentsArray = Array.isArray(fieldValue) ? fieldValue : (fieldValue ? [fieldValue] : []);
+      return componentsArray.some(item => {
+        const itemValue = String(item).toLowerCase();
+        return node.exact ? itemValue === searchValue : itemValue.includes(searchValue);
+      });
+    }
+
+    if (node.field === 'englishMeaning' || node.field === 'vietnameseMeaning') {
+      const strValue = (Array.isArray(fieldValue) ? fieldValue.join(', ') : String(fieldValue)).toLowerCase();
+      return node.exact ? strValue === searchValue : strValue.includes(searchValue);
+    }
+
     // Handle array fields (onyomi, kunyomi, category)
     if (Array.isArray(fieldValue)) {
       return fieldValue.some(item => {
@@ -679,13 +701,13 @@ export class KQLEvaluator {
         return node.exact ? itemValue === searchValue : itemValue.includes(searchValue);
       });
     }
-    
+
     // Handle string fields
     if (typeof fieldValue === 'string') {
       const value = fieldValue.toLowerCase();
       return node.exact ? value === searchValue : value.includes(searchValue);
     }
-    
+
     return false;
   }
 }

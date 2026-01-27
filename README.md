@@ -221,12 +221,27 @@ const cardsPerPage = rowCount * columnCount;
 
 ## 📊 Data Sources
 
-Kanji data loaded from JSON files in `public/json/`:
+**Kanji Data** (`public/data/kanji/`):
+- 2,000+ kanji characters across 14 JSON files
 - JLPT N5-N1 coverage
 - Kanji of the Year (KOTY)
 - Organized by level with consistent schema
+- See `manifest.json` for full file list
 
-See `public/json/input-json-manifest.txt` for full file list.
+**Vocabulary Data** (`public/data/vocabulary/`):
+- 6,789 vocabulary entries across 145 JSON files (optimized: ~3 MB, redundant fields removed)
+- Organized into 8 books:
+  - Minna no Nihongo I (Units 1-25, ~1,135 vocab)
+  - Minna no Nihongo II (Units 26-50, ~1,135 vocab)
+  - JLPT N2 (27 units, ~1,303 vocab)
+  - JLPT N3 (31 units, ~1,555 vocab)
+  - JLPT N4 (11 units, ~514 vocab)
+  - JLPT N5 (8 units, ~410 vocab)
+  - N3 Mimikara (17 groups, 841 vocab)
+  - Mimikara N3 other (1 file, 17 vocab)
+- Each entry includes: Japanese word, furigana, Han-Viet reading, Vietnamese/English translations, example sentences
+- Efficient structure: `book`, `unit`, `id`, `orderIndex` stored only at file level, not per-vocabulary item
+- See `manifest.json` for full file list
 
 ## 🤝 Contributing
 

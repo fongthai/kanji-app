@@ -62,24 +62,24 @@ export function PDFExplanationText({ kanji, maxWidth, lineCount = 3 }: PDFExplan
   
   const line1Parts: string[] = [
     kanji.kanji,
-    kanji.hanViet,
+    kanji.hanViet.join(', '),
     `ON: ${kanji.onyomi.join(', ')}`,
     kunPart,
   ];
   if (kanji.lookalikes) {
-    const lookalikeText = Array.isArray(kanji.lookalikes) 
-      ? kanji.lookalikes.join(', ') 
+    const lookalikeText = Array.isArray(kanji.lookalikes)
+      ? kanji.lookalikes.join(', ')
       : kanji.lookalikes;
     if (lookalikeText.trim()) {
       line1Parts.push(`⚠ ${lookalikeText} ⚠`);
     }
   }
   const line1FullText = line1Parts.filter(Boolean).join(' | ');
-  
+
   // Build Line 2 content: ★ VN: VIETNAMESE-MEANING | ★ EN: ENGLISH-MEANING
   const line2Parts: string[] = [
-    kanji.vietnameseMeaning ? `★ VN: ${kanji.vietnameseMeaning}` : '',
-    kanji.meaning ? `★ EN: ${kanji.meaning}` : '',
+    kanji.vietnameseMeaning.length > 0 ? `★ VN: ${kanji.vietnameseMeaning.join(', ')}` : '',
+    kanji.englishMeaning.length > 0 ? `★ EN: ${kanji.englishMeaning.join(', ')}` : '',
   ];
   const meaningText = line2Parts.filter(Boolean).join(' | ');
   

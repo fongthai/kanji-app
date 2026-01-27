@@ -18,7 +18,7 @@ interface WorksheetState {
   boardEmptyCellsMode: 'hide' | 'page' | 'row'; // hide, show full page, or show until last row
   boardShowHeader: boolean;
   boardShowFooter: boolean;
-  
+
   // Sheet mode settings
   sheetColumnCount: number;
   masterKanjiSize: number;
@@ -26,17 +26,20 @@ interface WorksheetState {
   sheetShowIndicators: boolean; // Show JLPT, freq, grade badges
   sheetGuideOpacity: number; // Guide lines opacity (0-100)
   sheetTracingOpacity: [number, number, number]; // P1, P2, P3 guiding kanji opacity
-  
+
   // Header/Footer settings (global across all modes)
   headerText: string;
   headerFontIndex: number; // Index into font list from fonts-manifest-for-non-kanji.txt
   headerAnimationStyle: number; // 0=Gradient Shimmer, 1=Wave Pattern, 2=Holographic, 3=Sparkle, 4=Neon Glow
-  
+
   // Shared settings
   hanVietOrientation: 'vertical' | 'horizontal';
   currentPage: number;
   currentMode: 'sheet' | 'board' | 'quiz';
   grayscaleMode: boolean;
+
+  // Data type filter (kanji vs vocabulary)
+  filterMode: 'kanji' | 'vocabulary';
 }
 
 // Load header text from localStorage or use default
@@ -60,7 +63,7 @@ const initialState: WorksheetState = {
   boardEmptyCellsMode: 'row',
   boardShowHeader: true,
   boardShowFooter: true,
-  
+
   // Sheet mode defaults
   sheetColumnCount: 13,
   masterKanjiSize: 150,
@@ -68,17 +71,20 @@ const initialState: WorksheetState = {
   sheetShowIndicators: true,
   sheetGuideOpacity: 50,
   sheetTracingOpacity: [40, 25, 15],
-  
+
   // Header/Footer defaults
   headerText: loadHeaderText(),
   headerFontIndex: 0, // Default to first font (system-ui)
   headerAnimationStyle: Math.floor(Math.random() * 5), // Random animation (0-4)
-  
+
   // Shared defaults
   hanVietOrientation: 'vertical',
   currentPage: 1,
   currentMode: loadSavedMode(),
   grayscaleMode: false,
+
+  // Data type filter
+  filterMode: 'kanji', // Default to kanji
 };
 
 const worksheetSlice = createSlice({
@@ -153,6 +159,11 @@ const worksheetSlice = createSlice({
       // Cycle through 5 animation styles (0-4)
       state.headerAnimationStyle = (state.headerAnimationStyle + 1) % 5;
     },
+    // Filter mode action (kanji vs vocabulary)
+    setFilterMode: (state, action: PayloadAction<'kanji' | 'vocabulary'>) => {
+      state.filterMode = action.payload;
+      state.currentPage = 1; // Reset to page 1 when switching modes
+    },
   },
 });
 
@@ -174,6 +185,7 @@ export const {
   setHeaderText,
   cycleHeaderFont,
   cycleHeaderAnimation,
+  setFilterMode,
 } = worksheetSlice.actions;
 
 export default worksheetSlice.reducer;

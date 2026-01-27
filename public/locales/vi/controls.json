@@ -81,5 +81,17 @@
     "buildings_construction": "Tòa Nhà & Xây Dựng",
     "health_medical": "Sức Khỏe & Y Tế",
     "materials_measurement": "Vật Liệu & Đo Lường"
+  },
+  "vocabulary": {
+    "font": "Phông Chữ",
+    "vocabulary_font": "Phông Chữ Từ Vựng",
+    "layout": "Bố Cục",
+    "practice_cell_size": "Kích Thước Ô Tập Viết",
+    "show_han_viet_reading": "Hiển Thị Âm Hán Việt",
+    "show_vietnamese_meaning": "Hiển Thị Nghĩa Tiếng Việt",
+    "show_english_meaning": "Hiển Thị Nghĩa Tiếng Anh",
+    "show_explanation": "Hiển Thị Giải Thích",
+    "show_example_sentence": "Hiển Thị Câu Ví Dụ (Tiếng Nhật)",
+    "show_example_translation": "Hiển Thị Bản Dịch Câu Ví Dụ"
   }
 }

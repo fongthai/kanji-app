@@ -51,10 +51,8 @@ export function PDFSheetMasterCell({
   const guideDashArray = '2 2';
   const guideOpacity = 0.5;
   
-  // Parse han-viet meanings (comma or slash separated)
-  const hanVietMeanings = kanji.hanViet
-    ? kanji.hanViet.split(/[,/]/).map(m => m.trim()).filter(m => m.length > 0)
-    : [];
+  // Parse han-viet meanings
+  const hanVietMeanings = kanji.hanViet;
 
   // Determine layout: 1-2 meanings on sides, 3rd+ at bottom center
   const topMeanings = hanVietMeanings.slice(0, 2);

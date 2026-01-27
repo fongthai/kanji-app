@@ -2,13 +2,17 @@ import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addKanji, removeKanji, setAllKanjis, clearChosenKanjis, reorderChosenKanjis, type KanjiData } from '../kanji/kanjiSlice';
-import { seedKanjisFromJSON, checkIfDataExists, getAllKanjis } from '../../db/indexedDB';
+import { setAllVocabularies, addChosenVocabulary, removeChosenVocabulary, clearChosenVocabularies, reorderChosenVocabularies } from '../vocabulary/vocabularySlice';
+import type { VocabularyData } from '../../types/vocabulary';
+import { seedKanjisFromJSON, checkIfDataExists, getAllKanjis, seedVocabulariesFromJSON, checkIfVocabulariesExist, getAllVocabularies } from '../../db/indexedDB';
 import { startQuiz, setQuizQuestions, type QuizSettings } from '../quiz/quizSlice';
 import { generateQuestions } from '../../utils/questionGenerator';
 import QuizCountdown from '../../components/QuizCountdown';
 import { KanjiSearch } from '../search/KanjiSearch';
 import { KanjiCard } from '../../components/screen/KanjiCard';
+import { VocabularyCard } from '../../components/screen/VocabularyCard';
 import { SECTION_COLOR_PAIRS } from '../../constants/indicators';
+import { setFilterMode } from '../worksheet/worksheetSlice';
 import {
   DndContext,
   closestCenter,
@@ -88,6 +92,60 @@ function SortableKanjiItem({ kanji, colors, onRemove, kanjiFont, kanjiSize, hanV
   );
 }
 
+// Sortable Vocabulary Item Component
+interface SortableVocabularyItemProps {
+  vocabulary: VocabularyData;
+  colors?: {
+    header: string;
+    body: string;
+    border: string;
+    chosenBorder: string;
+  };
+  onRemove: () => void;
+}
+
+function SortableVocabularyItem({ vocabulary, colors, onRemove }: SortableVocabularyItemProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+    setActivatorNodeRef,
+  } = useSortable({ id: vocabulary.id! });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="relative group"
+    >
+      <div className="relative">
+        <div
+          ref={setActivatorNodeRef}
+          {...attributes}
+          {...listeners}
+          className="absolute inset-0 cursor-grab active:cursor-grabbing z-10"
+          style={{ touchAction: 'none' }}
+          onDoubleClick={onRemove}
+        />
+        <VocabularyCard
+          vocabulary={vocabulary}
+          isChosen={true}
+          colors={colors}
+        />
+      </div>
+    </div>
+  );
+}
+
 interface KanjiSection {
   name: string;
   file: string;
@@ -102,12 +160,40 @@ interface KanjiSection {
   };
 }
 
+interface VocabularySection {
+  name: string;
+  sectionName: string;
+  displayName: string;
+  vocabularies: VocabularyData[];
+  expanded: boolean;
+  colors?: {
+    header: string;
+    body: string;
+    border: string;
+    chosenBorder: string;
+  };
+}
+
+interface BookGroup {
+  bookId: string;
+  displayName: string;
+  units: VocabularySection[];
+  totalVocabularies: number;
+  expanded: boolean;
+  colors?: {
+    header: string;
+    body: string;
+    border: string;
+    chosenBorder: string;
+  };
+}
+
 // Get random section color from 30 professional color pairs
 // Kanji text is always white for input panel
 const getSectionColor = () => {
   const randomIndex = Math.floor(Math.random() * SECTION_COLOR_PAIRS.length);
   const colorPair = SECTION_COLOR_PAIRS[randomIndex];
-  
+
   return {
     header: colorPair.header,    // Dark color for section header
     body: colorPair.area,         // Lighter color for kanji cards
@@ -117,14 +203,24 @@ const getSectionColor = () => {
   };
 };
 
+// Helper function to get book display names
+// Now the book field in JSON files already contains the display name
+function getBookDisplayName(bookId: string): string {
+  return bookId;
+}
+
 function InputPanel() {
   const { t } = useTranslation(['common', 'messages', 'quiz']);
   const dispatch = useAppDispatch();
   const allKanjis = useAppSelector((state) => state.kanji.allKanjis);
   const chosenKanjis = useAppSelector((state) => state.kanji.chosenKanjis);
+  const chosenVocabularies = useAppSelector((state) => state.vocabulary.chosenVocabularies);
+  const filterMode = useAppSelector((state) => state.worksheet.filterMode);
   const inputPanelSettings = useAppSelector((state) => state.displaySettings.inputPanel);
   const [loading, setLoading] = useState(true);
   const [sections, setSections] = useState<KanjiSection[]>([]);
+  const [vocabularySections, setVocabularySections] = useState<VocabularySection[]>([]);
+  const [vocabularyBooks, setVocabularyBooks] = useState<BookGroup[]>([]);
   const [chosenExpanded, setChosenExpanded] = useState(false);
   const [kanjiColors, setKanjiColors] = useState<Map<string, { header: string; body: string; border: string; chosenBorder: string; text: string }>>(new Map());
   const [isLoadingData, setIsLoadingData] = useState(false);
@@ -162,9 +258,9 @@ function InputPanel() {
   const kanjiFontSizePercentage = Math.max(60, Math.min(120, inputPanelSettings.kanjiSize)); // Clamp 60-120
   const calculatedKanjiSize = baseKanjiFontSize * (kanjiFontSizePercentage / 100);
   
-  // Han-viet and indicator: 20% of kanji base size, adjusted by surround-text slider
-  const baseHanVietSize = baseKanjiFontSize * 0.20; // 0.6rem
-  const hanVietSizePercentage = Math.max(60, Math.min(120, inputPanelSettings.hanVietSize)); // Clamp 60-120
+  // Han-viet and indicator: 25% of kanji base size, adjusted by surround-text slider
+  const baseHanVietSize = baseKanjiFontSize * 0.25; // 0.75rem
+  const hanVietSizePercentage = Math.max(35, Math.min(65, inputPanelSettings.hanVietSize)); // Clamp 35-65
   const calculatedHanVietSize = baseHanVietSize * (hanVietSizePercentage / 100);
 
   // Setup drag and drop sensors
@@ -181,8 +277,19 @@ function InputPanel() {
     if (over && active.id !== over.id) {
       const oldIndex = chosenKanjis.findIndex((k) => k.kanji === active.id);
       const newIndex = chosenKanjis.findIndex((k) => k.kanji === over.id);
-      
+
       dispatch(reorderChosenKanjis({ oldIndex, newIndex }));
+    }
+  };
+
+  const handleVocabularyDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      const oldIndex = chosenVocabularies.findIndex((v) => v.id === active.id);
+      const newIndex = chosenVocabularies.findIndex((v) => v.id === over.id);
+
+      dispatch(reorderChosenVocabularies({ oldIndex, newIndex }));
     }
   };
 
@@ -235,17 +342,13 @@ function InputPanel() {
         // Load manifest file to get list of JSON files
         let jsonFiles: string[] = [];
         try {
-          const manifestResponse = await fetch(`${import.meta.env.BASE_URL}json/input-json-manifest.txt`);
-          
+          const manifestResponse = await fetch('/data/kanji/manifest.json');
+
           if (manifestResponse.ok) {
-            const manifestText = await manifestResponse.text();
-            
-            // Parse manifest: each line is a filename, ignore empty lines
-            jsonFiles = manifestText
-              .split('\n')
-              .map(line => line.trim())
-              .filter(line => line.length > 0 && !line.startsWith('#'))
-              .map(filename => `${import.meta.env.BASE_URL}json/${filename}`);
+            const manifest = await manifestResponse.json();
+
+            // Parse manifest: extract file paths from sources array
+            jsonFiles = manifest.sources.map((source: any) => `/data/kanji/${source.file}`);
           } else {
             throw new Error(`Manifest file not found: ${manifestResponse.status}`);
           }
@@ -253,20 +356,20 @@ function InputPanel() {
           console.error('Could not load manifest file:', manifestError);
           // Fallback to hardcoded list if manifest fails
           jsonFiles = [
-            `${import.meta.env.BASE_URL}json/koty-2025.json`,
-            `${import.meta.env.BASE_URL}json/n5.json`,
-            `${import.meta.env.BASE_URL}json/n4.json`,
-            `${import.meta.env.BASE_URL}json/n3-A.json`,
-            `${import.meta.env.BASE_URL}json/n3-B.json`,
-            `${import.meta.env.BASE_URL}json/n2-A.json`,
-            `${import.meta.env.BASE_URL}json/n2-B.json`,
-            `${import.meta.env.BASE_URL}json/n1-A.json`,
-            `${import.meta.env.BASE_URL}json/n1-B.json`,
-            `${import.meta.env.BASE_URL}json/n1-C.json`,
-            `${import.meta.env.BASE_URL}json/n1-D.json`,
-            `${import.meta.env.BASE_URL}json/n1-E.json`,
-            `${import.meta.env.BASE_URL}json/n1-F.json`,
-            `${import.meta.env.BASE_URL}json/n1-G.json`,
+            '/data/kanji/koty-2025.json',
+            '/data/kanji/n5.json',
+            '/data/kanji/n4.json',
+            '/data/kanji/n3-A.json',
+            '/data/kanji/n3-B.json',
+            '/data/kanji/n2-A.json',
+            '/data/kanji/n2-B.json',
+            '/data/kanji/n1-A.json',
+            '/data/kanji/n1-B.json',
+            '/data/kanji/n1-C.json',
+            '/data/kanji/n1-D.json',
+            '/data/kanji/n1-E.json',
+            '/data/kanji/n1-F.json',
+            '/data/kanji/n1-G.json',
           ];
         }
         
@@ -319,6 +422,122 @@ function InputPanel() {
 
       console.log('[InputPanel] Sections created:', newSections.length);
       setSections(newSections);
+
+      // Load vocabularies
+      try {
+        console.log('[InputPanel] Checking if vocabulary data exists...');
+        const vocabExists = await checkIfVocabulariesExist();
+        console.log('[InputPanel] Vocabulary data exists:', vocabExists);
+
+        if (!vocabExists) {
+          console.log('[InputPanel] Vocabulary data does not exist, seeding from JSON...');
+          await seedVocabulariesFromJSON();
+          console.log('[InputPanel] Vocabulary data seeded successfully');
+        }
+
+        // Load all vocabularies
+        const vocabularies = await getAllVocabularies();
+        console.log('[InputPanel] Loaded vocabularies:', vocabularies.length);
+        dispatch(setAllVocabularies(vocabularies));
+
+        // Group vocabularies by book first, then by unit (2-layer hierarchy)
+        const bookGrouped = vocabularies.reduce((acc: Record<string, Record<string, VocabularyData[]>>, vocab) => {
+          const bookId = vocab.book || 'Unknown';
+          const unitId = vocab.unit || 'Unknown';
+
+          if (!acc[bookId]) {
+            acc[bookId] = {};
+          }
+          if (!acc[bookId][unitId]) {
+            acc[bookId][unitId] = [];
+          }
+
+          acc[bookId][unitId].push(vocab);
+          return acc;
+        }, {});
+
+        // Convert to BookGroup array
+        const newBookGroups: BookGroup[] = Object.entries(bookGrouped).map(([bookId, sections]) => {
+          // Create display name from bookId
+          const displayName = getBookDisplayName(bookId);
+
+          // Create unit sections within this book
+          const units: VocabularySection[] = Object.entries(sections).map(([unitName, vocabs]) => {
+            const colors = getSectionColor();
+
+            vocabs.sort((a, b) => (a.orderIndex ?? Infinity) - (b.orderIndex ?? Infinity));
+
+            return {
+              name: unitName,
+              sectionName: unitName,
+              displayName: unitName,
+              vocabularies: vocabs,
+              expanded: false,
+              colors
+            };
+          });
+
+          // Sort units numerically by extracting the last number in unit name
+          units.sort((a, b) => {
+            // Extract the last number from unit name (e.g., "Minna Unit 1" → 1, "N3 Mimi Group 17" → 17)
+            const extractLastNumber = (str: string): number => {
+              const match = str.match(/(\d+)$/);
+              return match ? parseInt(match[1], 10) : 0;
+            };
+
+            const numA = extractLastNumber(a.name);
+            const numB = extractLastNumber(b.name);
+            return numA - numB;
+          });
+
+          const totalVocabularies = units.reduce((sum, unit) => sum + unit.vocabularies.length, 0);
+
+          return {
+            bookId,
+            displayName,
+            units,
+            totalVocabularies,
+            expanded: false,
+            colors: getSectionColor()
+          };
+        });
+
+        // Sort books alphabetically by display name
+        newBookGroups.sort((a, b) => a.displayName.localeCompare(b.displayName));
+
+        console.log('[InputPanel] Vocabulary books created:', newBookGroups.length);
+        setVocabularyBooks(newBookGroups);
+
+        // Keep old flat structure for backward compatibility (if needed)
+        const vocabGrouped = vocabularies.reduce((acc: Record<string, VocabularyData[]>, vocab) => {
+          const section = vocab.sectionName || vocab.book || 'Unknown';
+          if (!acc[section]) {
+            acc[section] = [];
+          }
+          acc[section].push(vocab);
+          return acc;
+        }, {});
+
+        const newVocabSections: VocabularySection[] = Object.entries(vocabGrouped).map(([sectionName, vocabs]: [string, any]) => {
+          const colors = getSectionColor();
+          vocabs.sort((a: VocabularyData, b: VocabularyData) => (a.orderIndex ?? Infinity) - (b.orderIndex ?? Infinity));
+          const displayName = vocabs[0]?.displayName || sectionName;
+          return {
+            name: displayName,
+            sectionName: sectionName,
+            displayName: displayName,
+            vocabularies: vocabs,
+            expanded: false,
+            colors
+          };
+        });
+        newVocabSections.sort((a, b) => a.name.localeCompare(b.name));
+        console.log('[InputPanel] Vocabulary sections created (flat):', newVocabSections.length);
+        setVocabularySections(newVocabSections);
+      } catch (vocabError) {
+        console.error('[InputPanel] Failed to load vocabulary data:', vocabError);
+      }
+
       setLoading(false);
       setIsLoadingData(false);
       console.log('[InputPanel] Loading complete');
@@ -349,6 +568,56 @@ function InputPanel() {
       dispatch(addKanji(kanji));
       setChosenExpanded(true); // Auto-expand when adding
     }
+  };
+
+  const handleVocabularyClick = (vocab: VocabularyData) => {
+    const isChosen = chosenVocabularies.some(v => v.id === vocab.id);
+    if (isChosen) {
+      dispatch(removeChosenVocabulary(vocab.id!));
+    } else {
+      dispatch(addChosenVocabulary(vocab));
+      setChosenExpanded(true); // Auto-expand when adding
+    }
+  };
+
+  const toggleBook = (bookIndex: number) => {
+    setVocabularyBooks(books => books.map((book, i) => {
+      if (i === bookIndex) {
+        return { ...book, expanded: !book.expanded };
+      }
+      return { ...book, expanded: false }; // Collapse others (accordion)
+    }));
+  };
+
+  const toggleUnit = (bookIndex: number, unitIndex: number) => {
+    setVocabularyBooks(books => books.map((book, i) => {
+      if (i === bookIndex) {
+        const newUnits = book.units.map((unit, j) => {
+          if (j === unitIndex) {
+            return { ...unit, expanded: !unit.expanded };
+          }
+          return { ...unit, expanded: false }; // Collapse others
+        });
+        return { ...book, units: newUnits };
+      }
+      return book;
+    }));
+  };
+
+  const addAllFromUnit = (bookIndex: number, unitIndex: number) => {
+    const unit = vocabularyBooks[bookIndex].units[unitIndex];
+    unit.vocabularies.forEach(vocab => {
+      if (!chosenVocabularies.some(v => v.id === vocab.id)) {
+        dispatch(addChosenVocabulary(vocab));
+      }
+    });
+  };
+
+  const clearUnit = (bookIndex: number, unitIndex: number) => {
+    const unit = vocabularyBooks[bookIndex].units[unitIndex];
+    unit.vocabularies.forEach(vocab => {
+      dispatch(removeChosenVocabulary(vocab.id!));
+    });
   };
 
   const addAllFromSection = (sectionIndex: number) => {
@@ -468,10 +737,36 @@ function InputPanel() {
 
   return (
     <div data-testid="input-panel" className="bg-gray-800 rounded-lg p-4 border border-gray-700 overflow-y-auto h-full">
-      {/* Search Component with Tabs */}
-      <div className="mb-3 overflow-visible">
-        <KanjiSearch kanjiColors={kanjiColors} />
+      {/* Filter Mode Toggle */}
+      <div className="mb-4 flex gap-2">
+        <button
+          onClick={() => dispatch(setFilterMode('kanji'))}
+          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
+            filterMode === 'kanji'
+              ? 'bg-blue-600 text-white shadow-lg'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
+          📝 Kanji
+        </button>
+        <button
+          onClick={() => dispatch(setFilterMode('vocabulary'))}
+          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
+            filterMode === 'vocabulary'
+              ? 'bg-purple-600 text-white shadow-lg'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
+          📚 Vocabulary
+        </button>
       </div>
+
+      {/* Search Component with Tabs (only for kanji) */}
+      {filterMode === 'kanji' && (
+        <div className="mb-3 overflow-visible">
+          <KanjiSearch kanjiColors={kanjiColors} />
+        </div>
+      )}
       
       <div className="mb-4 bg-green-900 border border-green-600 rounded">
         <div 
@@ -480,13 +775,25 @@ function InputPanel() {
         >
           <div className="flex items-center gap-2">
             <span className="text-gray-400">{chosenExpanded ? '▼' : '▶'}</span>
-            <strong>{t('common:labels.chosen_kanjis')} ({chosenKanjis.length})</strong>
+            <strong>
+              {filterMode === 'kanji'
+                ? `${t('common:labels.chosen_kanjis')} (${chosenKanjis.length})`
+                : `Chosen Vocabulary (${chosenVocabularies.length})`
+              }
+            </strong>
           </div>
           <div className="flex gap-2 items-center">
-            {chosenKanjis.length > 0 && (
+            {((filterMode === 'kanji' && chosenKanjis.length > 0) || (filterMode === 'vocabulary' && chosenVocabularies.length > 0)) && (
               <>
                 <button
-                  onClick={(e) => { e.stopPropagation(); dispatch(clearChosenKanjis()); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (filterMode === 'kanji') {
+                      dispatch(clearChosenKanjis());
+                    } else {
+                      dispatch(clearChosenVocabularies());
+                    }
+                  }}
                   className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white text-sm rounded transition-colors"
                   title={t('common:tooltips.clear_all_kanjis')}
                 >
@@ -559,7 +866,7 @@ function InputPanel() {
             )}
           </div>
         </div>
-        {chosenExpanded && (
+        {chosenExpanded && filterMode === 'kanji' && (
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -569,7 +876,7 @@ function InputPanel() {
               items={chosenKanjis.map((k) => k.kanji)}
               strategy={rectSortingStrategy}
             >
-              <div 
+              <div
                 className="p-3 grid gap-1"
                 style={{
                   gridTemplateColumns: `repeat(auto-fill, minmax(${fixedCardSize}rem, 1fr))`,
@@ -594,13 +901,41 @@ function InputPanel() {
             </SortableContext>
           </DndContext>
         )}
+        {chosenExpanded && filterMode === 'vocabulary' && (
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleVocabularyDragEnd}
+          >
+            <SortableContext
+              items={chosenVocabularies.map((v) => v.id!)}
+              strategy={rectSortingStrategy}
+            >
+              <div className="p-3 grid gap-2 grid-cols-2">
+                {chosenVocabularies.map((vocab) => {
+                  const vocabSection = vocabularySections.find(s => s.sectionName === vocab.sectionName);
+                  const colors = vocabSection?.colors;
+                  return (
+                    <SortableVocabularyItem
+                      key={vocab.id}
+                      vocabulary={vocab}
+                      colors={colors}
+                      onRemove={() => dispatch(removeChosenVocabulary(vocab.id!))}
+                    />
+                  );
+                })}
+              </div>
+            </SortableContext>
+          </DndContext>
+        )}
       </div>
 
-      {sections.map((section, index) => {
-        const selectedCount = section.kanjis.filter((k: KanjiData) => 
+      {/* Kanji Sections */}
+      {filterMode === 'kanji' && sections.map((section, index) => {
+        const selectedCount = section.kanjis.filter((k: KanjiData) =>
           chosenKanjis.some(chosen => chosen.kanji === k.kanji)
         ).length;
-        
+
         return (
         <div key={section.file} className="mb-1 rounded-lg overflow-hidden" style={{ borderWidth: '2px', borderColor: section.colors?.border }}>
           <div 
@@ -725,7 +1060,118 @@ function InputPanel() {
         </div>
       );
       })}
-      
+
+      {/* Vocabulary Books - 2-Layer Hierarchy */}
+      {filterMode === 'vocabulary' && vocabularyBooks.map((book, bookIndex) => {
+        const selectedCount = book.units.reduce((sum, unit) => {
+          return sum + unit.vocabularies.filter(v =>
+            chosenVocabularies.some(chosen => chosen.id === v.id)
+          ).length;
+        }, 0);
+
+        return (
+          <div key={book.bookId} className="mb-2">
+            {/* Book Header (Layer 1) */}
+            <div
+              className="p-3 cursor-pointer rounded-lg transition-colors"
+              style={{ backgroundColor: book.colors?.header, borderWidth: '2px', borderColor: book.colors?.border }}
+              onClick={() => toggleBook(bookIndex)}
+            >
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400">{book.expanded ? '▼' : '▶'}</span>
+                  <span className="font-bold text-lg">📚 {book.displayName}</span>
+                  <span className="text-xs text-gray-400">
+                    ({book.units.length} units, {book.totalVocabularies} vocab)
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-400">
+                    {selectedCount} / {book.totalVocabularies}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Units within Book (Layer 2) */}
+            {book.expanded && (
+              <div className="ml-4 mt-1 space-y-1">
+                {book.units.map((unit, unitIndex) => {
+                  const unitSelectedCount = unit.vocabularies.filter(v =>
+                    chosenVocabularies.some(chosen => chosen.id === v.id)
+                  ).length;
+
+                  return (
+                    <div
+                      key={unit.sectionName}
+                      className="rounded-lg overflow-hidden"
+                      style={{ borderWidth: '1px', borderColor: unit.colors?.border }}
+                    >
+                      {/* Unit Header */}
+                      <div
+                        className="p-2 cursor-pointer transition-colors"
+                        style={{ backgroundColor: unit.colors?.header }}
+                        onClick={() => toggleUnit(bookIndex, unitIndex)}
+                      >
+                        <div className="flex justify-between items-center">
+                          <div className="flex items-center gap-2">
+                            <span className="text-gray-400 text-sm">{unit.expanded ? '▼' : '▶'}</span>
+                            <span className="font-medium">{unit.displayName}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-gray-400">
+                              {unitSelectedCount} / {unit.vocabularies.length}
+                            </span>
+                            {unit.expanded && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); addAllFromUnit(bookIndex, unitIndex); }}
+                                  className="px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white text-xs rounded transition-colors"
+                                  title={t('common:tooltips.add_all_section')}
+                                >
+                                  {t('common:buttons.add_all')}
+                                </button>
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); clearUnit(bookIndex, unitIndex); }}
+                                  className="px-2 py-1 bg-red-600 hover:bg-red-500 text-white text-xs rounded transition-colors"
+                                  title={t('common:tooltips.clear_section')}
+                                >
+                                  {t('common:buttons.clear')}
+                                </button>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Vocabulary Cards */}
+                      {unit.expanded && (
+                        <div className="p-3" style={{ backgroundColor: unit.colors?.body }}>
+                          <div className="grid grid-cols-2 gap-2">
+                            {unit.vocabularies.map((vocab) => {
+                              const isChosen = chosenVocabularies.some(v => v.id === vocab.id);
+                              return (
+                                <VocabularyCard
+                                  key={vocab.id}
+                                  vocabulary={vocab}
+                                  isChosen={isChosen}
+                                  onClick={() => handleVocabularyClick(vocab)}
+                                  colors={unit.colors}
+                                />
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+
       {showCountdown && <QuizCountdown onComplete={handleCountdownComplete} />}
     </div>
   );

@@ -18,6 +18,28 @@
 export const INDICATOR_SIZE_RATIO = 1.4;
 
 /**
+ * Column-based multiplier for indicator sizing (additive boost)
+ * Fewer columns = more space per cell = larger indicators
+ * Applied AFTER hanVietSize percentage calculation
+ */
+export const INDICATOR_COLUMN_MULTIPLIERS: Record<number, number> = {
+  4: 1.25,  // +25% boost for 4 columns
+  5: 1.20,  // +20% boost for 5 columns
+  6: 1.15,  // +15% boost for 6 columns
+  7: 1.12,  // +12% boost for 7 columns
+  // 8+ columns: use default 1.0 (no boost)
+} as const;
+
+/**
+ * Get indicator column multiplier based on column count
+ * @param columnCount - Number of columns in the grid (4-15)
+ * @returns Multiplier value (1.0 for 8+ columns)
+ */
+export function getIndicatorColumnMultiplier(columnCount: number): number {
+  return INDICATOR_COLUMN_MULTIPLIERS[columnCount] || 1.0;
+}
+
+/**
  * Padding from card edges for all indicators (in pixels)
  */
 export const INDICATOR_PADDING = 2;

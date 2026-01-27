@@ -62,10 +62,7 @@ export const MasterCell: React.FC<MasterCellProps> = ({
   const hanVietSizeRem = hanVietBaseSize * (sheetPanel.hanVietSize / 100);
   
   // Parse Han-viet meanings
-  const hanVietMeanings = kanji.hanViet
-    .split(/[,/]/)
-    .map(m => m.trim())
-    .filter(m => m.length > 0);
+  const hanVietMeanings = kanji.hanViet;
   
   // Indicator size (relative to han-viet size)
   const indicatorSize = hanVietSizeRem * INDICATOR_SIZE_RATIO;
@@ -180,10 +177,10 @@ export const MasterCell: React.FC<MasterCellProps> = ({
                 boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
               }}
             >
-              {kanji.gradeLevel}
+              G{kanji.gradeLevel}
             </div>
           )}
-          
+
           {/* Frequency (bottom-right or top-right based on han-viet orientation) */}
           {kanji.frequency && sheetPanel.showFrequencyIndicator && (
             <div

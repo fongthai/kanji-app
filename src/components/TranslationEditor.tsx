@@ -31,7 +31,7 @@ export const TranslationEditor: React.FC = () => {
         
         try {
           // Load for both languages explicitly
-          const basePath = '/kanji-app/locales'; // Match i18n backend config
+          const basePath = `${import.meta.env.BASE_URL}locales`; // Match i18n backend config
           const promises = [];
           if (!hasVi) {
             promises.push(

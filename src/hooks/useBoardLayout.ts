@@ -62,7 +62,8 @@ export const useBoardLayout = ({
     const { kanjiFontSize, indicatorFontSize, hanVietFontSize } = calculateFontSizes(
       cellSize,
       kanjiSizePercentage,
-      hanVietSizePercentage
+      hanVietSizePercentage,
+      columnCount  // Add column count for multiplier
     );
     
     return {

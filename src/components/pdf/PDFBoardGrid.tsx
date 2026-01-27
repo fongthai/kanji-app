@@ -18,6 +18,8 @@ interface PDFBoardGridProps {
   showJlptIndicator: boolean;
   showGradeIndicator: boolean;
   showFrequencyIndicator: boolean;
+  showVietnameseMeaning?: boolean;
+  showEnglishMeaning?: boolean;
   showEmptyCells: boolean;
   centerCards: boolean;
   availableHeight: number; // Add this to calculate centering
@@ -25,13 +27,13 @@ interface PDFBoardGridProps {
   grayscaleMode: boolean;
 }
 
-export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({ 
-  kanjis, 
+export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
+  kanjis,
   columnCount,
-  cellSize, 
-  gap, 
+  cellSize,
+  gap,
   kanjiFont,
-  kanjiFontSize, 
+  kanjiFontSize,
   hanVietFont,
   hanVietFontSize,
   hanVietOrientation,
@@ -40,6 +42,8 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   showJlptIndicator,
   showGradeIndicator,
   showFrequencyIndicator,
+  showVietnameseMeaning = false,
+  showEnglishMeaning = false,
   showEmptyCells,
   availableHeight,
   availableWidth,
@@ -74,15 +78,6 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
   // Calculate actual card size (matching filled cards)
   const actualCardSize = cellSize - PDF_CARD_BORDER_TOTAL;
   
-  console.log('=== PDF BOARD GRID DEBUG ===');
-  console.log('cellSize (prop):', cellSize);
-  console.log('actualCardSize:', actualCardSize);
-  console.log('columnCount:', columnCount);
-  console.log('gap:', gap);
-  console.log('availableWidth (prop):', availableWidth);
-  console.log('gridWidth (using availableWidth):', availableWidth);
-  console.log('availableHeight:', availableHeight);
-  console.log('===========================');
   
   const styles = StyleSheet.create({
     grid: {
@@ -122,6 +117,10 @@ export const PDFBoardGrid: React.FC<PDFBoardGridProps> = ({
             showJlptIndicator={showJlptIndicator}
             showGradeIndicator={showGradeIndicator}
             showFrequencyIndicator={showFrequencyIndicator}
+            showVietnameseMeaning={showVietnameseMeaning}
+            showEnglishMeaning={showEnglishMeaning}
+            meaningFont={hanVietFont}
+            meaningFontSize={hanVietFontSize}
             grayscaleMode={grayscaleMode}
           />
         );

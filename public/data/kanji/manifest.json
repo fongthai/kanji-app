@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-26T16:07:51.305Z",
+  "totalFiles": 14,
+  "totalKanjis": 2188,
+  "sources": [
+    {
+      "file": "koty-2025.json",
+      "displayName": "Kanji of the Year 2025",
+      "count": 20
+    },
+    {
+      "file": "n1-A.json",
+      "displayName": "JLPT N1 Part A",
+      "count": 200
+    },
+    {
+      "file": "n1-B.json",
+      "displayName": "JLPT N1 Part B",
+      "count": 200
+    },
+    {
+      "file": "n1-C.json",
+      "displayName": "JLPT N1 Part C",
+      "count": 200
+    },
+    {
+      "file": "n1-D.json",
+      "displayName": "JLPT N1 Part D",
+      "count": 200
+    },
+    {
+      "file": "n1-E.json",
+      "displayName": "JLPT N1 Part E",
+      "count": 200
+    },
+    {
+      "file": "n1-F.json",
+      "displayName": "JLPT N1 Part F",
+      "count": 200
+    },
+    {
+      "file": "n1-G.json",
+      "displayName": "JLPT N1 Part G",
+      "count": 32
+    },
+    {
+      "file": "n2-A.json",
+      "displayName": "JLPT N2 Part A",
+      "count": 200
+    },
+    {
+      "file": "n2-B.json",
+      "displayName": "JLPT N2 Part B",
+      "count": 167
+    },
+    {
+      "file": "n3-A.json",
+      "displayName": "JLPT N3 Part A",
+      "count": 200
+    },
+    {
+      "file": "n3-B.json",
+      "displayName": "JLPT N3 Part B",
+      "count": 167
+    },
+    {
+      "file": "n4.json",
+      "displayName": "JLPT N4",
+      "count": 122
+    },
+    {
+      "file": "n5.json",
+      "displayName": "JLPT N5",
+      "count": 80
+    }
+  ]
+}

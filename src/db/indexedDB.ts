@@ -1,5 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import type { KanjiData } from '../features/kanji/kanjiSlice';
+import type { VocabularyData } from '../types/vocabulary';
 
 interface KanjiDB extends DBSchema {
   kanjis: {
@@ -7,12 +8,24 @@ interface KanjiDB extends DBSchema {
     value: KanjiData;
     indexes: { 'by-section': string; 'by-level': string; 'by-category': string; 'by-kanji': string };
   };
+  vocabularies: {
+    key: string; // composite key: vocabulary-book-unit
+    value: VocabularyData;
+    indexes: {
+      'by-vocabulary': string;
+      'by-level': string;
+      'by-book': string;
+      'by-unit': string | number;
+      'by-category': string;
+      'by-section': string;
+    };
+  };
 }
 
 // Use different database names for localhost vs production to avoid conflicts
 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 const DB_NAME = isLocalhost ? 'ft-kanji-database-local' : 'ft-kanji-database';
-const DB_VERSION = 6; // Increment version to force clean recreation
+const DB_VERSION = 31; // Version 31: new N3 file from vnjpclub and minor fixes for some kanjis.
 
 let dbInstance: IDBPDatabase<KanjiDB> | null = null;
 
@@ -84,22 +97,53 @@ export async function initDB(): Promise<IDBPDatabase<KanjiDB>> {
     );
     
     const openPromise = openDB<KanjiDB>(DB_NAME, DB_VERSION, {
-      upgrade(db) {
-        console.log('[IndexedDB] Running upgrade from version', db.version);
-        // Delete old store if it exists
-        if (db.objectStoreNames.contains('kanjis')) {
-          console.log('[IndexedDB] Deleting old kanjis store');
-          db.deleteObjectStore('kanjis');
+      upgrade(db, oldVersion) {
+        console.log('[IndexedDB] Running upgrade from version', oldVersion, 'to', DB_VERSION);
+
+        // Create kanji store if it doesn't exist (version 0 or corrupted)
+        if (!db.objectStoreNames.contains('kanjis')) {
+          console.log('[IndexedDB] Creating kanjis store');
+          const kanjiStore = db.createObjectStore('kanjis', { keyPath: 'id' });
+          kanjiStore.createIndex('by-section', 'sectionName', { unique: false });
+          kanjiStore.createIndex('by-level', 'jlptLevel', { unique: false });
+          kanjiStore.createIndex('by-category', 'category', { multiEntry: true, unique: false });
+          kanjiStore.createIndex('by-kanji', 'kanji', { unique: false });
+          console.log('[IndexedDB] Kanjis store created with indexes');
         }
-        
-        // Create new store with composite key (kanji-sectionName)
-        console.log('[IndexedDB] Creating new kanjis store');
-        const store = db.createObjectStore('kanjis', { keyPath: 'id' });
-        store.createIndex('by-section', 'sectionName', { unique: false });
-        store.createIndex('by-level', 'jlptLevel', { unique: false });
-        store.createIndex('by-category', 'category', { multiEntry: true, unique: false });
-        store.createIndex('by-kanji', 'kanji', { unique: false }); // Index to search by kanji character
-        console.log('[IndexedDB] Store created with indexes');
+
+        // Add vocabularies store (new in version 7)
+        if (!db.objectStoreNames.contains('vocabularies')) {
+          console.log('[IndexedDB] Creating vocabularies store');
+          const vocabStore = db.createObjectStore('vocabularies', { keyPath: 'id' });
+          vocabStore.createIndex('by-vocabulary', 'vocabulary', { unique: false });
+          vocabStore.createIndex('by-level', 'jlptLevel', { unique: false });
+          vocabStore.createIndex('by-book', 'book', { unique: false });
+          vocabStore.createIndex('by-unit', 'unit', { unique: false });
+          vocabStore.createIndex('by-category', 'category', { multiEntry: true, unique: false });
+          vocabStore.createIndex('by-section', 'sectionName', { unique: false });
+          console.log('[IndexedDB] Vocabularies store created with indexes');
+        }
+
+        // Handle vocabulary data upgrades
+        if (oldVersion > 0 && oldVersion < 31 && db.objectStoreNames.contains('vocabularies')) {
+          // Clear vocabulary data for any version < 31
+          // Version 26: Updated field names (exampleSentencesVietnameseTranslate, exampleSentencesEnglishTranslate)
+          // Version 27: Updated book field values in vocabulary data (N3 Mimikara files)
+          // Version 28: Added new vocabulary file (Tu_Vung_Shinkanzen_N3.json)
+          // Version 29: Split N3-Shinkanzen.json into 21 group files (50 vocabs each)
+          console.log(`[IndexedDB] Upgrading to version 31 from ${oldVersion}: clearing all vocabulary data for fresh reload with updated files`);
+          const tx = (db as any).transaction;
+          const vocabStore = tx.objectStore('vocabularies');
+
+          // Add missing indexes if needed (kept for backward compatibility)
+          if (!vocabStore.indexNames.contains('by-section')) {
+            vocabStore.createIndex('by-section', 'sectionName', { unique: false });
+            console.log('[IndexedDB] by-section index created');
+          }
+
+          vocabStore.clear();
+          console.log('[IndexedDB] Vocabulary data cleared - will reload with new vocabulary file on next fetch');
+        }
       },
       blocked() {
         console.warn('[IndexedDB] Database upgrade blocked - another tab may be open');
@@ -159,7 +203,7 @@ export async function seedKanjisFromJSON(jsonFiles: string[]): Promise<void> {
         continue;
       }
       
-      // Extract filename for section grouping (e.g., "n5-org" from "/json/n5-org.json")
+      // Extract filename for section grouping (e.g., "n5" from "/data/kanji/n5.json")
       const filename = file.split('/').pop()?.replace('.json', '') || '';
       
       // Start a new transaction for each file
@@ -183,7 +227,7 @@ export async function seedKanjisFromJSON(jsonFiles: string[]): Promise<void> {
           hanViet: kanji.hanViet || '',
           onyomi: kanji.onyomi || [],
           kunyomi: kanji.kunyomi || [],
-          meaning: kanji.englishMeaning || '',
+          englishMeaning: kanji.englishMeaning || '',
           vietnameseMeaning: kanji.vietnameseMeaning || '',
           vietnameseMnemonic: kanji.vietMnemonics || '',
           lucThu: kanji.lucThu || '',
@@ -219,12 +263,12 @@ export async function getKanjisByLevel(level: string): Promise<KanjiData[]> {
 export async function searchKanjis(query: string): Promise<KanjiData[]> {
   const db = await initDB();
   const allKanjis = await db.getAll('kanjis');
-  
+
   const lowerQuery = query.toLowerCase();
-  return allKanjis.filter(k => 
+  return allKanjis.filter(k =>
     k.kanji.includes(query) ||
-    k.hanViet.toLowerCase().includes(lowerQuery) ||
-    k.meaning.toLowerCase().includes(lowerQuery)
+    k.hanViet.join(', ').toLowerCase().includes(lowerQuery) ||
+    k.englishMeaning.join(', ').toLowerCase().includes(lowerQuery)
   );
 }
 
@@ -238,6 +282,216 @@ export async function checkIfDataExists(): Promise<boolean> {
     return count > 0;
   } catch (error) {
     console.error('[IndexedDB] Error in checkIfDataExists:', error);
+    throw error;
+  }
+}
+
+// ===== Vocabulary Functions =====
+
+/**
+ * Validate and normalize vocabulary data structure
+ * Ensures all expected fields exist and are the correct type
+ */
+function validateAndNormalizeVocabulary(vocab: any): { valid: boolean; warnings: string[] } {
+  const warnings: string[] = [];
+
+  // Required fields
+  if (!vocab.vocabulary || typeof vocab.vocabulary !== 'string') {
+    warnings.push(`Missing or invalid 'vocabulary' field`);
+    return { valid: false, warnings };
+  }
+
+  if (!vocab.furigana || typeof vocab.furigana !== 'string') {
+    warnings.push(`Missing or invalid 'furigana' field for "${vocab.vocabulary}"`);
+  }
+
+  // Ensure array fields are actually arrays (not strings or other types)
+  const arrayFields = [
+    'exampleSentencesInJapanese',
+    'exampleSentencesVietnameseTranslate',
+    'exampleSentencesEnglishTranslate',
+    'category'
+  ];
+
+  for (const field of arrayFields) {
+    if (vocab[field] !== undefined && vocab[field] !== null) {
+      if (!Array.isArray(vocab[field])) {
+        warnings.push(`Field '${field}' should be an array but got ${typeof vocab[field]} for "${vocab.vocabulary}"`);
+        // Convert to array or set to empty array
+        if (typeof vocab[field] === 'string') {
+          vocab[field] = [vocab[field]]; // Convert string to array
+        } else {
+          vocab[field] = []; // Set to empty array
+        }
+      }
+    } else {
+      // Initialize missing array fields
+      vocab[field] = [];
+    }
+  }
+
+  // Ensure string fields exist
+  const stringFields = ['hanViet', 'vietnameseMeaning', 'englishMeaning', 'explanation', 'jlptLevel'];
+  for (const field of stringFields) {
+    if (vocab[field] === undefined || vocab[field] === null) {
+      vocab[field] = '';
+    } else if (typeof vocab[field] !== 'string') {
+      vocab[field] = String(vocab[field]);
+    }
+  }
+
+  return { valid: true, warnings };
+}
+
+export async function seedVocabulariesFromJSON(): Promise<void> {
+  const db = await initDB();
+  const allWarnings: Array<{ file: string; warnings: string[] }> = [];
+
+  try {
+    // Load manifest to get list of vocabulary files
+    const manifestResponse = await fetch('/data/vocabulary/manifest.json');
+    if (!manifestResponse.ok) {
+      throw new Error(`Failed to load vocabulary manifest: ${manifestResponse.status}`);
+    }
+
+    const manifest = await manifestResponse.json();
+    console.log('[IndexedDB] Loading vocabularies from', manifest.sources.length, 'sources');
+
+    let totalLoaded = 0;
+    let totalSkipped = 0;
+
+    for (const source of manifest.sources) {
+      try {
+        const fileResponse = await fetch(`/data/vocabulary/${source.file}`);
+        if (!fileResponse.ok) {
+          console.warn(`⚠️ Warning: Failed to load ${source.file}: ${fileResponse.status}`);
+          continue;
+        }
+
+        const data = await fileResponse.json();
+        const vocabularies = data.vocabularies || [];
+
+        if (vocabularies.length === 0) {
+          console.warn(`⚠️ Warning: ${source.file} contains 0 vocabularies`);
+          continue;
+        }
+
+        // Extract file-level metadata
+        const book = data.book;
+        const unit = data.unit;
+
+        // Start transaction for this file
+        const tx = db.transaction('vocabularies', 'readwrite');
+        const store = tx.objectStore('vocabularies');
+
+        const fileWarnings: string[] = [];
+
+        for (const vocab of vocabularies) {
+          // Validate and normalize vocabulary data
+          const { valid, warnings } = validateAndNormalizeVocabulary(vocab);
+
+          if (!valid) {
+            console.error(`✗ Skipping invalid vocabulary in ${source.file}:`, warnings);
+            fileWarnings.push(...warnings);
+            totalSkipped++;
+            continue;
+          }
+
+          if (warnings.length > 0) {
+            fileWarnings.push(...warnings);
+          }
+
+          // Copy file-level metadata to each vocabulary object
+          vocab.book = book;
+          vocab.unit = unit;
+
+          // Ensure ID is set using file-level book and unit
+          if (!vocab.id) {
+            vocab.id = `${vocab.vocabulary}-${book}-${unit}`;
+          }
+
+          await store.put(vocab);
+        }
+
+        await tx.done;
+        totalLoaded += vocabularies.length - fileWarnings.filter(w => w.includes('Missing or invalid')).length;
+
+        if (fileWarnings.length > 0) {
+          allWarnings.push({ file: source.file, warnings: fileWarnings });
+          console.warn(`⚠️ ${source.file}: ${fileWarnings.length} warnings`);
+        } else {
+          console.log(`✓ Loaded ${vocabularies.length} vocabularies from ${source.file}`);
+        }
+      } catch (error) {
+        console.error(`✗ Failed to load ${source.file}:`, error);
+        allWarnings.push({ file: source.file, warnings: [`Failed to load: ${error}`] });
+      }
+    }
+
+    console.log(`[IndexedDB] Total vocabularies loaded: ${totalLoaded}${totalSkipped > 0 ? ` (${totalSkipped} skipped)` : ''}`);
+
+    // Show warning popup if there were any data issues
+    if (allWarnings.length > 0) {
+      const warningMessage = `⚠️ Data Quality Issues Detected\n\n` +
+        `Some vocabulary files have missing or malformed fields:\n\n` +
+        allWarnings.slice(0, 5).map(w => `• ${w.file}: ${w.warnings.slice(0, 2).join(', ')}`).join('\n') +
+        (allWarnings.length > 5 ? `\n\n...and ${allWarnings.length - 5} more files` : '') +
+        `\n\nThe app will continue to work, but some vocabulary entries may display incorrectly.\n\n` +
+        `Please check the browser console for detailed warnings.`;
+
+      // Show alert after a short delay to ensure UI is ready
+      setTimeout(() => {
+        alert(warningMessage);
+      }, 1000);
+    }
+  } catch (error) {
+    console.error('[IndexedDB] Error seeding vocabularies:', error);
+    throw error;
+  }
+}
+
+export async function getAllVocabularies(): Promise<VocabularyData[]> {
+  const db = await initDB();
+  return db.getAll('vocabularies');
+}
+
+export async function getVocabulariesByLevel(level: string): Promise<VocabularyData[]> {
+  const db = await initDB();
+  return db.getAllFromIndex('vocabularies', 'by-level', level);
+}
+
+export async function getVocabulariesByBook(book: string): Promise<VocabularyData[]> {
+  const db = await initDB();
+  return db.getAllFromIndex('vocabularies', 'by-book', book);
+}
+
+export async function getVocabulariesBySection(sectionName: string): Promise<VocabularyData[]> {
+  const db = await initDB();
+  return db.getAllFromIndex('vocabularies', 'by-section', sectionName);
+}
+
+export async function searchVocabularies(query: string): Promise<VocabularyData[]> {
+  const db = await initDB();
+  const allVocabs = await db.getAll('vocabularies');
+
+  const lowerQuery = query.toLowerCase();
+  return allVocabs.filter(v =>
+    v.vocabulary.includes(query) ||
+    v.furigana.includes(query) ||
+    v.hanViet.toLowerCase().includes(lowerQuery) ||
+    v.vietnameseMeaning.toLowerCase().includes(lowerQuery) ||
+    v.englishMeaning.toLowerCase().includes(lowerQuery)
+  );
+}
+
+export async function checkIfVocabulariesExist(): Promise<boolean> {
+  try {
+    const db = await initDB();
+    const count = await db.count('vocabularies');
+    console.log('[IndexedDB] Vocabulary record count:', count);
+    return count > 0;
+  } catch (error) {
+    console.error('[IndexedDB] Error in checkIfVocabulariesExist:', error);
     throw error;
   }
 }

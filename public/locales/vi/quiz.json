@@ -96,7 +96,15 @@
     "newQuiz": "Bắt Đầu Quiz Mới",
     "format": "Định dạng",
     "unlimited": "Không Giới Hạn",
-    "grade": "Lớp"
+    "grade": "Lớp",
+    "quizType": "Loại Quiz",
+    "quickQuiz": "Quiz Nhanh",
+    "customQuiz": "Quiz Tùy Chỉnh",
+    "competingQuiz": "Quiz Thi Đấu",
+    "panel": "Panel",
+    "unknown": "Không Xác Định",
+    "chosenKanjis": "Kanji Đã Chọn",
+    "randomKanjis": "Kanji Ngẫu Nhiên"
   },
   "resumeQuiz": {
     "title": "Tiếp Tục Quiz?",
