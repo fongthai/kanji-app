@@ -348,7 +348,7 @@ function InputPanel() {
             const manifest = await manifestResponse.json();
 
             // Parse manifest: extract file paths from sources array
-            jsonFiles = manifest.sources.map((source: any) => ``${import.meta.env.BASE_URL}data/kanji/${source.file}`);
+            jsonFiles = manifest.sources.map((source: any) => `${import.meta.env.BASE_URL}data/kanji/${source.file}`);
           } else {
             throw new Error(`Manifest file not found: ${manifestResponse.status}`);
           }
