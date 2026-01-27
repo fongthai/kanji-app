@@ -24,8 +24,10 @@ dist-ssr
 *.sw?
 
 # My own patterns
-scripts/*
+my-scripts/*
+debug-references
 docs/*
+new-docs/*
 to-do/*
 !docs/README.md
 !docs/changelog.txt
