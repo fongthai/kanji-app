@@ -32,15 +32,17 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build && touch dist/.nojekyll
+        env:
+          VITE_DEPLOY_TARGET: github
 
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: './dist'
 
   deploy:
     environment:
