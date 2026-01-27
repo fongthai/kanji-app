@@ -342,13 +342,13 @@ function InputPanel() {
         // Load manifest file to get list of JSON files
         let jsonFiles: string[] = [];
         try {
-          const manifestResponse = await fetch('/data/kanji/manifest.json');
+          const manifestResponse = await fetch(`${import.meta.env.BASE_URL}data/kanji/manifest.json`);
 
           if (manifestResponse.ok) {
             const manifest = await manifestResponse.json();
 
             // Parse manifest: extract file paths from sources array
-            jsonFiles = manifest.sources.map((source: any) => `/data/kanji/${source.file}`);
+            jsonFiles = manifest.sources.map((source: any) => ``${import.meta.env.BASE_URL}data/kanji/${source.file}`);
           } else {
             throw new Error(`Manifest file not found: ${manifestResponse.status}`);
           }
@@ -356,20 +356,20 @@ function InputPanel() {
           console.error('Could not load manifest file:', manifestError);
           // Fallback to hardcoded list if manifest fails
           jsonFiles = [
-            '/data/kanji/koty-2025.json',
-            '/data/kanji/n5.json',
-            '/data/kanji/n4.json',
-            '/data/kanji/n3-A.json',
-            '/data/kanji/n3-B.json',
-            '/data/kanji/n2-A.json',
-            '/data/kanji/n2-B.json',
-            '/data/kanji/n1-A.json',
-            '/data/kanji/n1-B.json',
-            '/data/kanji/n1-C.json',
-            '/data/kanji/n1-D.json',
-            '/data/kanji/n1-E.json',
-            '/data/kanji/n1-F.json',
-            '/data/kanji/n1-G.json',
+            `${import.meta.env.BASE_URL}data/kanji/koty-2025.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n5.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n4.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n3-A.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n3-B.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n2-A.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n2-B.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-A.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-B.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-C.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-D.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-E.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-F.json`,
+            `${import.meta.env.BASE_URL}data/kanji/n1-G.json`,
           ];
         }
         

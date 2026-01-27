@@ -349,7 +349,7 @@ export async function seedVocabulariesFromJSON(): Promise<void> {
 
   try {
     // Load manifest to get list of vocabulary files
-    const manifestResponse = await fetch('/data/vocabulary/manifest.json');
+    const manifestResponse = await fetch(`${import.meta.env.BASE_URL}data/vocabulary/manifest.json`);
     if (!manifestResponse.ok) {
       throw new Error(`Failed to load vocabulary manifest: ${manifestResponse.status}`);
     }
@@ -362,7 +362,7 @@ export async function seedVocabulariesFromJSON(): Promise<void> {
 
     for (const source of manifest.sources) {
       try {
-        const fileResponse = await fetch(`/data/vocabulary/${source.file}`);
+        const fileResponse = await fetch(`${import.meta.env.BASE_URL}data/vocabulary/${source.file}`);
         if (!fileResponse.ok) {
           console.warn(`⚠️ Warning: Failed to load ${source.file}: ${fileResponse.status}`);
           continue;
