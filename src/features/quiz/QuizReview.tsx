@@ -30,7 +30,7 @@ const QuizReview: React.FC = () => {
 
   const currentResult = history[selectedResultIndex];
   const correctCount = currentResult.answers.filter(a => a.correct).length;
-  const totalQuestions = currentResult.answers.length;
+  const totalQuestions = currentResult.questions.length;
   const score = currentResult.score;
   const accuracy = Math.round((correctCount / totalQuestions) * 100);
 
@@ -69,21 +69,70 @@ const QuizReview: React.FC = () => {
   const handleExportQuiz = () => {
     // Generate quiz content in text format
     const timestamp = new Date(currentResult.completedAt);
-    const formattedDate = timestamp.toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    const quizNumber = String(currentResult.timestamp).slice(-6);
     
-    let content = `Quiz #${quizNumber}\n`;
-    content += `Date: ${timestamp.toLocaleString()}\n`;
-    content += `Settings: ${currentResult.settings.levelType.toUpperCase()} - `;
-    if (currentResult.settings.levelType === 'jlpt') {
-      content += currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join(', ');
-    } else {
-      content += `Grade ${currentResult.settings.selectedGradeLevels.join(', ')}`;
+    // Format: YYYYMMDD-HHMMSS
+    const year = timestamp.getFullYear();
+    const month = String(timestamp.getMonth() + 1).padStart(2, '0');
+    const day = String(timestamp.getDate()).padStart(2, '0');
+    const hours = String(timestamp.getHours()).padStart(2, '0');
+    const minutes = String(timestamp.getMinutes()).padStart(2, '0');
+    const seconds = String(timestamp.getSeconds()).padStart(2, '0');
+    const dateTimeStr = `${year}${month}${day}-${hours}${minutes}${seconds}`;
+    
+    // Build filename with quiz type and counter
+    let quizTypeStr = currentResult.settings.quizType || 'custom';
+    let levelStr = '';
+    
+    if (quizTypeStr === 'quick') {
+      levelStr = `${currentResult.settings.sourceSection || 'unknown'}`;
+    } else if (quizTypeStr === 'custom') {
+      if (currentResult.settings.levelType === 'jlpt') {
+        levelStr = currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join('-');
+      } else {
+        levelStr = `grade-${currentResult.settings.selectedGradeLevels.join('-')}`;
+      }
     }
+    
+    // Add counter (001, 002, etc.)
+    const counter = String(selectedResultIndex + 1).padStart(3, '0');
+    const filename = levelStr 
+      ? `quiz-${quizTypeStr}-${levelStr}-${dateTimeStr}-${counter}.txt`
+      : `quiz-${quizTypeStr}-${dateTimeStr}-${counter}.txt`;
+    
+    let content = '';
+    
+    // Add header with quiz type info
+    content += `QUIZ RESULT REPORT\n`;
+    content += `==================\n\n`;
+    
+    content += `Quiz Type: ${quizTypeStr.toUpperCase()}\n`;
+    if (quizTypeStr === 'quick' && currentResult.settings.sourceSection) {
+      content += `Panel: ${currentResult.settings.sourceSection}\n`;
+      if (currentResult.settings.chosenCount !== undefined && currentResult.settings.randomCount !== undefined) {
+        content += `Kanjis: ${currentResult.settings.chosenCount} chosen + ${currentResult.settings.randomCount} random\n`;
+      }
+      content += `Level: N/A\n`;
+    } else if (quizTypeStr === 'custom') {
+      content += `Level: ${currentResult.settings.levelType === 'jlpt' 
+        ? currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join(', ')
+        : `Grade ${currentResult.settings.selectedGradeLevels.join(', ')}`}\n`;
+    } else if (quizTypeStr === 'competing') {
+      content += `Level: Competing\n`;
+    }
+    
+    content += `Date: ${timestamp.toLocaleString()}\n`;
     content += `\n`;
-    content += `Show: ${currentResult.settings.showField} | Ask: ${currentResult.settings.askField}\n`;
-    content += `Order: ${currentResult.settings.questionOrder} | Time: ${currentResult.settings.maxTimePerQuestion === 0 ? 'unlimited' : currentResult.settings.maxTimePerQuestion + 's'}\n`;
+    
+    content += `Settings\n`;
+    content += `--------\n`;
+    content += `Show: ${currentResult.settings.showField} | Ask: ${currentResult.settings.askFields.join(', ')}\n`;
+    content += `Order: ${currentResult.settings.questionOrder} | Time per Question: ${currentResult.settings.maxTimePerQuestion === 0 ? 'unlimited' : currentResult.settings.maxTimePerQuestion + 's'}\n`;
+    content += `\n`;
+    
+    content += `Results\n`;
+    content += `-------\n`;
     content += `Total Questions: ${currentResult.questions.length}\n`;
+    content += `Correct Answers: ${correctCount}/${currentResult.questions.length}\n`;
     content += `Score: ${currentResult.score}/10 (${currentResult.percentage}%)\n`;
     content += `\n`;
     content += `================================\n\n`;
@@ -105,8 +154,17 @@ const QuizReview: React.FC = () => {
         content += `\n`;
       });
       
-      content += `Result: ${isCorrect ? '✓ Correct' : '✗ Wrong'}`;
-      if (!isCorrect && answer?.selectedIndex !== null && answer?.selectedIndex !== undefined) {
+      let resultStr = '';
+      if (answer?.skipped) {
+        resultStr = '⊝ Skipped';
+      } else if (isCorrect) {
+        resultStr = '✓ Correct';
+      } else {
+        resultStr = '✗ Wrong';
+      }
+      
+      content += `Result: ${resultStr}`;
+      if (!isCorrect && !answer?.skipped && answer?.selectedIndex !== null && answer?.selectedIndex !== undefined) {
         content += ` - You answered: ${String.fromCharCode(65 + answer.selectedIndex)}`;
       }
       content += `\n`;
@@ -119,7 +177,7 @@ const QuizReview: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `quiz-${quizNumber}-${formattedDate}.txt`;
+    link.download = filename;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -135,6 +193,48 @@ const QuizReview: React.FC = () => {
           {new Date(currentResult.completedAt).toLocaleDateString()} {' '}
           {new Date(currentResult.completedAt).toLocaleTimeString()}
         </p>
+      </div>
+
+      {/* Quiz Type Info */}
+      <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p className="text-sm text-gray-400">Quiz Type</p>
+            <p className="text-lg font-semibold text-white capitalize">
+              {currentResult.settings.quizType === 'quick' ? 'Quick Quiz' : 
+               currentResult.settings.quizType === 'custom' ? 'Custom Quiz' : 
+               'Competing Quiz'}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-gray-400">
+              {currentResult.settings.quizType === 'quick' ? 'Panel' : 'Level'}
+            </p>
+            <p className="text-lg font-semibold text-white">
+              {currentResult.settings.quizType === 'quick' 
+                ? currentResult.settings.sourceSection || 'Unknown'
+                : currentResult.settings.levelType === 'jlpt'
+                ? currentResult.settings.selectedJlptLevels.map(l => l.toUpperCase()).join(', ')
+                : `Grade ${currentResult.settings.selectedGradeLevels.join(', ')}`}
+            </p>
+          </div>
+          {currentResult.settings.quizType === 'quick' && (
+            <>
+              <div>
+                <p className="text-sm text-gray-400">Chosen Kanjis</p>
+                <p className="text-lg font-semibold text-white">
+                  {currentResult.settings.chosenCount || 0}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Random Kanjis</p>
+                <p className="text-lg font-semibold text-white">
+                  {currentResult.settings.randomCount || 0}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
       </div>
 
       {/* History Selector */}

@@ -1,0 +1,4932 @@
+[
+  {
+    "kanji": "傾",
+    "components": "傾, 亻, 頃, 匕, 頁, 貝, 目, 八, 人",
+    "strokeOrderSvg": "kanji-vectors/050be.svg",
+    "hanViet": "KHUYNH",
+    "englishMeaning": "lean, incline, tilt, trend, wane, sink, ruin, bias",
+    "vietnameseMeaning": "nghiêng, lệch, xu hướng, ngả, suy tàn, thiên vị",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ケイ"
+    ],
+    "kunyomi": [
+      "かたむ.く",
+      "かたむ.ける",
+      "かたぶ.く",
+      "かた.げる",
+      "かし.げる"
+    ],
+    "category": [],
+    "lookalikes": [
+      "頃",
+      "僑",
+      "傷"
+    ],
+    "mnemonics": "Start with the person on the left (亻), then the head (頁) with “頃” on the right leaning—imagine the head tilting step by step until the whole person is inclined.",
+    "vietMnemonics": "Vẽ người (亻) đứng rồi tới cái đầu (頁) nghiêng dần: như đang nghe nhạc buồn, đầu nghiêng theo nhịp, cuối cùng cả người… khuynh!",
+    "frequency": 1219,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 傾 KHUYNH = nghiêng: chữ ghép từ 亻 NHÂN, 頃, 匕 BĨ, 頁, 貝, 目 MỤC, 八 BÁT, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "届",
+    "components": "届, 尸, 由, 日, 丨",
+    "strokeOrderSvg": "kanji-vectors/05c4a.svg",
+    "hanViet": "GIỚI",
+    "englishMeaning": "deliver, reach, arrive, report, notify, forward",
+    "vietnameseMeaning": "tới, giao nộp, báo cáo, thông báo",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "カイ"
+    ],
+    "kunyomi": [
+      "とど.ける",
+      "-とど.け",
+      "とど.く"
+    ],
+    "category": [
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "housing-buildings-architecture",
+      "directions-positions-navigation",
+      "mail-post-delivery-tracking-shipping",
+      "social-cooperation-conflict-interaction"
+    ],
+    "lookalikes": [
+      "屈",
+      "局",
+      "届出"
+    ],
+    "mnemonics": "Lay down the ‘corpse’ radical (尸) top first, then box in contents with 由—like filing a report that finally reaches the desk.",
+    "vietMnemonics": "Trên là 尸 như cái bìa hồ sơ, dưới là 由 nội dung: kẹp lại và nộp, báo cáo đã tới nơi.",
+    "frequency": 296,
+    "lucThu": "Cần tra cứu. 届 GIỚI = tới: chữ ghép từ 尸, 由, 日 NHẬT, 丨 CỔN. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "巻",
+    "components": "巻, 𠔉, 二, 大, 人, 己, 卩",
+    "strokeOrderSvg": "kanji-vectors/05dfb.svg",
+    "hanViet": "QUYỂN",
+    "englishMeaning": "scroll, volume, book, part, roll up, wind up, tie, coil, counter for texts (or book scrolls)",
+    "vietnameseMeaning": "quyển sách, cuộn, cuốn, cuộn lại",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "カン",
+      "ケン"
+    ],
+    "kunyomi": [
+      "ま.く",
+      "まき",
+      "ま.き"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "券",
+      "圏"
+    ],
+    "mnemonics": "Draw the snake-like `己`, then stamp `卩`—wrap the seal around the rolled scroll to make a book volume.",
+    "vietMnemonics": "Vẽ nét `己` như sợi dây, rồi `卩` như cái niêm: buộc lại thành một cuộn QUYỂN.",
+    "frequency": 698,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 巻 QUYỂN = quyển sách: chữ ghép từ 𠔉, 二 NHỊ, 大 ĐẠI, 人 NHÂN, 己, 卩. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "燃",
+    "components": "燃, 火, 然, 月, 犬, 大, 丶, 灬",
+    "strokeOrderSvg": "kanji-vectors/071c3.svg",
+    "hanViet": "NHIÊN",
+    "englishMeaning": "burn, blaze, glow",
+    "vietnameseMeaning": "cháy, bùng cháy, rực sáng",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "ネン"
+    ],
+    "kunyomi": [
+      "も.える",
+      "も.やす",
+      "も.す"
+    ],
+    "category": [
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "然",
+      "熱",
+      "煙"
+    ],
+    "mnemonics": "Start with the fire radical (火), then add 然—the fire makes it ‘so’ that things burn ‘naturally’.",
+    "vietMnemonics": "Nét lửa 火 trước, rồi tới 然: cứ có lửa là tự nhiên NHIÊN bốc cháy.",
+    "frequency": 1101,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 燃 NHIÊN = cháy: chữ ghép từ 火 HỎA, 然, 月 NGUYỆT, 犬, 大 ĐẠI, 丶, 灬 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "跡",
+    "components": "跡, 足, 口, 亦, 亠, 丿, 亅",
+    "strokeOrderSvg": "kanji-vectors/08de1.svg",
+    "hanViet": "TÍCH",
+    "englishMeaning": "tracks, mark, print, impression",
+    "vietnameseMeaning": "vết tích, dấu chân, dấu vết",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "セキ"
+    ],
+    "kunyomi": [
+      "あと"
+    ],
+    "category": [
+      "mail-post-delivery-tracking-shipping"
+    ],
+    "lookalikes": [
+      "跡",
+      "跡形",
+      "跡地"
+    ],
+    "mnemonics": "Put down the foot (足) first, then 亦—each step leaves a mark behind.",
+    "vietMnemonics": "Chân 足 bước trước, rồi 亦 như cái dấu in: đi qua là để lại TÍCH.",
+    "frequency": 982,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 跡 TÍCH = vết tích: chữ ghép từ 足 TÚC, 口 KHẨU, 亦, 亠 ĐẦU, 丿 PHIỆT, 亅 QUYẾT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "包",
+    "components": "包, 勹, 丿, 己, 巳",
+    "strokeOrderSvg": "kanji-vectors/05305.svg",
+    "hanViet": "BAO",
+    "englishMeaning": "wrap, pack up, cover, conceal",
+    "vietnameseMeaning": "bao bọc, gói, che đậy",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ホウ",
+      "クル."
+    ],
+    "kunyomi": [
+      "つつ.む"
+    ],
+    "category": [],
+    "lookalikes": [
+      "抱",
+      "胞",
+      "飽"
+    ],
+    "mnemonics": "Hook with 勹 first, then curl 巳 inside—like wrapping something snug in a package.",
+    "vietMnemonics": "Nét móc 勹 ôm lấy, cuộn 巳 bên trong: gói lại là BAO.",
+    "frequency": 907,
+    "lucThu": "Cần tra cứu. 包 BAO = bao bọc: chữ ghép từ 勹, 丿 PHIỆT, 己, 巳. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "駐",
+    "components": "駐, 馬, 灬, 主, 丶, 王, 火, 玉",
+    "strokeOrderSvg": "kanji-vectors/099d0.svg",
+    "hanViet": "TRÚ",
+    "englishMeaning": "stop-over, reside in, resident",
+    "vietnameseMeaning": "đỗ lại, trú, cư trú",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "チュウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "social-community-neighborhood-local"
+    ],
+    "lookalikes": [
+      "駐",
+      "駐車",
+      "駐屯"
+    ],
+    "mnemonics": "Write the horse (馬) first, then the master dot (主)—the horse stops where the master resides.",
+    "vietMnemonics": "Ngựa 馬 đi trước, điểm chủ 主 sau: đến nơi chủ ở là dừng, TRÚ.",
+    "frequency": 1077,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 駐 TRÚ = đỗ lại: chữ ghép từ 馬 MÃ, 灬 HỎA, 主, 丶, 王, 火 HỎA, 玉 NGỌC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "弱",
+    "components": "弱, 弓, 冫",
+    "strokeOrderSvg": "kanji-vectors/05f31.svg",
+    "hanViet": "NHƯỢC",
+    "englishMeaning": "weak, frail",
+    "vietnameseMeaning": "yếu, yếu ớt, mong manh",
+    "jlptLevel": "N2",
+    "gradeLevel": "2",
+    "onyomi": [
+      "ジャク"
+    ],
+    "kunyomi": [
+      "よわ.い",
+      "よわ.る",
+      "よわ.まる",
+      "よわ.める"
+    ],
+    "category": [
+      "adjectives-conditions"
+    ],
+    "lookalikes": [
+      "張",
+      "引",
+      "弱者"
+    ],
+    "mnemonics": "Two bows (弓) drawn lightly—double bow but still weakly bent.",
+    "vietMnemonics": "Hai cây cung 弓 mà kéo nhẹ: lực yếu là NHƯỢC.",
+    "frequency": 908,
+    "lucThu": "Cần tra cứu. 弱 NHƯỢC = yếu: chữ ghép từ 弓, 冫. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "紹",
+    "components": "紹, 糸, 召, 刀, 口",
+    "strokeOrderSvg": "kanji-vectors/07d39.svg",
+    "hanViet": "THIỆU",
+    "englishMeaning": "introduce, inherit, help",
+    "vietnameseMeaning": "giới thiệu, nối tiếp, giúp đỡ",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ショ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "social-relationships-party-speaking-networking-events"
+    ],
+    "lookalikes": [
+      "詔",
+      "招",
+      "紹介"
+    ],
+    "mnemonics": "Thread (糸) first, then 召 ‘to call’—introductions tie people together by calling threads between them.",
+    "vietMnemonics": "Sợi chỉ 糸 buộc, rồi 召 là ‘mời gọi’: nối sợi quan hệ—THIỆU.",
+    "frequency": 276,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 紹 THIỆU = giới thiệu: chữ ghép từ 糸 MỊCH, 召, 刀 ĐAO, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "雇",
+    "components": "雇, 戸, 隹, 亻, 人",
+    "strokeOrderSvg": "kanji-vectors/096c7.svg",
+    "hanViet": "CỐ",
+    "englishMeaning": "employ, hire",
+    "vietnameseMeaning": "thuê, mướn, tuyển dụng",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "コ"
+    ],
+    "kunyomi": [
+      "やと.う"
+    ],
+    "category": [],
+    "lookalikes": [
+      "故",
+      "難",
+      "雇用"
+    ],
+    "mnemonics": "Open the door (戸), then a short bird (隹) enters—hire someone through the door.",
+    "vietMnemonics": "Cửa 戸 mở, chim 隹 bước vào như ứng viên đến phỏng vấn: CỐ = thuê mướn.",
+    "frequency": 1323,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 雇 CỐ = thuê: chữ ghép từ 戸, 隹, 亻 NHÂN, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "替",
+    "components": "替, 夫, 大, 日, 曰, 木",
+    "strokeOrderSvg": "kanji-vectors/066ff.svg",
+    "hanViet": "THẾ",
+    "englishMeaning": "exchange, spare, substitute, per-",
+    "vietnameseMeaning": "thay thế, đổi, dự phòng",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "タイ",
+      "カ.ワ"
+    ],
+    "kunyomi": [
+      "か.える",
+      "か.え-"
+    ],
+    "category": [
+      "social-cooperation-conflict-interaction"
+    ],
+    "lookalikes": [
+      "換",
+      "替",
+      "暗"
+    ],
+    "mnemonics": "Sun (日) top, then tree (木), then man (夫)—swap parts as you replace one with another.",
+    "vietMnemonics": "Ngày 日 thay, cây 木 đổi, người 夫 thay phiên: THẾ là đổi thay.",
+    "frequency": 491,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 替 THẾ = thay thế: chữ ghép từ 夫, 大 ĐẠI, 日 NHẬT, 曰 VIẾT, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "預",
+    "components": "預, 予, マ, 了, 亅, 頁, 貝, 目, 八",
+    "strokeOrderSvg": "kanji-vectors/09810.svg",
+    "hanViet": "DỰ",
+    "englishMeaning": "deposit, custody, leave with, entrust to",
+    "vietnameseMeaning": "gửi giữ, ký gửi, giao phó",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "ヨ"
+    ],
+    "kunyomi": [
+      "あず.ける",
+      "あず.かる"
+    ],
+    "category": [],
+    "lookalikes": [
+      "予",
+      "領",
+      "預金"
+    ],
+    "mnemonics": "Start with 予 (beforehand), then the head (頁)—entrust in advance and keep it safe.",
+    "vietMnemonics": "Chữ 予 là trước, thêm 頁 là cái đầu ghi nhớ: gửi trước để người ta DỰ trông coi.",
+    "frequency": 1319,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 預 DỰ = gửi giữ: chữ ghép từ 予, マ, 了, 亅 QUYẾT, 頁, 貝, 目 MỤC, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "焼",
+    "components": "焼, 火, 尭, 卉, 十, 廾, 丿, 兀, 一, 儿, 八",
+    "strokeOrderSvg": "kanji-vectors/0713c.svg",
+    "hanViet": "THIÊU",
+    "englishMeaning": "bake, burning",
+    "vietnameseMeaning": "nướng, thiêu đốt",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ショウ",
+      "ヤ.ケ"
+    ],
+    "kunyomi": [
+      "や.く",
+      "や.き",
+      "や.き-",
+      "-や.き"
+    ],
+    "category": [
+      "cooking-preparation-recipes"
+    ],
+    "lookalikes": [
+      "焦",
+      "熱",
+      "焼"
+    ],
+    "mnemonics": "Put 火 first, then the complex top—imagine flames licking up and baking the surface.",
+    "vietMnemonics": "Lửa 火 dưới, phần trên như miếng thịt: lửa táp lên là THIÊU nướng.",
+    "frequency": 441,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 焼 THIÊU = nướng: chữ ghép từ 火 HỎA, 尭, 卉, 十 THẬP, 廾, 丿 PHIỆT, 兀, 一 NHẤT, 儿 NHI, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "簡",
+    "components": "簡, 竹, 間, 門, 日",
+    "strokeOrderSvg": "kanji-vectors/07c21.svg",
+    "hanViet": "GIẢN",
+    "englishMeaning": "simplicity, brevity",
+    "vietnameseMeaning": "đơn giản, giản lược, ngắn gọn",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "カン"
+    ],
+    "kunyomi": [],
+    "category": [
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "housing-buildings-architecture"
+    ],
+    "lookalikes": [
+      "間",
+      "箇",
+      "管"
+    ],
+    "mnemonics": "Begin with bamboo (竹) notes, then 間—a simple, spaced arrangement makes things concise.",
+    "vietMnemonics": "Trúc 竹 làm thẻ, xếp theo khoảng 間: càng giản thì càng gọn.",
+    "frequency": 371,
+    "lucThu": "Hình thanh 形聲. 簡 GIẢN = đơn giản: gồm bộ 竹 TRÚC tre (TRÚC) chỉ nghĩa và 間 chỉ thanh, hợp lại thành chữ có nghĩa là đơn giản."
+  },
+  {
+    "kanji": "章",
+    "components": "章, 音, 立, 亠, 早, 日, 十",
+    "strokeOrderSvg": "kanji-vectors/07ae0.svg",
+    "hanViet": "CHƯƠNG",
+    "englishMeaning": "badge, chapter, composition, poem, design",
+    "vietnameseMeaning": "chương, huy chương, bài thơ, thiết kế",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ショ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-conditions",
+      "social-hierarchy-rank-class-status"
+    ],
+    "lookalikes": [
+      "童",
+      "章",
+      "章節"
+    ],
+    "mnemonics": "Crown the sound (音) over early (早)—a polished design becomes a chapter mark.",
+    "vietMnemonics": "Âm 音 đội lên 早 như sớm hoàn thiện: ra CHƯƠNG đánh dấu.",
+    "frequency": 709,
+    "lucThu": "Cần tra cứu. 章 CHƯƠNG = chương: chữ ghép từ 音, 立 LẬP, 亠 ĐẦU, 早, 日 NHẬT, 十 THẬP. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "臓",
+    "components": "臓, 月, 蔵, 艹, 厂, 戈, 弋, 臣, 丿, 丶, 肉, 艸",
+    "strokeOrderSvg": "kanji-vectors/081d3.svg",
+    "hanViet": "TẠNG",
+    "englishMeaning": "entrails, viscera, bowels",
+    "vietnameseMeaning": "nội tạng, phủ tạng",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ゾウ"
+    ],
+    "kunyomi": [
+      "はらわた"
+    ],
+    "category": [],
+    "lookalikes": [
+      "蔵",
+      "臓器",
+      "腸"
+    ],
+    "mnemonics": "Moon/flesh (月) plus storehouse (蔵)—organs are stored inside the body.",
+    "vietMnemonics": "Thịt 月 + kho 蔵: kho nội tạng cất bên trong cơ thể.",
+    "frequency": 1342,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 臓 TẠNG = nội tạng: chữ ghép từ 月 NGUYỆT, 蔵, 艹 THẢO, 厂, 戈, 弋, 臣, 丿 PHIỆT, 丶, 肉, 艸. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "律",
+    "components": "律, 彳, 亻, 聿, ⺕, 丨, 人, 彑",
+    "strokeOrderSvg": "kanji-vectors/05f8b.svg",
+    "hanViet": "LUẬT",
+    "englishMeaning": "rhythm, law, regulation, gauge, control",
+    "vietnameseMeaning": "luật, quy định, nhịp điệu",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "リツ",
+      "リチ",
+      "レ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "politics-law-government-police",
+      "arts-music-sports-culture-activities"
+    ],
+    "lookalikes": [
+      "律",
+      "律動",
+      "律法"
+    ],
+    "mnemonics": "Step (彳) then brush (聿)—laws are written to guide steps.",
+    "vietMnemonics": "Bước彳 rồi bút聿: viết ra để bước theo LUẬT.",
+    "frequency": 882,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 律 LUẬT = luật: chữ ghép từ 彳 XÍCH, 亻 NHÂN, 聿 DUẬT, ⺕, 丨 CỔN, 人 NHÂN, 彑. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "贈",
+    "components": "贈, 貝, 目, 八, 曽, 田, 日, 曾",
+    "strokeOrderSvg": "kanji-vectors/08d08.svg",
+    "hanViet": "TẶNG",
+    "englishMeaning": "presents, send, give to, award to, confer on, presenting something",
+    "vietnameseMeaning": "tặng, trao, biếu",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ゾウ",
+      "ソウ"
+    ],
+    "kunyomi": [
+      "おく.る"
+    ],
+    "category": [
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "housing-buildings-architecture",
+      "verbs-action",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "social-cooperation-conflict-interaction"
+    ],
+    "lookalikes": [
+      "増",
+      "賞",
+      "贈与"
+    ],
+    "mnemonics": "Shell/money (貝) under 曾—offer valuables to confer a gift.",
+    "vietMnemonics": "貝 là vật quý, 曾 như nhiều lớp: trao đi là TẶNG.",
+    "frequency": 1089,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 贈 TẶNG = tặng: chữ ghép từ 貝, 目 MỤC, 八 BÁT, 曽, 田 ĐIỀN, 日 NHẬT, 曾. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "照",
+    "components": "照, 昭, 日, 召, 刀, 口, 灬, 火",
+    "strokeOrderSvg": "kanji-vectors/07167.svg",
+    "hanViet": "CHIẾU",
+    "englishMeaning": "illuminate, shine, compare, bashful",
+    "vietnameseMeaning": "chiếu sáng, soi, soi chiếu",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ショウ",
+      "テ.レ"
+    ],
+    "kunyomi": [
+      "て.る",
+      "て.らす"
+    ],
+    "category": [],
+    "lookalikes": [
+      "昭",
+      "照",
+      "照明"
+    ],
+    "mnemonics": "Sun (日) first, then bright (昭)—light shines and compares shadows.",
+    "vietMnemonics": "Mặt trời 日 rồi chữ sáng 昭: chiếu lên là rõ.",
+    "frequency": 742,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 照 CHIẾU = chiếu sáng: chữ ghép từ 昭, 日 NHẬT, 召, 刀 ĐAO, 口 KHẨU, 灬 HỎA, 火 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "薄",
+    "components": "薄, 艹, 溥, 氵, 尃, 甫, 専, 用, 丶, 寸, 艸, 水",
+    "strokeOrderSvg": "kanji-vectors/08584.svg",
+    "hanViet": "BẠC, BÁC",
+    "englishMeaning": "dilute, thin, weak (tea)",
+    "vietnameseMeaning": "mỏng, nhạt, loãng",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ハク"
+    ],
+    "kunyomi": [
+      "うす.い",
+      "うす-",
+      "-うす",
+      "うす.める",
+      "うす.まる",
+      "うす.らぐ",
+      "うす.ら-",
+      "うす.れる",
+      "すすき"
+    ],
+    "category": [
+      "adjectives-conditions",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "簿",
+      "薄",
+      "薄い"
+    ],
+    "mnemonics": "Grass top (艹) then a wide spread—thin leaves, thin flavor.",
+    "vietMnemonics": "Cỏ 艹 phủ nhẹ: lá mỏng, vị nhạt, BẠC như trà loãng.",
+    "frequency": 1005,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 薄 BẠC = mỏng: chữ ghép từ 艹 THẢO, 溥, 氵 THỦY, 尃, 甫 PHỦ, 専, 用, 丶, 寸, 艸, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "群",
+    "components": "群, 君, 尹, ⺕, 尸, 丿, 口, 羊, 䒑, 彑",
+    "strokeOrderSvg": "kanji-vectors/07fa4.svg",
+    "hanViet": "QUẦN",
+    "englishMeaning": "flock, group, crowd, herd, swarm, cluster",
+    "vietnameseMeaning": "bầy đàn, nhóm, tụ tập",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "グン",
+      "ムラ.ガ"
+    ],
+    "kunyomi": [
+      "む.れる",
+      "む.れ",
+      "むら"
+    ],
+    "category": [
+      "social-organizations-groups-associations"
+    ],
+    "lookalikes": [
+      "君",
+      "派",
+      "羊"
+    ],
+    "mnemonics": "Sheep (羊) gather under a leader (君)—a flock becomes a group.",
+    "vietMnemonics": "Dê 羊 tụ dưới ‘quân’ 君: hợp lại thành QUẦN, một bầy.",
+    "frequency": 974,
+    "lucThu": "Hình thanh 形聲. 群 QUẦN = bầy đàn: gồm bộ 口 KHẨU miệng (KHẨU) chỉ nghĩa và 君 QUÂN chỉ thanh, hợp lại thành chữ có nghĩa là bầy đàn."
+  },
+  {
+    "kanji": "秒",
+    "components": "秒, 禾, 丿, 木, 少, 小",
+    "strokeOrderSvg": "kanji-vectors/079d2.svg",
+    "hanViet": "MIỂU, MIỄU",
+    "englishMeaning": "second (1, 60 minute)",
+    "vietnameseMeaning": "giây (đơn vị thời gian)",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ビョウ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "砂",
+      "秒",
+      "妙"
+    ],
+    "mnemonics": "Grain (禾) then small (少)—tiny grains like seconds ticking by.",
+    "vietMnemonics": "Lúa 禾 + ít 少: hạt tí xíu như từng ‘giây’ trôi.",
+    "frequency": 1274,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 秒 MIỂU = giây (đơn vị thời gian): chữ ghép từ 禾 HÒA, 丿 PHIỆT, 木 MỘC, 少, 小 TIỂU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "奥",
+    "components": "奥, 丿, 冂, 米, 大, 幺",
+    "strokeOrderSvg": "kanji-vectors/05965.svg",
+    "hanViet": "ÁO, ÚC",
+    "englishMeaning": "heart, interior",
+    "vietnameseMeaning": "bên trong, thâm sâu, nội tâm",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "オウ",
+      "オク",
+      "ク"
+    ],
+    "kunyomi": [
+      "おく.まる"
+    ],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency",
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "屋",
+      "奥",
+      "沖"
+    ],
+    "mnemonics": "Start broad (大), then layers of grains (米) and threads (幺)—deeper and deeper into the interior.",
+    "vietMnemonics": "Nét lớn 大 rồi gạo 米, sợi 幺: đi sâu vào bên trong, ÁO nghĩa thâm sâu.",
+    "frequency": 911,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 奥 ÁO = bên trong: chữ ghép từ 丿 PHIỆT, 冂 QUYNH, 米 MỄ, 大 ĐẠI, 幺 YẾU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "詰",
+    "components": "詰, 言, 口, 吉, 士, 亼",
+    "strokeOrderSvg": "kanji-vectors/08a70.svg",
+    "hanViet": "CẬT",
+    "englishMeaning": "packed, close, pressed, reprove, rebuke, blame",
+    "vietnameseMeaning": "chất vấn, dồn ép, trách móc",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "キツ",
+      "キチ",
+      "ツ."
+    ],
+    "kunyomi": [
+      "つ.める",
+      "つ.め",
+      "-づ.め",
+      "つ.まる"
+    ],
+    "category": [],
+    "lookalikes": [
+      "詰",
+      "話",
+      "詰問"
+    ],
+    "mnemonics": "Words (言) pressed into a mouth (口) and gathered (亼)—to pack tight and grill with questions.",
+    "vietMnemonics": "Lời 言 dồn vào miệng 口, gom 亼: chất vấn đến CẬT.",
+    "frequency": 1022,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 詰 CẬT = chất vấn: chữ ghép từ 言 NGÔN, 口 KHẨU, 吉, 士, 亼. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "双",
+    "components": "双, 又",
+    "strokeOrderSvg": "kanji-vectors/053cc.svg",
+    "hanViet": "SONG",
+    "englishMeaning": "pair, set, comparison, counter for pairs",
+    "vietnameseMeaning": "đôi, cặp, song song",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ソウ",
+      "フタ"
+    ],
+    "kunyomi": [
+      "ふた",
+      "たぐい",
+      "ならぶ"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "対",
+      "双",
+      "参"
+    ],
+    "mnemonics": "Two hands (又 + 又) side by side—make a pair.",
+    "vietMnemonics": "Hai nét 又 như hai tay: ghép lại thành SONG đôi.",
+    "frequency": 1369,
+    "lucThu": "Cần tra cứu. 双 SONG = đôi: chữ ghép từ 又 HỮU. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "刺",
+    "components": "刺, 朿, 木, 冂, 刂, 刀",
+    "strokeOrderSvg": "kanji-vectors/0523a.svg",
+    "hanViet": "THÍCH, THỨ",
+    "englishMeaning": "thorn, pierce, stab, prick, sting, calling card",
+    "vietnameseMeaning": "gai, đâm chích, châm, thẻ danh thiếp",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [
+      "さ.す",
+      "さ.さる",
+      "さ.し",
+      "さし",
+      "とげ"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "vehicles-train-car-travel-transport-driving-moving",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "刺激",
+      "蚊",
+      "刺"
+    ],
+    "mnemonics": "Thorny frame (朿) then blade (刂)—a sharp sting or stab.",
+    "vietMnemonics": "Khung gai 朿 rồi dao 刂: chích một phát là THÍCH.",
+    "frequency": 959,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 刺 THÍCH = gai: chữ ghép từ 朿, 木 MỘC, 冂 QUYNH, 刂 ĐAO, 刀 ĐAO. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "純",
+    "components": "純, 糸, 屯, 丿, 屮, 凵",
+    "strokeOrderSvg": "kanji-vectors/07d14.svg",
+    "hanViet": "THUẦN, CHUẨN, ĐỒN, TRUY",
+    "englishMeaning": "genuine, purity, innocence, net (profit)",
+    "vietnameseMeaning": "thuần khiết, tinh khiết, trong sạch",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ジュ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "economics-finance-money-business",
+      "work-office-banking-legal",
+      "occupations-jobs-employment-company"
+    ],
+    "lookalikes": [
+      "純",
+      "純真",
+      "純度"
+    ],
+    "mnemonics": "Thread (糸) wrapped on a camp mark (屯)—a pure single strand.",
+    "vietMnemonics": "Sợi 糸 quấn gọn 屯: một sợi tinh khiết là THUẦN.",
+    "frequency": 928,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 純 THUẦN = thuần khiết: chữ ghép từ 糸 MỊCH, 屯, 丿 PHIỆT, 屮, 凵. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "翌",
+    "components": "翌, 羽, 立, 亠",
+    "strokeOrderSvg": "kanji-vectors/07fcc.svg",
+    "hanViet": "DỰC",
+    "englishMeaning": "the following, next",
+    "vietnameseMeaning": "ngày hôm sau, kế tiếp",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ヨク"
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "翌",
+      "翌日",
+      "翌年"
+    ],
+    "mnemonics": "Wings (羽) above a stand (立)—tomorrow flies in next.",
+    "vietMnemonics": "Cánh 羽 trên trụ 立: ngày kế tiếp bay tới là DỰC.",
+    "frequency": 1039,
+    "lucThu": "Cần tra cứu. 翌 DỰC = ngày hôm sau: chữ ghép từ 羽, 立 LẬP, 亠 ĐẦU. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "快",
+    "components": "快, 忄, 夬, 大, 人, 心",
+    "strokeOrderSvg": "kanji-vectors/05feb.svg",
+    "hanViet": "KHOÁI",
+    "englishMeaning": "cheerful, pleasant, agreeable, comfortable",
+    "vietnameseMeaning": "sảng khoái, dễ chịu, vui vẻ",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "カイ",
+      "ココロヨ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-appearance-personality",
+      "entertainment-games-hobby-relax"
+    ],
+    "lookalikes": [
+      "怪",
+      "恵",
+      "快"
+    ],
+    "mnemonics": "Heart radical (忄) first, then decisive 夬—a heart decisively feels pleasant.",
+    "vietMnemonics": "Tâm 忄 trước, rồi 夬 dứt khoát: cảm giác KHOÁI rõ rệt.",
+    "frequency": 655,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 快 KHOÁI = sảng khoái: chữ ghép từ 忄 TÂM, 夬, 大 ĐẠI, 人 NHÂN, 心 TÂM. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "片",
+    "components": "片",
+    "strokeOrderSvg": "kanji-vectors/07247.svg",
+    "hanViet": "PHIẾN",
+    "englishMeaning": "one-sided, leaf, sheet",
+    "vietnameseMeaning": "một bên, mảnh, tấm",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ヘン"
+    ],
+    "kunyomi": [
+      "かた-",
+      "かた"
+    ],
+    "category": [],
+    "lookalikes": [
+      "版",
+      "片",
+      "反"
+    ],
+    "mnemonics": "A split board—one half is a single sheet.",
+    "vietMnemonics": "Một nửa tấm ván: mảnh PHIẾN còn lại là một ‘tấm’.",
+    "frequency": 918,
+    "lucThu": "Cần tra cứu. 片 PHIẾN = một bên: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "敬",
+    "components": "敬, 苟, 艹, 句, 勹, 丿, 口, 攵, 𠂉, 乂, 艸, 攴",
+    "strokeOrderSvg": "kanji-vectors/0656c.svg",
+    "hanViet": "KÍNH",
+    "englishMeaning": "awe, respect, honor, revere",
+    "vietnameseMeaning": "kính trọng, tôn kính",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ケイ",
+      "キョウ",
+      "ウヤマ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "abstract-philosophy-truth-justice-virtue"
+    ],
+    "lookalikes": [
+      "警",
+      "驚",
+      "敬"
+    ],
+    "mnemonics": "Plant-like top then 攵—act respectfully; strokes finish with a gentle tap.",
+    "vietMnemonics": "Phần trên như cỏ, thêm 攵: hành động nhã nhặn thể hiện KÍNH.",
+    "frequency": 1320,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 敬 KÍNH = kính trọng: chữ ghép từ 苟, 艹 THẢO, 句, 勹, 丿 PHIỆT, 口 KHẨU, 攵 PHỘC, 𠂉 PHIẾU, 乂 NGHỆ, 艸, 攴. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "悩",
+    "components": "悩, 忄, ⺍, 凶, 乂, 丿, 凵, 心, つ, 囟",
+    "strokeOrderSvg": "kanji-vectors/060a9.svg",
+    "hanViet": "NÃO",
+    "englishMeaning": "trouble, worry, in pain, distress, illness",
+    "vietnameseMeaning": "phiền não, lo âu, khổ sở",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "ノウ"
+    ],
+    "kunyomi": [
+      "なや.む",
+      "なや.ます",
+      "なや.ましい",
+      "なやみ"
+    ],
+    "category": [],
+    "lookalikes": [
+      "脳",
+      "患",
+      "恋"
+    ],
+    "mnemonics": "Heart (忄) then a skull-top—mind aches with worries.",
+    "vietMnemonics": "Tâm 忄 cộng đầu 囟: đầu nặng lòng là NẢO phiền.",
+    "frequency": 768,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 悩 NÃO = phiền não: chữ ghép từ 忄 TÂM, ⺍ TRÚ, 凶, 乂 NGHỆ, 丿 PHIỆT, 凵, 心 TÂM, つ, 囟. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "泉",
+    "components": "泉, 白, 日, 水",
+    "strokeOrderSvg": "kanji-vectors/06cc9.svg",
+    "hanViet": "TUYỀN, TOÀN",
+    "englishMeaning": "spring, fountain",
+    "vietnameseMeaning": "suối, nguồn nước",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "セン",
+      "イズ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing"
+    ],
+    "lookalikes": [
+      "原",
+      "泉",
+      "源"
+    ],
+    "mnemonics": "White (白) atop water—pure spring bubbling from the source.",
+    "vietMnemonics": "Trắng 白 trên nước 水: mạch nguồn TUYỀN trong.",
+    "frequency": 546,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 泉 TUYỀN = suối: chữ ghép từ 白 BẠCH, 日 NHẬT, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "皮",
+    "components": "皮",
+    "strokeOrderSvg": "kanji-vectors/076ae.svg",
+    "hanViet": "BÌ",
+    "englishMeaning": "pelt, skin, hide, leather",
+    "vietnameseMeaning": "da, da thú, da thuộc",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [],
+    "kunyomi": [
+      "けがわ"
+    ],
+    "category": [
+      "food-ingredients-kitchen",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "彼",
+      "皺",
+      "皮"
+    ],
+    "mnemonics": "Peel back the surface—this pictograph shows a skin layer.",
+    "vietMnemonics": "Hình lớp da bóc ra: BÌ là bề mặt da.",
+    "frequency": 988,
+    "lucThu": "Cần tra cứu. 皮 BÌ = da: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "漁",
+    "components": "漁, 氵, 魚, 𠂊, 田, 灬, 水, 勹, 火",
+    "strokeOrderSvg": "kanji-vectors/06f01.svg",
+    "hanViet": "NGƯ",
+    "englishMeaning": "fishing, fishery",
+    "vietnameseMeaning": "đánh cá, ngư nghiệp",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ギョ",
+      "リョウ"
+    ],
+    "kunyomi": [
+      "あさ.る"
+    ],
+    "category": [
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "food-ingredients-kitchen",
+      "entertainment-games-hobby-relax",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "魚",
+      "漁港",
+      "漁師"
+    ],
+    "mnemonics": "Water (氵) plus fish (魚)—that’s fishing.",
+    "vietMnemonics": "Nước 氵 và cá 魚: ghép lại là nghề NGƯ.",
+    "frequency": 1400,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 漁 NGƯ = đánh cá: chữ ghép từ 氵 THỦY, 魚 NGƯ, 𠂊, 田 ĐIỀN, 灬 HỎA, 水 THỦY, 勹, 火 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "荒",
+    "components": "荒, 艹, 亡, 亠, 匸, 川, 艸, 匚, 巛, 巟",
+    "strokeOrderSvg": "kanji-vectors/08352.svg",
+    "hanViet": "HOANG",
+    "englishMeaning": "laid waste, rough, rude, wild",
+    "vietnameseMeaning": "hoang vu, thô ráp, dữ dội",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "コウ",
+      "スサ."
+    ],
+    "kunyomi": [
+      "あら.い",
+      "あら-",
+      "あ.れる",
+      "あ.らす",
+      "-あ.らし"
+    ],
+    "category": [
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "慌",
+      "荒",
+      "黄"
+    ],
+    "mnemonics": "Grass (艹) over a wild swirl—terrain laid waste and rough.",
+    "vietMnemonics": "Cỏ 艹 phủ lên nét cuộn hoang: đất HOANG dữ dội.",
+    "frequency": 1106,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 荒 HOANG = hoang vu: chữ ghép từ 艹 THẢO, 亡, 亠 ĐẦU, 匸, 川, 艸, 匚, 巛, 巟. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "貯",
+    "components": "貯, 貝, 目, 八, 宁, 宀, 冖, 丁, 一, 亅, 室",
+    "strokeOrderSvg": "kanji-vectors/08caf.svg",
+    "hanViet": "TRỮ",
+    "englishMeaning": "savings, store, lay in, keep, wear mustache",
+    "vietnameseMeaning": "tích trữ, tiết kiệm, gửi giữ",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "チョ"
+    ],
+    "kunyomi": [
+      "た.める",
+      "たくわ.える"
+    ],
+    "category": [
+      "clothing-fashion-dress-shoes-hat",
+      "verbs-basic",
+      "shopping-purchasing-commerce"
+    ],
+    "lookalikes": [
+      "貯",
+      "貝",
+      "蓄"
+    ],
+    "mnemonics": "Money shell (貝) under a house—store valuables inside.",
+    "vietMnemonics": "貝 là tiền, cất trong ‘phòng’ 室: TRỮ để dành.",
+    "frequency": 1133,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 貯 TRỮ = tích trữ: chữ ghép từ 貝, 目 MỤC, 八 BÁT, 宁, 宀 MIÊN, 冖 MỊCH, 丁, 一 NHẤT, 亅 QUYẾT, 室. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "硬",
+    "components": "硬, 石, 口, 更, 日, 乂, 丿",
+    "strokeOrderSvg": "kanji-vectors/0786c.svg",
+    "hanViet": "NGẠNH",
+    "englishMeaning": "stiff, hard",
+    "vietnameseMeaning": "cứng, rắn, cứng nhắc",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "コウ"
+    ],
+    "kunyomi": [
+      "かた.い"
+    ],
+    "category": [
+      "adjectives-conditions"
+    ],
+    "lookalikes": [
+      "梗",
+      "更",
+      "便"
+    ],
+    "mnemonics": "Stone (石) plus change (更) that won’t bend—hard and stiff.",
+    "vietMnemonics": "Đá 石 gặp 更 mà chẳng đổi: NGẠNH là cứng.",
+    "frequency": 1407,
+    "lucThu": "Hình thanh 形聲. 硬 NGẠNH = cứng: gồm bộ 口 KHẨU miệng (KHẨU) chỉ nghĩa và 乂 NGHỆ chỉ thanh, hợp lại thành chữ có nghĩa là cứng."
+  },
+  {
+    "kanji": "埋",
+    "components": "埋, 土, 里, 日",
+    "strokeOrderSvg": "kanji-vectors/057cb.svg",
+    "hanViet": "MAI",
+    "englishMeaning": "bury, be filled up, embedded",
+    "vietnameseMeaning": "chôn, lấp, lấp đầy, chôn vùi",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "マイ"
+    ],
+    "kunyomi": [
+      "う.める",
+      "う.まる",
+      "う.もれる",
+      "うず.める",
+      "うず.まる",
+      "い.ける"
+    ],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "理",
+      "埋",
+      "重"
+    ],
+    "mnemonics": "Soil (土) over village (里)—fill earth to bury and embed.",
+    "vietMnemonics": "Đất 土 đổ lên 里: MAI là chôn lấp.",
+    "frequency": 1348,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 埋 MAI = chôn: chữ ghép từ 土 THỔ, 里 LÝ, 日 NHẬT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "柱",
+    "components": "柱, 木, 主, 丶, 王, 玉",
+    "strokeOrderSvg": "kanji-vectors/067f1.svg",
+    "hanViet": "TRỤ, TRÚ",
+    "englishMeaning": "pillar, post, cylinder, support",
+    "vietnameseMeaning": "cột, trụ, nâng đỡ",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "チュウ"
+    ],
+    "kunyomi": [
+      "はしら"
+    ],
+    "category": [
+      "mail-post-delivery-tracking-shipping"
+    ],
+    "lookalikes": [
+      "注",
+      "柱",
+      "主"
+    ],
+    "mnemonics": "Tree (木) with a dot of main (主)—the main support pillar.",
+    "vietMnemonics": "Gỗ 木 và chủ 主: cột TRỤ chính nhà.",
+    "frequency": 1484,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 柱 TRỤ = cột: chữ ghép từ 木 MỘC, 主, 丶, 王, 玉 NGỌC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "祭",
+    "components": "祭, 月, 示, 又, 肉",
+    "strokeOrderSvg": "kanji-vectors/0796d.svg",
+    "hanViet": "TẾ, SÁI",
+    "englishMeaning": "ritual, offer prayers, celebrate, deify, enshrine, worship",
+    "vietnameseMeaning": "lễ tế, nghi lễ, cúng bái",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "サイ"
+    ],
+    "kunyomi": [
+      "まつ.る",
+      "まつ.り",
+      "まつり"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "vehicles-train-car-travel-transport-driving-moving"
+    ],
+    "lookalikes": [
+      "察",
+      "祭",
+      "際"
+    ],
+    "mnemonics": "Altar (示) plus offerings—hands (又) and meat (肉)—a ritual festival.",
+    "vietMnemonics": "Bàn thờ 示, tay 又 dâng đồ (肉): TẾ lễ hội.",
+    "frequency": 730,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 祭 TẾ = lễ tế: chữ ghép từ 月 NGUYỆT, 示, 又 HỮU, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "袋",
+    "components": "袋, 代, 亻, 弋, 丶, 衣, 亠, 人",
+    "strokeOrderSvg": "kanji-vectors/0888b.svg",
+    "hanViet": "ĐẠI",
+    "englishMeaning": "sack, bag, pouch",
+    "vietnameseMeaning": "túi, bao, túi vải",
+    "jlptLevel": "N2",
+    "gradeLevel": "7",
+    "onyomi": [
+      "タイ",
+      "ダイ",
+      "フク"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "被",
+      "服",
+      "袋"
+    ],
+    "mnemonics": "Clothes (衣) with 代—a bag as a substitute cloth pouch.",
+    "vietMnemonics": "Áo 衣 + thay thế 代: túi vải dùng để đựng đồ.",
+    "frequency": 789,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 袋 ĐẠI = túi: chữ ghép từ 代, 亻 NHÂN, 弋, 丶, 衣, 亠 ĐẦU, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "筆",
+    "components": "筆, 竹, 聿, ⺕, 丨, 彑",
+    "strokeOrderSvg": "kanji-vectors/07b46.svg",
+    "hanViet": "BÚT",
+    "englishMeaning": "writing brush, writing, painting brush, handwriting",
+    "vietnameseMeaning": "bút lông, viết, bút tích",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ヒツ",
+      "フ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency",
+      "arts-music-sports-culture-activities"
+    ],
+    "lookalikes": [
+      "聿",
+      "算",
+      "管"
+    ],
+    "mnemonics": "Bamboo (竹) plus brush (聿)—a bamboo-handled writing brush.",
+    "vietMnemonics": "Thân tre 竹 gắn đầu bút 聿: BÚT lông để viết.",
+    "frequency": 1071,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 筆 BÚT = bút lông: chữ ghép từ 竹 TRÚC, 聿 DUẬT, ⺕, 丨 CỔN, 彑. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "訓",
+    "components": "訓, 言, 口, 川, 巛",
+    "strokeOrderSvg": "kanji-vectors/08a13.svg",
+    "hanViet": "HUẤN",
+    "englishMeaning": "instruction, Japanese character reading, explanation, read",
+    "vietnameseMeaning": "huấn luyện, giải nghĩa, cách đọc",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "クン",
+      "キン",
+      "クン.ズ"
+    ],
+    "kunyomi": [
+      "おし.える",
+      "よ.む"
+    ],
+    "category": [
+      "media-writing-journalism-internet-newspaper-news",
+      "phone-call-communication-interview-dialog",
+      "verbs-action"
+    ],
+    "lookalikes": [
+      "訳",
+      "訓",
+      "訓読み"
+    ],
+    "mnemonics": "Words (言) flow like a river (川)—train by repeated explanations.",
+    "vietMnemonics": "Lời 言 chảy như sông 川: HUẤN là dạy cách đọc.",
+    "frequency": 1306,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 訓 HUẤN = huấn luyện: chữ ghép từ 言 NGÔN, 口 KHẨU, 川, 巛. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "浴",
+    "components": "浴, 氵, 谷, 口, 水",
+    "strokeOrderSvg": "kanji-vectors/06d74.svg",
+    "hanViet": "DỤC",
+    "englishMeaning": "bathe, be favored with, bask in",
+    "vietnameseMeaning": "tắm, đắm mình, hưởng thụ",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ヨク",
+      "ア.ビセ"
+    ],
+    "kunyomi": [
+      "あ.びる"
+    ],
+    "category": [
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "verbs-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "容",
+      "谷",
+      "浴"
+    ],
+    "mnemonics": "Water (氵) into a valley (谷)—bathe in the basin.",
+    "vietMnemonics": "Nước 氵 chảy vào thung 谷: DỤC là tắm.",
+    "frequency": 891,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 浴 DỤC = tắm: chữ ghép từ 氵 THỦY, 谷, 口 KHẨU, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "童",
+    "components": "童, 立, 亠, 里, 日",
+    "strokeOrderSvg": "kanji-vectors/07ae5.svg",
+    "hanViet": "ĐỒNG",
+    "englishMeaning": "juvenile, child",
+    "vietnameseMeaning": "thiếu nhi, trẻ em",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ドウ",
+      "ワラ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "章",
+      "童",
+      "童話"
+    ],
+    "mnemonics": "Stand (立) above village (里)—a child standing in the community.",
+    "vietMnemonics": "立 trên 里: ĐỒNG là trẻ trong làng.",
+    "frequency": 1143,
+    "lucThu": "Cần tra cứu. 童 ĐỒNG = thiếu nhi: chữ ghép từ 立 LẬP, 亠 ĐẦU, 里 LÝ, 日 NHẬT. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "宝",
+    "components": "宝, 宀, 冖, 玉, 王, 丶",
+    "strokeOrderSvg": "kanji-vectors/05b9d.svg",
+    "hanViet": "BẢO",
+    "englishMeaning": "treasure, wealth, valuables",
+    "vietnameseMeaning": "bảo vật, châu báu, của quý",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ホウ",
+      "タカ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "玉",
+      "守",
+      "宝"
+    ],
+    "mnemonics": "Roof (宀) over a jewel (玉)—treasure kept at home.",
+    "vietMnemonics": "Mái 宀 che viên ngọc 玉: đó là BẢO vật.",
+    "frequency": 972,
+    "lucThu": "Cần tra cứu. 宝 BẢO = bảo vật: chữ ghép từ 宀 MIÊN, 冖 MỊCH, 玉 NGỌC, 王, 丶. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "封",
+    "components": "封, 圭, 土, 寸",
+    "strokeOrderSvg": "kanji-vectors/05c01.svg",
+    "hanViet": "PHONG",
+    "englishMeaning": "seal, closing",
+    "vietnameseMeaning": "niêm phong, phong ấn, đóng kín",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "フウ",
+      "ホウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
+    ],
+    "lookalikes": [
+      "封",
+      "封印",
+      "島"
+    ],
+    "mnemonics": "圭 then 寸—press the seal with a measured hand.",
+    "vietMnemonics": "圭 như khối đất, thêm 寸 là tay: ấn một cái là PHONG.",
+    "frequency": 1253,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 封 PHONG = niêm phong: chữ ghép từ 圭, 土 THỔ, 寸. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "胸",
+    "components": "胸, 月, 匈, 勹, 丿, 凶, 乂, 凵, 肉",
+    "strokeOrderSvg": "kanji-vectors/080f8.svg",
+    "hanViet": "HUNG",
+    "englishMeaning": "bosom, breast, chest, heart, feelings",
+    "vietnameseMeaning": "ngực, lồng ngực, tâm can",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "キョウ"
+    ],
+    "kunyomi": [
+      "むね",
+      "むな-"
+    ],
+    "category": [
+      "economics-finance-money-business",
+      "work-office-banking-legal",
+      "occupations-jobs-employment-company",
+      "emotions-feelings-happiness-love-states",
+      "directions-positions-navigation"
+    ],
+    "lookalikes": [
+      "胴",
+      "恩",
+      "匈"
+    ],
+    "mnemonics": "Flesh (月) plus a boxed breath—chest holds feelings.",
+    "vietMnemonics": "Nhục 月 kèm hơi thở: HUNG là vùng ngực chứa cảm xúc.",
+    "frequency": 1168,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 胸 HUNG = ngực: chữ ghép từ 月 NGUYỆT, 匈, 勹, 丿 PHIỆT, 凶, 乂 NGHỆ, 凵, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "砂",
+    "components": "砂, 石, 口, 少, 小, 丿",
+    "strokeOrderSvg": "kanji-vectors/07802.svg",
+    "hanViet": "SA",
+    "englishMeaning": "sand",
+    "vietnameseMeaning": "cát, hạt cát",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "サ",
+      "シャ",
+      "ス"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "砂",
+      "秒",
+      "沙"
+    ],
+    "mnemonics": "Stone (石) into small (少) bits—sand grains.",
+    "vietMnemonics": "Đá 石 vụn thành 少: SA là cát.",
+    "frequency": 1040,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 砂 SA = cát: chữ ghép từ 石 THẠCH, 口 KHẨU, 少, 小 TIỂU, 丿 PHIỆT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "塩",
+    "components": "塩, 土, 𠂉, 口, 皿, 鹵",
+    "strokeOrderSvg": "kanji-vectors/05869.svg",
+    "hanViet": "DIÊM",
+    "englishMeaning": "salt",
+    "vietnameseMeaning": "muối",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "エン"
+    ],
+    "kunyomi": [
+      "しお"
+    ],
+    "category": [],
+    "lookalikes": [
+      "監",
+      "皿",
+      "鹵"
+    ],
+    "mnemonics": "Soil (土) and dish (皿) with brine radical—salt on a plate.",
+    "vietMnemonics": "Đất 土 + đĩa 皿 + muối 鹵: DIÊM là muối ăn.",
+    "frequency": 990,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 塩 DIÊM = muối: chữ ghép từ 土 THỔ, 𠂉 PHIẾU, 口 KHẨU, 皿, 鹵. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "賢",
+    "components": "賢, 臣, 又, 貝, 目, 八",
+    "strokeOrderSvg": "kanji-vectors/08ce2.svg",
+    "hanViet": "HIỀN",
+    "englishMeaning": "intelligent, wise, wisdom, cleverness",
+    "vietnameseMeaning": "hiền tài, thông minh, khôn ngoan",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ケン",
+      "カシコ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "education-academic-learning-levels-school-research",
+      "occupations-jobs-employment-company",
+      "media-writing-journalism-internet-newspaper-news",
+      "phone-call-communication-interview-dialog",
+      "adjectives-appearance-personality"
+    ],
+    "lookalikes": [
+      "腎",
+      "見",
+      "賞"
+    ],
+    "mnemonics": "Servant (臣) and eye (目) over shell (貝)—value wise seeing.",
+    "vietMnemonics": "Thần 臣, mắt 目, vật quý 貝: HIỀN là người ‘thấy’ điều quý.",
+    "frequency": 1386,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 賢 HIỀN = hiền tài: chữ ghép từ 臣, 又 HỮU, 貝, 目 MỤC, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "腕",
+    "components": "腕, 月, 宛, 宀, 冖, 夗, 夕, 卩, 肉",
+    "strokeOrderSvg": "kanji-vectors/08155.svg",
+    "hanViet": "OẢN, UYỂN",
+    "englishMeaning": "arm, ability, talent",
+    "vietnameseMeaning": "cánh tay, tay nghề, tài cán",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ワン"
+    ],
+    "kunyomi": [
+      "うで"
+    ],
+    "category": [
+      "abstract-qualities-attributes-characteristics"
+    ],
+    "lookalikes": [
+      "湾",
+      "宛",
+      "腕"
+    ],
+    "mnemonics": "Flesh (月) plus bend (宛)—the arm bends with skill.",
+    "vietMnemonics": "Nhục 月 cộng dáng cong 宛: cánh tay khéo—tay nghề.",
+    "frequency": 1125,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 腕 OẢN = cánh tay: chữ ghép từ 月 NGUYỆT, 宛, 宀 MIÊN, 冖 MỊCH, 夗, 夕 TỊCH, 卩, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "兆",
+    "components": "兆, 儿, 丿, 冫, 八, 一",
+    "strokeOrderSvg": "kanji-vectors/05146.svg",
+    "hanViet": "TRIỆU",
+    "englishMeaning": "portent, 10**12, trillion, sign, omen, symptoms",
+    "vietnameseMeaning": "điềm báo, triệu chứng, đơn vị ‘triệu’ (trillion)",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "チョウ"
+    ],
+    "kunyomi": [
+      "きざ.す",
+      "きざ.し"
+    ],
+    "category": [],
+    "lookalikes": [
+      "兆",
+      "逃",
+      "眺"
+    ],
+    "mnemonics": "Two legs and a line—signs that point ahead.",
+    "vietMnemonics": "Hai chân 儿 và một vạch: báo hiệu TRIỆU (điềm) xuất hiện.",
+    "frequency": 1709,
+    "lucThu": "Cần tra cứu. 兆 TRIỆU = điềm báo: chữ ghép từ 儿 NHI, 丿 PHIỆT, 冫, 八 BÁT, 一 NHẤT. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "床",
+    "components": "床, 广, 厂, 木, 尙",
+    "strokeOrderSvg": "kanji-vectors/05e8a.svg",
+    "hanViet": "SÀNG",
+    "englishMeaning": "bed, floor, padding, tatami",
+    "vietnameseMeaning": "giường, sàn, chiếu",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ショウ"
+    ],
+    "kunyomi": [
+      "とこ",
+      "ゆか"
+    ],
+    "category": [
+      "housing-buildings-architecture",
+      "construction-engineering-technology",
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "床",
+      "床屋",
+      "病"
+    ],
+    "mnemonics": "Wood (木) base yields bed—the floor you lie upon.",
+    "vietMnemonics": "Gỗ 木 làm nền: SÀNG là sàn, giường chiếu.",
+    "frequency": 1122,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 床 SÀNG = giường: chữ ghép từ 广, 厂, 木 MỘC, 尙. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "毛",
+    "components": "毛",
+    "strokeOrderSvg": "kanji-vectors/06bdb.svg",
+    "hanViet": "MAO, MÔ",
+    "englishMeaning": "fur, hair, feather, down",
+    "vietnameseMeaning": "lông, tóc, lông vũ",
+    "jlptLevel": "N2",
+    "gradeLevel": "2",
+    "onyomi": [
+      "モウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "food-ingredients-kitchen",
+      "verbs-action",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "手",
+      "少",
+      "毫"
+    ],
+    "mnemonics": "Pictograph of a hair—wispy lines.",
+    "vietMnemonics": "Nét tượng hình sợi lông: MAO là lông/tóc.",
+    "frequency": 694,
+    "lucThu": "Cần tra cứu. 毛 MAO = lông: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "緑",
+    "components": "緑, 糸, 彔, ⺕, 氺, 彑, 水, 录",
+    "strokeOrderSvg": "kanji-vectors/07dd1.svg",
+    "hanViet": "LỤC",
+    "englishMeaning": "green",
+    "vietnameseMeaning": "màu xanh lục",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "リョク",
+      "ロク"
+    ],
+    "kunyomi": [
+      "みどり"
+    ],
+    "category": [
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "録",
+      "緑",
+      "率"
+    ],
+    "mnemonics": "Thread (糸) dyed by 录—a green strand.",
+    "vietMnemonics": "Sợi 糸 nhuộm 录: thành màu LỤC.",
+    "frequency": 1014,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 緑 LỤC = màu xanh lục: chữ ghép từ 糸 MỊCH, 彔, ⺕, 氺, 彑, 水 THỦY, 录. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "尊",
+    "components": "尊, 酋, 八, 酉, 西, 一, 寸, 襾",
+    "strokeOrderSvg": "kanji-vectors/05c0a.svg",
+    "hanViet": "TÔN",
+    "englishMeaning": "revered, valuable, precious, noble, exalted",
+    "vietnameseMeaning": "tôn kính, cao quý, đáng giá",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ソン",
+      "トウト."
+    ],
+    "kunyomi": [
+      "たっと.い",
+      "とうと.い",
+      "たっと.ぶ"
+    ],
+    "category": [
+      "politics-law-government-police",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "尊",
+      "酔",
+      "寸"
+    ],
+    "mnemonics": "Chief brew (酋) and a measured hand (寸)—hold something in high esteem.",
+    "vietMnemonics": "酋 như thủ lĩnh, thêm 寸 là tay: nâng lên là TÔN kính.",
+    "frequency": 1370,
+    "lucThu": "Cần tra cứu. 尊 TÔN = tôn kính: chữ ghép từ 酋, 八 BÁT, 酉, 西, 一 NHẤT, 寸, 襾. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "祝",
+    "components": "祝, 礻, 兄, 口, 儿, 丿, 示, 八",
+    "strokeOrderSvg": "kanji-vectors/0795d.svg",
+    "hanViet": "CHÚC, CHÚ",
+    "englishMeaning": "celebrate, congratulate",
+    "vietnameseMeaning": "chúc mừng, cầu chúc",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "シュク",
+      "シュウ",
+      "イワ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count"
+    ],
+    "lookalikes": [
+      "祉",
+      "祈",
+      "祝"
+    ],
+    "mnemonics": "Altar (礻) and older brother (兄)—offer blessings and celebrate.",
+    "vietMnemonics": "礻 bàn thờ + 兄 người anh: CHÚC mừng, cầu phúc.",
+    "frequency": 856,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 祝 CHÚC = chúc mừng: chữ ghép từ 礻, 兄, 口 KHẨU, 儿 NHI, 丿 PHIỆT, 示, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "柔",
+    "components": "柔, 矛, 予, マ, 了, 亅, 丿, 木",
+    "strokeOrderSvg": "kanji-vectors/067d4.svg",
+    "hanViet": "NHU",
+    "englishMeaning": "tender, weakness, gentleness, softness",
+    "vietnameseMeaning": "mềm, nhu hòa, dịu dàng",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ジュウ",
+      "ニュウ",
+      "ヤワ."
+    ],
+    "kunyomi": [
+      "やわ.らか",
+      "やわ.らかい",
+      "やわ"
+    ],
+    "category": [
+      "adjectives-conditions",
+      "adjectives-appearance-personality"
+    ],
+    "lookalikes": [
+      "茹",
+      "矛",
+      "柔"
+    ],
+    "mnemonics": "Spear (矛) and wood (木)—bend the spear gently: soft.",
+    "vietMnemonics": "矛 mũi giáo đặt lên 木 gỗ: uốn khéo là NHU.",
+    "frequency": 1214,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 柔 NHU = mềm: chữ ghép từ 矛, 予, マ, 了, 亅 QUYẾT, 丿 PHIỆT, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "殿",
+    "components": "殿, 尸, 共, 八, 殳, 几, 丿, 又, 𡈽",
+    "strokeOrderSvg": "kanji-vectors/06bbf.svg",
+    "hanViet": "ĐIỆN, ĐIẾN",
+    "englishMeaning": "Mr., hall, mansion, palace, temple, lord",
+    "vietnameseMeaning": "điện, phủ, cung, tôn xưng ‘ngài’",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "デン",
+      "テン",
+      "-ド"
+    ],
+    "kunyomi": [
+      "との"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "殷",
+      "殿",
+      "殻"
+    ],
+    "mnemonics": "Weapon (殳) and vast enclosure—grand hall for a lord.",
+    "vietMnemonics": "殳 kèm khuôn lớn: ĐIỆN là phủ đường của ‘ngài’.",
+    "frequency": 1310,
+    "lucThu": "Cần tra cứu. 殿 ĐIỆN = điện: chữ ghép từ 尸, 共, 八 BÁT, 殳, 几, 丿 PHIỆT, 又 HỮU, 𡈽. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "濃",
+    "components": "濃, 氵, 農, 曲, 日, 廾, 丿, 十, 辰, 厂, 水",
+    "strokeOrderSvg": "kanji-vectors/06fc3.svg",
+    "hanViet": "NỒNG, NÙNG",
+    "englishMeaning": "concentrated, thick, dark, undiluted",
+    "vietnameseMeaning": "đậm đặc, sánh, nồng",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ノウ",
+      "コ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "農",
+      "濁",
+      "濃"
+    ],
+    "mnemonics": "Water (氵) plus agriculture (農)—rich, thick fluids.",
+    "vietMnemonics": "Nước 氵 hòa chữ 農: vị NỒNG, sánh đậm.",
+    "frequency": 1081,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 濃 NỒNG = đậm đặc: chữ ghép từ 氵 THỦY, 農, 曲, 日 NHẬT, 廾, 丿 PHIỆT, 十 THẬP, 辰, 厂, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "液",
+    "components": "液, 氵, 夜, 亠, 亻, 夕, 水, 人",
+    "strokeOrderSvg": "kanji-vectors/06db2.svg",
+    "hanViet": "DỊCH",
+    "englishMeaning": "fluid, liquid, juice, sap, secretion",
+    "vietnameseMeaning": "chất lỏng, dung dịch, dịch thể",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "エキ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "drinking-beverages-alcohol",
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "夜",
+      "液",
+      "役"
+    ],
+    "mnemonics": "Water (氵) at night (夜)—fluids and secretions.",
+    "vietMnemonics": "Nước 氵 đi với 夜: DỊCH là chất lỏng.",
+    "frequency": 931,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 液 DỊCH = chất lỏng: chữ ghép từ 氵 THỦY, 夜, 亠 ĐẦU, 亻 NHÂN, 夕 TỊCH, 水 THỦY, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "衣",
+    "components": "衣, 亠",
+    "strokeOrderSvg": "kanji-vectors/08863.svg",
+    "hanViet": "Y, Ý",
+    "englishMeaning": "garment, clothes, dressing",
+    "vietnameseMeaning": "y phục, quần áo, mặc diện",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "イ",
+      "エ"
+    ],
+    "kunyomi": [
+      "ころも",
+      "きぬ",
+      "-ぎ"
+    ],
+    "category": [
+      "clothing-fashion-dress-shoes-hat"
+    ],
+    "lookalikes": [
+      "依",
+      "表",
+      "衣"
+    ],
+    "mnemonics": "A pictograph of clothing—draped fabric.",
+    "vietMnemonics": "Hình vải áo khoác: Y = quần áo mặc.",
+    "frequency": 998,
+    "lucThu": "Cần tra cứu. 衣 Y = y phục: chữ ghép từ 亠 ĐẦU. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "肩",
+    "components": "肩, 戸, 月, 肉, 戶",
+    "strokeOrderSvg": "kanji-vectors/080a9.svg",
+    "hanViet": "KIÊN",
+    "englishMeaning": "shoulder",
+    "vietnameseMeaning": "vai, bả vai",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ケン"
+    ],
+    "kunyomi": [
+      "かた"
+    ],
+    "category": [],
+    "lookalikes": [
+      "肩",
+      "肩書",
+      "肩幅"
+    ],
+    "mnemonics": "Flesh (月) with a door frame—shoulder aligns the frame.",
+    "vietMnemonics": "Nhục 月 dựa khung cửa 戶: vai là điểm tựa thân.",
+    "frequency": 1205,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 肩 KIÊN = vai: chữ ghép từ 戸, 月 NGUYỆT, 肉, 戶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "零",
+    "components": "零, 雨, 令, 人, 一, マ",
+    "strokeOrderSvg": "kanji-vectors/096f6.svg",
+    "hanViet": "LINH",
+    "englishMeaning": "zero, spill, overflow, nothing, cipher",
+    "vietnameseMeaning": "số không, rơi rớt, vương vãi",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "レイ"
+    ],
+    "kunyomi": [
+      "ぜろ",
+      "こぼ.す",
+      "こぼ.れる"
+    ],
+    "category": [
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "霊",
+      "零",
+      "零下"
+    ],
+    "mnemonics": "Rain (雨) under command (令)—drops spill to zero.",
+    "vietMnemonics": "Mưa 雨 theo lệnh 令: rơi rớt lẻ tẻ—LINH = số không.",
+    "frequency": 1876,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 零 LINH = số không: chữ ghép từ 雨 VŨ, 令 LỆNH, 人 NHÂN, 一 NHẤT, マ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "幼",
+    "components": "幼, 幺, 力",
+    "strokeOrderSvg": "kanji-vectors/05e7c.svg",
+    "hanViet": "ẤU",
+    "englishMeaning": "infancy, childhood",
+    "vietnameseMeaning": "ấu thơ, nhỏ bé",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ヨウ",
+      "オサナ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "幺",
+      "力",
+      "幼"
+    ],
+    "mnemonics": "Tiny thread (幺) with small strength (力)—early childhood.",
+    "vietMnemonics": "幺 sợi nhỏ, 力 lực yếu: ẤU thời bé bỏng.",
+    "frequency": 1030,
+    "lucThu": "Cần tra cứu. 幼 ẤU = ấu thơ: chữ ghép từ 幺 YẾU, 力 LỰC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "荷",
+    "components": "荷, 艹, 何, 亻, 可, 丁, 一, 口, 亅, 艸, 人",
+    "strokeOrderSvg": "kanji-vectors/08377.svg",
+    "hanViet": "HÀ",
+    "englishMeaning": "baggage, shoulder-pole load, bear (a burden), shoulder (a gun), load, cargo, freight",
+    "vietnameseMeaning": "hành lý, gánh vác, hàng hóa",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "カ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "vehicles-train-car-travel-transport-driving-moving",
+      "verbs-basic",
+      "mail-post-delivery-tracking-shipping"
+    ],
+    "lookalikes": [
+      "何",
+      "荷",
+      "荷物"
+    ],
+    "mnemonics": "Grass (艹) plus 何—load carried under foliage.",
+    "vietMnemonics": "艹 cỏ + 何: HÀ (hàng) chất thành gánh.",
+    "frequency": 645,
+    "lucThu": "Hình thanh 形聲. 荷 HÀ = hành lý: gồm bộ 艹 THẢO cỏ (THẢO) chỉ nghĩa và 何 chỉ thanh, hợp lại thành chữ có nghĩa là hành lý."
+  },
+  {
+    "kanji": "泊",
+    "components": "泊, 氵, 白, 日, 水",
+    "strokeOrderSvg": "kanji-vectors/06cca.svg",
+    "hanViet": "BẠC, PHÁCH",
+    "englishMeaning": "overnight, put up at, ride at anchor, 3-day stay",
+    "vietnameseMeaning": "trú đêm, neo đậu, ở lại",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ハク",
+      "ト.メ"
+    ],
+    "kunyomi": [
+      "と.まる"
+    ],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing",
+      "vehicles-train-car-travel-transport-driving-moving",
+      "verbs-action"
+    ],
+    "lookalikes": [
+      "白",
+      "泊",
+      "舶"
+    ],
+    "mnemonics": "Water (氵) and white—anchoring boat’s wake in calm water overnight.",
+    "vietMnemonics": "Nước 氵 + trắng 白 như bến bình yên: BẠC là neo đậu trú đêm.",
+    "frequency": 610,
+    "lucThu": "Hình thanh 形聲. 泊 BẠC = trú đêm: gồm bộ 氵 THỦY nước (THỦY) chỉ nghĩa và 白 BẠCH chỉ thanh, hợp lại thành chữ có nghĩa là trú đêm."
+  },
+  {
+    "kanji": "黄",
+    "components": "黄, 龷, 由, 八, 一",
+    "strokeOrderSvg": "kanji-vectors/09ec4.svg",
+    "hanViet": "HOÀNG, HUỲNH",
+    "englishMeaning": "yellow",
+    "vietnameseMeaning": "màu vàng",
+    "jlptLevel": "N2",
+    "gradeLevel": "2",
+    "onyomi": [
+      "コウ",
+      "オウ"
+    ],
+    "kunyomi": [
+      "き",
+      "こ"
+    ],
+    "category": [
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "横",
+      "黄",
+      "皇"
+    ],
+    "mnemonics": "Layered strokes stack up into golden yellow.",
+    "vietMnemonics": "Các nét chồng như khối vàng: HOÀNG là màu vàng.",
+    "frequency": 1048,
+    "lucThu": "Cần tra cứu. 黄 HOÀNG = màu vàng: chữ ghép từ 龷, 由, 八 BÁT, 一 NHẤT. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "甘",
+    "components": "甘, 廿, 十",
+    "strokeOrderSvg": "kanji-vectors/07518.svg",
+    "hanViet": "CAM",
+    "englishMeaning": "sweet, coax, pamper, be content, sugary",
+    "vietnameseMeaning": "ngọt, chiều chuộng, dễ chịu",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "カン",
+      "ウマ."
+    ],
+    "kunyomi": [
+      "あま.い",
+      "あま.える",
+      "あま.やかす"
+    ],
+    "category": [
+      "emotions-feelings-happiness-love-states",
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "旨",
+      "甘",
+      "柑"
+    ],
+    "mnemonics": "A mouthful taste glyph—sweet flavor.",
+    "vietMnemonics": "Hình chữ vị ngọt: CAM là ngọt ngào.",
+    "frequency": 832,
+    "lucThu": "Cần tra cứu. 甘 CAM = ngọt: chữ ghép từ 廿, 十 THẬP. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "臣",
+    "components": "臣",
+    "strokeOrderSvg": "kanji-vectors/081e3.svg",
+    "hanViet": "THẦN",
+    "englishMeaning": "retainer, subject",
+    "vietnameseMeaning": "bề tôi, thần tử",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "シン",
+      "ジ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "目",
+      "巨",
+      "臣"
+    ],
+    "mnemonics": "Pictograph of a minister’s eye watching—retainer.",
+    "vietMnemonics": "Hình ‘Thần’ chăm nhìn: THẦN là bề tôi.",
+    "frequency": 1257,
+    "lucThu": "Cần tra cứu. 臣 THẦN = bề tôi: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "浅",
+    "components": "浅, 氵, 戋, 三, 一, 戈, 弋, 丿, 丶, 水, 戔, 前",
+    "strokeOrderSvg": "kanji-vectors/06d45.svg",
+    "hanViet": "THIỂN, TIÊN",
+    "englishMeaning": "shallow, superficial, frivolous, wretched, shameful",
+    "vietnameseMeaning": "nông, cạn, hời hợt",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "セン",
+      "アサ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "銭",
+      "浅",
+      "潜"
+    ],
+    "mnemonics": "Water (氵) plus 前—water that’s just ahead is shallow.",
+    "vietMnemonics": "Nước 氵 ngay phía trước 前: THIỂN cạn nông.",
+    "frequency": 1249,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 浅 THIỂN = nông: chữ ghép từ 氵 THỦY, 戋, 三 TAM, 一 NHẤT, 戈, 弋, 丿 PHIỆT, 丶, 水 THỦY, 戔, 前. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "掃",
+    "components": "掃, 扌, 帚, ⺕, 冖, 巾, 手, 彑",
+    "strokeOrderSvg": "kanji-vectors/06383.svg",
+    "hanViet": "TẢO",
+    "englishMeaning": "sweep, brush",
+    "vietnameseMeaning": "quét dọn, chà, lau chùi",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ソウ",
+      "シュ",
+      "ハ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "household-chores-cleaning-maintenance"
+    ],
+    "lookalikes": [
+      "擦",
+      "掃",
+      "帚"
+    ],
+    "mnemonics": "Hand (扌) holding a broom (帚)—sweep clean.",
+    "vietMnemonics": "Tay 扌 cầm chổi 帚: TẢO là quét.",
+    "frequency": 1139,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 掃 TẢO = quét dọn: chữ ghép từ 扌 THỦ, 帚, ⺕, 冖 MỊCH, 巾, 手 THỦ, 彑. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "雲",
+    "components": "雲, 雨, 云, 二, 厶",
+    "strokeOrderSvg": "kanji-vectors/096f2.svg",
+    "hanViet": "VÂN",
+    "englishMeaning": "cloud",
+    "vietnameseMeaning": "mây",
+    "jlptLevel": "N2",
+    "gradeLevel": "2",
+    "onyomi": [
+      "ウン",
+      "-グ"
+    ],
+    "kunyomi": [
+      "くも"
+    ],
+    "category": [
+      "weather-nature-seasons",
+      "nature-elements-sightseeing"
+    ],
+    "lookalikes": [
+      "電",
+      "雲",
+      "曇"
+    ],
+    "mnemonics": "Rain (雨) plus say (云)—clouds speaking rain.",
+    "vietMnemonics": "Mưa 雨 và lời 云: VÂN mây hứa hẹn mưa.",
+    "frequency": 1177,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 雲 VÂN = mây: chữ ghép từ 雨 VŨ, 云, 二 NHỊ, 厶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "掘",
+    "components": "掘, 扌, 屈, 尸, 出, 山, 凵, 手",
+    "strokeOrderSvg": "kanji-vectors/06398.svg",
+    "hanViet": "QUẬT",
+    "englishMeaning": "dig, delve, excavate",
+    "vietnameseMeaning": "đào bới, khai quật",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "クツ",
+      "ホ."
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "掘",
+      "屈",
+      "堀"
+    ],
+    "mnemonics": "Hand (扌) plus bend (屈)—digging requires bending down.",
+    "vietMnemonics": "Tay 扌 + cúi 屈: QUẬT là đào.",
+    "frequency": 1379,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 掘 QUẬT = đào bới: chữ ghép từ 扌 THỦ, 屈, 尸, 出, 山 SƠN, 凵, 手 THỦ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "捨",
+    "components": "捨, 扌, 舎, 人, 吉, 士, 口, 手",
+    "strokeOrderSvg": "kanji-vectors/06368.svg",
+    "hanViet": "XẢ",
+    "englishMeaning": "discard, throw away, abandon, resign, reject, sacrifice",
+    "vietnameseMeaning": "vứt bỏ, từ bỏ, hy sinh",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "シャ"
+    ],
+    "kunyomi": [
+      "す.てる"
+    ],
+    "category": [
+      "vehicles-train-car-travel-transport-driving-moving",
+      "verbs-action",
+      "directions-positions-navigation",
+      "household-chores-cleaning-maintenance",
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "舎",
+      "捨",
+      "舗"
+    ],
+    "mnemonics": "Hand (扌) discards a hut (舎)—let go and throw away.",
+    "vietMnemonics": "Tay 扌 bỏ cái nhà 舎: XẢ là vứt đi.",
+    "frequency": 1134,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 捨 XẢ = vứt bỏ: chữ ghép từ 扌 THỦ, 舎, 人 NHÂN, 吉, 士, 口 KHẨU, 手 THỦ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "軟",
+    "components": "軟, 車, 欠",
+    "strokeOrderSvg": "kanji-vectors/08edf.svg",
+    "hanViet": "NHUYỄN",
+    "englishMeaning": "soft",
+    "vietnameseMeaning": "mềm, mềm mỏng",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ナン"
+    ],
+    "kunyomi": [
+      "やわ.らか",
+      "やわ.らかい"
+    ],
+    "category": [
+      "adjectives-conditions"
+    ],
+    "lookalikes": [
+      "軟",
+      "輸",
+      "軸"
+    ],
+    "mnemonics": "Car (車) with lack (欠)—softening like rubber tires.",
+    "vietMnemonics": "車 bánh xe + 欠 khuyết: mềm ra như cao su, NHUYỄN.",
+    "frequency": 1533,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 軟 NHUYỄN = mềm: chữ ghép từ 車 XA, 欠. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "沈",
+    "components": "沈, 氵, 冘, 冖, 儿, 丿, 水, 八",
+    "strokeOrderSvg": "kanji-vectors/06c88.svg",
+    "hanViet": "TRẦM, THẨM, TRẤM",
+    "englishMeaning": "sink, be submerged, subside, be depressed, aloes",
+    "vietnameseMeaning": "chìm, lắng, trầm cảm",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "チン",
+      "ジン",
+      "シズ.メ"
+    ],
+    "kunyomi": [
+      "しず.む"
+    ],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "侵",
+      "浸",
+      "沈"
+    ],
+    "mnemonics": "Water (氵) plus a drooping form—sink down into depth.",
+    "vietMnemonics": "Nước 氵 và dáng rũ: TRẦM là chìm xuống.",
+    "frequency": 1406,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 沈 TRẦM = chìm: chữ ghép từ 氵 THỦY, 冘, 冖 MỊCH, 儿 NHI, 丿 PHIỆT, 水 THỦY, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "凍",
+    "components": "凍, 冫, 東, 木, 日, 氷",
+    "strokeOrderSvg": "kanji-vectors/051cd.svg",
+    "hanViet": "ĐỐNG",
+    "englishMeaning": "frozen, congeal, refrigerate",
+    "vietnameseMeaning": "đông cứng, đóng băng",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "トウ",
+      "シ.ミ"
+    ],
+    "kunyomi": [
+      "こお.る",
+      "こご.える",
+      "こご.る",
+      "い.てる"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count"
+    ],
+    "lookalikes": [
+      "凍",
+      "冬",
+      "氷"
+    ],
+    "mnemonics": "Ice (冫) over 東—freeze the east wind.",
+    "vietMnemonics": "冫 băng phủ chữ 東: gió lạnh là ĐỐNG.",
+    "frequency": 1287,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 凍 ĐỐNG = đông cứng: chữ ghép từ 冫, 東, 木 MỘC, 日 NHẬT, 氷. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "乳",
+    "components": "乳, 孚, ⺤, 子, 乙, 爪, 乚",
+    "strokeOrderSvg": "kanji-vectors/04e73.svg",
+    "hanViet": "NHŨ",
+    "englishMeaning": "milk, breasts",
+    "vietnameseMeaning": "sữa, nhũ, bầu vú",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ニュウ"
+    ],
+    "kunyomi": [
+      "ちち",
+      "ち"
+    ],
+    "category": [
+      "directions-positions-navigation",
+      "drinking-beverages-alcohol"
+    ],
+    "lookalikes": [
+      "孕",
+      "乳",
+      "孚"
+    ],
+    "mnemonics": "Curved stroke with child—milk nourishment.",
+    "vietMnemonics": "Nét cong ôm đứa trẻ: NHŨ là sữa nuôi con.",
+    "frequency": 902,
+    "lucThu": "Cần tra cứu. 乳 NHŨ = sữa: chữ ghép từ 孚, ⺤, 子 TỬ, 乙 ẤT, 爪, 乚. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "恋",
+    "components": "恋, 亦, 亠, 丿, 亅, 心",
+    "strokeOrderSvg": "kanji-vectors/0604b.svg",
+    "hanViet": "LUYẾN",
+    "englishMeaning": "romance, in love, yearn for, miss, darling",
+    "vietnameseMeaning": "luyến ái, yêu, nhung nhớ",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "レン"
+    ],
+    "kunyomi": [
+      "こ.う",
+      "こい",
+      "こい.しい"
+    ],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing",
+      "emotions-feelings-happiness-love-states"
+    ],
+    "lookalikes": [
+      "変",
+      "愛",
+      "恋"
+    ],
+    "mnemonics": "Top 亦 then heart—love rests on a heart’s longing.",
+    "vietMnemonics": "亦 trên, tâm 心 dưới: LUYẾN là lòng nhớ thương.",
+    "frequency": 657,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 恋 LUYẾN = luyến ái: chữ ghép từ 亦, 亠 ĐẦU, 丿 PHIỆT, 亅 QUYẾT, 心 TÂM. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "紅",
+    "components": "紅, 糸, 工",
+    "strokeOrderSvg": "kanji-vectors/07d05.svg",
+    "hanViet": "HỒNG",
+    "englishMeaning": "crimson, deep red",
+    "vietnameseMeaning": "đỏ thẫm, hồng thắm",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "コウ",
+      "ク",
+      "アカ."
+    ],
+    "kunyomi": [
+      "べに",
+      "くれない"
+    ],
+    "category": [
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "功",
+      "絵",
+      "紅"
+    ],
+    "mnemonics": "Thread (糸) and work (工)—dyed deep crimson.",
+    "vietMnemonics": "Sợi 糸 nhuộm bằng công 工: thành màu HỒNG đậm.",
+    "frequency": 1105,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 紅 HỒNG = đỏ thẫm: chữ ghép từ 糸 MỊCH, 工 CÔNG. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "郊",
+    "components": "郊, 交, 亠, 父, ⻏, 邑, 阝",
+    "strokeOrderSvg": "kanji-vectors/090ca.svg",
+    "hanViet": "GIAO",
+    "englishMeaning": "outskirts, suburbs, rural area",
+    "vietnameseMeaning": "ngoại ô, vùng ven",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "コウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "housing-buildings-architecture"
+    ],
+    "lookalikes": [
+      "交",
+      "郊",
+      "郡"
+    ],
+    "mnemonics": "Town mound (阝) plus crossing (交)—outer crossings are suburbs.",
+    "vietMnemonics": "阝 là ấp, 交 là giao nhau: vùng GIAO ở ngoại ô.",
+    "frequency": 1754,
+    "lucThu": "Hình thanh 形聲. 郊 GIAO = ngoại ô: gồm bộ 邑 ấp (ẤP) chỉ nghĩa và 交 GIAO chỉ thanh, hợp lại thành chữ có nghĩa là ngoại ô."
+  },
+  {
+    "kanji": "腰",
+    "components": "腰, 月, 要, 覀, 女, 肉, 襾",
+    "strokeOrderSvg": "kanji-vectors/08170.svg",
+    "hanViet": "YÊU",
+    "englishMeaning": "loins, hips, waist, low wainscoting",
+    "vietnameseMeaning": "eo, thắt lưng, hông",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ヨウ",
+      "コ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "要",
+      "胴",
+      "腰"
+    ],
+    "mnemonics": "Flesh (月) and essential (要)—the essential body hinge is the waist.",
+    "vietMnemonics": "Nhục 月 cộng 要 ‘yếu’: chỗ ‘yếu điểm’ cơ thể là YÊU (eo).",
+    "frequency": 1218,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 腰 YÊU = eo: chữ ghép từ 月 NGUYỆT, 要, 覀, 女 NỮ, 肉, 襾. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "炭",
+    "components": "炭, 山, 灰, 厂, 火",
+    "strokeOrderSvg": "kanji-vectors/070ad.svg",
+    "hanViet": "THÁN",
+    "englishMeaning": "charcoal, coal",
+    "vietnameseMeaning": "than củi, than đá",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "タン"
+    ],
+    "kunyomi": [
+      "すみ"
+    ],
+    "category": [],
+    "lookalikes": [
+      "炭",
+      "炎",
+      "灰"
+    ],
+    "mnemonics": "Mountain (山) ashes—charcoal from burnt wood.",
+    "vietMnemonics": "Núi 山 và tro 灰: THÁN là than sau cháy.",
+    "frequency": 1255,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 炭 THÁN = than củi: chữ ghép từ 山 SƠN, 灰, 厂, 火 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "踊",
+    "components": "踊, 足, 口, 甬, マ, 用",
+    "strokeOrderSvg": "kanji-vectors/08e0a.svg",
+    "hanViet": "DŨNG",
+    "englishMeaning": "jump, dance, leap, skip",
+    "vietnameseMeaning": "nhảy múa, nhảy bật",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ヨウ"
+    ],
+    "kunyomi": [
+      "おど.る"
+    ],
+    "category": [
+      "arts-music-sports-culture-activities"
+    ],
+    "lookalikes": [
+      "湧",
+      "踊",
+      "踏"
+    ],
+    "mnemonics": "Foot (足) and corridor (甬)—feet leap down a hall.",
+    "vietMnemonics": "Chân 足 trên lối 甬: nhảy múa DŨNG.",
+    "frequency": 1209,
+    "lucThu": "Hình thanh 形聲. 踊 DŨNG = nhảy múa: gồm bộ 足 TÚC chân (TÚC) chỉ nghĩa và 甬 DŨNG chỉ thanh, hợp lại thành chữ có nghĩa là nhảy múa."
+  },
+  {
+    "kanji": "冊",
+    "components": "冊, 冂, 丨, 廾, 丿, 十, 巾",
+    "strokeOrderSvg": "kanji-vectors/0518a.svg",
+    "hanViet": "SÁCH",
+    "englishMeaning": "tome, counter for books, volume",
+    "vietnameseMeaning": "sách, quyển, số đếm sách",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "サツ",
+      "サク"
+    ],
+    "kunyomi": [
+      "ふみ"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "media-writing-journalism-internet-newspaper-news",
+      "phone-call-communication-interview-dialog"
+    ],
+    "lookalikes": [
+      "冊",
+      "巻"
+    ],
+    "mnemonics": "A frame (冂) and cloth (巾)—wrapped bundle: a book volume.",
+    "vietMnemonics": "冂 khung + 巾 vải: gói lại thành SÁCH.",
+    "frequency": 1063,
+    "lucThu": "Cần tra cứu. 冊 SÁCH = sách: chữ ghép từ 冂 QUYNH, 丨 CỔN, 廾, 丿 PHIỆT, 十 THẬP, 巾. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "勇",
+    "components": "勇, マ, 男, 田, 力",
+    "strokeOrderSvg": "kanji-vectors/052c7.svg",
+    "hanViet": "DŨNG",
+    "englishMeaning": "courage, cheer up, be in high spirits, bravery, heroism",
+    "vietnameseMeaning": "dũng cảm, hăng hái",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ユウ",
+      "イサ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic",
+      "adjectives-basic",
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors",
+      "social-hierarchy-rank-class-status"
+    ],
+    "lookalikes": [
+      "湧",
+      "勇",
+      "男"
+    ],
+    "mnemonics": "Man (男) with strength (力)—bravery.",
+    "vietMnemonics": "男 đàn ông + 力 sức mạnh: DŨNG là can đảm.",
+    "frequency": 1284,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 勇 DŨNG = dũng cảm: chữ ghép từ マ, 男, 田 ĐIỀN, 力 LỰC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "械",
+    "components": "械, 木, 戒, 戈, 弋, 廾, 十, 丿, 丶",
+    "strokeOrderSvg": "kanji-vectors/068b0.svg",
+    "hanViet": "GIỚI",
+    "englishMeaning": "contraption, fetter, machine, instrument",
+    "vietnameseMeaning": "máy móc, thiết bị, cơ cấu",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "カイ"
+    ],
+    "kunyomi": [
+      "かせ"
+    ],
+    "category": [
+      "construction-engineering-technology"
+    ],
+    "lookalikes": [
+      "戒",
+      "械",
+      "機"
+    ],
+    "mnemonics": "Wood (木) plus 戒—structured restraints make machines.",
+    "vietMnemonics": "Gỗ 木 phối với 戒: GIỚI là khí giới/máy móc.",
+    "frequency": 1217,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 械 GIỚI = máy móc: chữ ghép từ 木 MỘC, 戒, 戈, 弋, 廾, 十 THẬP, 丿 PHIỆT, 丶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "菜",
+    "components": "菜, 艹, 采, ⺤, 木, 艸, 爪",
+    "strokeOrderSvg": "kanji-vectors/083dc.svg",
+    "hanViet": "THÁI",
+    "englishMeaning": "vegetable, side dish, greens",
+    "vietnameseMeaning": "rau, món ăn kèm",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "サイ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "food-ingredients-kitchen",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "verbs-action",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "shopping-purchasing-commerce",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "採",
+      "菜",
+      "菜園"
+    ],
+    "mnemonics": "Grass (艹) and pick (采)—picked greens for a dish.",
+    "vietMnemonics": "艹 cỏ + 采 hái: THÁI là rau.",
+    "frequency": 732,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 菜 THÁI = rau: chữ ghép từ 艹 THẢO, 采, ⺤, 木 MỘC, 艸, 爪. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "珍",
+    "components": "珍, 王, 人, 彡, 玉, 呈",
+    "strokeOrderSvg": "kanji-vectors/073cd.svg",
+    "hanViet": "TRÂN",
+    "englishMeaning": "rare, curious, strange",
+    "vietnameseMeaning": "quý hiếm, kỳ lạ",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "チン",
+      "タカ"
+    ],
+    "kunyomi": [
+      "めずら.しい"
+    ],
+    "category": [
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "真",
+      "珍",
+      "玲"
+    ],
+    "mnemonics": "Jewel (王) presented (呈)—rare treasure.",
+    "vietMnemonics": "王 ngọc + 呈 trình: TRÂN là đồ quý hiếm.",
+    "frequency": 1239,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 珍 TRÂN = quý hiếm: chữ ghép từ 王, 人 NHÂN, 彡, 玉 NGỌC, 呈. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "卵",
+    "components": "卵, 卯, 丶, 丿, 卩, 𠂊",
+    "strokeOrderSvg": "kanji-vectors/05375.svg",
+    "hanViet": "NOÃN",
+    "englishMeaning": "egg, ovum, spawn, roe",
+    "vietnameseMeaning": "trứng, noãn",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ラン"
+    ],
+    "kunyomi": [
+      "たまご"
+    ],
+    "category": [],
+    "lookalikes": [
+      "乱",
+      "卵",
+      "卯"
+    ],
+    "mnemonics": "Folded shell strokes—the egg within.",
+    "vietMnemonics": "Vỏ nét gập: bên trong là NOÃN.",
+    "frequency": 1173,
+    "lucThu": "Cần tra cứu. 卵 NOÃN = trứng: chữ ghép từ 卯, 丶, 丿 PHIỆT, 卩, 𠂊. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "湖",
+    "components": "湖, 氵, 胡, 古, 十, 口, 月, 水",
+    "strokeOrderSvg": "kanji-vectors/06e56.svg",
+    "hanViet": "HỒ",
+    "englishMeaning": "lake",
+    "vietnameseMeaning": "hồ, ao lớn",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "コ",
+      "ミズウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks"
+    ],
+    "lookalikes": [
+      "沼",
+      "湖",
+      "胡"
+    ],
+    "mnemonics": "Water (氵) plus 胡—broad still waters: lake.",
+    "vietMnemonics": "氵 nước + 胡: HỒ là mặt nước rộng.",
+    "frequency": 1151,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 湖 HỒ = hồ: chữ ghép từ 氵 THỦY, 胡, 古 CỔ, 十 THẬP, 口 KHẨU, 月 NGUYỆT, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "喫",
+    "components": "喫, 口, 契, 龶, 刀, 大",
+    "strokeOrderSvg": "kanji-vectors/055ab.svg",
+    "hanViet": "KHIẾT",
+    "englishMeaning": "consume, eat, drink, smoke, receive (a blow)",
+    "vietnameseMeaning": "ăn uống, hút, chịu (đòn)",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "キツ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "food-ingredients-kitchen",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "契",
+      "喫",
+      "飲"
+    ],
+    "mnemonics": "Mouth (口) with contract (契)—consuming per rule.",
+    "vietMnemonics": "口 miệng + 契 khế ước: KHIẾT là dùng đồ ăn/uống.",
+    "frequency": 1195,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 喫 KHIẾT = ăn uống: chữ ghép từ 口 KHẨU, 契, 龶, 刀 ĐAO, 大 ĐẠI. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "干",
+    "components": "干, 十, 一",
+    "strokeOrderSvg": "kanji-vectors/05e72.svg",
+    "hanViet": "KIỀN, CAN",
+    "englishMeaning": "dry, parch",
+    "vietnameseMeaning": "khô, phơi khô",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "カン",
+      "ヒ."
+    ],
+    "kunyomi": [
+      "ほ.す",
+      "ほ.し-",
+      "-ぼ.し"
+    ],
+    "category": [
+      "household-chores-cleaning-maintenance"
+    ],
+    "lookalikes": [
+      "干",
+      "旱",
+      "竿"
+    ],
+    "mnemonics": "Simple dry line—sun-drying bars.",
+    "vietMnemonics": "Nét ngang phơi khô: KIỀN = làm khô.",
+    "frequency": 1018,
+    "lucThu": "Cần tra cứu. 干 KIỀN = khô: chữ ghép từ 十 THẬP, 一 NHẤT. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "虫",
+    "components": "虫, 中, 口, 丨",
+    "strokeOrderSvg": "kanji-vectors/0866b.svg",
+    "hanViet": "TRÙNG, HUỶ",
+    "englishMeaning": "insect, bug, temper",
+    "vietnameseMeaning": "côn trùng, sâu bọ",
+    "jlptLevel": "N2",
+    "gradeLevel": "1",
+    "onyomi": [
+      "チュウ",
+      "キ",
+      "ム"
+    ],
+    "kunyomi": [],
+    "category": [
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing"
+    ],
+    "lookalikes": [
+      "中",
+      "蟲",
+      "虫"
+    ],
+    "mnemonics": "Pictograph of a bug—three-part body.",
+    "vietMnemonics": "Hình con bọ ba khúc: TRÙNG = côn trùng.",
+    "frequency": 1004,
+    "lucThu": "Hình thanh 形聲. 虫 TRÙNG = côn trùng: gồm bộ 虫 TRÙNG sâu bọ (TRÙNG) chỉ nghĩa và 中 chỉ thanh, hợp lại thành chữ có nghĩa là côn trùng."
+  },
+  {
+    "kanji": "刷",
+    "components": "刷, 尸, 丿, 巾, 刂, 刀, 川, 冊",
+    "strokeOrderSvg": "kanji-vectors/05237.svg",
+    "hanViet": "XOÁT, LOÁT",
+    "englishMeaning": "printing, print",
+    "vietnameseMeaning": "in ấn, bản in",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "サツ"
+    ],
+    "kunyomi": [
+      "す.る",
+      "-ず.り",
+      "-ずり",
+      "は.く"
+    ],
+    "category": [],
+    "lookalikes": [
+      "殺",
+      "刷",
+      "冊"
+    ],
+    "mnemonics": "Blade (刂) and flows (川) with book (冊)—press to print.",
+    "vietMnemonics": "Dao 刂 + dòng 川 + sách 冊: XOÁT là in.",
+    "frequency": 1088,
+    "lucThu": "Cần tra cứu. 刷 XOÁT = in ấn: chữ ghép từ 尸, 丿 PHIỆT, 巾, 刂 ĐAO, 刀 ĐAO, 川, 冊. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "湯",
+    "components": "湯, 氵, 昜, 旦, 日, 一, 勿, 勹, 水",
+    "strokeOrderSvg": "kanji-vectors/06e6f.svg",
+    "hanViet": "THANG, SƯƠNG, THÃNG",
+    "englishMeaning": "hot water, bath, hot spring",
+    "vietnameseMeaning": "nước nóng, suối nước nóng",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "トウ"
+    ],
+    "kunyomi": [
+      "ゆ"
+    ],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing"
+    ],
+    "lookalikes": [
+      "湯",
+      "湧",
+      "湛"
+    ],
+    "mnemonics": "Water (氵) heated by sun (昜)—hot water bath.",
+    "vietMnemonics": "Nước 氵 + nắng 昜: THANG là nước nóng.",
+    "frequency": 790,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 湯 THANG = nước nóng: chữ ghép từ 氵 THỦY, 昜, 旦, 日 NHẬT, 一 NHẤT, 勿, 勹, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "溶",
+    "components": "溶, 氵, 容, 宀, 冖, 谷, 口, 水",
+    "strokeOrderSvg": "kanji-vectors/06eb6.svg",
+    "hanViet": "DUNG, DONG",
+    "englishMeaning": "melt, dissolve, thaw",
+    "vietnameseMeaning": "tan chảy, hòa tan",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ヨウ"
+    ],
+    "kunyomi": [
+      "と.ける",
+      "と.かす",
+      "と.く"
+    ],
+    "category": [],
+    "lookalikes": [
+      "容",
+      "融",
+      "溶"
+    ],
+    "mnemonics": "Water (氵) in a container (容)—things dissolve and melt.",
+    "vietMnemonics": "Nước 氵 trong ‘dung’ 容: hòa tan là DUNG.",
+    "frequency": 1280,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 溶 DUNG = tan chảy: chữ ghép từ 氵 THỦY, 容, 宀 MIÊN, 冖 MỊCH, 谷, 口 KHẨU, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "鉱",
+    "components": "鉱, 金, 広, 广, 厂, 厶",
+    "strokeOrderSvg": "kanji-vectors/09271.svg",
+    "hanViet": "KHOÁNG",
+    "englishMeaning": "mineral, ore",
+    "vietnameseMeaning": "khoáng sản, quặng",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "コウ"
+    ],
+    "kunyomi": [
+      "あらがね"
+    ],
+    "category": [],
+    "lookalikes": [
+      "鉱",
+      "鉛",
+      "銅"
+    ],
+    "mnemonics": "Metal (金) in a wide (広) seam—ore minerals.",
+    "vietMnemonics": "Kim 金 trong mạch rộng 広: KHOÁNG sản.",
+    "frequency": 1747,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 鉱 KHOÁNG = khoáng sản: chữ ghép từ 金 KIM, 広, 广, 厂, 厶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "涙",
+    "components": "涙, 氵, 戻, 戸, 大, 水",
+    "strokeOrderSvg": "kanji-vectors/06d99.svg",
+    "hanViet": "LỆ",
+    "englishMeaning": "tears, sympathy",
+    "vietnameseMeaning": "nước mắt, lệ",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ルイ",
+      "レイ"
+    ],
+    "kunyomi": [
+      "なみだ"
+    ],
+    "category": [
+      "directions-positions-navigation",
+      "drinking-beverages-alcohol"
+    ],
+    "lookalikes": [
+      "戻",
+      "涙",
+      "淚"
+    ],
+    "mnemonics": "Water (氵) returning (戻)—tears flowing back out.",
+    "vietMnemonics": "Nước 氵 quay trở 戻: LỆ là nước mắt trào.",
+    "frequency": 1104,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 涙 LỆ = nước mắt: chữ ghép từ 氵 THỦY, 戻, 戸, 大 ĐẠI, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "匹",
+    "components": "匹, 匸, 儿, 八, 丿, 匚",
+    "strokeOrderSvg": "kanji-vectors/05339.svg",
+    "hanViet": "THẤT",
+    "englishMeaning": "equal, head, counter for small animals, roll of cloth",
+    "vietnameseMeaning": "bằng, đơn vị đếm con vật nhỏ",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ヒツ"
+    ],
+    "kunyomi": [
+      "ひき"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "numbers-time-date-calendar-count",
+      "body-health-medicine",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "包",
+      "比",
+      "匹"
+    ],
+    "mnemonics": "Box (匚) and legs (儿)—count creatures by each.",
+    "vietMnemonics": "Hộp 匚 + chân 儿: ‘mỗi con’—匹 để đếm.",
+    "frequency": 1273,
+    "lucThu": "Cần tra cứu. 匹 THẤT = bằng: chữ ghép từ 匸, 儿 NHI, 八 BÁT, 丿 PHIỆT, 匚. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "孫",
+    "components": "孫, 子, 系, 丿, 糸",
+    "strokeOrderSvg": "kanji-vectors/05b6b.svg",
+    "hanViet": "TÔN, TỐN",
+    "englishMeaning": "grandchild, descendants",
+    "vietnameseMeaning": "cháu, hậu duệ",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ソン",
+      "マ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "系",
+      "子",
+      "孫"
+    ],
+    "mnemonics": "Child (子) tied by thread (系)—descendants.",
+    "vietMnemonics": "Con 子 nối sợi 系: cháu chắt TÔN.",
+    "frequency": 1538,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 孫 TÔN = cháu: chữ ghép từ 子 TỬ, 系, 丿 PHIỆT, 糸 MỊCH. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "鋭",
+    "components": "鋭, 金, 兌, 八, 兄, 口, 儿, 丿",
+    "strokeOrderSvg": "kanji-vectors/092ed.svg",
+    "hanViet": "DUỆ, NHUỆ",
+    "englishMeaning": "pointed, sharpness, edge, weapon, sharp, violent",
+    "vietnameseMeaning": "sắc bén, nhạy bén",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "エイ",
+      "スルド."
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "鋭",
+      "鈍",
+      "兌"
+    ],
+    "mnemonics": "Metal (金) plus exchange (兌)—finely sharpened edge.",
+    "vietMnemonics": "Kim 金 và 兌: mài đổi thành DUỆ sắc.",
+    "frequency": 1688,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 鋭 DUỆ = sắc bén: chữ ghép từ 金 KIM, 兌, 八 BÁT, 兄, 口 KHẨU, 儿 NHI, 丿 PHIỆT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "枝",
+    "components": "枝, 木, 支, 十, 又",
+    "strokeOrderSvg": "kanji-vectors/0679d.svg",
+    "hanViet": "CHI, KỲ",
+    "englishMeaning": "bough, branch, twig, limb",
+    "vietnameseMeaning": "cành, nhánh",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "シ",
+      "エ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "技",
+      "枝",
+      "伎"
+    ],
+    "mnemonics": "Tree (木) supports (支)—branches.",
+    "vietMnemonics": "Gỗ 木 đỡ 支: CHI là nhánh cây.",
+    "frequency": 1375,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 枝 CHI = cành: chữ ghép từ 木 MỘC, 支, 十 THẬP, 又 HỮU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "塗",
+    "components": "塗, 涂, 氵, 余, 人, 小, 土, 水",
+    "strokeOrderSvg": "kanji-vectors/05857.svg",
+    "hanViet": "ĐỒ, TRÀ",
+    "englishMeaning": "paint, plaster, daub, smear, coating",
+    "vietnameseMeaning": "sơn, trét, bôi phủ",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ト"
+    ],
+    "kunyomi": [
+      "ぬ.る",
+      "ぬ.り",
+      "まみ.れる"
+    ],
+    "category": [
+      "clothing-fashion-dress-shoes-hat"
+    ],
+    "lookalikes": [
+      "途",
+      "塗",
+      "余"
+    ],
+    "mnemonics": "Soil (土) plus surplus (余)—smear on extra coating.",
+    "vietMnemonics": "Đất 土 + dư 余: bôi phủ ĐỒ sơn/trét.",
+    "frequency": 1078,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 塗 ĐỒ = sơn: chữ ghép từ 涂, 氵 THỦY, 余, 人 NHÂN, 小 TIỂU, 土 THỔ, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "軒",
+    "components": "軒, 車, 干, 十",
+    "strokeOrderSvg": "kanji-vectors/08ed2.svg",
+    "hanViet": "HIÊN",
+    "englishMeaning": "flats, counter for houses, eaves",
+    "vietnameseMeaning": "hiên nhà, mái hiên, số đếm nhà",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "ケン"
+    ],
+    "kunyomi": [
+      "のき"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "housing-buildings-architecture",
+      "construction-engineering-technology",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "乾",
+      "軒",
+      "竿"
+    ],
+    "mnemonics": "Car (車) under dry beam (干)—house eaves.",
+    "vietMnemonics": "車 dưới thanh phơi 干: HIÊN là mái nhô ra.",
+    "frequency": 1497,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 軒 HIÊN = hiên nhà: chữ ghép từ 車 XA, 干 CAN, 十 THẬP. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "毒",
+    "components": "毒, 龶, 三, 一, 毋, 母, 业",
+    "strokeOrderSvg": "kanji-vectors/06bd2.svg",
+    "hanViet": "ĐỘC, ĐỐC, ĐẠI",
+    "englishMeaning": "poison, virus, venom, germ, harm, injury, spite",
+    "vietnameseMeaning": "độc, chất độc, ác ý",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "ドク"
+    ],
+    "kunyomi": [],
+    "category": [
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "毒",
+      "毒性",
+      "毒薬"
+    ],
+    "mnemonics": "Mother’s brew—bad batch: poison.",
+    "vietMnemonics": "Mẻ ‘nấu’ lỗi trở thành độc: ĐỘC hại.",
+    "frequency": 1243,
+    "lucThu": "Cần tra cứu. 毒 ĐỘC = độc: chữ ghép từ 龶, 三 TAM, 一 NHẤT, 毋, 母, 业. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "叫",
+    "components": "叫, 口, 丩, 丨",
+    "strokeOrderSvg": "kanji-vectors/053eb.svg",
+    "hanViet": "KHIẾU",
+    "englishMeaning": "shout, exclaim, yell",
+    "vietnameseMeaning": "kêu la, hét lớn",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "キョウ"
+    ],
+    "kunyomi": [
+      "さけ.ぶ"
+    ],
+    "category": [
+      "abstract-causation-reason-logic"
+    ],
+    "lookalikes": [
+      "叫",
+      "号",
+      "吠"
+    ],
+    "mnemonics": "Mouth (口) hooked (丩)—a caught cry becomes a shout.",
+    "vietMnemonics": "Miệng 口 với móc 丩: kéo hơi mà KHIẾU lên.",
+    "frequency": 1394,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 叫 KHIẾU = kêu la: chữ ghép từ 口 KHẨU, 丩, 丨 CỔN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "拝",
+    "components": "拝, 扌, 一, 丰, 三, 丨, 手, 𠂤",
+    "strokeOrderSvg": "kanji-vectors/062dd.svg",
+    "hanViet": "BÁI",
+    "englishMeaning": "worship, adore, pray to",
+    "vietnameseMeaning": "bái, lễ lạy, thờ phụng",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ハイ"
+    ],
+    "kunyomi": [
+      "おが.む",
+      "おろが.む"
+    ],
+    "category": [
+      "vehicles-train-car-travel-transport-driving-moving",
+      "verbs-action"
+    ],
+    "lookalikes": [
+      "排",
+      "拝",
+      "皆"
+    ],
+    "mnemonics": "Hand (扌) and gathered form—hands together to worship.",
+    "vietMnemonics": "Tay 扌 chắp lại: BÁI lạy thành kính.",
+    "frequency": 1279,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 拝 BÁI = bái: chữ ghép từ 扌 THỦ, 一 NHẤT, 丰, 三 TAM, 丨 CỔN, 手 THỦ, 𠂤. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "氷",
+    "components": "氷, 水, 丶",
+    "strokeOrderSvg": "kanji-vectors/06c37.svg",
+    "hanViet": "BĂNG",
+    "englishMeaning": "icicle, ice, hail, freeze, congeal",
+    "vietnameseMeaning": "băng, đá, đông cứng",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ヒョウ",
+      "コオ."
+    ],
+    "kunyomi": [
+      "こおり",
+      "ひ"
+    ],
+    "category": [
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "永",
+      "水",
+      "氷"
+    ],
+    "mnemonics": "Water with a dot freezes—ice.",
+    "vietMnemonics": "Nước thêm một chấm: đóng băng là BĂNG.",
+    "frequency": 1331,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 氷 BĂNG = băng: chữ ghép từ 水 THỦY, 丶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "乾",
+    "components": "乾, 𠦝, 十, 早, 日, 乞, 乙, 乹",
+    "strokeOrderSvg": "kanji-vectors/04e7e.svg",
+    "hanViet": "CAN, KIỀN",
+    "englishMeaning": "drought, dry, dessicate, drink up, heaven, emperor",
+    "vietnameseMeaning": "khô hạn, càn khôn, thiên can",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "カン",
+      "ケン"
+    ],
+    "kunyomi": [
+      "かわ.く",
+      "かわ.かす",
+      "ほ.す",
+      "ひ.る",
+      "いぬい"
+    ],
+    "category": [
+      "politics-law-government-police",
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "food-ingredients-kitchen",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "朝",
+      "乾",
+      "干"
+    ],
+    "mnemonics": "Complex dry form—heavenly stem ‘乾’ meaning dry.",
+    "vietMnemonics": "Chữ CAN 乾 mang nghĩa khô, thiên can.",
+    "frequency": 1117,
+    "lucThu": "Cần tra cứu. 乾 CAN = khô hạn: chữ ghép từ 𠦝, 十 THẬP, 早, 日 NHẬT, 乞, 乙 ẤT, 乹. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "棒",
+    "components": "棒, 木, 奉, 𡗗, 三, 一, 大, 人, 丨",
+    "strokeOrderSvg": "kanji-vectors/068d2.svg",
+    "hanViet": "BỔNG",
+    "englishMeaning": "rod, stick, cane, pole, club, line",
+    "vietnameseMeaning": "gậy, que, thanh trụ",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ボウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic",
+      "social-organizations-groups-associations"
+    ],
+    "lookalikes": [
+      "捧",
+      "棒",
+      "望"
+    ],
+    "mnemonics": "Wood (木) with offering (奉)—a held rod.",
+    "vietMnemonics": "Gỗ 木 + 奉 nâng: BỔNG là cây gậy.",
+    "frequency": 1410,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 棒 BỔNG = gậy: chữ ghép từ 木 MỘC, 奉, 𡗗, 三 TAM, 一 NHẤT, 大 ĐẠI, 人 NHÂN, 丨 CỔN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "祈",
+    "components": "祈, 礻, 斤, 示",
+    "strokeOrderSvg": "kanji-vectors/07948.svg",
+    "hanViet": "KÌ",
+    "englishMeaning": "pray, wish",
+    "vietnameseMeaning": "cầu nguyện, khấn vái",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "キ",
+      "イノ."
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "社",
+      "祈",
+      "祇"
+    ],
+    "mnemonics": "Altar (礻) plus axe (斤)—split time to pray.",
+    "vietMnemonics": "礻 bàn thờ + 斤 rìu: dừng tay mà KÌ khấn.",
+    "frequency": 1303,
+    "lucThu": "Cần tra cứu. 祈 KÌ = cầu nguyện: chữ ghép từ 礻, 斤 CÂN, 示. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "拾",
+    "components": "拾, 扌, 合, 人, 一, 口, 手",
+    "strokeOrderSvg": "kanji-vectors/062fe.svg",
+    "hanViet": "THẬP, THIỆP, KIỆP",
+    "englishMeaning": "pick up, gather, find, go on foot, ten",
+    "vietnameseMeaning": "nhặt lên, gom, tìm thấy",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "シュウ",
+      "ジュウ"
+    ],
+    "kunyomi": [
+      "ひろ.う"
+    ],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency",
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "合",
+      "拾",
+      "捷"
+    ],
+    "mnemonics": "Hand (扌) plus fit (合)—pick up to make it whole.",
+    "vietMnemonics": "Tay 扌 nhặt cho hợp 合: THẬP là ‘nhặt’.",
+    "frequency": 1531,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 拾 THẬP = nhặt lên: chữ ghép từ 扌 THỦ, 合, 人 NHÂN, 一 NHẤT, 口 KHẨU, 手 THỦ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "粉",
+    "components": "粉, 米, 分, 八, 刀",
+    "strokeOrderSvg": "kanji-vectors/07c89.svg",
+    "hanViet": "PHẤN",
+    "englishMeaning": "flour, powder, dust",
+    "vietnameseMeaning": "bột, bụi mịn, phấn",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "フン",
+      "デシメートル"
+    ],
+    "kunyomi": [
+      "こ",
+      "こな"
+    ],
+    "category": [],
+    "lookalikes": [
+      "粉",
+      "粒",
+      "盆"
+    ],
+    "mnemonics": "Rice (米) divided (分)—ground into powder.",
+    "vietMnemonics": "Gạo 米 chia 分 nhỏ: thành PHẤN bột.",
+    "frequency": 1065,
+    "lucThu": "Hình thanh 形聲. 粉 PHẤN = bột: gồm bộ 米 MỄ gạo (MỄ) chỉ nghĩa và 分 chỉ thanh, hợp lại thành chữ có nghĩa là bột."
+  },
+  {
+    "kanji": "糸",
+    "components": "糸",
+    "strokeOrderSvg": "kanji-vectors/07cf8.svg",
+    "hanViet": "MỊCH",
+    "englishMeaning": "thread",
+    "vietnameseMeaning": "sợi chỉ, sợi tơ",
+    "jlptLevel": "N2",
+    "gradeLevel": "1",
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [
+      "いと"
+    ],
+    "category": [
+      "media-writing-journalism-internet-newspaper-news",
+      "phone-call-communication-interview-dialog"
+    ],
+    "lookalikes": [
+      "系",
+      "絲",
+      "糸"
+    ],
+    "mnemonics": "Pictograph of thread—twisted fibers.",
+    "vietMnemonics": "Hình sợi tơ xe lại: MỊCH là chỉ.",
+    "frequency": 1333,
+    "lucThu": "Tượng hình 象形. 糸 MỊCH = sợi chỉ: chữ này vẽ theo hình dạng của sợi chỉ, nhìn vào có thể tưởng tượng ra hình sợi chỉ."
+  },
+  {
+    "kanji": "綿",
+    "components": "綿, 糸, 帛, 白, 日, 巾",
+    "strokeOrderSvg": "kanji-vectors/07dbf.svg",
+    "hanViet": "MIÊN",
+    "englishMeaning": "cotton",
+    "vietnameseMeaning": "bông, vải bông, sợi bông",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "メン",
+      "ワ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "棉",
+      "線",
+      "綿"
+    ],
+    "mnemonics": "Thread (糸) plus cloth (帛)—soft cotton.",
+    "vietMnemonics": "糸 chỉ + 帛 vải: MIÊN là bông vải.",
+    "frequency": 1524,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 綿 MIÊN = bông: chữ ghép từ 糸 MỊCH, 帛, 白 BẠCH, 日 NHẬT, 巾. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "汗",
+    "components": "汗, 氵, 干, 十, 水",
+    "strokeOrderSvg": "kanji-vectors/06c57.svg",
+    "hanViet": "HÃN, HÀN",
+    "englishMeaning": "sweat, perspire",
+    "vietnameseMeaning": "mồ hôi",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "カン"
+    ],
+    "kunyomi": [
+      "あせ"
+    ],
+    "category": [
+      "food-ingredients-kitchen",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "汗",
+      "汗水",
+      "汗ばむ"
+    ],
+    "mnemonics": "Water (氵) from drying (干)—sweat beads.",
+    "vietMnemonics": "Nước 氵 gặp khô 干: mồ hôi rịn ra—HÃN.",
+    "frequency": 1013,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 汗 HÃN = mồ hôi: chữ ghép từ 氵 THỦY, 干 CAN, 十 THẬP, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "銅",
+    "components": "銅, 金, 同, 冂, 一, 口",
+    "strokeOrderSvg": "kanji-vectors/09285.svg",
+    "hanViet": "ĐỒNG",
+    "englishMeaning": "copper",
+    "vietnameseMeaning": "đồng (kim loại)",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "ドウ"
+    ],
+    "kunyomi": [
+      "あかがね"
+    ],
+    "category": [],
+    "lookalikes": [
+      "銅",
+      "銀",
+      "鉄"
+    ],
+    "mnemonics": "Metal (金) same (同) tone—copper.",
+    "vietMnemonics": "金 kim loại + 同 giống nhau: kim loại ĐỒNG.",
+    "frequency": 1841,
+    "lucThu": "Hình thanh 形聲. 銅 ĐỒNG = đồng (kim loại): gồm bộ 金 KIM kim loại (KIM) chỉ nghĩa và 同 ĐỒNG chỉ thanh, hợp lại thành chữ có nghĩa là đồng (kim loại)."
+  },
+  {
+    "kanji": "湿",
+    "components": "湿, 氵, 日, 业, 水, 𡭴",
+    "strokeOrderSvg": "kanji-vectors/06e7f.svg",
+    "hanViet": "THẤP, CHẬP",
+    "englishMeaning": "damp, wet, moist",
+    "vietnameseMeaning": "ẩm ướt, ẩm thấp",
+    "jlptLevel": "N2",
+    "gradeLevel": "8",
+    "onyomi": [
+      "シツ",
+      "シュウ"
+    ],
+    "kunyomi": [
+      "しめ.る",
+      "しめ.す",
+      "うるお.う",
+      "うるお.す"
+    ],
+    "category": [],
+    "lookalikes": [
+      "湿",
+      "温",
+      "湿度"
+    ],
+    "mnemonics": "Water (氵) plus hush—air wet and heavy.",
+    "vietMnemonics": "氵 nước cộng nét ‘im ắng’: THẤP là ẩm nặng.",
+    "frequency": 1285,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 湿 THẤP = ẩm ướt: chữ ghép từ 氵 THỦY, 日 NHẬT, 业, 水 THỦY, 𡭴. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "瓶",
+    "components": "瓶, 并, 干, 十, 瓦, 丶",
+    "strokeOrderSvg": "kanji-vectors/074f6.svg",
+    "hanViet": "BÌNH",
+    "englishMeaning": "flower pot, bottle, vial, jar, jug, vat, urn",
+    "vietnameseMeaning": "chai, lọ, bình, hũ",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ビン",
+      "カ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "便",
+      "瓶",
+      "平"
+    ],
+    "mnemonics": "Tile (瓦) and together (并)—ceramic bottles.",
+    "vietMnemonics": "Ngói 瓦 ghép 并: BÌNH là đồ đựng.",
+    "frequency": 1705,
+    "lucThu": "Cần tra cứu. 瓶 BÌNH = chai: chữ ghép từ 并, 干 CAN, 十 THẬP, 瓦, 丶. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "咲",
+    "components": "咲, 口, 关, 天, 大, 各",
+    "strokeOrderSvg": "kanji-vectors/054b2.svg",
+    "hanViet": "TIẾU",
+    "englishMeaning": "blossom, bloom",
+    "vietnameseMeaning": "nở hoa, bung nở",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ショウ",
+      "-ザ"
+    ],
+    "kunyomi": [
+      "さ.く"
+    ],
+    "category": [
+      "economics-finance-money-business",
+      "work-office-banking-legal",
+      "occupations-jobs-employment-company",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "笑",
+      "咲",
+      "朔"
+    ],
+    "mnemonics": "Mouth (口) with 各—petals open like smiles.",
+    "vietMnemonics": "口 miệng + 各: cánh hoa nở cười—TIẾU nở.",
+    "frequency": 1016,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 咲 TIẾU = nở hoa: chữ ghép từ 口 KHẨU, 关, 天, 大 ĐẠI, 各 CÁC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "召",
+    "components": "召, 刀, 口",
+    "strokeOrderSvg": "kanji-vectors/053ec.svg",
+    "hanViet": "TRIỆU, THIỆU",
+    "englishMeaning": "seduce, call, send for, wear, put on, ride in, buy, eat, drink, catch (cold)",
+    "vietnameseMeaning": "triệu gọi, mời, dùng (ăn/uống/mặc)",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ショウ"
+    ],
+    "kunyomi": [
+      "め.す"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "economics-finance-money-business",
+      "work-office-banking-legal",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "招",
+      "昭",
+      "召"
+    ],
+    "mnemonics": "Mouth (口) and blade (刀)—call sharply.",
+    "vietMnemonics": "口 + 刀: TRIỆU là gọi mời dứt khoát.",
+    "frequency": 1452,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 召 TRIỆU = triệu gọi: chữ ghép từ 刀 ĐAO, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "缶",
+    "components": "缶, 甘, 丷",
+    "strokeOrderSvg": "kanji-vectors/07f36.svg",
+    "hanViet": "PHỮU, PHẪU, PHŨ",
+    "englishMeaning": "tin can, container",
+    "vietnameseMeaning": "lon, đồ chứa, hộp thiếc",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "カン",
+      "カ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "函",
+      "缶",
+      "罐"
+    ],
+    "mnemonics": "A lidded shape—can container.",
+    "vietMnemonics": "Hình nắp và thân: PHỮU là đồ chứa.",
+    "frequency": 1467,
+    "lucThu": "Cần tra cứu. 缶 PHỮU = lon: chữ ghép từ 甘, 丷 SONG. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "隻",
+    "components": "隻, 隹, 亻, 又, 人",
+    "strokeOrderSvg": "kanji-vectors/096bb.svg",
+    "hanViet": "CHÍCH",
+    "englishMeaning": "vessels, counter for ships, fish, birds, arrows, one of a pair",
+    "vietnameseMeaning": "chiếc (đếm thuyền, chim, cá), một bên",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "セキ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "雄",
+      "難",
+      "隻"
+    ],
+    "mnemonics": "Short bird (隹) with hand (又)—count single units.",
+    "vietMnemonics": "隹 chim + 又 tay: một chiếc—CHÍCH.",
+    "frequency": 2155,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 隻 CHÍCH = chiếc (đếm thuyền: chữ ghép từ 隹, 亻 NHÂN, 又 HỮU, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "脂",
+    "components": "脂, 月, 旨, 匕, 日, 肉",
+    "strokeOrderSvg": "kanji-vectors/08102.svg",
+    "hanViet": "CHI",
+    "englishMeaning": "fat, grease, tallow, lard, rosin, gum, tar",
+    "vietnameseMeaning": "mỡ, chất béo, nhựa",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [
+      "あぶら"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "entertainment-games-hobby-relax",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "旨",
+      "油",
+      "脂"
+    ],
+    "mnemonics": "Flesh (月) and tasty (旨)—fat is flavor.",
+    "vietMnemonics": "Nhục 月 + ngon 旨: CHI là mỡ béo.",
+    "frequency": 1138,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 脂 CHI = mỡ: chữ ghép từ 月 NGUYỆT, 旨, 匕 BĨ, 日 NHẬT, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "蒸",
+    "components": "蒸, 艹, 烝, 丞, 了, 亅, 水, 一, 灬, 艸, 火",
+    "strokeOrderSvg": "kanji-vectors/084b8.svg",
+    "hanViet": "CHƯNG",
+    "englishMeaning": "steam, heat, sultry, foment, get musty",
+    "vietnameseMeaning": "hấp, hơi nước, nóng hầm hập",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "ジョウ",
+      "セイ"
+    ],
+    "kunyomi": [
+      "む.す",
+      "む.れる",
+      "む.らす"
+    ],
+    "category": [
+      "food-ingredients-kitchen",
+      "verbs-action",
+      "verbs-basic",
+      "shopping-purchasing-commerce",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "蒸",
+      "熱",
+      "湯"
+    ],
+    "mnemonics": "Grass (艹) and steam form—food steaming.",
+    "vietMnemonics": "艹 thảo + hơi nóng: CHƯNG là hấp.",
+    "frequency": 1359,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 蒸 CHƯNG = hấp: chữ ghép từ 艹 THẢO, 烝, 丞, 了, 亅 QUYẾT, 水 THỦY, 一 NHẤT, 灬 HỎA, 艸, 火 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "肌",
+    "components": "肌, 月, 几, 丿, 肉",
+    "strokeOrderSvg": "kanji-vectors/0808c.svg",
+    "hanViet": "CƠ",
+    "englishMeaning": "texture, skin, body, grain",
+    "vietnameseMeaning": "da, bề mặt da, chất liệu",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "キ"
+    ],
+    "kunyomi": [
+      "はだ"
+    ],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency",
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "肩",
+      "肌",
+      "飢"
+    ],
+    "mnemonics": "Flesh (月) plus small table—skin texture.",
+    "vietMnemonics": "Nhục 月 trên bàn nhỏ: CƠ là bề mặt da.",
+    "frequency": 809,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 肌 CƠ = da: chữ ghép từ 月 NGUYỆT, 几, 丿 PHIỆT, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "耕",
+    "components": "耕, 耒, 丿, 未, 木, 井, 二, 廾, 十, 丂",
+    "strokeOrderSvg": "kanji-vectors/08015.svg",
+    "hanViet": "CANH",
+    "englishMeaning": "till, plow, cultivate",
+    "vietnameseMeaning": "cày cấy, canh tác",
+    "jlptLevel": "N2",
+    "gradeLevel": "5",
+    "onyomi": [
+      "コウ",
+      "タガヤ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "耕",
+      "畑",
+      "稼"
+    ],
+    "mnemonics": "Plow (耒) and breathe (丂)—cultivate the field.",
+    "vietMnemonics": "耒 lưỡi cày + hơi thở: CANH là cày cấy.",
+    "frequency": 1806,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 耕 CANH = cày cấy: chữ ghép từ 耒, 丿 PHIỆT, 未, 木 MỘC, 井, 二 NHỊ, 廾, 十 THẬP, 丂. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "鈍",
+    "components": "鈍, 金, 屯, 丿, 屮, 凵",
+    "strokeOrderSvg": "kanji-vectors/0920d.svg",
+    "hanViet": "ĐỘN",
+    "englishMeaning": "dull, slow, foolish, blunt",
+    "vietnameseMeaning": "cùn, chậm chạp, trì trệ",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ドン"
+    ],
+    "kunyomi": [
+      "にぶ.い",
+      "にぶ.る",
+      "にぶ-",
+      "なま.る",
+      "なまく.ら"
+    ],
+    "category": [
+      "adjectives-basic",
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "鋭",
+      "鈍",
+      "頓"
+    ],
+    "mnemonics": "Metal (金) but camped (屯)—blunt and slow.",
+    "vietMnemonics": "金 kim + 屯 dừng lại: ĐỘN là ì chậm.",
+    "frequency": 1918,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 鈍 ĐỘN = cùn: chữ ghép từ 金 KIM, 屯, 丿 PHIỆT, 屮, 凵. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "泥",
+    "components": "泥, 氵, 尼, 尸, 匕, 水",
+    "strokeOrderSvg": "kanji-vectors/06ce5.svg",
+    "hanViet": "NÊ, NỆ, NỄ",
+    "englishMeaning": "mud, mire, adhere to, be attached to",
+    "vietnameseMeaning": "bùn, nhão, dính bết",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "デイ",
+      "ナイ",
+      "デ",
+      "ニ",
+      "ド"
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "泥",
+      "沼"
+    ],
+    "mnemonics": "Water (氵) with nun (尼)—sticky mud.",
+    "vietMnemonics": "Nước 氵 hòa尼: NÊ là bùn.",
+    "frequency": 1648,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 泥 NÊ = bùn: chữ ghép từ 氵 THỦY, 尼, 尸, 匕 BĨ, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "隅",
+    "components": "隅, ⻖, 禺, 日, 田, 禸, 冂, 阜, 阝",
+    "strokeOrderSvg": "kanji-vectors/09685.svg",
+    "hanViet": "NGU, NGUNG",
+    "englishMeaning": "corner, nook",
+    "vietnameseMeaning": "góc khuất, xó xỉnh",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "グウ"
+    ],
+    "kunyomi": [
+      "すみ"
+    ],
+    "category": [
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "遇",
+      "隅",
+      "偶"
+    ],
+    "mnemonics": "Town mound (阝) plus 禺—tight corner nook.",
+    "vietMnemonics": "阝 ấp + 禺: NGU là góc trong xó.",
+    "frequency": 1655,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 隅 NGU = góc khuất: chữ ghép từ ⻖, 禺, 日 NHẬT, 田 ĐIỀN, 禸, 冂 QUYNH, 阜, 阝 ẤP/PHÙ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "灯",
+    "components": "灯, 火, 丁, 一, 亅",
+    "strokeOrderSvg": "kanji-vectors/0706f.svg",
+    "hanViet": "ĐĂNG",
+    "englishMeaning": "lamp, a light, light, counter for lights",
+    "vietnameseMeaning": "đèn, ánh sáng, chiếc (đếm đèn)",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "トウ"
+    ],
+    "kunyomi": [
+      "ひ",
+      "ほ-",
+      "ともしび",
+      "とも.す",
+      "あかり"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": [
+      "庭",
+      "灯",
+      "当"
+    ],
+    "mnemonics": "Fire (火) with 丁—a neat lamp light.",
+    "vietMnemonics": "火 lửa + 丁 ngay ngắn: ĐĂNG là đèn.",
+    "frequency": 1293,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 灯 ĐĂNG = đèn: chữ ghép từ 火 HỎA, 丁, 一 NHẤT, 亅 QUYẾT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "辛",
+    "components": "辛, 立, 亠, 十",
+    "strokeOrderSvg": "kanji-vectors/08f9b.svg",
+    "hanViet": "TÂN",
+    "englishMeaning": "spicy, bitter, hot, acrid",
+    "vietnameseMeaning": "cay, đắng, khổ cực",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "シン"
+    ],
+    "kunyomi": [
+      "から.い",
+      "つら.い",
+      "-づら.い",
+      "かのと"
+    ],
+    "category": [],
+    "lookalikes": [
+      "幸",
+      "辛",
+      "辞"
+    ],
+    "mnemonics": "Glyph with barbs—sharp, acrid taste.",
+    "vietMnemonics": "Nét gai nhọn: TÂN là vị cay/khổ.",
+    "frequency": 1011,
+    "lucThu": "Cần tra cứu. 辛 TÂN = cay: chữ ghép từ 立 LẬP, 亠 ĐẦU, 十 THẬP. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "磨",
+    "components": "磨, 麻, 广, 厂, 林, 木, 石, 口",
+    "strokeOrderSvg": "kanji-vectors/078e8.svg",
+    "hanViet": "MA, MÁ",
+    "englishMeaning": "grind, polish, scour, improve, brush (teeth)",
+    "vietnameseMeaning": "mài, đánh bóng, chà xát, cải thiện",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "マ",
+      "ス."
+    ],
+    "kunyomi": [
+      "みが.く"
+    ],
+    "category": [],
+    "lookalikes": [
+      "麻",
+      "摩",
+      "磨"
+    ],
+    "mnemonics": "Hemp (麻) and stone (石)—polish by rubbing.",
+    "vietMnemonics": "麻 vải thô + 石 đá: MA là mài, chà cho nhẵn.",
+    "frequency": 1102,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 磨 MA = mài: chữ ghép từ 麻, 广, 厂, 林, 木 MỘC, 石 THẠCH, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "麦",
+    "components": "麦, 龶, 夂, 麥, 来",
+    "strokeOrderSvg": "kanji-vectors/09ea6.svg",
+    "hanViet": "MẠCH",
+    "englishMeaning": "barley, wheat",
+    "vietnameseMeaning": "lúa mạch, lúa mì",
+    "jlptLevel": "N2",
+    "gradeLevel": "2",
+    "onyomi": [
+      "バク"
+    ],
+    "kunyomi": [
+      "むぎ"
+    ],
+    "category": [
+      "food-ingredients-kitchen",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "来",
+      "麦",
+      "秋"
+    ],
+    "mnemonics": "Grain form—wheat with trailing stroke.",
+    "vietMnemonics": "Hình bông lúa có nét đuôi: MẠCH là lúa mì.",
+    "frequency": 1230,
+    "lucThu": "Cần tra cứu. 麦 MẠCH = lúa mạch: chữ ghép từ 龶, 夂 TRỈ, 麥, 来. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "姓",
+    "components": "姓, 女, 生",
+    "strokeOrderSvg": "kanji-vectors/059d3.svg",
+    "hanViet": "TÍNH",
+    "englishMeaning": "surname",
+    "vietnameseMeaning": "họ (gia tộc)",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "セイ",
+      "ショウ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": [
+      "性",
+      "姓",
+      "生"
+    ],
+    "mnemonics": "Woman (女) and life (生)—family name.",
+    "vietMnemonics": "女 + 生: cái ‘họ’ dòng TÍNH.",
+    "frequency": 1742,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 姓 TÍNH = họ (gia tộc): chữ ghép từ 女 NỮ, 生 SINH. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "筒",
+    "components": "筒, 竹, 同, 冂, 一, 口",
+    "strokeOrderSvg": "kanji-vectors/07b52.svg",
+    "hanViet": "ĐỒNG",
+    "englishMeaning": "cylinder, pipe, tube, gun barrel, sleeve",
+    "vietnameseMeaning": "ống, ống trụ, nòng súng, tay áo",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "トウ"
+    ],
+    "kunyomi": [
+      "つつ"
+    ],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "童",
+      "筒",
+      "同"
+    ],
+    "mnemonics": "Bamboo (竹) same (同) cavity—tube.",
+    "vietMnemonics": "竹 tre + 同 giống nhau: ống ĐỒNG tròn đều.",
+    "frequency": 1662,
+    "lucThu": "Hình thanh 形聲. 筒 ĐỒNG = ống: gồm bộ 竹 TRÚC tre (TRÚC) chỉ nghĩa và 同 ĐỒNG chỉ thanh, hợp lại thành chữ có nghĩa là ống."
+  },
+  {
+    "kanji": "鼻",
+    "components": "鼻, 自, 目, 畀, 田, 廾, 十, 丿",
+    "strokeOrderSvg": "kanji-vectors/09f3b.svg",
+    "hanViet": "TỊ",
+    "englishMeaning": "nose, snout",
+    "vietnameseMeaning": "mũi",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ビ"
+    ],
+    "kunyomi": [
+      "はな"
+    ],
+    "category": [],
+    "lookalikes": [
+      "自",
+      "目",
+      "鼻"
+    ],
+    "mnemonics": "Self (自) above nose form—snout protrudes.",
+    "vietMnemonics": "自 trên, phần dưới thành mũi: TỊ ‘cái mũi’.",
+    "frequency": 1240,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 鼻 TỊ = mũi: chữ ghép từ 自, 目 MỤC, 畀, 田 ĐIỀN, 廾, 十 THẬP, 丿 PHIỆT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "粒",
+    "components": "粒, 米, 立, 亠",
+    "strokeOrderSvg": "kanji-vectors/07c92.svg",
+    "hanViet": "LẠP",
+    "englishMeaning": "grains, drop, counter for tiny particles",
+    "vietnameseMeaning": "hạt, viên, đơn vị hạt nhỏ",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "リュウ"
+    ],
+    "kunyomi": [
+      "つぶ"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "粉",
+      "粒",
+      "立"
+    ],
+    "mnemonics": "Rice (米) standing (立)—individual grains.",
+    "vietMnemonics": "米 hạt + 立 đứng riêng: LẠP là hạt lẻ.",
+    "frequency": 1356,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 粒 LẠP = hạt: chữ ghép từ 米 MỄ, 立 LẬP, 亠 ĐẦU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "詞",
+    "components": "詞, 言, 口, 司, 一",
+    "strokeOrderSvg": "kanji-vectors/08a5e.svg",
+    "hanViet": "TỪ",
+    "englishMeaning": "part of speech, words, poetry",
+    "vietnameseMeaning": "từ ngữ, từ loại, thi từ",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "詩",
+      "詞",
+      "司"
+    ],
+    "mnemonics": "Words (言) under 司—governed language: parts of speech.",
+    "vietMnemonics": "言 lời + 司 quản: TỪ là ngôn từ có quy tắc.",
+    "frequency": 1056,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 詞 TỪ = từ ngữ: chữ ghép từ 言 NGÔN, 口 KHẨU, 司, 一 NHẤT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "胃",
+    "components": "胃, 田, 月, 肉, 囲",
+    "strokeOrderSvg": "kanji-vectors/080c3.svg",
+    "hanViet": "VỊ",
+    "englishMeaning": "stomach, paunch, crop, craw",
+    "vietnameseMeaning": "dạ dày, bao tử",
+    "jlptLevel": "N2",
+    "gradeLevel": "4",
+    "onyomi": [
+      "イ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "囲",
+      "胃",
+      "腸"
+    ],
+    "mnemonics": "Flesh (月) enclosed (囲)—the stomach pouch.",
+    "vietMnemonics": "Nhục 月 bọc bởi 囲: VỊ là bao tử.",
+    "frequency": 1494,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 胃 VỊ = dạ dày: chữ ghép từ 田 ĐIỀN, 月 NGUYỆT, 肉, 囲. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "畳",
+    "components": "畳, 田, 冖, 且, 月, 一, 召",
+    "strokeOrderSvg": "kanji-vectors/07573.svg",
+    "hanViet": "ĐIỆP",
+    "englishMeaning": "tatami mat, counter for tatami mats, fold, shut up, do away with",
+    "vietnameseMeaning": "chiếu tatami, gấp, xếp",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ジョウ",
+      "チョウ"
+    ],
+    "kunyomi": [
+      "たた.む",
+      "たたみ",
+      "かさ.なる"
+    ],
+    "category": [
+      "measurements-math-calculation-units",
+      "numbers-time-date-calendar-count",
+      "verbs-action",
+      "history-culture-events",
+      "directions-positions-navigation"
+    ],
+    "lookalikes": [
+      "疊",
+      "畳",
+      "召"
+    ],
+    "mnemonics": "Field (田) and call (召)—mats folded and laid.",
+    "vietMnemonics": "田 ruộng + 召 gọi: chiếu ĐIỆP xếp chồng.",
+    "frequency": 1587,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 畳 ĐIỆP = chiếu tatami: chữ ghép từ 田 ĐIỀN, 冖 MỊCH, 且, 月 NGUYỆT, 一 NHẤT, 召. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "机",
+    "components": "机, 木, 几, 丿",
+    "strokeOrderSvg": "kanji-vectors/0673a.svg",
+    "hanViet": "KỶ, KY, CƠ",
+    "englishMeaning": "desk, table",
+    "vietnameseMeaning": "bàn, cái bàn",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "キ"
+    ],
+    "kunyomi": [
+      "つくえ"
+    ],
+    "category": [],
+    "lookalikes": [
+      "几",
+      "机",
+      "架"
+    ],
+    "mnemonics": "Wood (木) and small stand (几)—a desk.",
+    "vietMnemonics": "木 + 几: KỶ là chiếc bàn.",
+    "frequency": 1730,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 机 KỶ = bàn: chữ ghép từ 木 MỘC, 几, 丿 PHIỆT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "膚",
+    "components": "膚, 虍, 七, 一, 胃, 田, 月, 肉, 虎",
+    "strokeOrderSvg": "kanji-vectors/0819a.svg",
+    "hanViet": "PHU",
+    "englishMeaning": "skin, body, grain, texture, disposition",
+    "vietnameseMeaning": "da, bề mặt, tính chất",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "フ"
+    ],
+    "kunyomi": [
+      "はだ"
+    ],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency",
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "膚",
+      "皮",
+      "膀"
+    ],
+    "mnemonics": "Flesh (月) and tiger (虎)—skin texture.",
+    "vietMnemonics": "月 nhục + 虎 vằn: da PHU có vân.",
+    "frequency": 1503,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 膚 PHU = da: chữ ghép từ 虍, 七 THẤT, 一 NHẤT, 胃, 田 ĐIỀN, 月 NGUYỆT, 肉, 虎. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "濯",
+    "components": "濯, 氵, 翟, 羽, 隹, 亻, 水, 人, 𦥑",
+    "strokeOrderSvg": "kanji-vectors/06fef.svg",
+    "hanViet": "TRẠC",
+    "englishMeaning": "laundry, wash, pour on, rinse",
+    "vietnameseMeaning": "giặt giũ, xả nước, tráng rửa",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "タク"
+    ],
+    "kunyomi": [
+      "すす.ぐ",
+      "ゆす.ぐ"
+    ],
+    "category": [
+      "household-chores-cleaning-maintenance"
+    ],
+    "lookalikes": [
+      "濯",
+      "洗",
+      "澄"
+    ],
+    "mnemonics": "Water (氵) and sweep form—rinse clean.",
+    "vietMnemonics": "氵 nước + nét quét: TRẠC là tráng giặt.",
+    "frequency": 1388,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 濯 TRẠC = giặt giũ: chữ ghép từ 氵 THỦY, 翟, 羽, 隹, 亻 NHÂN, 水 THỦY, 人 NHÂN, 𦥑. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "塔",
+    "components": "塔, 土, 荅, 艹, 合, 人, 一, 口, 艸",
+    "strokeOrderSvg": "kanji-vectors/05854.svg",
+    "hanViet": "THÁP, ĐÁP",
+    "englishMeaning": "pagoda, tower, steeple",
+    "vietnameseMeaning": "tháp, bảo tháp",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "トウ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "塔",
+      "涛",
+      "塔楼"
+    ],
+    "mnemonics": "Soil (土) plus layered answer—tower rises.",
+    "vietMnemonics": "土 đất + tầng lớp: THÁP cao vút.",
+    "frequency": 1559,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 塔 THÁP = tháp: chữ ghép từ 土 THỔ, 荅, 艹 THẢO, 合, 人 NHÂN, 一 NHẤT, 口 KHẨU, 艸. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "沸",
+    "components": "沸, 氵, 弗, 弓, 丿, 丨, 水",
+    "strokeOrderSvg": "kanji-vectors/06cb8.svg",
+    "hanViet": "PHÍ, PHẤT",
+    "englishMeaning": "seethe, boil, ferment, uproar, breed",
+    "vietnameseMeaning": "sôi, sục sôi, sôi động",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "フツ"
+    ],
+    "kunyomi": [
+      "わ.く",
+      "わ.かす"
+    ],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": [
+      "泣",
+      "沸",
+      "活"
+    ],
+    "mnemonics": "Water (氵) with 弗—vigorously boiling.",
+    "vietMnemonics": "氵 nước + 弗: sôi PHÌNH—PHÍ.",
+    "frequency": 1667,
+    "lucThu": "Hình thanh 形聲. 沸 PHÍ = sôi: gồm bộ 氵 THỦY nước (THỦY) chỉ nghĩa và 丿 PHIỆT chỉ thanh, hợp lại thành chữ có nghĩa là sôi."
+  },
+  {
+    "kanji": "灰",
+    "components": "灰, 厂, 火",
+    "strokeOrderSvg": "kanji-vectors/07070.svg",
+    "hanViet": "HÔI, KHÔI",
+    "englishMeaning": "ashes, puckery juice, cremate",
+    "vietnameseMeaning": "tro, thiêu hóa",
+    "jlptLevel": "N2",
+    "gradeLevel": "6",
+    "onyomi": [
+      "カイ"
+    ],
+    "kunyomi": [
+      "はい"
+    ],
+    "category": [
+      "drinking-beverages-alcohol",
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "灰",
+      "炎",
+      "火"
+    ],
+    "mnemonics": "Fire (火) plus cliff (厂)—ashes after burning.",
+    "vietMnemonics": "Lửa 火 sát vách 厂: HÔI còn lại tro.",
+    "frequency": 1718,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 灰 HÔI = tro: chữ ghép từ 厂, 火 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "菓",
+    "components": "菓, 艹, 果, 田, 日, 木, 艸",
+    "strokeOrderSvg": "kanji-vectors/083d3.svg",
+    "hanViet": "QUẢ",
+    "englishMeaning": "candy, cakes, fruit",
+    "vietnameseMeaning": "bánh kẹo, trái cây",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "カ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "food-ingredients-kitchen",
+      "verbs-basic",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees",
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "果",
+      "菓",
+      "菓子"
+    ],
+    "mnemonics": "Grass (艹) over fruit (果)—sweets from fruits.",
+    "vietMnemonics": "艹 + 果: QUẢ là bánh trái.",
+    "frequency": 926,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 菓 QUẢ = bánh kẹo: chữ ghép từ 艹 THẢO, 果, 田 ĐIỀN, 日 NHẬT, 木 MỘC, 艸. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "帽",
+    "components": "帽, 巾, 冒, 日, 目",
+    "strokeOrderSvg": "kanji-vectors/05e3d.svg",
+    "hanViet": "MẠO",
+    "englishMeaning": "cap, headgear",
+    "vietnameseMeaning": "mũ, nón",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ボウ",
+      "モウ"
+    ],
+    "kunyomi": [
+      "ずきん",
+      "おお.う"
+    ],
+    "category": [
+      "body-health-medicine",
+      "health-care-dental-emergency"
+    ],
+    "lookalikes": [
+      "冒",
+      "巾",
+      "帽"
+    ],
+    "mnemonics": "Cloth (巾) and cover (冒)—a hat.",
+    "vietMnemonics": "巾 vải + 冒 che: MẠO là mũ.",
+    "frequency": 1500,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 帽 MẠO = mũ: chữ ghép từ 巾, 冒, 日 NHẬT, 目 MỤC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "枯",
+    "components": "枯, 木, 古, 十, 口",
+    "strokeOrderSvg": "kanji-vectors/067af.svg",
+    "hanViet": "KHÔ",
+    "englishMeaning": "wither, die, dry up, be seasoned",
+    "vietnameseMeaning": "khô héo, tàn, cằn cỗi",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "コ"
+    ],
+    "kunyomi": [
+      "か.れる",
+      "か.らす"
+    ],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing",
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": [
+      "固",
+      "枯",
+      "雇"
+    ],
+    "mnemonics": "Wood (木) becomes old (古)—wither and dry.",
+    "vietMnemonics": "木 gỗ + 古 cũ: KHÔ là héo.",
+    "frequency": 1765,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 枯 KHÔ = khô héo: chữ ghép từ 木 MỘC, 古 CỔ, 十 THẬP, 口 KHẨU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "涼",
+    "components": "涼, 氵, 京, 亠, 口, 小, 水",
+    "strokeOrderSvg": "kanji-vectors/06dbc.svg",
+    "hanViet": "LƯƠNG, LƯỢNG",
+    "englishMeaning": "refreshing, nice and cool",
+    "vietnameseMeaning": "mát mẻ, sảng khoái",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "リョウ",
+      "マコト"
+    ],
+    "kunyomi": [
+      "すず.しい",
+      "すず.む",
+      "すず.やか",
+      "うす.い",
+      "ひや.す"
+    ],
+    "category": [
+      "storage-preservation-containers"
+    ],
+    "lookalikes": [
+      "凉",
+      "京",
+      "清"
+    ],
+    "mnemonics": "Water (氵) cool under 京—refreshing breeze.",
+    "vietMnemonics": "氵 nước + 京 kinh: khí LƯƠNG mát.",
+    "frequency": 1148,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 涼 LƯƠNG = mát mẻ: chữ ghép từ 氵 THỦY, 京, 亠 ĐẦU, 口 KHẨU, 小 TIỂU, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "舟",
+    "components": "舟",
+    "strokeOrderSvg": "kanji-vectors/0821f.svg",
+    "hanViet": "CHU, CHÂU",
+    "englishMeaning": "boat, ship",
+    "vietnameseMeaning": "thuyền, tàu",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "シュウ"
+    ],
+    "kunyomi": [
+      "ふね",
+      "ふな-",
+      "-ぶね"
+    ],
+    "category": [
+      "vehicles-train-car-travel-transport-driving-moving"
+    ],
+    "lookalikes": [
+      "船",
+      "般",
+      "舟"
+    ],
+    "mnemonics": "Pictograph of boat—hull and deck.",
+    "vietMnemonics": "Hình thuyền nhỏ: CHU = thuyền.",
+    "frequency": 1851,
+    "lucThu": "Cần tra cứu. 舟 CHU = thuyền: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "貝",
+    "components": "貝, 目, 八",
+    "strokeOrderSvg": "kanji-vectors/08c9d.svg",
+    "hanViet": "BỐI",
+    "englishMeaning": "shellfish",
+    "vietnameseMeaning": "vỏ sò, hải sản có vỏ",
+    "jlptLevel": "N2",
+    "gradeLevel": "1",
+    "onyomi": [
+      "バイ"
+    ],
+    "kunyomi": [
+      "かい"
+    ],
+    "category": [
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "food-ingredients-kitchen",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": [
+      "員",
+      "貝",
+      "貞"
+    ],
+    "mnemonics": "Pictograph of a shell—valuables and money glyph.",
+    "vietMnemonics": "Hình vỏ sò: BỐI cũng là biểu cho tiền của.",
+    "frequency": 1653,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 貝 BỐI = vỏ sò: chữ ghép từ 目 MỤC, 八 BÁT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "符",
+    "components": "符, 竹, 付, 亻, 寸, 人",
+    "strokeOrderSvg": "kanji-vectors/07b26.svg",
+    "hanViet": "PHÙ",
+    "englishMeaning": "token, sign, mark, tally, charm",
+    "vietnameseMeaning": "phù hiệu, bùa, thẻ bài",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "フ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": [
+      "付",
+      "竹",
+      "符"
+    ],
+    "mnemonics": "Bamboo (竹) and attach (付)—a token tag.",
+    "vietMnemonics": "竹 thẻ tre + 付 gắn: PHÙ là thẻ/bùa.",
+    "frequency": 1726,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 符 PHÙ = phù hiệu: chữ ghép từ 竹 TRÚC, 付, 亻 NHÂN, 寸, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "憎",
+    "components": "憎, 忄, 曽, 田, 日, 心, 曾",
+    "strokeOrderSvg": "kanji-vectors/0618e.svg",
+    "hanViet": "TĂNG",
+    "englishMeaning": "hate, detest",
+    "vietnameseMeaning": "ghét, căm ghét",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ゾウ"
+    ],
+    "kunyomi": [
+      "にく.む",
+      "にく.い",
+      "にく.らしい",
+      "にく.しみ"
+    ],
+    "category": [
+      "emotions-feelings-happiness-love-states",
+      "clothing-fashion-dress-shoes-hat"
+    ],
+    "lookalikes": [
+      "増",
+      "曾",
+      "憎"
+    ],
+    "mnemonics": "Heart (忄) under 曾—feelings amplified into hate.",
+    "vietMnemonics": "忄 tâm + 曾 tăng: TĂNG là căm ghét.",
+    "frequency": 1860,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 憎 TĂNG = ghét: chữ ghép từ 忄 TÂM, 曽, 田 ĐIỀN, 日 NHẬT, 心 TÂM, 曾. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "皿",
+    "components": "皿",
+    "strokeOrderSvg": "kanji-vectors/076bf.svg",
+    "hanViet": "MÃNH",
+    "englishMeaning": "dish, a helping, plate",
+    "vietnameseMeaning": "đĩa, chén bát, suất ăn",
+    "jlptLevel": "N2",
+    "gradeLevel": "3",
+    "onyomi": [
+      "ベイ"
+    ],
+    "kunyomi": [
+      "さら"
+    ],
+    "category": [
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "血",
+      "皿",
+      "盆"
+    ],
+    "mnemonics": "Pictograph of a dish—flat plate.",
+    "vietMnemonics": "Hình cái đĩa cạn: MÃNH là bát đĩa.",
+    "frequency": 1441,
+    "lucThu": "Cần tra cứu. 皿 MÃNH = đĩa: chữ ghép từ . Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "肯",
+    "components": "肯, 止, 卜, 月, 肉",
+    "strokeOrderSvg": "kanji-vectors/080af.svg",
+    "hanViet": "KHẲNG, KHẢI",
+    "englishMeaning": "agreement, consent, comply with",
+    "vietnameseMeaning": "đồng ý, chấp thuận, khẳng định",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "コウ"
+    ],
+    "kunyomi": [
+      "がえんじ.る"
+    ],
+    "category": [
+      "social-cooperation-conflict-interaction"
+    ],
+    "lookalikes": [
+      "肝",
+      "肯",
+      "朋"
+    ],
+    "mnemonics": "Flesh (月) and a nod—affirm and consent.",
+    "vietMnemonics": "月 nhục + dáng gật đầu: KHẲNG là đồng ý.",
+    "frequency": 2059,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 肯 KHẲNG = đồng ý: chữ ghép từ 止, 卜, 月 NGUYỆT, 肉. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "燥",
+    "components": "燥, 火, 喿, 品, 口, 木",
+    "strokeOrderSvg": "kanji-vectors/071e5.svg",
+    "hanViet": "TÁO",
+    "englishMeaning": "parch, dry up",
+    "vietnameseMeaning": "khô ráp, hanh khô",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "ソウ"
+    ],
+    "kunyomi": [
+      "はしゃ.ぐ"
+    ],
+    "category": [
+      "household-chores-cleaning-maintenance"
+    ],
+    "lookalikes": [
+      "操",
+      "燥",
+      "藻"
+    ],
+    "mnemonics": "Fire (火) under tree tops—drying heat.",
+    "vietMnemonics": "火 lửa cháy trên tán: hanh khô TÁO.",
+    "frequency": 1392,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 燥 TÁO = khô ráp: chữ ghép từ 火 HỎA, 喿, 品, 口 KHẨU, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "畜",
+    "components": "畜, 玄, 亠, 幺, 田",
+    "strokeOrderSvg": "kanji-vectors/0755c.svg",
+    "hanViet": "SÚC, HÚC",
+    "englishMeaning": "livestock, domestic fowl and animals",
+    "vietnameseMeaning": "gia súc, vật nuôi",
+    "jlptLevel": "N2",
+    "gradeLevel": "9",
+    "onyomi": [
+      "チク"
+    ],
+    "kunyomi": [],
+    "category": [
+      "animals-insects-birds-fish-pets-creatures-wildlife",
+      "nature-elements-sightseeing",
+      "verbs-action"
+    ],
+    "lookalikes": [
+      "蓄",
+      "畜",
+      "牧"
+    ],
+    "mnemonics": "Dark (玄) over field (田)—kept animals.",
+    "vietMnemonics": "玄 trên 田: SÚC là nuôi trong ruộng.",
+    "frequency": 1488,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 畜 SÚC = gia súc: chữ ghép từ 玄, 亠 ĐẦU, 幺 YẾU, 田 ĐIỀN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "挟",
+    "components": "挟, 扌, 夹, 二, 大, 从, 人, 手, 夾",
+    "strokeOrderSvg": "kanji-vectors/0631f.svg",
+    "hanViet": "HIỆP, TIỆP",
+    "englishMeaning": "pinch, between",
+    "vietnameseMeaning": "kẹp, chen giữa",
+    "jlptLevel": "N2",
+    "gradeLevel": "10",
+    "onyomi": [
+      "キョウ",
+      "ショウ"
+    ],
+    "kunyomi": [
+      "はさ.む",
+      "はさ.まる",
+      "わきばさ.む",
+      "さしはさ.む"
+    ],
+    "category": [
+      "verbs-basic",
+      "directions-positions-navigation",
+      "entertainment-games-hobby-relax"
+    ],
+    "lookalikes": [
+      "挾",
+      "狭",
+      "挟"
+    ],
+    "mnemonics": "Hand (扌) plus clamp (夹)—pinch between.",
+    "vietMnemonics": "扌 tay + 夹 kẹp: HIỆP là kẹp lại.",
+    "frequency": 1780,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 挟 HIỆP = kẹp: chữ ghép từ 扌 THỦ, 夹, 二 NHỊ, 大 ĐẠI, 从, 人 NHÂN, 手 THỦ, 夾. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "曇",
+    "components": "曇, 日, 雲, 雨, 云, 二, 厶",
+    "strokeOrderSvg": "kanji-vectors/066c7.svg",
+    "hanViet": "ĐÀM",
+    "englishMeaning": "cloudy weather, cloud up",
+    "vietnameseMeaning": "âm u, nhiều mây",
+    "jlptLevel": "N2",
+    "gradeLevel": "10",
+    "onyomi": [
+      "ドン",
+      "クモ."
+    ],
+    "kunyomi": [],
+    "category": [
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "food-ingredients-kitchen",
+      "eating-dining-meals-restaurants"
+    ],
+    "lookalikes": [
+      "雲",
+      "曇",
+      "雰"
+    ],
+    "mnemonics": "Sun (日) with cloud (雲)—clouds dim the day.",
+    "vietMnemonics": "日 mặt trời + 雲 mây: ĐÀM là âm u.",
+    "frequency": 1615,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 曇 ĐÀM = âm u: chữ ghép từ 日 NHẬT, 雲, 雨 VŨ, 云, 二 NHỊ, 厶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "滴",
+    "components": "滴, 氵, 啇, 亠, 冂, 古, 十, 口, 水",
+    "strokeOrderSvg": "kanji-vectors/06ef4.svg",
+    "hanViet": "TÍCH, TRÍCH",
+    "englishMeaning": "drip, drop",
+    "vietnameseMeaning": "giọt, nhỏ giọt",
+    "jlptLevel": "N2",
+    "gradeLevel": "10",
+    "onyomi": [
+      "テキ"
+    ],
+    "kunyomi": [
+      "しずく",
+      "したた.る"
+    ],
+    "category": [],
+    "lookalikes": [
+      "敵",
+      "滴",
+      "商"
+    ],
+    "mnemonics": "Water (氵) plus bottom (啇)—drops fall to the base.",
+    "vietMnemonics": "氵 nước + 啇 đáy: TÍCH là giọt rơi.",
+    "frequency": 1834,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 滴 TÍCH = giọt: chữ ghép từ 氵 THỦY, 啇, 亠 ĐẦU, 冂 QUYNH, 古 CỔ, 十 THẬP, 口 KHẨU, 水 THỦY. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "伺",
+    "components": "伺, 亻, 司, 一, 口, 人",
+    "strokeOrderSvg": "kanji-vectors/04f3a.svg",
+    "hanViet": "TÝ, TỨ",
+    "englishMeaning": "pay respects, visit, ask, inquire, question, implore",
+    "vietnameseMeaning": "thăm hỏi, vấn an, hỏi han",
+    "jlptLevel": "N2",
+    "gradeLevel": "10",
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [
+      "うかが.う"
+    ],
+    "category": [],
+    "lookalikes": [
+      "似",
+      "司",
+      "伺"
+    ],
+    "mnemonics": "Person (亻) under 司—politely inquire and visit.",
+    "vietMnemonics": "亻 người + 司 quản: TÝ là đến thăm hỏi.",
+    "frequency": 1419,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 伺 TÝ = thăm hỏi: chữ ghép từ 亻 NHÂN, 司, 一 NHẤT, 口 KHẨU, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  }
+]

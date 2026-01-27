@@ -1,0 +1,789 @@
+[
+  {
+    "kanji": "勁",
+    "components": "巠, 一, 巛, 工, 力",
+    "strokeOrderSvg": "kanji-vectors/052c1.svg",
+    "hanViet": "KÍNH",
+    "englishMeaning": "strong",
+    "vietnameseMeaning": "mạnh",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ケイ"
+    ],
+    "kunyomi": [
+      "つよ.い"
+    ],
+    "category": [
+      "adjectives-conditions"
+    ],
+    "lookalikes": "",
+    "mnemonics": "_Sewer power_ : **formidable** stench.",
+    "vietMnemonics": "Cống thoát nước_ : **ghê gớm** mùi hôi thối.",
+    "frequency": 2110,
+    "lucThu": "Cần tra cứu. 勁 KÍNH = strong: chữ ghép từ 巠, 一 NHẤT, 巛, 工 CÔNG, 力 LỰC. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "菖",
+    "components": "艹, 昌, 日",
+    "strokeOrderSvg": "kanji-vectors/083d6.svg",
+    "hanViet": "XƯƠNG",
+    "englishMeaning": "iris",
+    "vietnameseMeaning": "mống mắt",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ショウ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "Most people don't realize this, but there is a very specific biological reason that the **iris** _flower_ has _flowers_ that split into two main petal groups that generally face two completely different directions. The reason is that the **iris** _flower_ was brought over from another solar system many light years away that had two _suns_. Thus, one petal group would face one _sun_ , while the other petal group would face the other _sun_.",
+    "vietMnemonics": "Hầu hết mọi người không nhận ra điều này, nhưng có một lý do sinh học rất cụ thể là **iris** _flower_ có _hoa_ chia thành hai nhóm cánh chính nhìn chung quay về hai hướng hoàn toàn khác nhau.Lý do là vì **iris** _flower_ được mang đến từ một hệ mặt trời khác cách chúng ta nhiều năm ánh sáng và có hai _mặt trời_.Do đó, một nhóm cánh hoa sẽ hướng về một _mặt trời_, trong khi nhóm cánh hoa còn lại sẽ hướng về _mặt trời_ kia.",
+    "frequency": 2111,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 菖 XƯƠNG = iris: chữ ghép từ 艹 THẢO, 昌, 日 NHẬT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "旦",
+    "components": "日, 一",
+    "strokeOrderSvg": "kanji-vectors/065e6.svg",
+    "hanViet": "ĐÁN",
+    "englishMeaning": "nightbreak, dawn, morning",
+    "vietnameseMeaning": "đêm, bình minh, buổi sáng",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [
+      "タン",
+      "ダン"
+    ],
+    "kunyomi": [
+      "あき.らか",
+      "あきら",
+      "ただし",
+      "あさ",
+      "あした"
+    ],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing"
+    ],
+    "lookalikes": "",
+    "mnemonics": "A **nightbreak** happens when the sun rises over the horizon (floor). It may be easier to think of the keyword \"DAYBREAK\" or \"MORNING\" for this kanji (other kanji dictionaries do). Then the mnemonic phrase \"SUN rising over the HORIZON\" works better. It is an infrequent kanji, but can be found in: 旦夕 （たんせき） morning and evening, or 元旦 （がんたん） New Year's Day.",
+    "vietMnemonics": "**nghỉ đêm** xảy ra khi mặt trời mọc trên đường chân trời (tầng). Có thể dễ dàng hơn khi nghĩ đến từ khóa \"DAYBREAK\" hoặc \"MORNING\" cho chữ Hán này (các từ điển chữ Hán khác cũng làm như vậy).Khi đó cụm từ ghi nhớ \"MẶT TRỜI mọc trên HORIZON\" sẽ hoạt động hiệu quả hơn.Đây là một chữ kanji không phổ biến nhưng có thể được tìm thấy trong: 旦夕 （たんせき） buổi sáng và buổi tối, hoặc 元旦 （がんたん） Ngày đầu năm mới.",
+    "frequency": 1182,
+    "lucThu": "Cần tra cứu. 旦 ĐÁN = nightbreak: chữ ghép từ 日 NHẬT, 一 NHẤT. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "椋",
+    "components": "木, 京, 亠, 口, 小",
+    "strokeOrderSvg": "kanji-vectors/0690b.svg",
+    "hanViet": "LƯƠNG",
+    "englishMeaning": "type of deciduous tree, grey starling",
+    "vietnameseMeaning": "loại cây rụng lá, sáo xám",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リョウ",
+      "ム"
+    ],
+    "kunyomi": [
+      "むく"
+    ],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": "諒",
+    "mnemonics": "The **Oriental elm** is, of course, a _tree_ fairly representative of the Orient and thus it is common in the _capital_ in order to show ambassadors what the Orient is all about.",
+    "frequency": 2113,
+    "lucThu": "Hình thanh 形聲. 椋  = type of deciduous tree: chữ ghép từ 木 MỘC, 京, 亠 ĐẦU, 口 KHẨU, 小 TIỂU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Tất nhiên, **Cây du phương Đông** là một _cây_ khá tiêu biểu cho Phương Đông và do đó, nó thường được sử dụng ở _thủ đô_ để cho các đại sứ thấy tất cả những gì về Phương Đông."
+  },
+  {
+    "kanji": "叡",
+    "components": "睿, 卜, 冖, 目, 又",
+    "strokeOrderSvg": "kanji-vectors/053e1.svg",
+    "hanViet": "DUỆ",
+    "englishMeaning": "intelligence, imperial",
+    "vietnameseMeaning": "tình báo, đế quốc",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "エイ"
+    ],
+    "kunyomi": [
+      "あき.らか"
+    ],
+    "category": [
+      "politics-law-government-police",
+      "education-academic-learning-levels-school-research",
+      "occupations-jobs-employment-company",
+      "media-writing-journalism-internet-newspaper-news"
+    ],
+    "lookalikes": "",
+    "mnemonics": "Magic wand, crown, 1-eyed valley, crotch: The archeologist was searching for the birthplace of the homo **sapience**. Wearing his _magic wand_ and his divining _crown_ , he was able to located it in the _1-eyed valley_ , somewhere in Bolivia. His _crotch_ got all excited, thinking on all the publicity of finding the birthplace of homo **sapience**.",
+    "frequency": 2114,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 叡 DUỆ = intelligence: chữ ghép từ 睿, 卜, 冖 MỊCH, 目 MỤC, 又 HỮU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Đũa thần, vương miện, thung lũng 1 mắt, háng: Nhà khảo cổ học đang tìm kiếm nơi sinh ra **sapience** của người đồng tính.Đeo _cây đũa thần_ và _vương miện_ bói toán của mình, anh ấy đã có thể định vị được nó ở _thung lũng 1 mắt_ , đâu đó ở Bolivia._Đũng quần_ của anh ấy trở nên phấn khích khi nghĩ đến tất cả sự công khai về việc tìm ra nơi sinh của **sapience** đồng tính."
+  },
+  {
+    "kanji": "紬",
+    "components": "糸, 由, 日, 丨",
+    "strokeOrderSvg": "kanji-vectors/07d2c.svg",
+    "hanViet": "TRỪU",
+    "englishMeaning": "pongee (a knotted silk cloth)",
+    "vietnameseMeaning": "pongee (một loại vải lụa thắt nút)",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "チュウ"
+    ],
+    "kunyomi": [
+      "つむぎ",
+      "つむ.ぐ"
+    ],
+    "category": [
+      "clothing-fashion-dress-shoes-hat"
+    ],
+    "lookalikes": "",
+    "mnemonics": "_Spiderman_ decides to try a new diet of _sprouts_ to see how it affects the consistency of his web. To his surprise (150m above ground) a lovely line of **pongee** comes out instead. Time to think quickly.",
+    "frequency": 2115,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 紬 TRỪU = pongee (a knotted silk cloth): chữ ghép từ 糸 MỊCH, 由, 日 NHẬT, 丨 CỔN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "_Spiderman_ quyết định thử chế độ ăn mới gồm _mầm_ để xem nó ảnh hưởng như thế nào đến độ chắc chắn của mạng nhện của anh ấy.Trước sự ngạc nhiên của anh ấy (cách mặt đất 150m), thay vào đó, một dòng **pongee** đáng yêu xuất hiện.Đã đến lúc phải suy nghĩ nhanh chóng."
+  },
+  {
+    "kanji": "胤",
+    "components": "儿, 丿, 幺, 月, 乙",
+    "strokeOrderSvg": "kanji-vectors/080e4.svg",
+    "hanViet": "DẬN",
+    "englishMeaning": "descendent, issue, offspring",
+    "vietnameseMeaning": "hậu duệ, con cháu",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "イン",
+      "タ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "numbers-time-date-calendar-count",
+      "nature-elements-sightseeing",
+      "family-people-friend-relations",
+      "family-home-childcare-baby-play"
+    ],
+    "lookalikes": "",
+    "mnemonics": "The _cocoon_ like piece of _flesh_ between _human legs_ can produce **blood relative** s.",
+    "frequency": 2116,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 胤 DẬN = descendent: chữ ghép từ 儿 NHI, 丿 PHIỆT, 幺 YẾU, 月 NGUYỆT, 乙 ẤT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Mảnh _thịt_kén_ nằm giữa _chân người_ có thể sinh ra **họ hàng**."
+  },
+  {
+    "kanji": "凜",
+    "components": "冫, 稟, 㐭, 亠, 回, 囗, 口, 禾, 丿, 木",
+    "strokeOrderSvg": "kanji-vectors/051dc.svg",
+    "hanViet": "LẪM",
+    "englishMeaning": "cold, strict, severe",
+    "vietnameseMeaning": "lạnh lùng, nghiêm khắc, khắc nghiệt",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リン"
+    ],
+    "kunyomi": [
+      "きびし.い"
+    ],
+    "category": [
+      "history-culture-events"
+    ],
+    "lookalikes": "",
+    "mnemonics": "",
+    "frequency": 2117,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 凜 LẪM = cold: chữ ghép từ 冫, 稟, 㐭, 亠 ĐẦU, 回, 囗 VI, 口 KHẨU, 禾 HÒA, 丿 PHIỆT, 木 MỘC. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "亥",
+    "components": "亠, 人",
+    "strokeOrderSvg": "kanji-vectors/04ea5.svg",
+    "hanViet": "HỢI",
+    "englishMeaning": "sign of the hog, 9-11PM, twelfth sign of the Chinese zodiac",
+    "vietnameseMeaning": "con lợn, 9-11 giờ tối, cung hoàng đạo thứ mười hai của Trung Quốc",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ガイ",
+      "カイ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "* The _top hat_ represents the external shape of the _acorn_ , and the unusual but easily written complex of strokes beneath it (which you might also see as distortions of an _elbow_ and _person_ ) stands for the mysterious secret whereby the _acorn_ contains the oak tree in a nutshell. This kanji is the 12th sign of the Chinese zodiac: the **sign of the hog**. It is best learned by thinking of an acorn-eating **hog** in connection with the primitive meaning given below.",
+    "frequency": 2118,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 亥 HỢI = sign of the hog: chữ ghép từ 亠 ĐẦU, 人 NHÂN. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "* Mũ _top_ thể hiện hình dạng bên ngoài của _acorn_ và phức hợp bất thường nhưng dễ viết của các nét bên dưới nó (mà bạn cũng có thể thấy là sự biến dạng của _elbow_ và _person_ ) tượng trưng cho bí mật bí ẩn trong đó _acorn_ chứa đựng cây sồi trong một cái vỏ ngắn.Chữ kanji này là cung hoàng đạo thứ 12 của Trung Quốc: **ký hiệu con lợn**.Tốt nhất nên học nó bằng cách nghĩ đến một con **lợn** ăn quả sồi liên quan đến ý nghĩa nguyên thủy được đưa ra dưới đây."
+  },
+  {
+    "kanji": "爵",
+    "components": "⺤, 罒, 艮, 寸",
+    "strokeOrderSvg": "kanji-vectors/07235.svg",
+    "hanViet": "TƯỚC",
+    "englishMeaning": "baron, peerage, court rank",
+    "vietnameseMeaning": "nam tước, quý tộc, cấp bậc triều đình",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [
+      "シャク"
+    ],
+    "kunyomi": [],
+    "category": [
+      "politics-law-government-police",
+      "social-hierarchy-rank-class-status"
+    ],
+    "lookalikes": "",
+    "mnemonics": "Vulture . . . eye . . . silver . . . glue.",
+    "frequency": 2049,
+    "lucThu": "Cần tra cứu. 爵 TƯỚC = baron: chữ ghép từ ⺤, 罒, 艮, 寸. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư.",
+    "vietMnemonics": "Kền kền...mắt ...bạc ...keo dán."
+  },
+  {
+    "kanji": "脹",
+    "components": "月, 長",
+    "strokeOrderSvg": "kanji-vectors/08139.svg",
+    "hanViet": "TRƯỚNG",
+    "englishMeaning": "dilate, distend, bulge, fill out, swell",
+    "vietnameseMeaning": "giãn ra, căng ra, phình ra, lấp đầy, sưng lên",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "チョウ"
+    ],
+    "kunyomi": [
+      "は.れる",
+      "ふく.らむ",
+      "ふく.れる"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "Flesh . . . long.",
+    "frequency": 2120,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 脹 TRƯỚNG = dilate: chữ ghép từ 月 NGUYỆT, 長. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Thịt ...dài."
+  },
+  {
+    "kanji": "麟",
+    "components": "鹿, 广, 厂, 比, 匕, 粦, 米, 舛, 夕, 㐄",
+    "strokeOrderSvg": "kanji-vectors/09e9f.svg",
+    "hanViet": "LÂN",
+    "englishMeaning": "Chinese unicorn, genius, giraffe, bright, shining",
+    "vietnameseMeaning": "Kỳ lân Trung Quốc, thiên tài, hươu cao cổ, tươi sáng, tỏa sáng",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リン"
+    ],
+    "kunyomi": [],
+    "category": [
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-conditions",
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": "",
+    "mnemonics": "As a scientologist, A DEER to TOM CRUISE, is not just a deer. It is actually a descendent of a **camelopard** that was sent by extraterrestrials.",
+    "frequency": 2121,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 麟 LÂN = Chinese unicorn: chữ ghép từ 鹿, 广, 厂, 比, 匕 BĨ, 粦, 米 MỄ, 舛, 夕 TỊCH, 㐄. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Với tư cách là một nhà khoa học, A DEER to TOM CRUISE, không chỉ là một con nai.Nó thực chất là hậu duệ của **lạc đà** được người ngoài hành tinh gửi đến."
+  },
+  {
+    "kanji": "莉",
+    "components": "艹, 利, 禾, 丿, 木, 刂",
+    "strokeOrderSvg": "kanji-vectors/08389.svg",
+    "hanViet": "LỊ",
+    "englishMeaning": "jasmine",
+    "vietnameseMeaning": "hoa nhài",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リ",
+      "ライ",
+      "レイ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "Thanks to Nathaniel **Hawthorn** e, the **hawthorn** _flower_ is now _profit_ able.",
+    "frequency": 2122,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 莉 LỊ = jasmine: chữ ghép từ 艹 THẢO, 利, 禾 HÒA, 丿 PHIỆT, 木 MỘC, 刂 ĐAO. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Nhờ có Nathaniel **Hawthorn** e, **táo gai** _flower_ giờ đã có thể sinh lời."
+  },
+  {
+    "kanji": "汰",
+    "components": "水, 太, 大, 丶",
+    "strokeOrderSvg": "kanji-vectors/06c70.svg",
+    "hanViet": "THÁI, THẢI",
+    "englishMeaning": "luxury, select",
+    "vietnameseMeaning": "sang trọng, chọn",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [
+      "タ",
+      "タイ"
+    ],
+    "kunyomi": [
+      "おご.る",
+      "にご.る",
+      "よな.げる"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "This character can mean both to **cleanse** and to make dirty. We will choose the latter and imagine someone who is displeasingly _plump_ going to a skinny spa whose medicinal _waters_ promise to **cleanse** him of his unwanted corpulence. Picture him sitting in the spa as the pounds melt away, leaving a greasy scum on top of the _water_.",
+    "frequency": 1656,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 汰 THÁI = luxury: chữ ghép từ 水 THỦY, 太, 大 ĐẠI, 丶. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Ký tự này có thể vừa có nghĩa là **làm sạch** vừa có nghĩa là làm bẩn.Chúng ta sẽ chọn phương án sau và tưởng tượng một người có thân hình đầy đặn một cách khó chịu đang đi đến một spa gầy gò nơi mà những loại nước thuốc hứa hẹn sẽ **làm sạch** sự béo phì không mong muốn của anh ta.Hãy tưởng tượng anh ta đang ngồi trong spa khi cân nặng tan đi, để lại cặn nhờn trên _nước_."
+  },
+  {
+    "kanji": "瑶",
+    "components": "王, 䍃, ⺤, 缶, 山",
+    "strokeOrderSvg": "kanji-vectors/07476.svg",
+    "hanViet": "DAO",
+    "englishMeaning": "beautiful as a jewel",
+    "vietnameseMeaning": "đẹp như một viên ngọc",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ヨウ"
+    ],
+    "kunyomi": [
+      "たま"
+    ],
+    "category": [
+      "verbs-basic",
+      "adjectives-appearance-personality"
+    ],
+    "lookalikes": "",
+    "mnemonics": "",
+    "frequency": 2124,
+    "lucThu": "Cần tra cứu. 瑶 DAO = beautiful as a jewel: chữ ghép từ 王, 䍃, ⺤, 缶, 山 SƠN. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "瑳",
+    "components": "王, 差, 羊, 䒑, 丿, 工",
+    "strokeOrderSvg": "kanji-vectors/07473.svg",
+    "hanViet": "THA",
+    "englishMeaning": "polish",
+    "vietnameseMeaning": "đánh bóng",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "サ"
+    ],
+    "kunyomi": [
+      "みが.く"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "The _king_ appreciated the _distinction_ of **burnish** ed jewels.",
+    "vietMnemonics": "_Vua_ đánh giá cao sự khác biệt_ của đồ trang sức **đánh bóng**.",
+    "frequency": 2125,
+    "lucThu": "Cần tra cứu. 瑳  = polish: chữ ghép từ 王, 差, 羊 DƯƠNG, 䒑, 丿 PHIỆT, 工 CÔNG. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "耶",
+    "components": "耳, ⻏",
+    "strokeOrderSvg": "kanji-vectors/08036.svg",
+    "hanViet": "DA, GIA",
+    "englishMeaning": "question mark",
+    "vietnameseMeaning": "dấu chấm hỏi",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ヤ",
+      "ジャ"
+    ],
+    "kunyomi": [
+      "か"
+    ],
+    "category": [],
+    "lookalikes": "椰",
+    "mnemonics": "Quiet!!!! The _city walls_ have _ears_ he exclaimed.",
+    "vietMnemonics": "Im lặng!!!!Tường thành có tai, anh kêu lên.",
+    "frequency": 2126,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 耶 DA = question mark: chữ ghép từ 耳 NHĨ, ⻏. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "椰",
+    "components": "木, 耶, 耳, ⻏",
+    "strokeOrderSvg": "kanji-vectors/06930.svg",
+    "hanViet": "GIA, DA",
+    "englishMeaning": "coconut tree",
+    "vietnameseMeaning": "cây dừa",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ヤ"
+    ],
+    "kunyomi": [
+      "やし"
+    ],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": "耶",
+    "mnemonics": "(../v4/2680.html) (#2680 耶)). I see a _tree_ with an _exclamation_ mark painted on it. \"Why is that?\" I think, \"An _exclamation_ mark indicates danger, but it's only a _tree_ \". Then a coconut drops on my head. Ah, it's a **coconut tree**.",
+    "vietMnemonics": "(../v4/2680.html) (#2680 耶)).Tôi nhìn thấy một _cây_ có dấu _chấm than_ được vẽ trên đó.\"Tại sao vậy?\"Tôi nghĩ, \"Dấu _chấm than_ biểu thị sự nguy hiểm, nhưng đó chỉ là một _cây_ \".Rồi một quả dừa rơi xuống đầu tôi.À, đó là **cây dừa**.",
+    "frequency": 2127,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 椰 GIA = coconut tree: chữ ghép từ 木 MỘC, 耶, 耳 NHĨ, ⻏. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "絃",
+    "components": "糸, 玄, 亠, 幺",
+    "strokeOrderSvg": "kanji-vectors/07d43.svg",
+    "hanViet": "HUYỀN",
+    "englishMeaning": "string, cord, samisen music",
+    "vietnameseMeaning": "dây, nhạc samisen",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ゲン"
+    ],
+    "kunyomi": [
+      "いと"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "The _thread_ with a _mysterious_ origin… hint: its not from a plant!",
+    "frequency": 2128,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 絃 HUYỀN = string: chữ ghép từ 糸 MỊCH, 玄, 亠 ĐẦU, 幺 YẾU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "_Sợi chỉ_ có nguồn gốc _bí ẩn… gợi ý: nó không phải từ thực vật!"
+  },
+  {
+    "kanji": "丞",
+    "components": "了, ㇁, 水, 一",
+    "strokeOrderSvg": "kanji-vectors/04e1e.svg",
+    "hanViet": "THỪA, CHƯNG",
+    "englishMeaning": "help",
+    "vietnameseMeaning": "giúp đỡ",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ジョウ",
+      "ショウ",
+      "タス.ケ"
+    ],
+    "kunyomi": [
+      "すく.う"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "If _water completely_ covers the _floor_ , you will need a **helping hand** to clean it up.",
+    "frequency": 2129,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 丞 THỪA = help: chữ ghép từ 了, ㇁, 水 THỦY, 一 NHẤT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Nếu _nước_ ngập hoàn toàn _sàn_ , bạn sẽ cần **bàn tay trợ giúp** để làm sạch nó."
+  },
+  {
+    "kanji": "璃",
+    "components": "王, 离, 亠, 凶, 乂, 丿, 凵, 禸, 冂",
+    "strokeOrderSvg": "kanji-vectors/07483.svg",
+    "hanViet": "LY, LI, LÊ",
+    "englishMeaning": "glassy, lapis lazuli",
+    "vietnameseMeaning": "thủy tinh, lapis lazuli",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [],
+    "kunyomi": [],
+    "category": [
+      "materials-metals-substances",
+      "construction-engineering-technology"
+    ],
+    "lookalikes": "",
+    "mnemonics": "This kanji refers to one of the seven classical stones of China. Its elements: _jewel_ . . . _top hat_ . . . _villain_ . . . _belt_ . . . _elbow_.",
+    "vietMnemonics": "Chữ Hán này đề cập đến một trong bảy viên đá cổ điển của Trung Quốc.Các phần tử của nó: _jewel_ ..._mũ chóp_ ..._nhân vật phản diện_ ..._thắt lưng_ ..._khuỷu tay_.",
+    "frequency": 2051,
+    "lucThu": "Cần tra cứu. 璃 LY = glassy: chữ ghép từ 王, 离, 亠 ĐẦU, 凶, 乂 NGHỆ, 丿 PHIỆT, 凵, 禸, 冂 QUYNH. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư."
+  },
+  {
+    "kanji": "奎",
+    "components": "大, 圭, 土",
+    "strokeOrderSvg": "kanji-vectors/0594e.svg",
+    "hanViet": "KHUÊ",
+    "englishMeaning": "star, god of literature",
+    "vietnameseMeaning": "ngôi sao, thần văn chương",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ケイ",
+      "キ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "verbs-basic"
+    ],
+    "lookalikes": "",
+    "mnemonics": "(From Greek mythology). When Perseus goes to rescue **Andromeda** , he finds he's made a mistake. What looked from a distance like a beautiful maiden chained to a rock turns out to be a _St. Bernard_ tangled up in some _ivy_. (Andromeda was chained up a bit further down on another beach).",
+    "frequency": 2131,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 奎 KHUÊ = star: chữ ghép từ 大 ĐẠI, 圭, 土 THỔ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "(Trích từ thần thoại Hy Lạp).Khi Perseus đi giải cứu **Andromeda**, anh nhận ra mình đã phạm sai lầm.Thứ nhìn từ xa giống như một thiếu nữ xinh đẹp bị xích vào một tảng đá hóa ra lại là _St.Bernard_ vướng vào một số cây thường xuân.(Andromeda bị xích xa hơn một chút ở một bãi biển khác)."
+  },
+  {
+    "kanji": "塑",
+    "components": "朔, 屰, 屮, 凵, 丿, 月, 土",
+    "strokeOrderSvg": "kanji-vectors/05851.svg",
+    "hanViet": "TỐ",
+    "englishMeaning": "model, molding",
+    "vietnameseMeaning": "mô hình, đúc",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [
+      "ソ"
+    ],
+    "kunyomi": [
+      "でく"
+    ],
+    "category": [
+      "history-culture-events"
+    ],
+    "lookalikes": "",
+    "mnemonics": "This kanji depicts the art of **modeling** clay or wood into a figure of your choice. The elements for composing it are: _mountain goat_ . . . _moon_ . . . _soil_.",
+    "frequency": 2210,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 塑 TỐ = model: chữ ghép từ 朔, 屰, 屮, 凵, 丿 PHIỆT, 月 NGUYỆT, 土 THỔ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Chữ Hán này mô tả nghệ thuật **tạo hình** đất sét hoặc gỗ thành hình bạn chọn.Các yếu tố để sáng tác nó là: _dê núi_ ..._mặt trăng_ ..._đất_."
+  },
+  {
+    "kanji": "昂",
+    "components": "日, 卩",
+    "strokeOrderSvg": "kanji-vectors/06602.svg",
+    "hanViet": "NGANG",
+    "englishMeaning": "rise",
+    "vietnameseMeaning": "tăng lên",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "コウ",
+      "ゴウ",
+      "タカ.ブ"
+    ],
+    "kunyomi": [
+      "あ.がる",
+      "たか.い"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "Sending mail to the _sun_. It would take a whole _box of stamps_ to **elevate** it that high.",
+    "frequency": 2133,
+    "lucThu": "Cần tra cứu. 昂 NGANG = rise: chữ ghép từ 日 NHẬT, 卩. Cần nghiên cứu nguồn gốc chữ Hán để xác định loại lục thư.",
+    "vietMnemonics": "Đang gửi thư tới _sun_.Sẽ phải mất cả _hộp tem_ để **nâng** nó lên cao như vậy."
+  },
+  {
+    "kanji": "柾",
+    "components": "木, 正, 止, 卜",
+    "strokeOrderSvg": "kanji-vectors/067fe.svg",
+    "hanViet": "CỮU",
+    "englishMeaning": "straight grain, spindle tree, (kokuji)",
+    "vietnameseMeaning": "hạt thẳng, cây trục, (kokuji)",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [],
+    "kunyomi": [
+      "まさ",
+      "まさめ",
+      "まさき"
+    ],
+    "category": [
+      "nature-elements-sightseeing",
+      "geography-places-countries-cities-mountains-rivers-lakes-landmarks",
+      "weather-nature-seasons",
+      "adjectives-sizes-shapes-colors",
+      "farming-fishing-crops-gardening-flowers-fruits-vegetables-trees"
+    ],
+    "lookalikes": "",
+    "mnemonics": "Give the **spindle tree** a spin, if you can guess where it lands _correctly_ , you'll get a prize!",
+    "frequency": 2134,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 柾  = straight grain: chữ ghép từ 木 MỘC, 正 CHÍNH, 止, 卜. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Hãy quay **cây trục chính**, nếu bạn đoán được nó hạ cánh ở đâu _chính xác_ , bạn sẽ nhận được giải thưởng!"
+  },
+  {
+    "kanji": "熙",
+    "components": "匚, 巳, 己, 灬",
+    "strokeOrderSvg": "kanji-vectors/07199.svg",
+    "hanViet": "HI",
+    "englishMeaning": "bright, sunny, prosperous, merry",
+    "vietnameseMeaning": "tươi sáng, đầy nắng, thịnh vượng, vui vẻ",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "キ"
+    ],
+    "kunyomi": [
+      "たのし.む",
+      "ひか.る",
+      "ひろ.い",
+      "よろこ.ぶ",
+      "かわ.く",
+      "あきらか",
+      "ひろ.める",
+      "ひろ.まる"
+    ],
+    "category": [
+      "weather-nature-seasons",
+      "nature-elements-sightseeing",
+      "colors-visual-painting-shades-tints",
+      "adjectives-basic",
+      "adjectives-conditions",
+      "adjectives-appearance-personality",
+      "adjectives-sizes-shapes-colors",
+      "directions-positions-navigation"
+    ],
+    "lookalikes": "",
+    "mnemonics": "",
+    "frequency": 2135,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 熙  = bright: chữ ghép từ 匚, 巳, 己, 灬 HỎA. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh."
+  },
+  {
+    "kanji": "菫",
+    "components": "艹, 三, 一",
+    "strokeOrderSvg": "kanji-vectors/083eb.svg",
+    "hanViet": "CẬN",
+    "englishMeaning": "the violet",
+    "vietnameseMeaning": "màu tím",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "キン"
+    ],
+    "kunyomi": [
+      "すみれ"
+    ],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "This is a **violet** _cabbage_ , hanging from a _nail_ on the kitchen wall.",
+    "frequency": 2136,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 菫 CẬN = the violet: chữ ghép từ 艹 THẢO, 三 TAM, 一 NHẤT. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Đây là **_cải bắp_màu tím**, treo trên _đinh_ trên tường bếp."
+  },
+  {
+    "kanji": "諒",
+    "components": "言, 口, 京, 亠, 小",
+    "strokeOrderSvg": "kanji-vectors/08ad2.svg",
+    "hanViet": "LƯỢNG",
+    "englishMeaning": "fact, reality, understand, appreciate",
+    "vietnameseMeaning": "thực tế, hiểu, đánh giá cao",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リョウ",
+      "マコト"
+    ],
+    "kunyomi": [
+      "あきら.か"
+    ],
+    "category": [
+      "verbs-action"
+    ],
+    "lookalikes": "椋",
+    "mnemonics": "When a Japanese person _say_ s they'll meet you at the _capital_ , it's best to **verify** whether they mean Tokyo or Kyoto.",
+    "frequency": 2137,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 諒 LƯỢNG = fact: chữ ghép từ 言 NGÔN, 口 KHẨU, 京, 亠 ĐẦU, 小 TIỂU. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Khi một người Nhật _nói_ họ sẽ gặp bạn ở _capital_ , tốt nhất bạn nên **xác minh** xem họ muốn nói đến Tokyo hay Kyoto."
+  },
+  {
+    "kanji": "鞠",
+    "components": "革, 廿, 十, 匊, 勹, 丿, 米",
+    "strokeOrderSvg": "kanji-vectors/097a0.svg",
+    "hanViet": "CÚC",
+    "englishMeaning": "ball",
+    "vietnameseMeaning": "quả bóng",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "キク",
+      "キュウ",
+      "マ"
+    ],
+    "kunyomi": [],
+    "category": [
+      "measurements-math-calculation-units",
+      "adjectives-basic",
+      "abstract-quantity-amount-measure"
+    ],
+    "lookalikes": "",
+    "mnemonics": "Wtf **terminate**? This is \"ball\". Use \"leather ball\" for keyword, imagine a leather american football packed with bound up rice.",
+    "frequency": 2138,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 鞠 CÚC = ball: chữ ghép từ 革, 廿, 十 THẬP, 匊, 勹, 丿 PHIỆT, 米 MỄ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Cái quái gì **chấm dứt**?Đây là \"quả bóng\".Sử dụng từ khóa \"quả bóng da\", hãy tưởng tượng một quả bóng đá Mỹ bằng da chứa đầy cơm."
+  },
+  {
+    "kanji": "崚",
+    "components": "山, 夌, 土, 八, 丿, 夂",
+    "strokeOrderSvg": "kanji-vectors/05d1a.svg",
+    "hanViet": "LĂNG",
+    "englishMeaning": "towering in a row",
+    "vietnameseMeaning": "cao chót vót liên tiếp",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "リョウ"
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "(../v4/2136.html) (#2136 凌) from being trapped: mountains in the distance, extremely **rugged mountains** , and nowhere to go next but through them.",
+    "frequency": 2139,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 崚 LĂNG = towering in a row: chữ ghép từ 山 SƠN, 夌, 土 THỔ, 八 BÁT, 丿 PHIỆT, 夂 TRỈ. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "(../v4/2136.html) (#2136 凌) khỏi bị mắc kẹt: những ngọn núi ở phía xa, những ngọn núi cực kỳ gồ ghề** , và không còn nơi nào để đi tiếp theo ngoài việc xuyên qua chúng."
+  },
+  {
+    "kanji": "濫",
+    "components": "水, 監, 臣, 𠂉, 皿",
+    "strokeOrderSvg": "kanji-vectors/06feb.svg",
+    "hanViet": "LẠM, LÃM, CÃM",
+    "englishMeaning": "excessive, overflow, spread out",
+    "vietnameseMeaning": "quá mức, tràn ra, lan ra",
+    "jlptLevel": "N1",
+    "gradeLevel": "10",
+    "onyomi": [
+      "ラン"
+    ],
+    "kunyomi": [
+      "みだ.りに",
+      "みだ.りがましい"
+    ],
+    "category": [
+      "media-writing-journalism-internet-newspaper-news",
+      "phone-call-communication-interview-dialog",
+      "adjectives-basic",
+      "adjectives-sizes-shapes-colors"
+    ],
+    "lookalikes": "",
+    "mnemonics": "Water . . . oversee.",
+    "frequency": 2143,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 濫 LẠM = excessive: chữ ghép từ 水 THỦY, 監, 臣, 𠂉 PHIẾU, 皿. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Nước ...giám sát."
+  },
+  {
+    "kanji": "捷",
+    "components": "手, ⺕",
+    "strokeOrderSvg": "kanji-vectors/06377.svg",
+    "hanViet": "TIỆP, THIỆP",
+    "englishMeaning": "victory, fast",
+    "vietnameseMeaning": "chiến thắng, nhanh chóng",
+    "jlptLevel": "N1",
+    "gradeLevel": "11",
+    "onyomi": [
+      "ショウ",
+      "ソウ",
+      "ハヤ."
+    ],
+    "kunyomi": [],
+    "category": [],
+    "lookalikes": "",
+    "mnemonics": "Someone tries to lay their fingers on your **spoils** , and you run after them hitting them with a broom as they run from you.",
+    "frequency": 2141,
+    "lucThu": "Hình thanh 形聲 (chưa xác định rõ). 捷 TIỆP = victory: chữ ghép từ 手 THỦ, ⺕. Cần tra cứu nguồn gốc để xác định phần nghĩa và phần thanh.",
+    "vietMnemonics": "Ai đó cố gắng đặt ngón tay của họ lên **chiến lợi phẩm** của bạn và bạn chạy theo sau khi họ dùng chổi đánh họ khi họ chạy trốn khỏi bạn."
+  }
+]

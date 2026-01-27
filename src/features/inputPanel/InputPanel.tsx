@@ -133,6 +133,7 @@ function InputPanel() {
   const [showAskFieldMenu, setShowAskFieldMenu] = useState(false);
   const [showAnswerTypeMenu, setShowAnswerTypeMenu] = useState<boolean>(false);
   const [selectedAnswerTypes, setSelectedAnswerTypes] = useState<Set<'hanViet' | 'onyomi' | 'vietnamese' | 'english'>>(new Set(['hanViet']));
+  const [quizSourceSection, setQuizSourceSection] = useState<string | null>(null);
   const loadDataAttemptedRef = useRef(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const chosenMenuRef = useRef<HTMLDivElement>(null);
@@ -367,12 +368,14 @@ function InputPanel() {
   const startQuizFromSection = (sectionIndex: number, _askField: 'hanViet' | 'onyomi' | 'vietnamese' | 'english') => {
     // Get section kanjis (use full list if sectionIndex >= 0, otherwise use chosen)
     const sectionKanjis = sectionIndex >= 0 ? sections[sectionIndex].kanjis : chosenKanjis;
+    const sectionName = sectionIndex >= 0 ? sections[sectionIndex].file : 'Chosen Kanjis';
     
     if (sectionKanjis.length === 0) {
       alert('This section has no kanjis');
       return;
     }
     
+    setQuizSourceSection(sectionName);
     setQuizSectionKanjis(sectionKanjis);
     setShowAskFieldMenu(false);
     setShowCountdown(true);
@@ -380,16 +383,34 @@ function InputPanel() {
 
   const handleCountdownComplete = () => {
     setShowCountdown(false);
-    
-    // Create 10 random kanjis from section (or less if section has fewer)
+
+    // Prioritize chosen/highlighted kanjis from the section first
+    const chosenFromSection = quizSectionKanjis.filter(k =>
+      chosenKanjis.some(chosen => chosen.kanji === k.kanji)
+    );
+    const unchosenFromSection = quizSectionKanjis.filter(k =>
+      !chosenKanjis.some(chosen => chosen.kanji === k.kanji)
+    );
+
+    // Create 10 kanjis: prioritize chosen ones, then fill with random unchosen ones
     const quizCount = Math.min(10, quizSectionKanjis.length);
     const randomKanjis: KanjiData[] = [];
-    const available = [...quizSectionKanjis];
-    
-    for (let i = 0; i < quizCount; i++) {
-      const randomIndex = Math.floor(Math.random() * available.length);
-      randomKanjis.push(available[randomIndex]);
-      available.splice(randomIndex, 1);
+
+    // Add chosen kanjis first
+    randomKanjis.push(...chosenFromSection.slice(0, quizCount));
+
+    // If we need more, add random unchosen kanjis
+    if (randomKanjis.length < quizCount) {
+      const remaining = quizCount - randomKanjis.length;
+      const shuffled = [...unchosenFromSection];
+
+      // Shuffle the unchosen kanjis
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      randomKanjis.push(...shuffled.slice(0, remaining));
     }
 
     // Extract unique JLPT levels from the random kanjis
@@ -417,6 +438,11 @@ function InputPanel() {
       maxTimePerQuestion: 30,
       includeKanji: true,
       includeVocabulary: false,
+      // Quiz metadata for tracking
+      quizType: 'quick',
+      sourceSection: quizSourceSection || 'Unknown',
+      chosenCount: chosenFromSection.length,
+      randomCount: unchosenFromSection.length > 0 ? (quizCount - chosenFromSection.length) : 0,
     };
 
     // Generate questions from random kanjis using full kanji pool for wrong answers
@@ -468,12 +494,12 @@ function InputPanel() {
                 </button>
                 <div className="relative">
                   <button
-                    onClick={(e) => { 
-                      e.stopPropagation(); 
-                      if (chosenKanjis.length >= 20) {
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (chosenKanjis.length >= 10) {
                         setShowAnswerTypeMenu(!showAnswerTypeMenu);
                       } else {
-                        alert(`Need at least 20 kanjis for quiz (have ${chosenKanjis.length})`);
+                        alert(`Need at least 10 kanjis for quiz (have ${chosenKanjis.length})`);
                       }
                     }}
                     className="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white text-sm rounded transition-colors"

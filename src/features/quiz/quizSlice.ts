@@ -7,6 +7,7 @@ export type QuestionOrder = 'sequential' | 'random';
 export type NumberSelection = 'all' | 'random-10' | 'random-20' | 'random-30' | 'random-50' | 'random-100';
 export type ShowField = 'kanji' | 'hanViet' | 'onyomi' | 'vietnamese' | 'english';
 export type AskField = 'kanji' | 'hanViet' | 'onyomi' | 'vietnamese' | 'english';
+export type QuizType = 'quick' | 'custom' | 'competing';
 
 export interface QuizSettings {
   numberSelection: NumberSelection;
@@ -20,6 +21,11 @@ export interface QuizSettings {
   askFields: AskField[]; // Multi-select when showField is 'kanji'
   questionOrder: QuestionOrder;
   maxTimePerQuestion: 10 | 30 | 60 | 0; // 0 = unlimited
+  // Quiz type metadata (temporary, for display and export only)
+  quizType?: QuizType;
+  sourceSection?: string; // For quick quiz: section name (e.g., "n5", "n3-A")
+  chosenCount?: number; // For quick quiz: number of manually chosen kanjis
+  randomCount?: number; // For quick quiz: number of random kanjis added
 }
 
 export interface QuizQuestion {
@@ -33,9 +39,10 @@ export interface QuizQuestion {
 
 export interface UserAnswer {
   questionId: string;
-  selectedIndex: number | null; // null = timeout
+  selectedIndex: number | null; // null = timeout or skipped
   timeSpent: number; // milliseconds
   correct: boolean;
+  skipped?: boolean; // Track if question was explicitly skipped
 }
 
 export interface ActiveQuiz {

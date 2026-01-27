@@ -295,3 +295,25 @@
   animation: flashRedShake 0.6s ease-in-out;
 }
 
+/* Shimmer animation for quiz cards */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+  background-repeat: no-repeat;
+}
+
