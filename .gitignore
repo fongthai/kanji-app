@@ -25,7 +25,8 @@ dist-ssr
 
 # My own patterns
 my-scripts/*
-debug-references
+debug-references/*
+references-vocabs/*
 docs/*
 new-docs/*
 to-do/*
