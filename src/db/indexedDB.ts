@@ -182,71 +182,169 @@ export async function initDB(): Promise<IDBPDatabase<KanjiDB>> {
   }
 }
 
-export async function seedKanjisFromJSON(jsonFiles: string[]): Promise<void> {
-  const db = await initDB();
-  
-  for (const file of jsonFiles) {
-    try {
-      const response = await fetch(file);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+/**
+ * Fetch JSON files in parallel chunks to optimize network usage
+ * @param files Array of file paths to fetch
+ * @param chunkSize Number of concurrent fetches (default: 10)
+ * @returns Array with success/failure status per file
+ */
+async function fetchJSONFilesInChunks(
+  files: string[],
+  chunkSize: number = 10
+): Promise<Array<{ file: string; data?: any; error?: Error }>> {
+  const results: Array<{ file: string; data?: any; error?: Error }> = [];
+
+  // Split files into chunks
+  for (let i = 0; i < files.length; i += chunkSize) {
+    const chunk = files.slice(i, i + chunkSize);
+
+    // Fetch chunk in parallel with allSettled for graceful error handling
+    const chunkResults = await Promise.allSettled(
+      chunk.map(async (file) => {
+        const response = await fetch(file);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return { file, data };
+      })
+    );
+
+    // Convert settled promises to result format
+    chunkResults.forEach((result, index) => {
+      const file = chunk[index];
+      if (result.status === 'fulfilled') {
+        results.push({ file, data: result.value.data });
+      } else {
+        results.push({ file, error: result.reason });
       }
-      
-      const data: any = await response.json();
-      
-      // Handle both direct array and wrapped object formats
-      const kanjis: any[] = Array.isArray(data) ? data : (data.kanji || []);
-      
-      if (kanjis.length === 0) {
-        console.warn(`⚠️ Warning: ${file} contains 0 kanjis`);
-        continue;
-      }
-      
-      // Extract filename for section grouping (e.g., "n5" from "/data/kanji/n5.json")
-      const filename = file.split('/').pop()?.replace('.json', '') || '';
-      
-      // Start a new transaction for each file
-      const tx = db.transaction('kanjis', 'readwrite');
-      const store = tx.objectStore('kanjis');
-      
-      for (let i = 0; i < kanjis.length; i++) {
-        const kanji = kanjis[i];
-        // Transform org file format to camelCase
-        // id = composite key to allow duplicates across sections
-        // orderIndex = preserve original array position
-        // sectionName = filename for grouping (e.g., "n5-org")
-        // jlptLevel = jlpt-level field for badge display (e.g., "N5")
-        const transformed = {
-          id: `${kanji.kanji}-${filename}`, // Composite key: kanji-sectionName
-          kanji: kanji.kanji || '',
-          sectionName: filename,
-          orderIndex: i, // Preserve original position in JSON array
-          jlptLevel: kanji.jlptLevel || '',
-          gradeLevel: kanji.gradeLevel || '',
-          hanViet: kanji.hanViet || '',
-          onyomi: kanji.onyomi || [],
-          kunyomi: kanji.kunyomi || [],
-          englishMeaning: kanji.englishMeaning || '',
-          vietnameseMeaning: kanji.vietnameseMeaning || '',
-          vietnameseMnemonic: kanji.vietMnemonics || '',
-          lucThu: kanji.lucThu || '',
-          components: kanji.components || '',
-          lookalikes: kanji.lookalikes || '',
-          frequency: kanji.frequency || 0,
-          category: kanji.category || [],
-        };
-        
-        store.put(transformed);
-      }
-      
-      await tx.done;
-    } catch (error) {
-      console.error(`✗ FAILED to load ${file}:`, error);
-      if (error instanceof Error) {
-        console.error(`  Error message: ${error.message}`);
+    });
+  }
+
+  return results;
+}
+
+/**
+ * Write data to IndexedDB in batches to reduce transaction overhead
+ * @param db Database instance
+ * @param storeName Name of the object store
+ * @param batches Array of file data with items
+ * @param batchSize Number of files per transaction
+ * @param transformer Function to transform each item before insertion
+ */
+async function writeBatchToIndexedDB<T extends KanjiData | VocabularyData>(
+  db: IDBPDatabase<KanjiDB>,
+  storeName: 'kanjis' | 'vocabularies',
+  batches: Array<{ file: string; items: any[] }>,
+  batchSize: number,
+  transformer: (item: any, file: string, index: number) => T
+): Promise<void> {
+  // Group files into transaction batches
+  for (let i = 0; i < batches.length; i += batchSize) {
+    const batch = batches.slice(i, i + batchSize);
+
+    // Create single transaction for this batch
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+
+    // Process all files in this batch
+    for (const { file, items } of batch) {
+      for (let j = 0; j < items.length; j++) {
+        try {
+          const transformed = transformer(items[j], file, j);
+          await store.put(transformed as any);
+        } catch (error) {
+          console.error(`✗ Failed to write item ${j} from ${file}:`, error);
+          // Continue with next item (don't fail entire batch)
+        }
       }
     }
+
+    await tx.done;
+  }
+}
+
+export async function seedKanjisFromJSON(
+  jsonFiles: string[],
+  onProgress?: (loaded: number, total: number) => void
+): Promise<void> {
+  const startTime = performance.now();
+  console.log(`[Kanji] Starting parallel fetch of ${jsonFiles.length} files...`);
+
+  const db = await initDB();
+
+  // Parallel fetch all files in chunks of 10
+  const fetchResults = await fetchJSONFilesInChunks(jsonFiles, 10);
+
+  // Separate successful and failed fetches
+  const successful: Array<{ file: string; items: any[] }> = [];
+  const failed: Array<{ file: string; error: Error }> = [];
+
+  fetchResults.forEach((result) => {
+    if (result.data) {
+      // Handle both direct array and wrapped object formats
+      const kanjis: any[] = Array.isArray(result.data) ? result.data : (result.data.kanji || []);
+
+      if (kanjis.length === 0) {
+        console.warn(`⚠️ Warning: ${result.file} contains 0 kanjis`);
+      } else {
+        successful.push({ file: result.file, items: kanjis });
+      }
+    } else if (result.error) {
+      failed.push({ file: result.file, error: result.error });
+    }
+  });
+
+  // Log failures
+  failed.forEach((f) => {
+    console.error(`✗ FAILED to load ${f.file}:`, f.error);
+    if (f.error instanceof Error) {
+      console.error(`  Error message: ${f.error.message}`);
+    }
+  });
+
+  console.log(`[Kanji] Fetched ${successful.length}/${jsonFiles.length} files successfully`);
+  console.log(`[Kanji] Starting batched write to IndexedDB...`);
+
+  // Batched writes (5 files per transaction)
+  await writeBatchToIndexedDB(
+    db,
+    'kanjis',
+    successful,
+    5,
+    (kanji, file, index) => {
+      // Extract filename for section grouping (e.g., "n5" from "/data/kanji/n5.json")
+      const filename = file.split('/').pop()?.replace('.json', '') || '';
+
+      // Transform org file format to camelCase
+      return {
+        id: `${kanji.kanji}-${filename}`, // Composite key: kanji-sectionName
+        kanji: kanji.kanji || '',
+        sectionName: filename,
+        orderIndex: index, // Preserve original position in JSON array
+        jlptLevel: kanji.jlptLevel || '',
+        gradeLevel: kanji.gradeLevel || '',
+        hanViet: kanji.hanViet || '',
+        onyomi: kanji.onyomi || [],
+        kunyomi: kanji.kunyomi || [],
+        englishMeaning: kanji.englishMeaning || '',
+        vietnameseMeaning: kanji.vietnameseMeaning || '',
+        vietnameseMnemonic: kanji.vietMnemonics || '',
+        lucThu: kanji.lucThu || '',
+        components: kanji.components || '',
+        lookalikes: kanji.lookalikes || '',
+        frequency: kanji.frequency || 0,
+        category: kanji.category || [],
+      };
+    }
+  );
+
+  const endTime = performance.now();
+  const duration = ((endTime - startTime) / 1000).toFixed(2);
+  console.log(`[Kanji] ✓ Loaded ${successful.length} files in ${duration}s (${failed.length} failed)`);
+
+  if (onProgress) {
+    onProgress(successful.length, jsonFiles.length);
   }
 }
 
@@ -343,55 +441,86 @@ function validateAndNormalizeVocabulary(vocab: any): { valid: boolean; warnings:
   return { valid: true, warnings };
 }
 
-export async function seedVocabulariesFromJSON(): Promise<void> {
+export async function seedVocabulariesFromJSON(
+  onProgress?: (loaded: number, total: number) => void
+): Promise<void> {
+  const startTime = performance.now();
   const db = await initDB();
   const allWarnings: Array<{ file: string; warnings: string[] }> = [];
 
   try {
     // Load manifest to get list of vocabulary files
-    const manifestResponse = await fetch(`${import.meta.env.BASE_URL}data/vocabulary/manifest.json`);
+    const manifestResponse = await fetch('/data/vocabulary/manifest.json');
     if (!manifestResponse.ok) {
       throw new Error(`Failed to load vocabulary manifest: ${manifestResponse.status}`);
     }
 
     const manifest = await manifestResponse.json();
-    console.log('[IndexedDB] Loading vocabularies from', manifest.sources.length, 'sources');
+    console.log(`[Vocabulary] Starting parallel fetch of ${manifest.sources.length} files...`);
+
+    // Build file paths from manifest sources
+    const filePaths = manifest.sources.map((source: any) => `/data/vocabulary/${source.file}`);
+
+    // Parallel fetch all files in chunks of 10
+    const fetchResults = await fetchJSONFilesInChunks(filePaths, 10);
+
+    // Process fetch results and prepare for batched writes
+    const successful: Array<{ file: string; items: any[]; metadata: { book: string; unit: string } }> = [];
+    const failed: Array<{ file: string; error: Error }> = [];
+
+    fetchResults.forEach((result) => {
+      if (result.data) {
+        const vocabularies = result.data.vocabularies || [];
+
+        if (vocabularies.length === 0) {
+          console.warn(`⚠️ Warning: ${result.file} contains 0 vocabularies`);
+        } else {
+          // Extract file-level metadata
+          const book = result.data.book;
+          const unit = result.data.unit;
+
+          successful.push({
+            file: result.file,
+            items: vocabularies,
+            metadata: { book, unit },
+          });
+        }
+      } else if (result.error) {
+        failed.push({ file: result.file, error: result.error });
+      }
+    });
+
+    // Log failures
+    failed.forEach((f) => {
+      console.error(`✗ FAILED to load ${f.file}:`, f.error);
+      allWarnings.push({ file: f.file, warnings: [`Failed to load: ${f.error}`] });
+    });
+
+    console.log(`[Vocabulary] Fetched ${successful.length}/${manifest.sources.length} files successfully`);
+    console.log(`[Vocabulary] Starting batched write to IndexedDB...`);
 
     let totalLoaded = 0;
     let totalSkipped = 0;
 
-    for (const source of manifest.sources) {
-      try {
-        const fileResponse = await fetch(`${import.meta.env.BASE_URL}data/vocabulary/${source.file}`);
-        if (!fileResponse.ok) {
-          console.warn(`⚠️ Warning: Failed to load ${source.file}: ${fileResponse.status}`);
-          continue;
-        }
+    // Batched writes (8 files per transaction)
+    const batchSize = 8;
+    for (let i = 0; i < successful.length; i += batchSize) {
+      const batch = successful.slice(i, i + batchSize);
 
-        const data = await fileResponse.json();
-        const vocabularies = data.vocabularies || [];
+      // Create single transaction for this batch
+      const tx = db.transaction('vocabularies', 'readwrite');
+      const store = tx.objectStore('vocabularies');
 
-        if (vocabularies.length === 0) {
-          console.warn(`⚠️ Warning: ${source.file} contains 0 vocabularies`);
-          continue;
-        }
-
-        // Extract file-level metadata
-        const book = data.book;
-        const unit = data.unit;
-
-        // Start transaction for this file
-        const tx = db.transaction('vocabularies', 'readwrite');
-        const store = tx.objectStore('vocabularies');
-
+      // Process all files in this batch
+      for (const { file, items, metadata } of batch) {
         const fileWarnings: string[] = [];
 
-        for (const vocab of vocabularies) {
+        for (const vocab of items) {
           // Validate and normalize vocabulary data
           const { valid, warnings } = validateAndNormalizeVocabulary(vocab);
 
           if (!valid) {
-            console.error(`✗ Skipping invalid vocabulary in ${source.file}:`, warnings);
+            console.error(`✗ Skipping invalid vocabulary in ${file}:`, warnings);
             fileWarnings.push(...warnings);
             totalSkipped++;
             continue;
@@ -401,34 +530,40 @@ export async function seedVocabulariesFromJSON(): Promise<void> {
             fileWarnings.push(...warnings);
           }
 
-          // Copy file-level metadata to each vocabulary object
-          vocab.book = book;
-          vocab.unit = unit;
+          // Copy file-level metadata to vocabulary object
+          vocab.book = metadata.book;
+          vocab.unit = metadata.unit;
 
           // Ensure ID is set using file-level book and unit
           if (!vocab.id) {
-            vocab.id = `${vocab.vocabulary}-${book}-${unit}`;
+            vocab.id = `${vocab.vocabulary}-${metadata.book}-${metadata.unit}`;
           }
 
-          await store.put(vocab);
+          try {
+            await store.put(vocab);
+            totalLoaded++;
+          } catch (error) {
+            console.error(`✗ Failed to write vocabulary from ${file}:`, error);
+            totalSkipped++;
+          }
         }
-
-        await tx.done;
-        totalLoaded += vocabularies.length - fileWarnings.filter(w => w.includes('Missing or invalid')).length;
 
         if (fileWarnings.length > 0) {
-          allWarnings.push({ file: source.file, warnings: fileWarnings });
-          console.warn(`⚠️ ${source.file}: ${fileWarnings.length} warnings`);
-        } else {
-          console.log(`✓ Loaded ${vocabularies.length} vocabularies from ${source.file}`);
+          allWarnings.push({ file, warnings: fileWarnings });
         }
-      } catch (error) {
-        console.error(`✗ Failed to load ${source.file}:`, error);
-        allWarnings.push({ file: source.file, warnings: [`Failed to load: ${error}`] });
+      }
+
+      await tx.done;
+
+      // Report progress
+      if (onProgress) {
+        onProgress(i + batch.length, successful.length);
       }
     }
 
-    console.log(`[IndexedDB] Total vocabularies loaded: ${totalLoaded}${totalSkipped > 0 ? ` (${totalSkipped} skipped)` : ''}`);
+    const endTime = performance.now();
+    const duration = ((endTime - startTime) / 1000).toFixed(2);
+    console.log(`[Vocabulary] ✓ Loaded ${totalLoaded} vocabularies from ${successful.length} files in ${duration}s (${totalSkipped} skipped, ${failed.length} failed)`);
 
     // Show warning popup if there were any data issues
     if (allWarnings.length > 0) {
