@@ -11,10 +11,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build:github",
-<<<<<<< HEAD
-    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy",
-=======
->>>>>>> d7c2f0c (refresh the repo)
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
