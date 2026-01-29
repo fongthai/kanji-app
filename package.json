@@ -6,12 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-manifests.mjs && tsc -b && vite build",
-    "build:github": "VITE_DEPLOY_TARGET=github npm run build && touch dist/.nojekyll",
-    "build:cloudflare": "npm run build",
+    "build:github": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build:github",
-    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",

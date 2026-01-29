@@ -448,9 +448,11 @@ export async function seedVocabulariesFromJSON(
   const db = await initDB();
   const allWarnings: Array<{ file: string; warnings: string[] }> = [];
 
+  const baseUrl = import.meta.env.BASE_URL || '/';
+
   try {
     // Load manifest to get list of vocabulary files
-    const manifestResponse = await fetch('/data/vocabulary/manifest.json');
+    const manifestResponse = await fetch(`${baseUrl}data/vocabulary/manifest.json`);
     if (!manifestResponse.ok) {
       throw new Error(`Failed to load vocabulary manifest: ${manifestResponse.status}`);
     }
@@ -459,7 +461,7 @@ export async function seedVocabulariesFromJSON(
     console.log(`[Vocabulary] Starting parallel fetch of ${manifest.sources.length} files...`);
 
     // Build file paths from manifest sources
-    const filePaths = manifest.sources.map((source: any) => `/data/vocabulary/${source.file}`);
+    const filePaths = manifest.sources.map((source: any) => `${baseUrl}data/vocabulary/${source.file}`);
 
     // Parallel fetch all files in chunks of 10
     const fetchResults = await fetchJSONFilesInChunks(filePaths, 10);

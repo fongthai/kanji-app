@@ -33,6 +33,8 @@ jobs:
 
       - name: Build
         run: npm run build:github
+        env:
+          VITE_DEPLOY_TARGET: github
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
