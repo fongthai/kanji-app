@@ -1,0 +1,11 @@
+/data/kanji/*.json
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/vocabulary/*.json
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/kanji/manifest.json
+  Cache-Control: public, max-age=86400
+
+/data/vocabulary/manifest.json
+  Cache-Control: public, max-age=86400

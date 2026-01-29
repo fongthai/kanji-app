@@ -25,8 +25,7 @@ dist-ssr
 
 # My own patterns
 my-scripts/*
-debug-references/*
-references-vocabs/*
+debug-references
 docs/*
 new-docs/*
 to-do/*
@@ -51,9 +50,5 @@ public/data/vocabulary/n2*.json
 public/data/vocabulary/n3*.json
 public/data/vocabulary/N3*.json
 public/data/vocabulary/n4*.json
-<<<<<<< HEAD
 !public/data/vocabulary/n5-*.json
-=======
-!public/data/vocabulary/n5*.json
->>>>>>> d7c2f0c (refresh the repo)
 !public/data/vocabulary/minna*.json 

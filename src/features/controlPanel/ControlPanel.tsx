@@ -435,8 +435,8 @@ function ControlPanel() {
             </div>
             <input
               type="range"
-              min={worksheet.currentMode === 'board' ? 4 : 4}
-              max={worksheet.currentMode === 'board' ? 15 : 15}
+              min={worksheet.currentMode === 'board' ? 4 : 2}
+              max={worksheet.currentMode === 'board' ? 15 : 5}
               value={columnCount}
               onChange={(e) => {
                 const value = Number(e.target.value);

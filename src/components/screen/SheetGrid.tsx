@@ -51,11 +51,17 @@ export function SheetGrid({
     const borderWidth = 1;
     const totalBorderWidth = (totalColumns + 1) * borderWidth;
     const innerWidth = availableWidth - (outerTablePadding * 2);
-    const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
+
+    // NEW: Calculate practice width (60% with gap)
+    const gap = 16;
+    const practiceWidth = Math.floor((innerWidth - gap) * 0.6);
+
+    // Use practiceWidth instead of innerWidth
+    const cellSize = (practiceWidth - totalBorderWidth) / totalColumns;
     const writingTableHeight = cellSize * 2 + borderWidth * 3; // 2 rows + borders
-    
+
     const outerTableBorder = 4; // border-2 = 2px top + 2px bottom
-    
+
     // Total OUTER-TABLE height
     return (
       outerTablePadding + // top padding
@@ -139,7 +145,13 @@ export function calculateTablesPerPage(
   const borderWidth = 1;
   const totalBorderWidth = (totalColumns + 1) * borderWidth;
   const innerWidth = availableWidth - (outerTablePadding * 2) - (2 * 2); // 2px outer table border on each side
-  const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
+
+  // NEW: Add gap and practice width calculation
+  const gap = 16;
+  const practiceWidth = Math.floor((innerWidth - gap) * 0.6);
+
+  // Use practiceWidth instead of innerWidth
+  const cellSize = (practiceWidth - totalBorderWidth) / totalColumns;
   const writingTableHeight = cellSize * 2 + borderWidth * 3;
   
   const outerTableBorder = 4; // border-2 = 2px top + 2px bottom
@@ -200,7 +212,13 @@ export function calculateTablesPerPagePDF(
   const borderWidth = 1;
   const totalBorderWidth = (totalColumns + 1) * borderWidth;
   const innerWidth = availableWidth - (outerTablePadding * 2) - (2 * 2); // 2pt border on each side
-  const cellSize = (innerWidth - totalBorderWidth) / totalColumns;
+
+  // NEW: Add gap and practice width calculation
+  const gap = 12; // Slightly smaller gap for PDF
+  const practiceWidth = Math.floor((innerWidth - gap) * 0.6);
+
+  // Use practiceWidth instead of innerWidth
+  const cellSize = (practiceWidth - totalBorderWidth) / totalColumns;
   const writingTableHeight = cellSize * 2 + borderWidth * 3;
   
   const outerTableBorder = 4; // border: 2pt = 4pt total (top + bottom)

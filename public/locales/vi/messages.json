@@ -14,6 +14,6 @@
     "delete_database_failed": "Xóa cơ sở dữ liệu thất bại. Vui lòng thử thủ công: Mở DevTools Console và chạy lệnh:\nindexedDB.deleteDatabase('ft-kanji-database')"
   },
   "empty_state": {
-    "select_kanji": "Chọn kanji từ panel bên trái để thấy dữ liệu hiện ra ở đây."
+    "select_kanji": "Chọn kanji hoặc từ vựng từ Input Panel bên trái để bắt đầu"
   }
 }

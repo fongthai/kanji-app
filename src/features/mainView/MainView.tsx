@@ -8,6 +8,7 @@ import { VocabularySheetGrid, calculatePageBreaks, estimateVocabRowsPerPage } fr
 import { A4_HEIGHT, BOARD_HEADER_HEIGHT, BOARD_FOOTER_HEIGHT } from '../../constants/boardDimensions';
 import { BoardHeader } from '../../components/screen/BoardHeader';
 import { BoardFooter } from '../../components/screen/BoardFooter';
+import { UIWatermark } from '../../components/screen/UIWatermark';
 import Quiz from '../quiz/Quiz';
 import { useState, useEffect, useMemo } from 'react';
 
@@ -196,8 +197,9 @@ function MainView() {
               
               <div className="flex-1 overflow-hidden">
                 {chosenKanjis.length === 0 ? (
-                  <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
-                    {t('empty_state.select_kanji')}
+                  <div className="flex items-center justify-center h-full text-gray-400 text-center px-8 text-3xl font-medium relative">
+                    <UIWatermark />
+                    <span className="relative z-10">{t('empty_state.select_kanji')}</span>
                   </div>
                 ) : (
                   <BoardGrid
@@ -228,8 +230,9 @@ function MainView() {
                 {filterMode === 'vocabulary' ? (
                   // Vocabulary sheet mode
                   chosenVocabularies.length === 0 ? (
-                    <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
-                      Select vocabularies from the Input Panel to generate practice worksheet
+                    <div className="flex items-center justify-center h-full text-gray-400 text-center px-8 text-3xl font-medium relative">
+                      <UIWatermark />
+                      <span className="relative z-10">{t('empty_state.select_kanji')}</span>
                     </div>
                   ) : (
                     <VocabularySheetGrid
@@ -244,8 +247,9 @@ function MainView() {
                 ) : (
                   // Kanji sheet mode
                   chosenKanjis.length === 0 ? (
-                    <div className="flex items-center justify-center h-full text-gray-500 text-center px-8">
-                      Select kanji from the Input Panel to generate practice worksheet
+                    <div className="flex items-center justify-center h-full text-gray-400 text-center px-8 text-3xl font-medium relative">
+                      <UIWatermark />
+                      <span className="relative z-10">{t('empty_state.select_kanji')}</span>
                     </div>
                   ) : (
                     <SheetGrid

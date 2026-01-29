@@ -9,7 +9,7 @@ function loadSavedMode(): 'sheet' | 'board' | 'quiz' {
       return savedMode;
     }
   }
-  return 'quiz'; // Default fallback
+  return 'board'; // Default fallback
 }
 
 interface WorksheetState {
@@ -65,7 +65,7 @@ const initialState: WorksheetState = {
   boardShowFooter: true,
 
   // Sheet mode defaults
-  sheetColumnCount: 13,
+  sheetColumnCount: 3, // Default to middle of 2-5 range
   masterKanjiSize: 150,
   sheetShowHanViet: true,
   sheetShowIndicators: true,

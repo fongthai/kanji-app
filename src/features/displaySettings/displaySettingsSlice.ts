@@ -62,7 +62,7 @@ const initialState: DisplaySettingsState = {
     hanVietSize: 58, // Percentage scale: 35%-65%, default 58%
     showHanViet: true, // Default: show Hán-Việt
     showVietnameseMeaning: true, // Default: show Vietnamese (Board mode)
-    showEnglishMeaning: false, // Default: hide English (Board mode)
+    showEnglishMeaning: true, // Default: show English (Board mode)
     hanVietOrientation: 'horizontal', // Default: horizontal
     // Indicator defaults: JLPT=on, Grade=off, Frequency=on
     showJlptIndicator: true,
@@ -92,10 +92,10 @@ const initialState: DisplaySettingsState = {
     vocabularyFont: 'NotoSansJP-Regular', // Default font for vocabulary text
     showHanViet: true,
     showVietnameseMeaning: true,
-    showEnglishMeaning: false,
-    showExplanation: false, // Default: hide explanation
-    showExampleSentence: false, // Default: hide example sentences
-    showExampleTranslation: false, // Default: hide translations
+    showEnglishMeaning: true,
+    showExplanation: true, // Default: show explanation
+    showExampleSentence: true, // Default: show example sentences
+    showExampleTranslation: true, // Default: show translations
     practiceCellSize: 40, // Default: 40px per cell
   },
   pngQuality: 300, // Default: Medium quality (300 DPI)

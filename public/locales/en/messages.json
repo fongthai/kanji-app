@@ -14,6 +14,6 @@
     "delete_database_failed": "Failed to delete database. Please try manually: Open DevTools Console and run:\nindexedDB.deleteDatabase('ft-kanji-database')"
   },
   "empty_state": {
-    "select_kanji": "Select kanji from the Input Panel to generate worksheet"
+    "select_kanji": "Select kanjis or vocabularies from the Input Panel on the left to start with"
   }
 }
