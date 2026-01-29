@@ -52,7 +52,7 @@ export const KanjiOuterTable: React.FC<KanjiOuterTableProps> = ({
   const innerWidth = availableWidth - (outerPadding * 2);
 
   // Calculate 60/40 split widths with gap
-  const { practiceWidth, vocabWidth, writingTableHeight, vocabHeight } = useMemo(() => {
+  const { practiceWidth, vocabWidth, vocabHeight } = useMemo(() => {
     const gap = 16; // Gap between practice and vocabulary sections
     const practiceWidthCalc = Math.floor((innerWidth - gap) * 0.6);
     const vocabWidthCalc = innerWidth - practiceWidthCalc - gap;
@@ -71,7 +71,6 @@ export const KanjiOuterTable: React.FC<KanjiOuterTableProps> = ({
     return {
       practiceWidth: practiceWidthCalc,
       vocabWidth: vocabWidthCalc,
-      writingTableHeight: heightCalc,
       vocabHeight: vocabHeightCalc,
     };
   }, [innerWidth, sheetColumnCount]);

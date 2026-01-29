@@ -41,7 +41,7 @@ interface PDFKanjiVocabularySectionProps {
  * Future: Will display actual vocabulary data
  */
 export function PDFKanjiVocabularySection({
-  kanji,
+  kanji: _kanji, // Will be used for vocabulary fetching in the future
   availableWidth,
   availableHeight,
 }: PDFKanjiVocabularySectionProps) {

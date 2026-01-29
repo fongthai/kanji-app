@@ -1,8 +1,8 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-01-28T00:57:06.100Z",
-  "totalVocabularies": 13842,
-  "totalFiles": 171,
+  "generatedAt": "2026-01-29T02:31:55.452Z",
+  "totalVocabularies": 7894,
+  "totalFiles": 165,
   "sources": [
     {
       "file": "N3-mimi-kara-grouped-by50-group-01.json",
@@ -111,12 +111,6 @@
       "book": "N3 Mimi Vnjpclub",
       "unit": "Unit 01",
       "count": 120
-    },
-    {
-      "file": "N3-mimikara-vnjpclub-bai01-1.json",
-      "book": "N3 Mimikara from vnjpclub.com",
-      "unit": "Unit 1.1: 人と人との関係 (Relationships between People)",
-      "count": 17
     },
     {
       "file": "N3-shinkanzen-group-01.json",
@@ -539,12 +533,6 @@
       "count": 46
     },
     {
-      "file": "minna.json",
-      "book": "Minna no Nihongo",
-      "unit": "All Units",
-      "count": 2249
-    },
-    {
       "file": "n2-unit-01.json",
       "book": "JLPT N2",
       "unit": "N2 Unit 01",
@@ -705,12 +693,6 @@
       "book": "JLPT N2",
       "unit": "N2 Unit 27",
       "count": 3
-    },
-    {
-      "file": "n2.json",
-      "book": "N2-vietnamjp",
-      "unit": "All Units",
-      "count": 1303
     },
     {
       "file": "n3-unit-01.json",
@@ -899,12 +881,6 @@
       "count": 5
     },
     {
-      "file": "n3.json",
-      "book": "N3-vietnamjp",
-      "unit": "All Units",
-      "count": 1505
-    },
-    {
       "file": "n4-unit-01.json",
       "book": "JLPT N4",
       "unit": "N4 Unit 01",
@@ -971,12 +947,6 @@
       "count": 14
     },
     {
-      "file": "n4.json",
-      "book": "N4-vietnamjp",
-      "unit": "All Units",
-      "count": 514
-    },
-    {
       "file": "n5-unit-01.json",
       "book": "JLPT N5",
       "unit": "N5 Unit 01",
@@ -1023,12 +993,6 @@
       "book": "JLPT N5",
       "unit": "N5 Unit 08",
       "count": 10
-    },
-    {
-      "file": "n5.json",
-      "book": "N5-vietnamjp",
-      "unit": "All Units",
-      "count": 360
     }
   ]
 }

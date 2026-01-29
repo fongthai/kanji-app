@@ -17,7 +17,7 @@ interface KanjiVocabularySectionProps {
  * Future: Will fetch and display vocabularies using this kanji
  */
 export const KanjiVocabularySection = React.memo<KanjiVocabularySectionProps>(({
-  kanji,
+  kanji: _kanji, // Will be used for vocabulary fetching in the future
   availableWidth,
   availableHeight,
 }) => {

@@ -20,7 +20,7 @@ const renderWatermarkCircle = (
   centerY: number,
   allChars: string[],
   angles: number[],
-  grayscaleMode: boolean,
+  _grayscaleMode: boolean, // Reserved for future grayscale styling
   charStyle: any,
   watermarkId: string
 ) => {
